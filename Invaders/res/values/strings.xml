@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?> 
+ 
+<resources> 
+	
+   <!-- Strings for main menu  -->
+    <string name="app_name">Galactic Invaders</string> 
+    <string name="main_title">Galactic Invaders</string>  
+    <string name="new_game_label">New Game</string> 
+    <string name="return_label">Return to Game</string> 
+    <string name="hiscore_label">High Scores</string>
+    <string name="help_label">Help and Credits</string>
+    <string name="exit_label">Exit</string>
+    
+   <!-- Strings for settings menu -->
+	<string name="settings_label">Settings</string>
+	<string name="settings_title">Settings</string>
+	<string name="controls_title">Controls Settings</string>
+	<string name="move_title">Move Controls</string>
+	<string name="move_summary">Choose how to move the ship</string>
+	<string name="tilt_move">Tilt</string>
+	<string name="touch_move">Touch</string>
+	<string name="shoot_title">Shoot Controls</string>
+	<string name="shoot_summary">Choose which button to shoot with</string>
+	<string name="dpad_shoot">D-pad button</string>
+	<string name="menu_shoot">Menu button</string>
+	<string name="volume_shoot">Volume up button</string>
+	<string name="player_title">Player Settings</string>
+	<string name="player_name">Player name</string>
+	<string name="name_summary">Choose the name to appear on the high score</string>
+	<string name="default_name">Cpt. Awesome</string>
+	<string name="name_title">Your name</string>
+	
+	
+   <!-- Strings for the high score -->
+    <string name="highscore_title">High Score</string>
+    <string name="no_name">No one</string>
+	
+   <!-- Strings for game -->
+	<string name="game_title">Galactic Invaders</string>
+	<string name="game_over"><center>Game Over</center></string>
+	<string name="game_over_text"><center>Click back to try again!</center></string>
+	<string name="high_score_notify">Congratulations you made the High Score with:\u0020</string>
+	<string name="no_high_score_notify">Unfortunately you did not make the high score with:\u0020</string>
+	
+	
+   <!-- Strings for instructions -->
+	<string name="instructions_title">Instructions</string>
+	
+</resources> 

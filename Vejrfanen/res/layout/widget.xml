@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="150dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/widget_bg"
+    android:gravity="center"
+    >
+    <ImageView android:id="@+id/widgetimage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        ></ImageView>
+    <TextView android:id="@+id/widgettext"
+        android:layout_width="600sp"
+        android:layout_height="wrap_content"
+        android:text="@string/hello"
+        android:textSize="10sp"
+        android:gravity="center"
+        android:textColor="@android:color/black"
+        android:padding="4sp"
+    />
+</LinearLayout>

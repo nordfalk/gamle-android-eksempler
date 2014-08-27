@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <string-array  name="posBestem">
+        <item>Vent på aktuel position</item>
+        <item>Brug sidste aktuelle position mens der ventes</item>
+        <item>Vælg selv hvilken by der skal anvendes</item>
+   </string-array >
+   <string-array  name="posBestemValues">
+        <item>pos_aktuel</item>
+        <item>pos_vent</item>
+        <item>pos_valgtby</item>
+   </string-array >
+   <string-array  name="hudType">
+        <item>Type 1</item>
+        <item>Type 2</item>
+        <item>Type 3</item>
+   </string-array >
+   <string-array  name="hudTypeValues">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+   </string-array >
+   <string-array  name="tabs">
+        <item>Tab 1</item>
+        <item>Tab 2</item>
+        <item>Tab 3</item>
+   </string-array >
+   <string-array  name="tabsValues">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+   </string-array >
+   <array name="posValgt1Values">
+       <item>@string/posValgNavn</item>
+       <item>@string/posValgDist</item>
+   </array>
+</resources>

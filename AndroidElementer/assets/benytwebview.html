@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+    <META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+    <TITLE>Benyt WebView</TITLE>
+</HEAD>
+<BODY>
+<H1>Benyt WebView</H1>
+<ul>
+    <LI><P>Gå til <A HREF="http://javabog.dk">javabog.dk</A></P>
+    <LI><P>Henvisning til at installere noget <A HREF="market://search?q=pname:dk.nordfalk.teoriproeve">direkte fra
+        Android Marked</A></P>
+</ul>
+
+Et WebView understøtter også at man via Javascript kalder i (på forhånd registrerede) Java-objekter.
+<ul>
+    <LI><P>Klik for at <A HREF="javascript:mitObjekt.visToast('Dette er en toast fra Javascript');">vise toast aktiveret
+        fra Javascript</A></P>
+    <LI><P><A HREF="javascript:mitObjekt.afslut();">Luk aktivitet</A></P>
+</ul>
+
+En app der baserer sig på et WebView ligner ikke rigtig en indfødt app,
+men mere en webside. Her er f.eks. en HTML-knap: <br/>
+<button onclick="javascript:mitObjekt.visToast('Fint, du trykkede på mig');">Tryk på mig</button>
+
+</BODY>
+</HTML>

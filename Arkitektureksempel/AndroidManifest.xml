@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="dk.firma.mitprojekt"
+      android:versionCode="1"
+      android:versionName="1.0">
+
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-sdk android:minSdkVersion="4" android:targetSdkVersion="10" />
+  
+	<!-- Klassen MinApp bliver initialiseret  <uses-sdk android:minSdkVersion="4" android:targetSdkVersion="14" />
+	 som det allerførste
+	     der overhovedet sker når programmet startes, uanset hvordan
+	     det bliver startet -->
+	<application android:name="dk.firma.mitprojekt.MinApp"
+			android:label="Arkitektureksempel" >
+
+		<activity android:name="dk.firma.mitprojekt.Velkommen_akt">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+
+		<activity android:name="dk.firma.mitprojekt.Hjaelp_akt" />
+
+		<activity android:name="dk.firma.mitprojekt.Indstillinger_akt" />
+
+		<activity android:name="dk.firma.mitprojekt.Chat_akt" />
+		
+	</application>
+</manifest>

@@ -1,0 +1,27 @@
+    <ScrollView android:layout_width="fill_parent"
+        android:layout_height="fill_parent" android:layout_weight="1"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+        <LinearLayout android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_margin="0px">
+        <TextView android:id="@+id/PrognoseTextView" android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""></TextView>
+            <ImageView android:id="@+id/PrognoseImageView1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"></ImageView>
+            <ImageView android:id="@+id/PrognoseImageView2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="10px"></ImageView>
+            <ImageView android:id="@+id/PrognoseImageView3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="10px"
+            android:layout_marginBottom="10px"></ImageView>
+            </LinearLayout>
+    </ScrollView>

@@ -1,0 +1,39 @@
+
+http://developer.android.com/reference/android/nfc/package-summary.html
+http://developer.android.com/guide/topics/nfc/index.html
+http://developer.android.com/resources/samples/NFCDemo/index.html
+http://www.open-nfc.org/opennfc_library/overview-summary.html
+http://code.google.com/p/openmobster/wiki/NFC
+
+
+
+
+http://developer.android.com/reference/android/nfc/tech/TagTechnology.html
+
+
+    NfcA (also known as ISO 14443-3A)
+
+ISO14443-A (NXP MIFARE)
+ http://en.wikipedia.org/wiki/MIFARE
+
+
+    NfcB (also known as ISO 14443-3B)
+ISO14443-B
+ http://en.wikipedia.org/wiki/ISO/IEC_14443
+
+
+    NfcF (also known as JIS 6319-4)
+
+JIS X 6319-4 (Sony Felica)
+ http://en.wikipedia.org/wiki/FeliCa
+
+
+    NfcV (also known as ISO 15693)
+http://en.wikipedia.org/wiki/ISO/IEC_15693
+
+    IsoDep
+    Ndef on NFC Forum Type 1, Type 2, Type 3 or Type 4 compliant tags
+
+
+
+

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<PreferenceCategory android:title="@string/controls_title">
+		<ListPreference
+	        android:title="@string/move_title"
+	        android:summary="@string/move_summary"
+	        android:key="move"
+	        android:defaultValue="touch"
+	        android:entries="@array/moveArray"
+	        android:entryValues="@array/moveValues" />
+		<ListPreference
+	        android:title="@string/shoot_title"
+	        android:summary="@string/shoot_summary"
+	        android:key="shoot"
+	        android:defaultValue="dpad"
+	        android:entries="@array/shootArray"
+	        android:entryValues="@array/shootValues" />
+	</PreferenceCategory>
+	<PreferenceCategory android:title="@string/player_title">
+		<EditTextPreference
+            android:name="@string/player_name"
+            android:summary="@string/name_summary"
+            android:title="@string/name_title"
+            android:key="playername" 
+            android:defaultValue="@string/default_name"/>
+	</PreferenceCategory>
+</PreferenceScreen>

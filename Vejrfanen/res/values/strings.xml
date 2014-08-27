@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="app_name">Vejrhanen</string>
+    <string name="hello">Hello World!</string>
+    <string name="widget_name">Vejrhanen widget</string>
+    <string name="posValg1">Vælg by</string>
+    <string name="posValgNavn">Vælg efter navn</string>
+    <string name="posValgDist">Vælg nærmeste by</string>
+    <string name="about_title">Nyeste tilføjelser</string>
+    <string name="about_text">Siden den oprindelige udgave af TabVejr, er der sket en række ændringer:\r\n\r\nDer er tilføjet nye tabs for hhv. glatførevarsel
+    og Web-TV. Der er eksperimenteret med en mulighed for at skifte mellem tabs vha. swipe bevægelse, og endelig er standardikonet skiftet ud.</string>
+    <string name="about_label">Luk</string>
+</resources>

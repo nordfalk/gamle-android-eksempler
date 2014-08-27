@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+            android:id="@+id/youtube_overskrift"
+            android:text="overskrift"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:shadowDx="5"
+            android:shadowDy="3"
+            android:shadowRadius="5"
+            android:shadowColor="#00ffff"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:id="@+id/youtube_beskrivelse"
+                android:text="beskrivelse"
+                android:textSize="12sp"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <ImageButton
+                android:id="@+id/youtube_infoknap"
+                android:src="@android:drawable/ic_media_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+    </TableRow>
+
+    <VideoView
+            android:id="@+id/youtube_videoView"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+</TableLayout>

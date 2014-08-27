@@ -1,0 +1,17 @@
+
+Dette er en samling af let forståelige eksempler der viser elementer i Android-programmering.
+
+De er udarbejdet i forbindelse med Android-kurser jeg har holdt på http://ihk.dk og http://lundogbendsen.dk/
+
+Alle eksemplerne er som udgangspunkt open source under GPLv3, med mindre andet er i en specifik kildekode-fil.
+
+Kontakt mig hvis du ønsker at bygge videre på eksemplerne under en anden licens eller hvis du ønsker skriveadgang så du kan arbejde videre på en af projekterne.
+
+Eksempelsamlingen kan hentes ned fra Android Marked:
+https://market.android.com/details?id=dk.nordfalk.android.elementer
+
+19. april 2011
+
+Jacob Nordfalk
+http://javabog.dk
+

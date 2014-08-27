@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    android:versionCode="2" android:versionName="1"
+    package="dk.nordfalk.donation.skolemad">
+      
+    <application android:icon="@drawable/logo" 
+    android:label="Skolemad til Nepal">
+
+    </application>
+
+	<supports-screens
+        android:smallScreens="true"
+        android:xlargeScreens="true"
+        android:anyDensity="true" />     
+    <uses-sdk android:minSdkVersion="3" targetSdkVersion="9"/>
+
+</manifest>

@@ -1,0 +1,17 @@
+{
+	"velkomsttekst": "Velkommen til min app :-)",
+
+  "driftmeddelelse": "",
+
+  "chatUrl": "http://javabog.dk:8080/ServerEksempel/MinServlet?",
+  //"chatUrl": "http://localhost:8080/ServerEksempel/MinServlet?",
+
+	"hjælpetekst": "Hjælpetekst fra json i raw",
+
+	"kanalkoder": ["P1D", "P2D", "P3", "P4", "P5D", "P6B", "P7M", "P8J", "RAM", "DRM", "NEWS"],
+
+	"kontakt_modtagere": "jano@ihk.dk,jacob.nordfalk@gmail.com",
+
+  "opdater_fra_android_marked_url": ""
+
+}

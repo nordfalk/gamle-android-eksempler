@@ -1,0 +1,991 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:openSearch="http://a9.com/-/spec/opensearchrss/1.0/" xmlns:gd="http://schemas.google.com/g/2005" xmlns:yt="http://gdata.youtube.com/schemas/2007">
+  <id>http://gdata.youtube.com/feeds/api/users/Esperantoestas/uploads</id>
+  <updated>2011-06-11T20:05:36.606Z</updated>
+  <category scheme="http://schemas.google.com/g/2005#kind" term="http://gdata.youtube.com/schemas/2007#video"/>
+  <title type="text">Uploads by Esperantoestas</title>
+  <logo>http://www.youtube.com/img/pic_youtubelogo_123x63.gif</logo>
+  <link rel="related" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/users/esperantoestas"/>
+  <link rel="alternate" type="text/html" href="http://www.youtube.com/profile_videos?user=Esperantoestas"/>
+  <link rel="http://schemas.google.com/g/2005#feed" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/users/Esperantoestas/uploads"/>
+  <link rel="http://schemas.google.com/g/2005#batch" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/users/Esperantoestas/uploads/batch"/>
+  <link rel="self" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/users/Esperantoestas/uploads?start-index=1&amp;max-results=25"/>
+  <link rel="next" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/users/Esperantoestas/uploads?start-index=26&amp;max-results=25"/>
+  <author>
+    <name>Esperantoestas</name>
+    <uri>http://gdata.youtube.com/feeds/api/users/esperantoestas</uri>
+  </author>
+  <generator version="2.0" uri="http://gdata.youtube.com/">YouTube data API</generator>
+  <openSearch:totalResults>70</openSearch:totalResults>
+  <openSearch:startIndex>1</openSearch:startIndex>
+  <openSearch:itemsPerPage>25</openSearch:itemsPerPage>
+  <entry>
+    <id>http://gdata.youtube.com/feeds/api/videos/b_dMGO1vFdA</id>
+    <published>2009-04-16T16:43:27.000Z</published>
+    <updated>2011-03-11T17:18:24.000Z</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://gdata.youtube.com/schemas/2007#video"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/categories.cat" term="Education" label="Education"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="esperanto"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="international language"/>
+    <title type="text">Part 05 -Esperanto is a language with a colourful movement.</title>
+    <content type="text">E@I, TEJO, ILEI, EEU, UEA, AdE - these are a few of the abbreviations of organizations in the international Esperanto movement. Find out more about them in this part.</content>
+    <link rel="alternate" type="text/html" href="http://www.youtube.com/watch?v=b_dMGO1vFdA&amp;feature=youtube_gdata"/>
+    <link rel="http://gdata.youtube.com/schemas/2007#video.related" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/videos/b_dMGO1vFdA/related"/>
+    <link rel="self" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/users/Esperantoestas/uploads/b_dMGO1vFdA"/>
+    <author>
+      <name>Esperantoestas</name>
+      <uri>http://gdata.youtube.com/feeds/api/users/esperantoestas</uri>
+    </author>
+    <gd:comments>
+      <gd:feedLink href="http://gdata.youtube.com/feeds/api/videos/b_dMGO1vFdA/comments" countHint="4"/>
+    </gd:comments>
+    <media:group>
+      <media:category label="Education" scheme="http://gdata.youtube.com/schemas/2007/categories.cat">Education</media:category>
+      <media:content url="http://www.youtube.com/v/b_dMGO1vFdA?f=user_uploads&amp;app=youtube_gdata" type="application/x-shockwave-flash" medium="video" isDefault="true" expression="full" duration="255" yt:format="5"/>
+      <media:content url="rtsp://v1.cache1.c.youtube.com/CigLENy73wIaHwnQFW_tGEz3bxMYDSANFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="255" yt:format="1"/>
+      <media:content url="rtsp://v7.cache8.c.youtube.com/CigLENy73wIaHwnQFW_tGEz3bxMYESARFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="255" yt:format="6"/>
+      <media:description type="plain">E@I, TEJO, ILEI, EEU, UEA, AdE - these are a few of the abbreviations of organizations in the international Esperanto movement. Find out more about them in this part.</media:description>
+      <media:keywords>esperanto, international language</media:keywords>
+      <media:player url="http://www.youtube.com/watch?v=b_dMGO1vFdA&amp;feature=youtube_gdata_player"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/b_dMGO1vFdA/0.jpg" height="240" width="320" time="00:02:07.500"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/b_dMGO1vFdA/1.jpg" height="90" width="120" time="00:01:03.750"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/b_dMGO1vFdA/2.jpg" height="90" width="120" time="00:02:07.500"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/b_dMGO1vFdA/3.jpg" height="90" width="120" time="00:03:11.250"/>
+      <media:title type="plain">Part 05 -Esperanto is a language with a colourful movement.</media:title>
+      <yt:duration seconds="255"/>
+    </media:group>
+    <gd:rating average="5.0" max="5" min="1" numRaters="11" rel="http://schemas.google.com/g/2005#overall"/>
+    <yt:statistics favoriteCount="8" viewCount="1947"/>
+  </entry>
+  <entry>
+    <id>http://gdata.youtube.com/feeds/api/videos/ZXnT9mda07s</id>
+    <published>2009-04-16T04:24:22.000Z</published>
+    <updated>2010-08-26T22:40:23.000Z</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://gdata.youtube.com/schemas/2007#video"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/categories.cat" term="Education" label="Education"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="L'espéranto"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="internationale langue"/>
+    <title type="text">Chapitre 05 - L'espéranto est la langue d'un mouvement multicolore</title>
+    <content type="text">E@I, TEJO, ILEI, EEU, UEA, AdE - voici quelques abréviations de noms d'organisations qui font partie du mouvement international espérantophone. Apprenez-en davantage à leur sujet dans ce chapitre.</content>
+    <link rel="alternate" type="text/html" href="http://www.youtube.com/watch?v=ZXnT9mda07s&amp;feature=youtube_gdata"/>
+    <link rel="http://gdata.youtube.com/schemas/2007#video.related" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/videos/ZXnT9mda07s/related"/>
+    <link rel="self" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/users/Esperantoestas/uploads/ZXnT9mda07s"/>
+    <author>
+      <name>Esperantoestas</name>
+      <uri>http://gdata.youtube.com/feeds/api/users/esperantoestas</uri>
+    </author>
+    <gd:comments>
+      <gd:feedLink href="http://gdata.youtube.com/feeds/api/videos/ZXnT9mda07s/comments" countHint="0"/>
+    </gd:comments>
+    <media:group>
+      <media:category label="Education" scheme="http://gdata.youtube.com/schemas/2007/categories.cat">Education</media:category>
+      <media:content url="http://www.youtube.com/v/ZXnT9mda07s?f=user_uploads&amp;app=youtube_gdata" type="application/x-shockwave-flash" medium="video" isDefault="true" expression="full" duration="255" yt:format="5"/>
+      <media:content url="rtsp://v8.cache4.c.youtube.com/CigLENy73wIaHwm701pn9tN5ZRMYDSANFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="255" yt:format="1"/>
+      <media:content url="rtsp://v1.cache3.c.youtube.com/CigLENy73wIaHwm701pn9tN5ZRMYESARFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="255" yt:format="6"/>
+      <media:description type="plain">E@I, TEJO, ILEI, EEU, UEA, AdE - voici quelques abréviations de noms d'organisations qui font partie du mouvement international espérantophone. Apprenez-en davantage à leur sujet dans ce chapitre.</media:description>
+      <media:keywords>L'espéranto, internationale langue</media:keywords>
+      <media:player url="http://www.youtube.com/watch?v=ZXnT9mda07s&amp;feature=youtube_gdata_player"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/ZXnT9mda07s/0.jpg" height="240" width="320" time="00:02:07.500"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/ZXnT9mda07s/1.jpg" height="90" width="120" time="00:01:03.750"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/ZXnT9mda07s/2.jpg" height="90" width="120" time="00:02:07.500"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/ZXnT9mda07s/3.jpg" height="90" width="120" time="00:03:11.250"/>
+      <media:title type="plain">Chapitre 05 - L'espéranto est la langue d'un mouvement multicolore</media:title>
+      <yt:duration seconds="255"/>
+    </media:group>
+    <gd:rating average="5.0" max="5" min="1" numRaters="2" rel="http://schemas.google.com/g/2005#overall"/>
+    <yt:statistics favoriteCount="2" viewCount="488"/>
+  </entry>
+  <entry>
+    <id>http://gdata.youtube.com/feeds/api/videos/MHohg_vb8WA</id>
+    <published>2009-04-08T00:46:55.000Z</published>
+    <updated>2010-08-23T17:48:37.000Z</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://gdata.youtube.com/schemas/2007#video"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/categories.cat" term="Education" label="Education"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="L'esperanto"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="esperanto"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="lingua"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="internazionale"/>
+    <title type="text">Capitolo 05 - L'esperanto è una lingua con un movimento variegato.</title>
+    <content type="text">E@I, TEJO, ILEI, EEU, UEA, AdE ecco alcune delle sigle che rappresentano il movimento esperantista internazionale. Impara a conoscerle in questa parte.</content>
+    <link rel="alternate" type="text/html" href="http://www.youtube.com/watch?v=MHohg_vb8WA&amp;feature=youtube_gdata"/>
+    <link rel="http://gdata.youtube.com/schemas/2007#video.related" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/videos/MHohg_vb8WA/related"/>
+    <link rel="self" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/users/Esperantoestas/uploads/MHohg_vb8WA"/>
+    <author>
+      <name>Esperantoestas</name>
+      <uri>http://gdata.youtube.com/feeds/api/users/esperantoestas</uri>
+    </author>
+    <gd:comments>
+      <gd:feedLink href="http://gdata.youtube.com/feeds/api/videos/MHohg_vb8WA/comments" countHint="0"/>
+    </gd:comments>
+    <media:group>
+      <media:category label="Education" scheme="http://gdata.youtube.com/schemas/2007/categories.cat">Education</media:category>
+      <media:content url="http://www.youtube.com/v/MHohg_vb8WA?f=user_uploads&amp;app=youtube_gdata" type="application/x-shockwave-flash" medium="video" isDefault="true" expression="full" duration="255" yt:format="5"/>
+      <media:content url="rtsp://v3.cache8.c.youtube.com/CigLENy73wIaHwlg8dv7gyF6MBMYDSANFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="255" yt:format="1"/>
+      <media:content url="rtsp://v6.cache8.c.youtube.com/CigLENy73wIaHwlg8dv7gyF6MBMYESARFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="255" yt:format="6"/>
+      <media:description type="plain">E@I, TEJO, ILEI, EEU, UEA, AdE ecco alcune delle sigle che rappresentano il movimento esperantista internazionale. Impara a conoscerle in questa parte.</media:description>
+      <media:keywords>L'esperanto, esperanto, lingua, internazionale</media:keywords>
+      <media:player url="http://www.youtube.com/watch?v=MHohg_vb8WA&amp;feature=youtube_gdata_player"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/MHohg_vb8WA/0.jpg" height="240" width="320" time="00:02:07.500"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/MHohg_vb8WA/1.jpg" height="90" width="120" time="00:01:03.750"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/MHohg_vb8WA/2.jpg" height="90" width="120" time="00:02:07.500"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/MHohg_vb8WA/3.jpg" height="90" width="120" time="00:03:11.250"/>
+      <media:title type="plain">Capitolo 05 - L'esperanto è una lingua con un movimento variegato.</media:title>
+      <yt:duration seconds="255"/>
+    </media:group>
+    <gd:rating average="5.0" max="5" min="1" numRaters="4" rel="http://schemas.google.com/g/2005#overall"/>
+    <yt:statistics favoriteCount="0" viewCount="331"/>
+  </entry>
+  <entry>
+    <id>http://gdata.youtube.com/feeds/api/videos/t4H39feQfHM</id>
+    <published>2009-04-07T22:11:37.000Z</published>
+    <updated>2011-03-10T07:35:53.000Z</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://gdata.youtube.com/schemas/2007#video"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/categories.cat" term="Education" label="Education"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="世界语"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="是一种语言"/>
+    <title type="text">第 01 部分 - 世界语是适用于一切事物的语言</title>
+    <content type="text">世界语适合国际沟通, 旅行, 网路, 跨文化学习, 结交新朋友, 国际会议, 免费到外国作客等等还有很多.</content>
+    <link rel="alternate" type="text/html" href="http://www.youtube.com/watch?v=t4H39feQfHM&amp;feature=youtube_gdata"/>
+    <link rel="http://gdata.youtube.com/schemas/2007#video.related" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/videos/t4H39feQfHM/related"/>
+    <link rel="self" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/users/Esperantoestas/uploads/t4H39feQfHM"/>
+    <author>
+      <name>Esperantoestas</name>
+      <uri>http://gdata.youtube.com/feeds/api/users/esperantoestas</uri>
+    </author>
+    <gd:comments>
+      <gd:feedLink href="http://gdata.youtube.com/feeds/api/videos/t4H39feQfHM/comments" countHint="0"/>
+    </gd:comments>
+    <media:group>
+      <media:category label="Education" scheme="http://gdata.youtube.com/schemas/2007/categories.cat">Education</media:category>
+      <media:content url="http://www.youtube.com/v/t4H39feQfHM?f=user_uploads&amp;app=youtube_gdata" type="application/x-shockwave-flash" medium="video" isDefault="true" expression="full" duration="104" yt:format="5"/>
+      <media:content url="rtsp://v4.cache3.c.youtube.com/CigLENy73wIaHwlzfJD39feBtxMYDSANFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="104" yt:format="1"/>
+      <media:content url="rtsp://v1.cache7.c.youtube.com/CigLENy73wIaHwlzfJD39feBtxMYESARFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="104" yt:format="6"/>
+      <media:description type="plain">世界语适合国际沟通, 旅行, 网路, 跨文化学习, 结交新朋友, 国际会议, 免费到外国作客等等还有很多.</media:description>
+      <media:keywords>世界语, 是一种语言</media:keywords>
+      <media:player url="http://www.youtube.com/watch?v=t4H39feQfHM&amp;feature=youtube_gdata_player"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/t4H39feQfHM/0.jpg" height="240" width="320" time="00:00:52"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/t4H39feQfHM/1.jpg" height="90" width="120" time="00:00:26"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/t4H39feQfHM/2.jpg" height="90" width="120" time="00:00:52"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/t4H39feQfHM/3.jpg" height="90" width="120" time="00:01:18"/>
+      <media:title type="plain">第 01 部分 - 世界语是适用于一切事物的语言</media:title>
+      <yt:duration seconds="104"/>
+    </media:group>
+    <gd:rating average="5.0" max="5" min="1" numRaters="1" rel="http://schemas.google.com/g/2005#overall"/>
+    <yt:statistics favoriteCount="3" viewCount="493"/>
+  </entry>
+  <entry>
+    <id>http://gdata.youtube.com/feeds/api/videos/n62fJrFMYxs</id>
+    <published>2009-04-07T22:02:20.000Z</published>
+    <updated>2010-08-27T02:26:10.000Z</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://gdata.youtube.com/schemas/2007#video"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/categories.cat" term="Education" label="Education"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="Esperanto"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="jazyk"/>
+    <title type="text">Časť 01 - Esperanto je jazyk vhodný na všetko</title>
+    <content type="text">Esperanto je jazyk vhodný na medzinárodnú komunikáciu, cestovanie, internet, interkultúrne učenie, nájdenie nových priateľov, medzinárodné kongresy, bezplatné hosťovanie v cudzích krajinách a ešte oveľa viac.</content>
+    <link rel="alternate" type="text/html" href="http://www.youtube.com/watch?v=n62fJrFMYxs&amp;feature=youtube_gdata"/>
+    <link rel="http://gdata.youtube.com/schemas/2007#video.related" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/videos/n62fJrFMYxs/related"/>
+    <link rel="self" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/users/Esperantoestas/uploads/n62fJrFMYxs"/>
+    <author>
+      <name>Esperantoestas</name>
+      <uri>http://gdata.youtube.com/feeds/api/users/esperantoestas</uri>
+    </author>
+    <gd:comments>
+      <gd:feedLink href="http://gdata.youtube.com/feeds/api/videos/n62fJrFMYxs/comments" countHint="1"/>
+    </gd:comments>
+    <media:group>
+      <media:category label="Education" scheme="http://gdata.youtube.com/schemas/2007/categories.cat">Education</media:category>
+      <media:content url="http://www.youtube.com/v/n62fJrFMYxs?f=user_uploads&amp;app=youtube_gdata" type="application/x-shockwave-flash" medium="video" isDefault="true" expression="full" duration="104" yt:format="5"/>
+      <media:content url="rtsp://v2.cache2.c.youtube.com/CigLENy73wIaHwkbY0yxJp-tnxMYDSANFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="104" yt:format="1"/>
+      <media:content url="rtsp://v5.cache7.c.youtube.com/CigLENy73wIaHwkbY0yxJp-tnxMYESARFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="104" yt:format="6"/>
+      <media:description type="plain">Esperanto je jazyk vhodný na medzinárodnú komunikáciu, cestovanie, internet, interkultúrne učenie, nájdenie nových priateľov, medzinárodné kongresy, bezplatné hosťovanie v cudzích krajinách a ešte oveľa viac.</media:description>
+      <media:keywords>Esperanto, jazyk</media:keywords>
+      <media:player url="http://www.youtube.com/watch?v=n62fJrFMYxs&amp;feature=youtube_gdata_player"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/n62fJrFMYxs/0.jpg" height="240" width="320" time="00:00:52"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/n62fJrFMYxs/1.jpg" height="90" width="120" time="00:00:26"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/n62fJrFMYxs/2.jpg" height="90" width="120" time="00:00:52"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/n62fJrFMYxs/3.jpg" height="90" width="120" time="00:01:18"/>
+      <media:title type="plain">Časť 01 - Esperanto je jazyk vhodný na všetko</media:title>
+      <yt:duration seconds="104"/>
+    </media:group>
+    <gd:rating average="5.0" max="5" min="1" numRaters="4" rel="http://schemas.google.com/g/2005#overall"/>
+    <yt:statistics favoriteCount="2" viewCount="871"/>
+  </entry>
+  <entry>
+    <id>http://gdata.youtube.com/feeds/api/videos/uOGSE0oSKCE</id>
+    <published>2009-04-07T21:53:54.000Z</published>
+    <updated>2011-04-20T18:13:10.000Z</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://gdata.youtube.com/schemas/2007#video"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/categories.cat" term="Education" label="Education"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="esperanto"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="língua internacional"/>
+    <title type="text">Parte 01 - Esperanto é uma língua útil pra tudo</title>
+    <content type="text">Esperanto é uma língua útil para comunicação internacional, viagens, Internet, aprendizado intercultural, fazer novos amigos, congressos internacionais, hospedagem gratuita em países estrangeiros e muito mais.</content>
+    <link rel="alternate" type="text/html" href="http://www.youtube.com/watch?v=uOGSE0oSKCE&amp;feature=youtube_gdata"/>
+    <link rel="http://gdata.youtube.com/schemas/2007#video.related" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/videos/uOGSE0oSKCE/related"/>
+    <link rel="self" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/users/Esperantoestas/uploads/uOGSE0oSKCE"/>
+    <author>
+      <name>Esperantoestas</name>
+      <uri>http://gdata.youtube.com/feeds/api/users/esperantoestas</uri>
+    </author>
+    <gd:comments>
+      <gd:feedLink href="http://gdata.youtube.com/feeds/api/videos/uOGSE0oSKCE/comments" countHint="51"/>
+    </gd:comments>
+    <media:group>
+      <media:category label="Education" scheme="http://gdata.youtube.com/schemas/2007/categories.cat">Education</media:category>
+      <media:content url="http://www.youtube.com/v/uOGSE0oSKCE?f=user_uploads&amp;app=youtube_gdata" type="application/x-shockwave-flash" medium="video" isDefault="true" expression="full" duration="104" yt:format="5"/>
+      <media:content url="rtsp://v1.cache6.c.youtube.com/CigLENy73wIaHwkhKBJKE5LhuBMYDSANFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="104" yt:format="1"/>
+      <media:content url="rtsp://v5.cache4.c.youtube.com/CigLENy73wIaHwkhKBJKE5LhuBMYESARFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="104" yt:format="6"/>
+      <media:description type="plain">Esperanto é uma língua útil para comunicação internacional, viagens, Internet, aprendizado intercultural, fazer novos amigos, congressos internacionais, hospedagem gratuita em países estrangeiros e muito mais.</media:description>
+      <media:keywords>esperanto, língua internacional</media:keywords>
+      <media:player url="http://www.youtube.com/watch?v=uOGSE0oSKCE&amp;feature=youtube_gdata_player"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/uOGSE0oSKCE/0.jpg" height="240" width="320" time="00:00:52"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/uOGSE0oSKCE/1.jpg" height="90" width="120" time="00:00:26"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/uOGSE0oSKCE/2.jpg" height="90" width="120" time="00:00:52"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/uOGSE0oSKCE/3.jpg" height="90" width="120" time="00:01:18"/>
+      <media:title type="plain">Parte 01 - Esperanto é uma língua útil pra tudo</media:title>
+      <yt:duration seconds="104"/>
+    </media:group>
+    <gd:rating average="5.0" max="5" min="1" numRaters="24" rel="http://schemas.google.com/g/2005#overall"/>
+    <yt:statistics favoriteCount="25" viewCount="9611"/>
+  </entry>
+  <entry>
+    <id>http://gdata.youtube.com/feeds/api/videos/pY9l2hCuN10</id>
+    <published>2009-04-07T21:45:29.000Z</published>
+    <updated>2011-04-10T21:29:48.000Z</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://gdata.youtube.com/schemas/2007#video"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/categories.cat" term="Education" label="Education"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="międzynarodowy język"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="esperanto"/>
+    <title type="text">Część 01 - Esperanto to język przydatny do wszystkiego</title>
+    <content type="text">Esperanto to język przydatny w komunikacji międzynarodowej, podróżach, internecie, poznawaniu innych kultur, znajdowaniu przyjaciół, międzynarodowych spotkaniach, darmowych noclegach w obcych krajach i wielu innych rzeczach.</content>
+    <link rel="alternate" type="text/html" href="http://www.youtube.com/watch?v=pY9l2hCuN10&amp;feature=youtube_gdata"/>
+    <link rel="http://gdata.youtube.com/schemas/2007#video.related" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/videos/pY9l2hCuN10/related"/>
+    <link rel="self" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/users/Esperantoestas/uploads/pY9l2hCuN10"/>
+    <author>
+      <name>Esperantoestas</name>
+      <uri>http://gdata.youtube.com/feeds/api/users/esperantoestas</uri>
+    </author>
+    <gd:comments>
+      <gd:feedLink href="http://gdata.youtube.com/feeds/api/videos/pY9l2hCuN10/comments" countHint="0"/>
+    </gd:comments>
+    <media:group>
+      <media:category label="Education" scheme="http://gdata.youtube.com/schemas/2007/categories.cat">Education</media:category>
+      <media:content url="http://www.youtube.com/v/pY9l2hCuN10?f=user_uploads&amp;app=youtube_gdata" type="application/x-shockwave-flash" medium="video" isDefault="true" expression="full" duration="104" yt:format="5"/>
+      <media:content url="rtsp://v7.cache2.c.youtube.com/CigLENy73wIaHwldN64Q2mWPpRMYDSANFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="104" yt:format="1"/>
+      <media:content url="rtsp://v1.cache6.c.youtube.com/CigLENy73wIaHwldN64Q2mWPpRMYESARFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="104" yt:format="6"/>
+      <media:description type="plain">Esperanto to język przydatny w komunikacji międzynarodowej, podróżach, internecie, poznawaniu innych kultur, znajdowaniu przyjaciół, międzynarodowych spotkaniach, darmowych noclegach w obcych krajach i wielu innych rzeczach.</media:description>
+      <media:keywords>międzynarodowy język, esperanto</media:keywords>
+      <media:player url="http://www.youtube.com/watch?v=pY9l2hCuN10&amp;feature=youtube_gdata_player"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/pY9l2hCuN10/0.jpg" height="240" width="320" time="00:00:52"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/pY9l2hCuN10/1.jpg" height="90" width="120" time="00:00:26"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/pY9l2hCuN10/2.jpg" height="90" width="120" time="00:00:52"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/pY9l2hCuN10/3.jpg" height="90" width="120" time="00:01:18"/>
+      <media:title type="plain">Część 01 - Esperanto to język przydatny do wszystkiego</media:title>
+      <yt:duration seconds="104"/>
+    </media:group>
+    <gd:rating average="5.0" max="5" min="1" numRaters="4" rel="http://schemas.google.com/g/2005#overall"/>
+    <yt:statistics favoriteCount="2" viewCount="921"/>
+  </entry>
+  <entry>
+    <id>http://gdata.youtube.com/feeds/api/videos/ApF7fWXpQYQ</id>
+    <published>2009-04-07T21:37:04.000Z</published>
+    <updated>2010-12-25T16:04:32.000Z</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://gdata.youtube.com/schemas/2007#video"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/categories.cat" term="Education" label="Education"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="L'esperanto"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="esperanto"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="lingua"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="internazionale"/>
+    <title type="text">Capitolo 01 - L'esperanto è una lingua adatta a tutto.</title>
+    <content type="text">L'esperanto è una lingua ideale per la comunicazione internazionale, i viaggi, Internet, lo studio interculturale, per trovare nuovi amici, per i congressi internazionali, per l'ospitalità gratuita in Paesi stranieri e molto altro.</content>
+    <link rel="alternate" type="text/html" href="http://www.youtube.com/watch?v=ApF7fWXpQYQ&amp;feature=youtube_gdata"/>
+    <link rel="http://gdata.youtube.com/schemas/2007#video.related" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/videos/ApF7fWXpQYQ/related"/>
+    <link rel="self" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/users/Esperantoestas/uploads/ApF7fWXpQYQ"/>
+    <author>
+      <name>Esperantoestas</name>
+      <uri>http://gdata.youtube.com/feeds/api/users/esperantoestas</uri>
+    </author>
+    <gd:comments>
+      <gd:feedLink href="http://gdata.youtube.com/feeds/api/videos/ApF7fWXpQYQ/comments" countHint="2"/>
+    </gd:comments>
+    <media:group>
+      <media:category label="Education" scheme="http://gdata.youtube.com/schemas/2007/categories.cat">Education</media:category>
+      <media:content url="http://www.youtube.com/v/ApF7fWXpQYQ?f=user_uploads&amp;app=youtube_gdata" type="application/x-shockwave-flash" medium="video" isDefault="true" expression="full" duration="104" yt:format="5"/>
+      <media:content url="rtsp://v6.cache3.c.youtube.com/CigLENy73wIaHwmEQellfXuRAhMYDSANFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="104" yt:format="1"/>
+      <media:content url="rtsp://v3.cache6.c.youtube.com/CigLENy73wIaHwmEQellfXuRAhMYESARFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="104" yt:format="6"/>
+      <media:description type="plain">L'esperanto è una lingua ideale per la comunicazione internazionale, i viaggi, Internet, lo studio interculturale, per trovare nuovi amici, per i congressi internazionali, per l'ospitalità gratuita in Paesi stranieri e molto altro.</media:description>
+      <media:keywords>L'esperanto, esperanto, lingua, internazionale</media:keywords>
+      <media:player url="http://www.youtube.com/watch?v=ApF7fWXpQYQ&amp;feature=youtube_gdata_player"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/ApF7fWXpQYQ/0.jpg" height="240" width="320" time="00:00:52"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/ApF7fWXpQYQ/1.jpg" height="90" width="120" time="00:00:26"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/ApF7fWXpQYQ/2.jpg" height="90" width="120" time="00:00:52"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/ApF7fWXpQYQ/3.jpg" height="90" width="120" time="00:01:18"/>
+      <media:title type="plain">Capitolo 01 - L'esperanto è una lingua adatta a tutto.</media:title>
+      <yt:duration seconds="104"/>
+    </media:group>
+    <gd:rating average="4.733333" max="5" min="1" numRaters="15" rel="http://schemas.google.com/g/2005#overall"/>
+    <yt:statistics favoriteCount="7" viewCount="4594"/>
+  </entry>
+  <entry>
+    <id>http://gdata.youtube.com/feeds/api/videos/imvLqAdSCro</id>
+    <published>2009-04-07T21:28:40.000Z</published>
+    <updated>2010-08-25T20:01:45.000Z</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://gdata.youtube.com/schemas/2007#video"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/categories.cat" term="Education" label="Education"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="L'L'espéranto"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="esperanto"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="langue internationale"/>
+    <title type="text">Chapitre 01 - L'espéranto est une langue qui convient pour tout</title>
+    <content type="text">L'espéranto est une langue qui convient à la communication internationale, aux voyages, à internet, à l'apprentissage interculturel, à la rencontre de nouveaux amis, aux congrès internationaux, à l'hébergement gratuit en pays étranger et à plein d'autres choses encore.</content>
+    <link rel="alternate" type="text/html" href="http://www.youtube.com/watch?v=imvLqAdSCro&amp;feature=youtube_gdata"/>
+    <link rel="http://gdata.youtube.com/schemas/2007#video.related" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/videos/imvLqAdSCro/related"/>
+    <link rel="http://gdata.youtube.com/schemas/2007#mobile" type="text/html" href="http://m.youtube.com/details?v=imvLqAdSCro"/>
+    <link rel="self" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/users/Esperantoestas/uploads/imvLqAdSCro"/>
+    <author>
+      <name>Esperantoestas</name>
+      <uri>http://gdata.youtube.com/feeds/api/users/esperantoestas</uri>
+    </author>
+    <gd:comments>
+      <gd:feedLink href="http://gdata.youtube.com/feeds/api/videos/imvLqAdSCro/comments" countHint="0"/>
+    </gd:comments>
+    <media:group>
+      <media:category label="Education" scheme="http://gdata.youtube.com/schemas/2007/categories.cat">Education</media:category>
+      <media:content url="http://www.youtube.com/v/imvLqAdSCro?f=user_uploads&amp;app=youtube_gdata" type="application/x-shockwave-flash" medium="video" isDefault="true" expression="full" duration="104" yt:format="5"/>
+      <media:content url="rtsp://v6.cache4.c.youtube.com/CigLENy73wIaHwm6ClIHqMtrihMYDSANFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="104" yt:format="1"/>
+      <media:content url="rtsp://v7.cache6.c.youtube.com/CigLENy73wIaHwm6ClIHqMtrihMYESARFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="104" yt:format="6"/>
+      <media:description type="plain">L'espéranto est une langue qui convient à la communication internationale, aux voyages, à internet, à l'apprentissage interculturel, à la rencontre de nouveaux amis, aux congrès internationaux, à l'hébergement gratuit en pays étranger et à plein d'autres choses encore.</media:description>
+      <media:keywords>L'L'espéranto, esperanto, langue internationale</media:keywords>
+      <media:player url="http://www.youtube.com/watch?v=imvLqAdSCro&amp;feature=youtube_gdata_player"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/imvLqAdSCro/0.jpg" height="240" width="320" time="00:00:52"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/imvLqAdSCro/1.jpg" height="90" width="120" time="00:00:26"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/imvLqAdSCro/2.jpg" height="90" width="120" time="00:00:52"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/imvLqAdSCro/3.jpg" height="90" width="120" time="00:01:18"/>
+      <media:title type="plain">Chapitre 01 - L'espéranto est une langue qui convient pour tout</media:title>
+      <yt:duration seconds="104"/>
+    </media:group>
+    <gd:rating average="5.0" max="5" min="1" numRaters="6" rel="http://schemas.google.com/g/2005#overall"/>
+    <yt:statistics favoriteCount="4" viewCount="2191"/>
+  </entry>
+  <entry>
+    <id>http://gdata.youtube.com/feeds/api/videos/EQZxMTbSee8</id>
+    <published>2009-04-07T16:57:02.000Z</published>
+    <updated>2011-05-14T15:40:55.000Z</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://gdata.youtube.com/schemas/2007#video"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/categories.cat" term="Education" label="Education"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="Esperanto"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="internationale Sprache"/>
+    <title type="text">Teil 01 - Esperanto ist eine für alles geeignete Sprache</title>
+    <content type="text">Esperanto ist eine für alles geeignete Sprache: Für internationale Kommunikation, Reisen, Internet, interkulturelles Lernen, neue Bekanntschaften, internationale Kongresse, kostenlose Aufenthalte in fremden Ländern and vieles mehr.</content>
+    <link rel="alternate" type="text/html" href="http://www.youtube.com/watch?v=EQZxMTbSee8&amp;feature=youtube_gdata"/>
+    <link rel="http://gdata.youtube.com/schemas/2007#video.related" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/videos/EQZxMTbSee8/related"/>
+    <link rel="self" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/users/Esperantoestas/uploads/EQZxMTbSee8"/>
+    <author>
+      <name>Esperantoestas</name>
+      <uri>http://gdata.youtube.com/feeds/api/users/esperantoestas</uri>
+    </author>
+    <gd:comments>
+      <gd:feedLink href="http://gdata.youtube.com/feeds/api/videos/EQZxMTbSee8/comments" countHint="27"/>
+    </gd:comments>
+    <media:group>
+      <media:category label="Education" scheme="http://gdata.youtube.com/schemas/2007/categories.cat">Education</media:category>
+      <media:content url="http://www.youtube.com/v/EQZxMTbSee8?f=user_uploads&amp;app=youtube_gdata" type="application/x-shockwave-flash" medium="video" isDefault="true" expression="full" duration="104" yt:format="5"/>
+      <media:content url="rtsp://v7.cache1.c.youtube.com/CigLENy73wIaHwnvedI2MXEGERMYDSANFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="104" yt:format="1"/>
+      <media:content url="rtsp://v3.cache4.c.youtube.com/CigLENy73wIaHwnvedI2MXEGERMYESARFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="104" yt:format="6"/>
+      <media:description type="plain">Esperanto ist eine für alles geeignete Sprache: Für internationale Kommunikation, Reisen, Internet, interkulturelles Lernen, neue Bekanntschaften, internationale Kongresse, kostenlose Aufenthalte in fremden Ländern and vieles mehr.</media:description>
+      <media:keywords>Esperanto, internationale Sprache</media:keywords>
+      <media:player url="http://www.youtube.com/watch?v=EQZxMTbSee8&amp;feature=youtube_gdata_player"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/EQZxMTbSee8/0.jpg" height="240" width="320" time="00:00:52"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/EQZxMTbSee8/1.jpg" height="90" width="120" time="00:00:26"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/EQZxMTbSee8/2.jpg" height="90" width="120" time="00:00:52"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/EQZxMTbSee8/3.jpg" height="90" width="120" time="00:01:18"/>
+      <media:title type="plain">Teil 01 - Esperanto ist eine für alles geeignete Sprache</media:title>
+      <yt:duration seconds="104"/>
+    </media:group>
+    <gd:rating average="4.111111" max="5" min="1" numRaters="9" rel="http://schemas.google.com/g/2005#overall"/>
+    <yt:statistics favoriteCount="9" viewCount="6048"/>
+  </entry>
+  <entry>
+    <id>http://gdata.youtube.com/feeds/api/videos/1yiQHymMRAQ</id>
+    <published>2009-04-07T16:48:41.000Z</published>
+    <updated>2011-05-23T16:33:56.000Z</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://gdata.youtube.com/schemas/2007#video"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/categories.cat" term="Education" label="Education"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="esperanto"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="international language"/>
+    <title type="text">Part 01 - Esperanto is a language suitable for everything.</title>
+    <content type="text">Esperanto is a language suitable for international communication, travel,surfing the internet, cross cultural learning, finding new friends, international conventions, free stayovers in foreign countries and much more.</content>
+    <link rel="alternate" type="text/html" href="http://www.youtube.com/watch?v=1yiQHymMRAQ&amp;feature=youtube_gdata"/>
+    <link rel="http://gdata.youtube.com/schemas/2007#video.responses" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/videos/1yiQHymMRAQ/responses"/>
+    <link rel="http://gdata.youtube.com/schemas/2007#video.related" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/videos/1yiQHymMRAQ/related"/>
+    <link rel="self" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/users/Esperantoestas/uploads/1yiQHymMRAQ"/>
+    <author>
+      <name>Esperantoestas</name>
+      <uri>http://gdata.youtube.com/feeds/api/users/esperantoestas</uri>
+    </author>
+    <gd:comments>
+      <gd:feedLink href="http://gdata.youtube.com/feeds/api/videos/1yiQHymMRAQ/comments" countHint="20"/>
+    </gd:comments>
+    <media:group>
+      <media:category label="Education" scheme="http://gdata.youtube.com/schemas/2007/categories.cat">Education</media:category>
+      <media:content url="http://www.youtube.com/v/1yiQHymMRAQ?f=user_uploads&amp;app=youtube_gdata" type="application/x-shockwave-flash" medium="video" isDefault="true" expression="full" duration="104" yt:format="5"/>
+      <media:content url="rtsp://v1.cache4.c.youtube.com/CigLENy73wIaHwkERIwpH5Ao1xMYDSANFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="104" yt:format="1"/>
+      <media:content url="rtsp://v4.cache8.c.youtube.com/CigLENy73wIaHwkERIwpH5Ao1xMYESARFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="104" yt:format="6"/>
+      <media:description type="plain">Esperanto is a language suitable for international communication, travel,surfing the internet, cross cultural learning, finding new friends, international conventions, free stayovers in foreign countries and much more.</media:description>
+      <media:keywords>esperanto, international language</media:keywords>
+      <media:player url="http://www.youtube.com/watch?v=1yiQHymMRAQ&amp;feature=youtube_gdata_player"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/1yiQHymMRAQ/0.jpg" height="240" width="320" time="00:00:52"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/1yiQHymMRAQ/1.jpg" height="90" width="120" time="00:00:26"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/1yiQHymMRAQ/2.jpg" height="90" width="120" time="00:00:52"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/1yiQHymMRAQ/3.jpg" height="90" width="120" time="00:01:18"/>
+      <media:title type="plain">Part 01 - Esperanto is a language suitable for everything.</media:title>
+      <yt:duration seconds="104"/>
+    </media:group>
+    <gd:rating average="4.6190476" max="5" min="1" numRaters="21" rel="http://schemas.google.com/g/2005#overall"/>
+    <yt:statistics favoriteCount="11" viewCount="7781"/>
+  </entry>
+  <entry>
+    <id>http://gdata.youtube.com/feeds/api/videos/3jpUP2KJ2C4</id>
+    <published>2009-04-07T16:36:26.000Z</published>
+    <updated>2011-04-10T21:51:14.000Z</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://gdata.youtube.com/schemas/2007#video"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/categories.cat" term="Education" label="Education"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="międzynarodowy język"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="esperanto"/>
+    <title type="text">Część 04B - Esperanto to język, którego każdy może się nauczyć</title>
+    <content type="text">W tej części esperantyści z różnych krajów odpowiadają na pytania:
+- Dlaczego nauczyłeś się esperanta?
+- Czy łatwo było ci się nauczyć esperanta?
+- Czy esperanto jest ci przydatne?
+Ponadto będziesz mógł obejrzeć prezentację języka i nauczyć się kilku wyrażeń w esperanto.</content>
+    <link rel="alternate" type="text/html" href="http://www.youtube.com/watch?v=3jpUP2KJ2C4&amp;feature=youtube_gdata"/>
+    <link rel="http://gdata.youtube.com/schemas/2007#video.related" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/videos/3jpUP2KJ2C4/related"/>
+    <link rel="self" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/users/Esperantoestas/uploads/3jpUP2KJ2C4"/>
+    <author>
+      <name>Esperantoestas</name>
+      <uri>http://gdata.youtube.com/feeds/api/users/esperantoestas</uri>
+    </author>
+    <gd:comments>
+      <gd:feedLink href="http://gdata.youtube.com/feeds/api/videos/3jpUP2KJ2C4/comments" countHint="3"/>
+    </gd:comments>
+    <media:group>
+      <media:category label="Education" scheme="http://gdata.youtube.com/schemas/2007/categories.cat">Education</media:category>
+      <media:content url="http://www.youtube.com/v/3jpUP2KJ2C4?f=user_uploads&amp;app=youtube_gdata" type="application/x-shockwave-flash" medium="video" isDefault="true" expression="full" duration="456" yt:format="5"/>
+      <media:content url="rtsp://v3.cache5.c.youtube.com/CigLENy73wIaHwku2IliP1Q63hMYDSANFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="456" yt:format="1"/>
+      <media:content url="rtsp://v6.cache1.c.youtube.com/CigLENy73wIaHwku2IliP1Q63hMYESARFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="456" yt:format="6"/>
+      <media:description type="plain">W tej części esperantyści z różnych krajów odpowiadają na pytania:
+- Dlaczego nauczyłeś się esperanta?
+- Czy łatwo było ci się nauczyć esperanta?
+- Czy esperanto jest ci przydatne?
+Ponadto będziesz mógł obejrzeć prezentację języka i nauczyć się kilku wyrażeń w esperanto.</media:description>
+      <media:keywords>międzynarodowy język, esperanto</media:keywords>
+      <media:player url="http://www.youtube.com/watch?v=3jpUP2KJ2C4&amp;feature=youtube_gdata_player"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/3jpUP2KJ2C4/0.jpg" height="240" width="320" time="00:03:48"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/3jpUP2KJ2C4/1.jpg" height="90" width="120" time="00:01:54"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/3jpUP2KJ2C4/2.jpg" height="90" width="120" time="00:03:48"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/3jpUP2KJ2C4/3.jpg" height="90" width="120" time="00:05:42"/>
+      <media:title type="plain">Część 04B - Esperanto to język, którego każdy może się nauczyć</media:title>
+      <yt:duration seconds="456"/>
+    </media:group>
+    <gd:rating average="5.0" max="5" min="1" numRaters="8" rel="http://schemas.google.com/g/2005#overall"/>
+    <yt:statistics favoriteCount="1" viewCount="754"/>
+  </entry>
+  <entry>
+    <id>http://gdata.youtube.com/feeds/api/videos/MknmiBdBR5o</id>
+    <published>2009-04-06T22:00:40.000Z</published>
+    <updated>2011-04-23T19:19:52.000Z</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://gdata.youtube.com/schemas/2007#video"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/categories.cat" term="Education" label="Education"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="Esperanto"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="mezinárodní jazyk"/>
+    <title type="text">Část 01 - Esperanto je jazyk vhodný na všechno</title>
+    <content type="text">Esperanto je jazyk vhodný pro mezinárodní komunikaci, cestování, internet, interkulturní vzdělávání, poznávání nových přátel, mezinárodní kongresy, bezplatné ubytování v cizích zemích a ještě mnohem více.</content>
+    <link rel="alternate" type="text/html" href="http://www.youtube.com/watch?v=MknmiBdBR5o&amp;feature=youtube_gdata"/>
+    <link rel="http://gdata.youtube.com/schemas/2007#video.related" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/videos/MknmiBdBR5o/related"/>
+    <link rel="self" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/users/Esperantoestas/uploads/MknmiBdBR5o"/>
+    <author>
+      <name>Esperantoestas</name>
+      <uri>http://gdata.youtube.com/feeds/api/users/esperantoestas</uri>
+    </author>
+    <gd:comments>
+      <gd:feedLink href="http://gdata.youtube.com/feeds/api/videos/MknmiBdBR5o/comments" countHint="0"/>
+    </gd:comments>
+    <media:group>
+      <media:category label="Education" scheme="http://gdata.youtube.com/schemas/2007/categories.cat">Education</media:category>
+      <media:content url="http://www.youtube.com/v/MknmiBdBR5o?f=user_uploads&amp;app=youtube_gdata" type="application/x-shockwave-flash" medium="video" isDefault="true" expression="full" duration="104" yt:format="5"/>
+      <media:content url="rtsp://v3.cache7.c.youtube.com/CigLENy73wIaHwmaR0EXiOZJMhMYDSANFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="104" yt:format="1"/>
+      <media:content url="rtsp://v7.cache1.c.youtube.com/CigLENy73wIaHwmaR0EXiOZJMhMYESARFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="104" yt:format="6"/>
+      <media:description type="plain">Esperanto je jazyk vhodný pro mezinárodní komunikaci, cestování, internet, interkulturní vzdělávání, poznávání nových přátel, mezinárodní kongresy, bezplatné ubytování v cizích zemích a ještě mnohem více.</media:description>
+      <media:keywords>Esperanto, mezinárodní jazyk</media:keywords>
+      <media:player url="http://www.youtube.com/watch?v=MknmiBdBR5o&amp;feature=youtube_gdata_player"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/MknmiBdBR5o/0.jpg" height="240" width="320" time="00:00:52"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/MknmiBdBR5o/1.jpg" height="90" width="120" time="00:00:26"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/MknmiBdBR5o/2.jpg" height="90" width="120" time="00:00:52"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/MknmiBdBR5o/3.jpg" height="90" width="120" time="00:01:18"/>
+      <media:title type="plain">Část 01 - Esperanto je jazyk vhodný na všechno</media:title>
+      <yt:duration seconds="104"/>
+    </media:group>
+    <gd:rating average="5.0" max="5" min="1" numRaters="3" rel="http://schemas.google.com/g/2005#overall"/>
+    <yt:statistics favoriteCount="0" viewCount="496"/>
+  </entry>
+  <entry>
+    <id>http://gdata.youtube.com/feeds/api/videos/BkZLk4VVLHg</id>
+    <published>2009-04-03T03:17:22.000Z</published>
+    <updated>2011-05-31T17:17:07.000Z</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://gdata.youtube.com/schemas/2007#video"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/categories.cat" term="Education" label="Education"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="esperanto"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="língua internacional"/>
+    <title type="text">Parte 06 - Esperanto é uma língua do futuro</title>
+    <content type="text">Só "loucos" acreditavam que a Terra circundava o Sol ou que um dia as pessoas voariam em aviões. Só "loucos" acreditam que um dia todos os povos viverão em paz e terão uma língua internacional comum além de suas línguas nacionais, regionais e locais. Mas quão "loucas" são essas idéias? Quão "louco" você é? Nós somos muito "loucos" temos orgulho disso.</content>
+    <link rel="alternate" type="text/html" href="http://www.youtube.com/watch?v=BkZLk4VVLHg&amp;feature=youtube_gdata"/>
+    <link rel="http://gdata.youtube.com/schemas/2007#video.related" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/videos/BkZLk4VVLHg/related"/>
+    <link rel="self" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/users/Esperantoestas/uploads/BkZLk4VVLHg"/>
+    <author>
+      <name>Esperantoestas</name>
+      <uri>http://gdata.youtube.com/feeds/api/users/esperantoestas</uri>
+    </author>
+    <gd:comments>
+      <gd:feedLink href="http://gdata.youtube.com/feeds/api/videos/BkZLk4VVLHg/comments" countHint="2"/>
+    </gd:comments>
+    <media:group>
+      <media:category label="Education" scheme="http://gdata.youtube.com/schemas/2007/categories.cat">Education</media:category>
+      <media:content url="http://www.youtube.com/v/BkZLk4VVLHg?f=user_uploads&amp;app=youtube_gdata" type="application/x-shockwave-flash" medium="video" isDefault="true" expression="full" duration="572" yt:format="5"/>
+      <media:content url="rtsp://v1.cache3.c.youtube.com/CigLENy73wIaHwl4LFWFk0tGBhMYDSANFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="572" yt:format="1"/>
+      <media:content url="rtsp://v4.cache3.c.youtube.com/CigLENy73wIaHwl4LFWFk0tGBhMYESARFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="572" yt:format="6"/>
+      <media:description type="plain">Só "loucos" acreditavam que a Terra circundava o Sol ou que um dia as pessoas voariam em aviões. Só "loucos" acreditam que um dia todos os povos viverão em paz e terão uma língua internacional comum além de suas línguas nacionais, regionais e locais. Mas quão "loucas" são essas idéias? Quão "louco" você é? Nós somos muito "loucos" temos orgulho disso.</media:description>
+      <media:keywords>esperanto, língua internacional</media:keywords>
+      <media:player url="http://www.youtube.com/watch?v=BkZLk4VVLHg&amp;feature=youtube_gdata_player"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/BkZLk4VVLHg/0.jpg" height="240" width="320" time="00:04:46"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/BkZLk4VVLHg/1.jpg" height="90" width="120" time="00:02:23"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/BkZLk4VVLHg/2.jpg" height="90" width="120" time="00:04:46"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/BkZLk4VVLHg/3.jpg" height="90" width="120" time="00:07:09"/>
+      <media:title type="plain">Parte 06 - Esperanto é uma língua do futuro</media:title>
+      <yt:duration seconds="572"/>
+    </media:group>
+    <gd:rating average="5.0" max="5" min="1" numRaters="11" rel="http://schemas.google.com/g/2005#overall"/>
+    <yt:statistics favoriteCount="4" viewCount="1304"/>
+  </entry>
+  <entry>
+    <id>http://gdata.youtube.com/feeds/api/videos/Yo3A3x_A4Xk</id>
+    <published>2009-04-03T02:35:33.000Z</published>
+    <updated>2011-03-10T07:35:53.000Z</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://gdata.youtube.com/schemas/2007#video"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/categories.cat" term="Education" label="Education"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="世界语"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="是一种语言"/>
+    <title type="text">第 06 部分 - 世界语是未来的语言</title>
+    <content type="text">只有 "疯子" 才相信地球绕著太阳转, 或人们将可以用飞机在天上飞. 只有 "疯子" 才相信, 未来各民族将和平相处, 除了各自的民族语, 地方话, 及方言外, 并将拥有共通的国际语言. 但那些想法有多 "疯狂" 呢? 你有多 "疯狂" 呢? 我们都很 "疯狂" 而且引以为豪.</content>
+    <link rel="alternate" type="text/html" href="http://www.youtube.com/watch?v=Yo3A3x_A4Xk&amp;feature=youtube_gdata"/>
+    <link rel="http://gdata.youtube.com/schemas/2007#video.related" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/videos/Yo3A3x_A4Xk/related"/>
+    <link rel="self" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/users/Esperantoestas/uploads/Yo3A3x_A4Xk"/>
+    <author>
+      <name>Esperantoestas</name>
+      <uri>http://gdata.youtube.com/feeds/api/users/esperantoestas</uri>
+    </author>
+    <gd:comments>
+      <gd:feedLink href="http://gdata.youtube.com/feeds/api/videos/Yo3A3x_A4Xk/comments" countHint="1"/>
+    </gd:comments>
+    <media:group>
+      <media:category label="Education" scheme="http://gdata.youtube.com/schemas/2007/categories.cat">Education</media:category>
+      <media:content url="http://www.youtube.com/v/Yo3A3x_A4Xk?f=user_uploads&amp;app=youtube_gdata" type="application/x-shockwave-flash" medium="video" isDefault="true" expression="full" duration="572" yt:format="5"/>
+      <media:content url="rtsp://v7.cache6.c.youtube.com/CigLENy73wIaHwl54cAf38CNYhMYDSANFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="572" yt:format="1"/>
+      <media:content url="rtsp://v7.cache4.c.youtube.com/CigLENy73wIaHwl54cAf38CNYhMYESARFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="572" yt:format="6"/>
+      <media:description type="plain">只有 "疯子" 才相信地球绕著太阳转, 或人们将可以用飞机在天上飞. 只有 "疯子" 才相信, 未来各民族将和平相处, 除了各自的民族语, 地方话, 及方言外, 并将拥有共通的国际语言. 但那些想法有多 "疯狂" 呢? 你有多 "疯狂" 呢? 我们都很 "疯狂" 而且引以为豪.</media:description>
+      <media:keywords>世界语, 是一种语言</media:keywords>
+      <media:player url="http://www.youtube.com/watch?v=Yo3A3x_A4Xk&amp;feature=youtube_gdata_player"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/Yo3A3x_A4Xk/0.jpg" height="240" width="320" time="00:04:46"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/Yo3A3x_A4Xk/1.jpg" height="90" width="120" time="00:02:23"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/Yo3A3x_A4Xk/2.jpg" height="90" width="120" time="00:04:46"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/Yo3A3x_A4Xk/3.jpg" height="90" width="120" time="00:07:09"/>
+      <media:title type="plain">第 06 部分 - 世界语是未来的语言</media:title>
+      <yt:duration seconds="572"/>
+    </media:group>
+    <gd:rating average="5.0" max="5" min="1" numRaters="1" rel="http://schemas.google.com/g/2005#overall"/>
+    <yt:statistics favoriteCount="0" viewCount="143"/>
+  </entry>
+  <entry>
+    <id>http://gdata.youtube.com/feeds/api/videos/lURNk6ll8ug</id>
+    <published>2009-04-03T01:53:52.000Z</published>
+    <updated>2010-08-23T19:03:43.000Z</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://gdata.youtube.com/schemas/2007#video"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/categories.cat" term="Education" label="Education"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="medzinárodný jazyk"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="esperanto"/>
+    <title type="text">Časť 06 - Esperanto je jazyk budúcnosti</title>
+    <content type="text">Len "blázni" verili, že Zem obieha okolo Slnka, alebo že ľudia budú lietať lietadlami. Len "blázni" veria, že niekedy budú všetky národy žiť v mieri a budú mať spoločný medzinárodný jazyk, okrem svojich národných, regionálnych a miestnych jazykov. Ale nakoľko "bláznivé" sú tieto myšlienky? Nakoľko "blázniví" ste vy? My sme veľmi "blázniví" a sme na to pyšní.</content>
+    <link rel="alternate" type="text/html" href="http://www.youtube.com/watch?v=lURNk6ll8ug&amp;feature=youtube_gdata"/>
+    <link rel="http://gdata.youtube.com/schemas/2007#video.related" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/videos/lURNk6ll8ug/related"/>
+    <link rel="self" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/users/Esperantoestas/uploads/lURNk6ll8ug"/>
+    <author>
+      <name>Esperantoestas</name>
+      <uri>http://gdata.youtube.com/feeds/api/users/esperantoestas</uri>
+    </author>
+    <gd:comments>
+      <gd:feedLink href="http://gdata.youtube.com/feeds/api/videos/lURNk6ll8ug/comments" countHint="1"/>
+    </gd:comments>
+    <media:group>
+      <media:category label="Education" scheme="http://gdata.youtube.com/schemas/2007/categories.cat">Education</media:category>
+      <media:content url="http://www.youtube.com/v/lURNk6ll8ug?f=user_uploads&amp;app=youtube_gdata" type="application/x-shockwave-flash" medium="video" isDefault="true" expression="full" duration="572" yt:format="5"/>
+      <media:content url="rtsp://v2.cache5.c.youtube.com/CigLENy73wIaHwno8mWpk01ElRMYDSANFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="572" yt:format="1"/>
+      <media:content url="rtsp://v5.cache6.c.youtube.com/CigLENy73wIaHwno8mWpk01ElRMYESARFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="572" yt:format="6"/>
+      <media:description type="plain">Len "blázni" verili, že Zem obieha okolo Slnka, alebo že ľudia budú lietať lietadlami. Len "blázni" veria, že niekedy budú všetky národy žiť v mieri a budú mať spoločný medzinárodný jazyk, okrem svojich národných, regionálnych a miestnych jazykov. Ale nakoľko "bláznivé" sú tieto myšlienky? Nakoľko "blázniví" ste vy? My sme veľmi "blázniví" a sme na to pyšní.</media:description>
+      <media:keywords>medzinárodný jazyk, esperanto</media:keywords>
+      <media:player url="http://www.youtube.com/watch?v=lURNk6ll8ug&amp;feature=youtube_gdata_player"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/lURNk6ll8ug/0.jpg" height="240" width="320" time="00:04:46"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/lURNk6ll8ug/1.jpg" height="90" width="120" time="00:02:23"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/lURNk6ll8ug/2.jpg" height="90" width="120" time="00:04:46"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/lURNk6ll8ug/3.jpg" height="90" width="120" time="00:07:09"/>
+      <media:title type="plain">Časť 06 - Esperanto je jazyk budúcnosti</media:title>
+      <yt:duration seconds="572"/>
+    </media:group>
+    <gd:rating average="5.0" max="5" min="1" numRaters="3" rel="http://schemas.google.com/g/2005#overall"/>
+    <yt:statistics favoriteCount="1" viewCount="216"/>
+  </entry>
+  <entry>
+    <id>http://gdata.youtube.com/feeds/api/videos/uHWAq4gN9c8</id>
+    <published>2009-04-03T01:09:02.000Z</published>
+    <updated>2011-04-10T21:57:33.000Z</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://gdata.youtube.com/schemas/2007#video"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/categories.cat" term="Education" label="Education"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="międzynarodowy język"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="esperanto"/>
+    <title type="text">Część 06 - Esperanto to język przyszłości</title>
+    <content type="text">Tylko "szaleńcy" wierzyli, że Ziemia krąży dookoła Słońca albo że ludzie będą kiedyś latać samolotami. Tylko "szaleńcy" wierzą, że kiedyś wszystkie narody będą żyć w pokoju i porozumiewać się za pomocą wspólnego międzynarodowego języka istniejącego obok języków narodowych i lokalnych. Ale jak "szalone" są naprawdę te pomysły? Jak "szalony" jesteś Ty? My jesteśmy bardzo "szaleni" i szczycimy się tym.</content>
+    <link rel="alternate" type="text/html" href="http://www.youtube.com/watch?v=uHWAq4gN9c8&amp;feature=youtube_gdata"/>
+    <link rel="http://gdata.youtube.com/schemas/2007#video.related" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/videos/uHWAq4gN9c8/related"/>
+    <link rel="self" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/users/Esperantoestas/uploads/uHWAq4gN9c8"/>
+    <author>
+      <name>Esperantoestas</name>
+      <uri>http://gdata.youtube.com/feeds/api/users/esperantoestas</uri>
+    </author>
+    <gd:comments>
+      <gd:feedLink href="http://gdata.youtube.com/feeds/api/videos/uHWAq4gN9c8/comments" countHint="0"/>
+    </gd:comments>
+    <media:group>
+      <media:category label="Education" scheme="http://gdata.youtube.com/schemas/2007/categories.cat">Education</media:category>
+      <media:content url="http://www.youtube.com/v/uHWAq4gN9c8?f=user_uploads&amp;app=youtube_gdata" type="application/x-shockwave-flash" medium="video" isDefault="true" expression="full" duration="572" yt:format="5"/>
+      <media:content url="rtsp://v1.cache2.c.youtube.com/CigLENy73wIaHwnP9Q2Iq4B1uBMYDSANFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="572" yt:format="1"/>
+      <media:content url="rtsp://v6.cache2.c.youtube.com/CigLENy73wIaHwnP9Q2Iq4B1uBMYESARFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="572" yt:format="6"/>
+      <media:description type="plain">Tylko "szaleńcy" wierzyli, że Ziemia krąży dookoła Słońca albo że ludzie będą kiedyś latać samolotami. Tylko "szaleńcy" wierzą, że kiedyś wszystkie narody będą żyć w pokoju i porozumiewać się za pomocą wspólnego międzynarodowego języka istniejącego obok języków narodowych i lokalnych. Ale jak "szalone" są naprawdę te pomysły? Jak "szalony" jesteś Ty? My jesteśmy bardzo "szaleni" i szczycimy się tym.</media:description>
+      <media:keywords>międzynarodowy język, esperanto</media:keywords>
+      <media:player url="http://www.youtube.com/watch?v=uHWAq4gN9c8&amp;feature=youtube_gdata_player"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/uHWAq4gN9c8/0.jpg" height="240" width="320" time="00:04:46"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/uHWAq4gN9c8/1.jpg" height="90" width="120" time="00:02:23"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/uHWAq4gN9c8/2.jpg" height="90" width="120" time="00:04:46"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/uHWAq4gN9c8/3.jpg" height="90" width="120" time="00:07:09"/>
+      <media:title type="plain">Część 06 - Esperanto to język przyszłości</media:title>
+      <yt:duration seconds="572"/>
+    </media:group>
+    <gd:rating average="5.0" max="5" min="1" numRaters="4" rel="http://schemas.google.com/g/2005#overall"/>
+    <yt:statistics favoriteCount="0" viewCount="384"/>
+  </entry>
+  <entry>
+    <id>http://gdata.youtube.com/feeds/api/videos/WUEYRk9WQPY</id>
+    <published>2009-04-03T00:16:10.000Z</published>
+    <updated>2010-08-26T03:26:03.000Z</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://gdata.youtube.com/schemas/2007#video"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/categories.cat" term="Education" label="Education"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="L'esperanto"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="esperanto"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="lingua"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="internazionale"/>
+    <title type="text">Capitolo 06 - L'esperanto è una lingua del futuro.</title>
+    <content type="text">Solo dei "pazzi" credevano che la terra gira intorno al sole o che un giorno le persone avrebbero potuto volare con gli aerei. Solo dei "pazzi" credono che un giorno tutti i popoli vivranno in pace e avranno una lingua comune internazionale oltre alle proprie lingue nazionali, regionali o locali. Ma quanto "pazze" sono queste idee? Noi siamo molto "pazzi" e ne siamo fieri.</content>
+    <link rel="alternate" type="text/html" href="http://www.youtube.com/watch?v=WUEYRk9WQPY&amp;feature=youtube_gdata"/>
+    <link rel="http://gdata.youtube.com/schemas/2007#video.related" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/videos/WUEYRk9WQPY/related"/>
+    <link rel="self" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/users/Esperantoestas/uploads/WUEYRk9WQPY"/>
+    <author>
+      <name>Esperantoestas</name>
+      <uri>http://gdata.youtube.com/feeds/api/users/esperantoestas</uri>
+    </author>
+    <gd:comments>
+      <gd:feedLink href="http://gdata.youtube.com/feeds/api/videos/WUEYRk9WQPY/comments" countHint="2"/>
+    </gd:comments>
+    <media:group>
+      <media:category label="Education" scheme="http://gdata.youtube.com/schemas/2007/categories.cat">Education</media:category>
+      <media:content url="http://www.youtube.com/v/WUEYRk9WQPY?f=user_uploads&amp;app=youtube_gdata" type="application/x-shockwave-flash" medium="video" isDefault="true" expression="full" duration="572" yt:format="5"/>
+      <media:content url="rtsp://v8.cache6.c.youtube.com/CigLENy73wIaHwn2QFZPRhhBWRMYDSANFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="572" yt:format="1"/>
+      <media:content url="rtsp://v7.cache4.c.youtube.com/CigLENy73wIaHwn2QFZPRhhBWRMYESARFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="572" yt:format="6"/>
+      <media:description type="plain">Solo dei "pazzi" credevano che la terra gira intorno al sole o che un giorno le persone avrebbero potuto volare con gli aerei. Solo dei "pazzi" credono che un giorno tutti i popoli vivranno in pace e avranno una lingua comune internazionale oltre alle proprie lingue nazionali, regionali o locali. Ma quanto "pazze" sono queste idee? Noi siamo molto "pazzi" e ne siamo fieri.</media:description>
+      <media:keywords>L'esperanto, esperanto, lingua, internazionale</media:keywords>
+      <media:player url="http://www.youtube.com/watch?v=WUEYRk9WQPY&amp;feature=youtube_gdata_player"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/WUEYRk9WQPY/0.jpg" height="240" width="320" time="00:04:46"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/WUEYRk9WQPY/1.jpg" height="90" width="120" time="00:02:23"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/WUEYRk9WQPY/2.jpg" height="90" width="120" time="00:04:46"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/WUEYRk9WQPY/3.jpg" height="90" width="120" time="00:07:09"/>
+      <media:title type="plain">Capitolo 06 - L'esperanto è una lingua del futuro.</media:title>
+      <yt:duration seconds="572"/>
+    </media:group>
+    <gd:rating average="5.0" max="5" min="1" numRaters="6" rel="http://schemas.google.com/g/2005#overall"/>
+    <yt:statistics favoriteCount="1" viewCount="495"/>
+  </entry>
+  <entry>
+    <id>http://gdata.youtube.com/feeds/api/videos/foTwlMY0QFQ</id>
+    <published>2009-04-02T23:31:10.000Z</published>
+    <updated>2010-08-25T21:42:07.000Z</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://gdata.youtube.com/schemas/2007#video"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/categories.cat" term="Education" label="Education"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="L'L'espéranto"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="esperanto"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="langue internationale"/>
+    <title type="text">Chapitre 06 - L'espéranto est la langue de l'avenir</title>
+    <content type="text">Seuls des «fous» ont pu croire que la Terre tournait autour du soleil ou que l'Homme pourrait un jour voler. Seuls des «fous» croient qu'un jour tous les peuples vivront en paix et auront une langue commune internationale à côté de leurs langues nationales, régionales ou locales. Mais combien «folles» sont ces idées ? Combien vous-mêmes êtes-vous fou ? Nous sommes très «fous» et nous en sommes fiers.</content>
+    <link rel="alternate" type="text/html" href="http://www.youtube.com/watch?v=foTwlMY0QFQ&amp;feature=youtube_gdata"/>
+    <link rel="http://gdata.youtube.com/schemas/2007#video.related" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/videos/foTwlMY0QFQ/related"/>
+    <link rel="self" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/users/Esperantoestas/uploads/foTwlMY0QFQ"/>
+    <author>
+      <name>Esperantoestas</name>
+      <uri>http://gdata.youtube.com/feeds/api/users/esperantoestas</uri>
+    </author>
+    <gd:comments>
+      <gd:feedLink href="http://gdata.youtube.com/feeds/api/videos/foTwlMY0QFQ/comments" countHint="1"/>
+    </gd:comments>
+    <media:group>
+      <media:category label="Education" scheme="http://gdata.youtube.com/schemas/2007/categories.cat">Education</media:category>
+      <media:content url="http://www.youtube.com/v/foTwlMY0QFQ?f=user_uploads&amp;app=youtube_gdata" type="application/x-shockwave-flash" medium="video" isDefault="true" expression="full" duration="572" yt:format="5"/>
+      <media:content url="rtsp://v7.cache1.c.youtube.com/CigLENy73wIaHwlUQDTGlPCEfhMYDSANFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="572" yt:format="1"/>
+      <media:content url="rtsp://v7.cache7.c.youtube.com/CigLENy73wIaHwlUQDTGlPCEfhMYESARFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="572" yt:format="6"/>
+      <media:description type="plain">Seuls des «fous» ont pu croire que la Terre tournait autour du soleil ou que l'Homme pourrait un jour voler. Seuls des «fous» croient qu'un jour tous les peuples vivront en paix et auront une langue commune internationale à côté de leurs langues nationales, régionales ou locales. Mais combien «folles» sont ces idées ? Combien vous-mêmes êtes-vous fou ? Nous sommes très «fous» et nous en sommes fiers.</media:description>
+      <media:keywords>L'L'espéranto, esperanto, langue internationale</media:keywords>
+      <media:player url="http://www.youtube.com/watch?v=foTwlMY0QFQ&amp;feature=youtube_gdata_player"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/foTwlMY0QFQ/0.jpg" height="240" width="320" time="00:04:46"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/foTwlMY0QFQ/1.jpg" height="90" width="120" time="00:02:23"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/foTwlMY0QFQ/2.jpg" height="90" width="120" time="00:04:46"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/foTwlMY0QFQ/3.jpg" height="90" width="120" time="00:07:09"/>
+      <media:title type="plain">Chapitre 06 - L'espéranto est la langue de l'avenir</media:title>
+      <yt:duration seconds="572"/>
+    </media:group>
+    <gd:rating average="5.0" max="5" min="1" numRaters="2" rel="http://schemas.google.com/g/2005#overall"/>
+    <yt:statistics favoriteCount="1" viewCount="660"/>
+  </entry>
+  <entry>
+    <id>http://gdata.youtube.com/feeds/api/videos/VXJbFHh6fKk</id>
+    <published>2009-04-02T22:49:24.000Z</published>
+    <updated>2011-04-15T02:38:50.000Z</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://gdata.youtube.com/schemas/2007#video"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/categories.cat" term="Education" label="Education"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="esperanto"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="international language"/>
+    <title type="text">Part 06 - Esperanto is the language of the future.</title>
+    <content type="text">At one time only "eccentrics" thought that the earth goes around the sun or that one day people would be able to fly in a plane. Today only "eccentrics" believe that one day all people will live in peace and will have a common international language beside their own national, regional and local languages. But how "eccentric" are these ideas? How "eccentric" are you? We're quite "eccentric" and proud of it.</content>
+    <link rel="alternate" type="text/html" href="http://www.youtube.com/watch?v=VXJbFHh6fKk&amp;feature=youtube_gdata"/>
+    <link rel="http://gdata.youtube.com/schemas/2007#video.related" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/videos/VXJbFHh6fKk/related"/>
+    <link rel="http://gdata.youtube.com/schemas/2007#mobile" type="text/html" href="http://m.youtube.com/details?v=VXJbFHh6fKk"/>
+    <link rel="self" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/users/Esperantoestas/uploads/VXJbFHh6fKk"/>
+    <author>
+      <name>Esperantoestas</name>
+      <uri>http://gdata.youtube.com/feeds/api/users/esperantoestas</uri>
+    </author>
+    <gd:comments>
+      <gd:feedLink href="http://gdata.youtube.com/feeds/api/videos/VXJbFHh6fKk/comments" countHint="8"/>
+    </gd:comments>
+    <media:group>
+      <media:category label="Education" scheme="http://gdata.youtube.com/schemas/2007/categories.cat">Education</media:category>
+      <media:content url="http://www.youtube.com/v/VXJbFHh6fKk?f=user_uploads&amp;app=youtube_gdata" type="application/x-shockwave-flash" medium="video" isDefault="true" expression="full" duration="572" yt:format="5"/>
+      <media:content url="rtsp://v5.cache6.c.youtube.com/CigLENy73wIaHwmpfHp4FFtyVRMYDSANFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="572" yt:format="1"/>
+      <media:content url="rtsp://v3.cache3.c.youtube.com/CigLENy73wIaHwmpfHp4FFtyVRMYESARFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="572" yt:format="6"/>
+      <media:description type="plain">At one time only "eccentrics" thought that the earth goes around the sun or that one day people would be able to fly in a plane. Today only "eccentrics" believe that one day all people will live in peace and will have a common international language beside their own national, regional and local languages. But how "eccentric" are these ideas? How "eccentric" are you? We're quite "eccentric" and proud of it.</media:description>
+      <media:keywords>esperanto, international language</media:keywords>
+      <media:player url="http://www.youtube.com/watch?v=VXJbFHh6fKk&amp;feature=youtube_gdata_player"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/VXJbFHh6fKk/0.jpg" height="240" width="320" time="00:04:46"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/VXJbFHh6fKk/1.jpg" height="90" width="120" time="00:02:23"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/VXJbFHh6fKk/2.jpg" height="90" width="120" time="00:04:46"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/VXJbFHh6fKk/3.jpg" height="90" width="120" time="00:07:09"/>
+      <media:title type="plain">Part 06 - Esperanto is the language of the future.</media:title>
+      <yt:duration seconds="572"/>
+    </media:group>
+    <gd:rating average="5.0" max="5" min="1" numRaters="9" rel="http://schemas.google.com/g/2005#overall"/>
+    <yt:statistics favoriteCount="8" viewCount="1847"/>
+  </entry>
+  <entry>
+    <id>http://gdata.youtube.com/feeds/api/videos/BdzqBySOS1A</id>
+    <published>2009-04-02T22:07:41.000Z</published>
+    <updated>2011-05-14T15:45:30.000Z</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://gdata.youtube.com/schemas/2007#video"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/categories.cat" term="Education" label="Education"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="Esperanto"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="internationale Sprache"/>
+    <title type="text">Teil 06 - Esperanto ist eine Sprache der Zukunft.</title>
+    <content type="text">Nur "Verrückte" glaubten, dass die Erde sich um die Sonne dreht, oder dass es einmal eine Zeit geben wird, in der Menschen mit dem Flugzeug fliegen. Nur "Verrückte" glauben heute, dass Menschen einmal im Frieden leben werden mit einer gemeinsamen internationalen Sprache, neben ihrer nationalen, regionalen und örtlichen Sprache. Aber wie "verrückt" sind diese Ideen? Wie "verrückt" bist du? Wir sind sehr "verrückt" und stolz darauf.</content>
+    <link rel="alternate" type="text/html" href="http://www.youtube.com/watch?v=BdzqBySOS1A&amp;feature=youtube_gdata"/>
+    <link rel="http://gdata.youtube.com/schemas/2007#video.related" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/videos/BdzqBySOS1A/related"/>
+    <link rel="self" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/users/Esperantoestas/uploads/BdzqBySOS1A"/>
+    <author>
+      <name>Esperantoestas</name>
+      <uri>http://gdata.youtube.com/feeds/api/users/esperantoestas</uri>
+    </author>
+    <gd:comments>
+      <gd:feedLink href="http://gdata.youtube.com/feeds/api/videos/BdzqBySOS1A/comments" countHint="2"/>
+    </gd:comments>
+    <media:group>
+      <media:category label="Education" scheme="http://gdata.youtube.com/schemas/2007/categories.cat">Education</media:category>
+      <media:content url="http://www.youtube.com/v/BdzqBySOS1A?f=user_uploads&amp;app=youtube_gdata" type="application/x-shockwave-flash" medium="video" isDefault="true" expression="full" duration="572" yt:format="5"/>
+      <media:content url="rtsp://v6.cache4.c.youtube.com/CigLENy73wIaHwlQS44kB-rcBRMYDSANFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="572" yt:format="1"/>
+      <media:content url="rtsp://v4.cache2.c.youtube.com/CigLENy73wIaHwlQS44kB-rcBRMYESARFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="572" yt:format="6"/>
+      <media:description type="plain">Nur "Verrückte" glaubten, dass die Erde sich um die Sonne dreht, oder dass es einmal eine Zeit geben wird, in der Menschen mit dem Flugzeug fliegen. Nur "Verrückte" glauben heute, dass Menschen einmal im Frieden leben werden mit einer gemeinsamen internationalen Sprache, neben ihrer nationalen, regionalen und örtlichen Sprache. Aber wie "verrückt" sind diese Ideen? Wie "verrückt" bist du? Wir sind sehr "verrückt" und stolz darauf.</media:description>
+      <media:keywords>Esperanto, internationale Sprache</media:keywords>
+      <media:player url="http://www.youtube.com/watch?v=BdzqBySOS1A&amp;feature=youtube_gdata_player"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/BdzqBySOS1A/0.jpg" height="240" width="320" time="00:04:46"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/BdzqBySOS1A/1.jpg" height="90" width="120" time="00:02:23"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/BdzqBySOS1A/2.jpg" height="90" width="120" time="00:04:46"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/BdzqBySOS1A/3.jpg" height="90" width="120" time="00:07:09"/>
+      <media:title type="plain">Teil 06 - Esperanto ist eine Sprache der Zukunft.</media:title>
+      <yt:duration seconds="572"/>
+    </media:group>
+    <gd:rating average="5.0" max="5" min="1" numRaters="5" rel="http://schemas.google.com/g/2005#overall"/>
+    <yt:statistics favoriteCount="3" viewCount="917"/>
+  </entry>
+  <entry>
+    <id>http://gdata.youtube.com/feeds/api/videos/jQO7Ik68JHc</id>
+    <published>2009-04-02T21:25:58.000Z</published>
+    <updated>2010-08-10T18:29:51.000Z</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://gdata.youtube.com/schemas/2007#video"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/categories.cat" term="Education" label="Education"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="Esperanto"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="mezinárodní jazyk"/>
+    <title type="text">Část 06 - Esperanto je jazyk budoucnosti</title>
+    <content type="text">Jen „blázni kdysi věřili, že Země obíhá kolem Slunce nebo že lidé budou někdy schopni létat. Jen „blázni dnes věří, že jednou budou všechny národy žít v míru a budou mít společný mezinárodní jazyk, vedle svých národních, regionálních a místních jazyků. Ale jak moc „bláznivé ve skutečnosti jsou tyto myšlenky? Jak moc „blázniví jste vy? My jsme velice „blázniví a jsme na to hrdí.</content>
+    <link rel="alternate" type="text/html" href="http://www.youtube.com/watch?v=jQO7Ik68JHc&amp;feature=youtube_gdata"/>
+    <link rel="http://gdata.youtube.com/schemas/2007#video.related" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/videos/jQO7Ik68JHc/related"/>
+    <link rel="self" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/users/Esperantoestas/uploads/jQO7Ik68JHc"/>
+    <author>
+      <name>Esperantoestas</name>
+      <uri>http://gdata.youtube.com/feeds/api/users/esperantoestas</uri>
+    </author>
+    <gd:comments>
+      <gd:feedLink href="http://gdata.youtube.com/feeds/api/videos/jQO7Ik68JHc/comments" countHint="0"/>
+    </gd:comments>
+    <media:group>
+      <media:category label="Education" scheme="http://gdata.youtube.com/schemas/2007/categories.cat">Education</media:category>
+      <media:content url="http://www.youtube.com/v/jQO7Ik68JHc?f=user_uploads&amp;app=youtube_gdata" type="application/x-shockwave-flash" medium="video" isDefault="true" expression="full" duration="572" yt:format="5"/>
+      <media:content url="rtsp://v4.cache8.c.youtube.com/CigLENy73wIaHwl3JLxOIrsDjRMYDSANFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="572" yt:format="1"/>
+      <media:content url="rtsp://v1.cache2.c.youtube.com/CigLENy73wIaHwl3JLxOIrsDjRMYESARFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="572" yt:format="6"/>
+      <media:description type="plain">Jen „blázni kdysi věřili, že Země obíhá kolem Slunce nebo že lidé budou někdy schopni létat. Jen „blázni dnes věří, že jednou budou všechny národy žít v míru a budou mít společný mezinárodní jazyk, vedle svých národních, regionálních a místních jazyků. Ale jak moc „bláznivé ve skutečnosti jsou tyto myšlenky? Jak moc „blázniví jste vy? My jsme velice „blázniví a jsme na to hrdí.</media:description>
+      <media:keywords>Esperanto, mezinárodní jazyk</media:keywords>
+      <media:player url="http://www.youtube.com/watch?v=jQO7Ik68JHc&amp;feature=youtube_gdata_player"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/jQO7Ik68JHc/0.jpg" height="240" width="320" time="00:04:46"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/jQO7Ik68JHc/1.jpg" height="90" width="120" time="00:02:23"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/jQO7Ik68JHc/2.jpg" height="90" width="120" time="00:04:46"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/jQO7Ik68JHc/3.jpg" height="90" width="120" time="00:07:09"/>
+      <media:title type="plain">Část 06 - Esperanto je jazyk budoucnosti</media:title>
+      <yt:duration seconds="572"/>
+    </media:group>
+    <gd:rating average="5.0" max="5" min="1" numRaters="1" rel="http://schemas.google.com/g/2005#overall"/>
+    <yt:statistics favoriteCount="0" viewCount="180"/>
+  </entry>
+  <entry>
+    <id>http://gdata.youtube.com/feeds/api/videos/uENSLNYRCME</id>
+    <published>2009-04-01T18:24:01.000Z</published>
+    <updated>2010-07-01T11:00:27.000Z</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://gdata.youtube.com/schemas/2007#video"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/categories.cat" term="Education" label="Education"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="世界语"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="是一种语言"/>
+    <title type="text">第 05 部分 - 世界语是充满活动的语言</title>
+    <content type="text">E@I, TEJO, ILEI, EEU, UEA, AdE - 这些是几个推动国际世界语运动的组织的缩写. 在这个部分你可以认识它们.</content>
+    <link rel="alternate" type="text/html" href="http://www.youtube.com/watch?v=uENSLNYRCME&amp;feature=youtube_gdata"/>
+    <link rel="http://gdata.youtube.com/schemas/2007#video.related" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/videos/uENSLNYRCME/related"/>
+    <link rel="self" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/users/Esperantoestas/uploads/uENSLNYRCME"/>
+    <author>
+      <name>Esperantoestas</name>
+      <uri>http://gdata.youtube.com/feeds/api/users/esperantoestas</uri>
+    </author>
+    <gd:comments>
+      <gd:feedLink href="http://gdata.youtube.com/feeds/api/videos/uENSLNYRCME/comments" countHint="1"/>
+    </gd:comments>
+    <media:group>
+      <media:category label="Education" scheme="http://gdata.youtube.com/schemas/2007/categories.cat">Education</media:category>
+      <media:content url="http://www.youtube.com/v/uENSLNYRCME?f=user_uploads&amp;app=youtube_gdata" type="application/x-shockwave-flash" medium="video" isDefault="true" expression="full" duration="255" yt:format="5"/>
+      <media:content url="rtsp://v7.cache7.c.youtube.com/CigLENy73wIaHwnBCBHWLFJDuBMYDSANFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="255" yt:format="1"/>
+      <media:content url="rtsp://v3.cache6.c.youtube.com/CigLENy73wIaHwnBCBHWLFJDuBMYESARFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="255" yt:format="6"/>
+      <media:description type="plain">E@I, TEJO, ILEI, EEU, UEA, AdE - 这些是几个推动国际世界语运动的组织的缩写. 在这个部分你可以认识它们.</media:description>
+      <media:keywords>世界语, 是一种语言</media:keywords>
+      <media:player url="http://www.youtube.com/watch?v=uENSLNYRCME&amp;feature=youtube_gdata_player"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/uENSLNYRCME/0.jpg" height="240" width="320" time="00:02:07.500"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/uENSLNYRCME/1.jpg" height="90" width="120" time="00:01:03.750"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/uENSLNYRCME/2.jpg" height="90" width="120" time="00:02:07.500"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/uENSLNYRCME/3.jpg" height="90" width="120" time="00:03:11.250"/>
+      <media:title type="plain">第 05 部分 - 世界语是充满活动的语言</media:title>
+      <yt:duration seconds="255"/>
+    </media:group>
+    <gd:rating average="5.0" max="5" min="1" numRaters="1" rel="http://schemas.google.com/g/2005#overall"/>
+    <yt:statistics favoriteCount="0" viewCount="71"/>
+  </entry>
+  <entry>
+    <id>http://gdata.youtube.com/feeds/api/videos/5dsqb8Q5vx4</id>
+    <published>2009-04-01T18:05:29.000Z</published>
+    <updated>2010-07-23T20:52:34.000Z</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://gdata.youtube.com/schemas/2007#video"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/categories.cat" term="Education" label="Education"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="medzinárodný jazyk"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="esperanto"/>
+    <title type="text">Časť 05 - Esperanto je jazyk s pestrým hnutím.</title>
+    <content type="text">E@I, TEJO, ILEI, EEU, UEA, AdE  to je niekoľko skratiek, ktoré tvoria medzinárodné esperantské hnutie. Zistite o nich viac v tejto časti.</content>
+    <link rel="alternate" type="text/html" href="http://www.youtube.com/watch?v=5dsqb8Q5vx4&amp;feature=youtube_gdata"/>
+    <link rel="http://gdata.youtube.com/schemas/2007#video.related" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/videos/5dsqb8Q5vx4/related"/>
+    <link rel="self" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/users/Esperantoestas/uploads/5dsqb8Q5vx4"/>
+    <author>
+      <name>Esperantoestas</name>
+      <uri>http://gdata.youtube.com/feeds/api/users/esperantoestas</uri>
+    </author>
+    <gd:comments>
+      <gd:feedLink href="http://gdata.youtube.com/feeds/api/videos/5dsqb8Q5vx4/comments" countHint="2"/>
+    </gd:comments>
+    <media:group>
+      <media:category label="Education" scheme="http://gdata.youtube.com/schemas/2007/categories.cat">Education</media:category>
+      <media:content url="http://www.youtube.com/v/5dsqb8Q5vx4?f=user_uploads&amp;app=youtube_gdata" type="application/x-shockwave-flash" medium="video" isDefault="true" expression="full" duration="255" yt:format="5"/>
+      <media:content url="rtsp://v1.cache2.c.youtube.com/CigLENy73wIaHwkevznEbyrb5RMYDSANFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="255" yt:format="1"/>
+      <media:content url="rtsp://v4.cache5.c.youtube.com/CigLENy73wIaHwkevznEbyrb5RMYESARFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="255" yt:format="6"/>
+      <media:description type="plain">E@I, TEJO, ILEI, EEU, UEA, AdE  to je niekoľko skratiek, ktoré tvoria medzinárodné esperantské hnutie. Zistite o nich viac v tejto časti.</media:description>
+      <media:keywords>medzinárodný jazyk, esperanto</media:keywords>
+      <media:player url="http://www.youtube.com/watch?v=5dsqb8Q5vx4&amp;feature=youtube_gdata_player"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/5dsqb8Q5vx4/0.jpg" height="240" width="320" time="00:02:07.500"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/5dsqb8Q5vx4/1.jpg" height="90" width="120" time="00:01:03.750"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/5dsqb8Q5vx4/2.jpg" height="90" width="120" time="00:02:07.500"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/5dsqb8Q5vx4/3.jpg" height="90" width="120" time="00:03:11.250"/>
+      <media:title type="plain">Časť 05 - Esperanto je jazyk s pestrým hnutím.</media:title>
+      <yt:duration seconds="255"/>
+    </media:group>
+    <gd:rating average="5.0" max="5" min="1" numRaters="2" rel="http://schemas.google.com/g/2005#overall"/>
+    <yt:statistics favoriteCount="1" viewCount="109"/>
+  </entry>
+  <entry>
+    <id>http://gdata.youtube.com/feeds/api/videos/cdVMenf2oBs</id>
+    <published>2009-04-01T17:46:58.000Z</published>
+    <updated>2011-05-31T17:15:08.000Z</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://gdata.youtube.com/schemas/2007#video"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/categories.cat" term="Education" label="Education"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="esperanto"/>
+    <category scheme="http://gdata.youtube.com/schemas/2007/keywords.cat" term="língua internacional"/>
+    <title type="text">Parte 05 - Esperanto é uma língua com um movimento bem diversificado</title>
+    <content type="text">E@I, TEJO, ILEI, EEU, UEA, AdE  eis algumas das siglas que constituem o movimento esperantista internacional. Saiba mais sobre elas nesta parte.</content>
+    <link rel="alternate" type="text/html" href="http://www.youtube.com/watch?v=cdVMenf2oBs&amp;feature=youtube_gdata"/>
+    <link rel="http://gdata.youtube.com/schemas/2007#video.related" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/videos/cdVMenf2oBs/related"/>
+    <link rel="self" type="application/atom+xml" href="http://gdata.youtube.com/feeds/api/users/Esperantoestas/uploads/cdVMenf2oBs"/>
+    <author>
+      <name>Esperantoestas</name>
+      <uri>http://gdata.youtube.com/feeds/api/users/esperantoestas</uri>
+    </author>
+    <gd:comments>
+      <gd:feedLink href="http://gdata.youtube.com/feeds/api/videos/cdVMenf2oBs/comments" countHint="0"/>
+    </gd:comments>
+    <media:group>
+      <media:category label="Education" scheme="http://gdata.youtube.com/schemas/2007/categories.cat">Education</media:category>
+      <media:content url="http://www.youtube.com/v/cdVMenf2oBs?f=user_uploads&amp;app=youtube_gdata" type="application/x-shockwave-flash" medium="video" isDefault="true" expression="full" duration="255" yt:format="5"/>
+      <media:content url="rtsp://v4.cache2.c.youtube.com/CigLENy73wIaHwkboPZ3ekzVcRMYDSANFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="255" yt:format="1"/>
+      <media:content url="rtsp://v7.cache6.c.youtube.com/CigLENy73wIaHwkboPZ3ekzVcRMYESARFEgGUgx1c2VyX3VwbG9hZHMM/0/0/0/video.3gp" type="video/3gpp" medium="video" expression="full" duration="255" yt:format="6"/>
+      <media:description type="plain">E@I, TEJO, ILEI, EEU, UEA, AdE  eis algumas das siglas que constituem o movimento esperantista internacional. Saiba mais sobre elas nesta parte.</media:description>
+      <media:keywords>esperanto, língua internacional</media:keywords>
+      <media:player url="http://www.youtube.com/watch?v=cdVMenf2oBs&amp;feature=youtube_gdata_player"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/cdVMenf2oBs/0.jpg" height="240" width="320" time="00:02:07.500"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/cdVMenf2oBs/1.jpg" height="90" width="120" time="00:01:03.750"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/cdVMenf2oBs/2.jpg" height="90" width="120" time="00:02:07.500"/>
+      <media:thumbnail url="http://i.ytimg.com/vi/cdVMenf2oBs/3.jpg" height="90" width="120" time="00:03:11.250"/>
+      <media:title type="plain">Parte 05 - Esperanto é uma língua com um movimento bem diversificado</media:title>
+      <yt:duration seconds="255"/>
+    </media:group>
+    <gd:rating average="4.428571" max="5" min="1" numRaters="7" rel="http://schemas.google.com/g/2005#overall"/>
+    <yt:statistics favoriteCount="4" viewCount="796"/>
+  </entry>
+</feed>

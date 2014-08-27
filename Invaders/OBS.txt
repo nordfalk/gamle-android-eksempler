@@ -1,0 +1,23 @@
+
+Dette er et spil af Kristian Torgard der er udarbejdet i forbindelse med et Android-kursus på http://ihk.dk 
+
+Det er open source under GPLv3.
+
+OBS: Spillet kører desværre ikke optimalt på skærme mindre end WVGA. 
+Menuen og de fleste elementer ud over selve spillet kan dog vises på de fleste skærmstørrelser. 
+Prøv eventuelt at starte spillet i en emulator med en større skærm. 
+Det kører ikke hurtigt men det giver et indtryk af hvad det går ud på.
+
+
+PÅ VEJ: Programmet kan også hentes ned fra Android Marked
+
+
+Kontakt mig hvis du ønsker skriveadgang så du kan arbejde videre på projektet.
+
+
+19. april 2011
+
+Jacob Nordfalk
+http://javabog.dk
+
+

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+   xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <CheckBoxPreference
+      android:key="brugPosVedStart"
+      android:title="Brug stedbestemmelse ved start"
+      android:summary="Vis vejrudsigt for aktuel position ved opstart"
+      android:defaultValue="true" />
+  <CheckBoxPreference
+      android:key="ventPåPos"
+      android:title="Vent på stedbestemmelse"
+      android:summaryOn="Vent på en frisk positionsbestemmelse"
+      android:summaryOff="Bruge seneste position til vejrudsigt"
+      android:defaultValue="false" />
+  <EditTextPreference
+      android:key="foretrukkenPostNr"
+      android:title="Foretrukken postnummer"
+      android:summary="Dit foretrukne postnummer"
+      android:defaultValue="" />
+<!--       android:password="true" -->
+
+    <PreferenceScreen
+            android:key="underskaerm"
+            android:title="En underskærm">
+        <CheckBoxPreference
+                android:key="indst1"
+                android:title="Indstilling 1" />
+        <CheckBoxPreference
+                android:key="indst2"
+                android:title="Indstilling 2" />
+    </PreferenceScreen>
+</PreferenceScreen>

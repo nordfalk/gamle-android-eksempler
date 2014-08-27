@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <string name="app_name">Boulder Dash</string>
+   <string name="main_title">Android Boulder Dash</string>
+   <string name="highscore_label">High Score</string>
+   <string name="new_game_label">New Game</string>
+   <string name="help_label">Help</string>
+   <string name="exit_label">Exit</string>
+
+
+   <string name="help_title">About Android Boulder Dash</string>
+       
+    <string name="levels">10</string>
+    <string name="LEVEL_TITLE_1">The Caverns Await</string>
+    <string name="LEVEL_AUTHOR_1">Dave Koelle</string>
+
+
+    <string-array name="NEEDED_DIAMONDS">
+        <item>10</item>
+        <item>36</item>
+    </string-array>
+
+    <string-array name="POINTS_PER_DIAMOND">
+        <item>100</item>
+        <item>50</item>
+    </string-array>
+
+    <string-array name="POINTS_PER_EXTRA_DIAMOND">
+        <item>150</item>
+        <item>200</item>
+    </string-array>
+
+    <string name="IMAGEFILE_1">images.gif</string>
+
+    <string-array name="level_data_1">
+        <item>\####################\</item>
+        <item>\#P:::WWW:OO::#OOOO+#\</item>
+        <item>\#::::O.+:WO+:#O++OO#\</item>
+        <item>\#:::WW.::::W:###:###\</item>
+        <item>\#:...:W::O:::::::::#\</item>
+        <item>\#:O.O:W:::O:::.....#\</item>
+        <item>\#WWWWWW:::W::::...:#\</item>
+        <item>\#+O+#::::::::O:::::#\</item>
+        <item>\#O+#::::....::WWWWW#\</item>
+        <item>\#O#:::::....::W::::#\</item>
+        <item>\#:::::::...F:OW::::#\</item>
+        <item>\#....:::::::::W::::#\</item>
+        <item>\#....:::::::::W::::#\</item>
+        <item>\#:::::::+:::::WWWWW#\</item>
+        <item>\#:::::::O::+:::::::#\</item>
+        <item>\#:B...:::::O::+:::O#\</item>
+        <item>\#:....::::::::O:::+#\</item>
+        <item>\#:....:::::::::::::#\</item>
+        <item>\#:::::::::::::::::]#\</item>
+        <item>\####################\</item>
+    </string-array>
+    <string-array name="level_data_2">
+        <item>\####################\</item>
+        <item>\#::O::::OOOO::::O::#\</item>
+        <item>\#:::O:::#::#:::O:::#\</item>
+        <item>\#::::::::::::::::::#\</item>
+        <item>\#WWWW::::::::::WWWW#\</item>
+        <item>\#::::::::::::::::::#\</item>
+        <item>\#::::::::::::::::::#\</item>
+        <item>\#::::::::::::::::::#\</item>
+        <item>\#B.......B.........#\</item>
+        <item>\#..##############.B#\</item>
+        <item>\#..#:O::O::O::O:#..#\</item>
+        <item>\#..#::::::::::::#..#\</item>
+        <item>\#..#::::::::::::#..#\</item>
+        <item>\#..#............#..#\</item>
+        <item>\#..#.....P......#..#\</item>
+        <item>\#..#............#..#\</item>
+        <item>\#..:............:..#\</item>
+        <item>\#..##############.B#\</item>
+        <item>\#B.......B........]#\</item>
+        <item>\####################\</item>
+    </string-array>
+    
+
+</resources>

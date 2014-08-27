@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+	<array name="moveArray">
+		<item>@string/tilt_move</item>
+		<item>@string/touch_move</item>
+	</array>
+	<array name="moveValues">
+		<item>tilt</item>
+		<item>touch</item>
+	</array>
+	<array name="shootArray">
+		<item>@string/dpad_shoot</item>
+		<item>@string/menu_shoot</item>
+		<item>@string/volume_shoot</item>
+	</array>
+	<array name="shootValues">
+		<item>dpad</item>
+		<item>menu</item>
+		<item>volume</item>
+	</array>	
+</resources>

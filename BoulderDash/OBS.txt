@@ -1,0 +1,16 @@
+
+
+Dette er et spil af Allan Hirsch der er udarbejdet i forbindelse med et Android-kursus på http://ihk.dk 
+
+Det er open source under GPLv3.
+
+Kontakt mig hvis du ønsker skriveadgang så du kan arbejde videre på projektet.
+
+PÅ VEJ: Programmet kan også hentes ned fra Android Marked
+
+
+19. april 2011
+
+Jacob Nordfalk
+http://javabog.dk
+

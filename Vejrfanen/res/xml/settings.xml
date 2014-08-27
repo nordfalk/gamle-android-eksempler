@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+        <ListPreference
+            android:title="Positionsbestemmelse"
+            android:summary="Angiv om du ønsker at anvende aktiv positionsbestemmelse"
+            android:key="posBestem"
+            android:defaultValue="pos_aktuel"
+            android:entries="@array/posBestem"
+            android:entryValues="@array/posBestemValues" />
+        <ListPreference
+            android:title="Min hudtype"
+            android:summary="Angiv din hudtype for at tilpasse UV varsel til dig"
+            android:key="hudType"
+            android:defaultValue="2"
+            android:entries="@array/hudType"
+            android:entryValues="@array/hudTypeValues"
+            android:dialogLayout="@android:layout/preference_category" />
+        <dk.andreas.tabvejrny.ListPreferenceMultiSelect android:defaultValue="#ALL#"
+             android:key="pref_tab_key"
+             android:title="Faneblads-indstillinger" android:dialogTitle="Faneblads-indstillinger"
+             android:summary="Angiv hvilke faneblade, der skal være aktive" />
+    </PreferenceScreen>

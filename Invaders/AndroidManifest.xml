@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="org.dook.invaders"
+      android:versionCode="1"
+      android:versionName="1.0">
+    <application android:icon="@drawable/icon" android:label="@string/app_name" android:theme="@style/InvaderTheme">
+    	<activity android:name=".Invaders"
+                  android:label="@string/app_name"
+                  android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>    
+        </activity>
+		<activity android:name=".CustomDialog"
+			android:label="@string/game_over"
+			android:theme="@style/CustomDialog"	>			
+		</activity>
+		<activity android:name=".Highscore"
+			android:label="@string/highscore_title">
+		</activity>
+		<activity android:name=".Prefs"
+			android:label="@string/settings_title">
+		</activity>
+		<activity android:name=".Game"
+			android:label="@string/game_title"
+			android:screenOrientation="portrait">
+		</activity>
+		<activity android:name=".Instruction"
+			android:label="@string/instructions_title">
+		</activity>
+    </application>
+    <uses-sdk android:minSdkVersion="7" />
+</manifest> 

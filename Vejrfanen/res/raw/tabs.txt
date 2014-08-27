@@ -1,0 +1,9 @@
+1,Byvejr,Byvejr,true,1,true
+2,UV-Indeks,UVIndeks,true,2,true
+3,Vejrkort,Vejrkort,true,3,false
+4,Radar,Radar,true,4,true
+5,Radar2,Radar2,true,5,false
+6,Nyheder,Nyheder,true,6,true
+7,WebTV,WebTV,true,7,false
+8,Glatføre,Glatfoere,true,8,true
+9,Indstillinger,Settings,true,9,false

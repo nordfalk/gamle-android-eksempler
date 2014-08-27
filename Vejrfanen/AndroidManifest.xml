@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+     package="dk.andreas.tabvejrny">
+    <application android:icon="@drawable/p_meteorology">
+         <activity android:name=".MainActivity" android:label="Vejrfanen" android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".aktiviteter.Byvejr"></activity>
+        <activity android:name=".aktiviteter.Vejrkort"></activity>
+        <activity android:name=".aktiviteter.UVIndeks"></activity>
+        <activity android:name=".aktiviteter.Nyheder"></activity>
+        <activity android:name=".aktiviteter.Indstillinger"></activity>
+        <activity android:name=".aktiviteter.Settings"></activity>
+        <activity android:name=".aktiviteter.Radar"></activity>
+        <activity android:name=".aktiviteter.Radar2"></activity>
+        <activity android:name=".aktiviteter.WebTV"></activity>
+        <activity android:name=".aktiviteter.Glatfoere"></activity>
+        <activity android:name=".aktiviteter.About" android:label="@string/about_title" android:theme="@android:style/Theme.Dialog"></activity>
+        <receiver android:name=".widget.Widget"
+                android:label="@string/widget_name">
+            <intent-filter>
+                <action android:name=
+                    "android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider"
+                android:resource="@xml/widget" />
+        </receiver>
+    </application>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+</manifest>

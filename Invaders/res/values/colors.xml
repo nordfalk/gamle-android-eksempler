@@ -1,0 +1,14 @@
+<resources>
+		
+	<!-- Game colors -->
+	<color name="game_background">#291f19</color>
+	<color name="game_foreground">#403128</color>
+	<color name="game_blue_highlight">#5cbac7</color>
+	<color name="game_green_highlight">#9dcf1a</color>
+	<color name="text_foreground">#5cbac7</color>
+	<color name="text_background">#285257</color>
+	<color name="slider_background">#151717</color>
+	<color name="slider_edge">#612469</color>
+	
+	
+</resources>
