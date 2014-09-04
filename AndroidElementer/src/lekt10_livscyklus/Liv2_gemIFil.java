@@ -6,6 +6,9 @@ import android.widget.EditText;
 
 import java.io.IOException;
 
+import lekt04_arkitektur.Programdata;
+import lekt04_arkitektur.Serialisering;
+
 /**
  * Viser hvordan data kan gemmes i en fil. Her bruges serialisering.
  *
@@ -25,14 +28,14 @@ public class Liv2_gemIFil extends LogAktivitet {
 
     try {
       data = (Programdata) Serialisering.hent(getCacheDir() + "/programdata.ser");
-      Log.d("data.liste", "" + data);
-      Log.d("data.liste", "" + data.liste);
+      Log.d("data.noter", "" + data);
+      Log.d("data.noter", "" + data.noter);
 
-      data.liste.add("dataFraForrigeAkrivitet " + data.liste.size());
+      data.noter.add("dataFraForrigeAkrivitet " + data.noter.size());
       System.out.println("programdata indlæst fra fil");
     } catch (Exception ex) {
       data = new Programdata(); // fil fandtes ikke eller data var inkompatible
-      data.liste.add("første element");
+      data.noter.add("første element");
       System.out.println("programdata oprettet fra ny: " + ex);
     }
 

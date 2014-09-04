@@ -1,7 +1,6 @@
 package lekt02_intents;
 
 import android.app.Activity;
-import android.app.SearchManager;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -26,7 +25,7 @@ import android.widget.Toast;
  */
 public class BenytIntents extends Activity implements OnClickListener {
   EditText tekstfelt, nummerfelt;
-  Button ringOp, ringOpDirekte, sendSms, delApp, sendEpost, websøgning, webadresse, wifiIndstillinger;
+  Button ringOp, ringOpDirekte, sendSms, delApp, sendEpost, webadresse, wifiIndstillinger;
 
 
   /**
@@ -81,10 +80,6 @@ public class BenytIntents extends Activity implements OnClickListener {
     delApp.setText("Del app...");
     tl.addView(delApp);
 
-    websøgning = new Button(this);
-    websøgning.setText("Websøgning");
-    tl.addView(websøgning);
-
     webadresse = new Button(this);
     webadresse.setText("Webadresse (javabog)");
     tl.addView(webadresse);
@@ -104,7 +99,6 @@ public class BenytIntents extends Activity implements OnClickListener {
     sendSms.setOnClickListener(this);
     delApp.setOnClickListener(this);
     sendEpost.setOnClickListener(this);
-    websøgning.setOnClickListener(this);
     webadresse.setOnClickListener(this);
     wifiIndstillinger.setOnClickListener(this);
 
@@ -152,8 +146,6 @@ public class BenytIntents extends Activity implements OnClickListener {
           "AndroidElementer\n" +
           "https://market.android.com/details?id=dk.nordfalk.android.elementer").setType("text/plain");
       startActivity(Intent.createChooser(i, "Del via"));
-    } else if (v == websøgning) {
-      startActivity(new Intent(Intent.ACTION_WEB_SEARCH).putExtra(SearchManager.QUERY, tekst));
     } else if (v == webadresse) {
       Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://javabog.dk"));
       startActivity(intent);

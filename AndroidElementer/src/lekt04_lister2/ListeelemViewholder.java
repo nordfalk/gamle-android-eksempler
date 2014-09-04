@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package lekt04x_lister;
+package lekt04_lister2;
 
 import android.widget.ImageView;
 import android.widget.TextView;

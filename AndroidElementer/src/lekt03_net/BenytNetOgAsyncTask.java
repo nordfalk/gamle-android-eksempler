@@ -42,7 +42,7 @@ public class BenytNetOgAsyncTask extends Activity implements OnClickListener {
     tl.addView(knap2);
 
     knap3 = new Button(this);
-    knap3.setText("Vis nyeste data og hent i baggrunden");
+    knap3.setText("Vis cachet kopi og hent i baggrunden");
     tl.addView(knap3);
 
     setContentView(tl);
@@ -55,7 +55,6 @@ public class BenytNetOgAsyncTask extends Activity implements OnClickListener {
   public void onClick(View hvadBlevDerKlikketPå) {
     setProgressBarIndeterminateVisibility(true);
     try {
-
       if (hvadBlevDerKlikketPå == knap1) {
 
         String rssdata = hentUrl("http://www.version2.dk/it-nyheder/rss");
@@ -64,6 +63,7 @@ public class BenytNetOgAsyncTask extends Activity implements OnClickListener {
         setProgressBarIndeterminateVisibility(false);
 
       } else if (hvadBlevDerKlikketPå == knap2) {
+        textView.setText("Henter...");
 
         new AsyncTask() {
           @Override
@@ -79,8 +79,8 @@ public class BenytNetOgAsyncTask extends Activity implements OnClickListener {
           }
 
           @Override
-          protected void onPostExecute(Object resultat) {
-            textView.setText("resultat: \n" + resultat);
+          protected void onPostExecute(Object titler) {
+            textView.setText("resultat: \n" + titler);
             setProgressBarIndeterminateVisibility(false);
           }
         }.execute();
@@ -89,7 +89,7 @@ public class BenytNetOgAsyncTask extends Activity implements OnClickListener {
       } else if (hvadBlevDerKlikketPå == knap3) {
 
         final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        String titler = prefs.getString("titler", "(ingen titler)");
+        String titler = prefs.getString("titler", "(ingen titler)"); // Hent fra prefs
         textView.setText("henter... her er hvad jeg ved:\n" + titler);
 
         new AsyncTask() {
@@ -98,7 +98,7 @@ public class BenytNetOgAsyncTask extends Activity implements OnClickListener {
             try {
               String rssdata = hentUrl("http://www.version2.dk/it-nyheder/rss");
               String titler = findTitler(rssdata);
-              prefs.edit().putString("titler", titler).commit();
+              prefs.edit().putString("titler", titler).commit();     // Gem i prefs
               return titler;
             } catch (Exception e) {
               e.printStackTrace();
@@ -107,8 +107,8 @@ public class BenytNetOgAsyncTask extends Activity implements OnClickListener {
           }
 
           @Override
-          protected void onPostExecute(Object resultat) {
-            textView.setText("nyeste titler: \n" + resultat);
+          protected void onPostExecute(Object titler) {
+            textView.setText("nyeste titler: \n" + titler);
             setProgressBarIndeterminateVisibility(false);
           }
         }.execute();
@@ -117,6 +117,7 @@ public class BenytNetOgAsyncTask extends Activity implements OnClickListener {
     } catch (Exception e) {
       e.printStackTrace();
       textView.setText("Der skete en fejl:\n" + e);
+      setProgressBarIndeterminateVisibility(false);
     }
 
   }

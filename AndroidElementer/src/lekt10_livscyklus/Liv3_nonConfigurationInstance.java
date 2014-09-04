@@ -3,6 +3,8 @@ package lekt10_livscyklus;
 import android.os.Bundle;
 import android.widget.EditText;
 
+import lekt04_arkitektur.Programdata;
+
 /**
  * Når skærmen vendes eller tastaturet bliver skubbet ind eller ud
  * bliver aktiviteten normalt kasseret og en ny aktivitet oprettes
@@ -33,10 +35,10 @@ public class Liv3_nonConfigurationInstance extends LogAktivitet {
 
     if (dataFraForrigeAkrivitet == null) {
       data = new Programdata();
-      data.liste.add("første element");
+      data.noter.add("første element");
     } else {
       data = dataFraForrigeAkrivitet;
-      data.liste.add("dataFraForrigeAkrivitet " + data.liste.size());
+      data.noter.add("dataFraForrigeAkrivitet " + data.noter.size());
     }
 
     EditText et = new EditText(this);

@@ -23,6 +23,8 @@ import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
+import java.io.IOException;
+
 import lekt06_youtube.FilCache;
 
 /**
@@ -32,10 +34,10 @@ import lekt06_youtube.FilCache;
  * udføre de allermest nødvendige ting her.
  */
 public class MinApp extends Application {
-  /**
-   * Data kunne lige så godt være gemt i en klassevariabel andetsteds
-   */
+  // Globale data (kunne godt være gemt i en klassevariabel andetsteds)
   public static SharedPreferences prefs;
+  public static Programdata data;
+  public static MinApp instans;
 
   /**
    * Håndtag til forgrundstråden
@@ -44,11 +46,22 @@ public class MinApp extends Application {
 
   @Override
   public void onCreate() {
-    Log.d("MinApplicationSingleton", "onCreate() kaldt");
+    Log.d("MinApp", "onCreate() kaldt");
     super.onCreate();
+    instans = this;
 
     // Initialisering der kræver en Context
     prefs = PreferenceManager.getDefaultSharedPreferences(this);
+
+    // Programdata der skal være indlæst ved opstart
+    try {
+      data = (Programdata) Serialisering.hent(getFilesDir() + "/programdata.ser");
+      Log.d("data", "" + data);
+      System.out.println("programdata indlæst fra fil");
+    } catch (Exception ex) {
+      data = new Programdata(); // fil fandtes ikke eller data var inkompatible
+      System.out.println("programdata oprettet fra ny: " + ex);
+    }
 
 
     // Initialisering af hjælpeklasser, f.eks. mappen som en cache af filer
@@ -56,5 +69,13 @@ public class MinApp extends Application {
     // skal tjek for denne initialisering ske i alle de aktiviteter, services
     // og recievers der er afhængig af hjælpeklasserne
     FilCache.init(this.getCacheDir());
+  }
+
+  public static void gemData() {
+    try {  // nu er aktiviteten ikke synlig, så er det tid til at gemme data!
+      Serialisering.gem(data, instans.getFilesDir() + "/programdata.ser");
+    } catch (IOException ex) {
+      ex.printStackTrace();
+    }
   }
 }

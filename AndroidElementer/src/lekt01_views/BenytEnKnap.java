@@ -2,6 +2,7 @@ package lekt01_views;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -38,5 +39,7 @@ public class BenytEnKnap extends Activity implements OnClickListener {
 
 		// Skriv meddelelse til loggen (loggen kan ses med adb logcat)
 		System.out.println("Der blev trykket på knappen");
-	}
+
+		Log.d("BenytEnKnap", "Knap trykket");
+  }
 }

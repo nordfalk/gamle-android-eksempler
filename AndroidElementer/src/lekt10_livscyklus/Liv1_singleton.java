@@ -3,6 +3,8 @@ package lekt10_livscyklus;
 import android.os.Bundle;
 import android.widget.EditText;
 
+import lekt04_arkitektur.Programdata;
+
 /**
  * @author Jacob Nordfalk
  */
@@ -20,15 +22,15 @@ public class Liv1_singleton extends LogAktivitet {
     /*
     if (data == null) {
       data = new Programdata();
-      data.liste.add("første element");
+      data.noter.add("første element");
     } else {
     }*/
-    data.liste.add("dataFraForrigeAkrivitet " + data.liste.size());
+    data.noter.add("dataFraForrigeAkrivitet " + data.noter.size());
 
     EditText et = new EditText(this);
     et.setText(data.toString());
     setContentView(et);
 
-    data.liste.add("hej");
+    data.noter.add("hej");
   }
 }

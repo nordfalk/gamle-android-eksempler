@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="dk.nordfalk.android.elementer"
-          android:versionCode="36"
-          android:versionName="1.93 tilladelser">
+          android:versionCode="37"
+          android:versionName="2.00 1. sept 2014">
 
     <!--
     denne app virker fra Android 2.1 (API 7) og frem
@@ -16,6 +16,7 @@
 
     <!-- tilladelser -->
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
@@ -105,12 +106,24 @@
         <activity android:name="lekt03_diverse.BenytWebView2"/>
         <activity android:name="lekt03_diverse.BenytMenuer2"/>
         <activity android:name="lekt03_diverse.BenytDialogerOgToasts"/>
-        <activity android:name="lekt03_diverse.Stedbestemmelse"/>
+        <activity android:name="lekt05_sensorer.Stedbestemmelse"/>
         <activity android:name="lekt03_diverse.TekstTilTale"/>
 
         <activity android:name="lekt03_net.BenytNetOgAsyncTask"/>
         <activity android:name="lekt03_net.ByvejrAktivitet"/>
-        <activity android:name="lekt03_net.ByvejrAktivitet2"/>
+
+        <activity android:name="lekt04_arkitektur.NoteAktivitet"/>
+
+        <activity android:name="lekt04_lister.BenytListView"/>
+        <activity android:name="lekt04_lister.BenytListActivity"/>
+        <activity android:name="lekt04_lister.BenytGallery"/>
+        <activity android:name="lekt04_lister.BenytGridView"/>
+        <activity android:name="lekt04_lister.BenytSpinner"/>
+        <activity android:name="lekt04_lister2.BenytListViewMedEgetLayout"/>
+        <activity android:name="lekt04_lister2.BenytListViewMedEgetLayout2"/>
+        <activity android:name="lekt04_lister2.VisAlleAndroidDrawables"/>
+        <activity android:name="lekt04_lister2.BenytListviewMedOverskrifter"/>
+        <activity android:name="lekt04_lister2.BenytExpandableListActivity"/>
 
 
         <activity android:name="lekt05_grafik.Tegneprogram"/>
@@ -139,17 +152,6 @@
                 android:screenOrientation="portrait"/>
 
 
-        <activity android:name="lekt04_lister.BenytListView"/>
-        <activity android:name="lekt04_lister.BenytListActivity"/>
-        <activity android:name="lekt04x_lister.BenytListViewMedEgetLayout"/>
-        <activity android:name="lekt04_lister.BenytGallery"/>
-        <activity android:name="lekt04_lister.BenytGridView"/>
-        <activity android:name="lekt04_lister.BenytSpinner"/>
-        <activity android:name="lekt04x_lister.BenytListViewMedEgetLayout2"/>
-        <activity android:name="lekt04x_lister.VisAlleAndroidDrawables"/>
-        <activity android:name="lekt04x_lister.BenytListviewMedOverskrifter"/>
-        <activity android:name="lekt04x_lister.BenytExpandableListActivity"/>
-
 
         <activity android:name="lekt06_data.CSVParsning"/>
         <activity android:name="lekt06_data.JsonParsning"/>
@@ -174,14 +176,6 @@
         <activity android:name="lekt08_providers.VisKontakter"/>
         <activity android:name="lekt08_providers.VisKontakterIListView"/>
 
-
-        <activity android:name="lekt10_livscyklus.ManglendeKaldTilSuperklasse"/>
-        <activity android:name="lekt10_livscyklus.LogAktivitet"/>
-        <activity android:name="lekt10_livscyklus.Liv1_singleton"/>
-        <activity android:name="lekt10_livscyklus.Liv2_gemIFil"/>
-        <activity android:name="lekt10_livscyklus.Liv3_nonConfigurationInstance"/>
-        <activity android:name="lekt10_livscyklus.Liv4_bundle"/>
-        <activity android:name="lekt10_livscyklus.DialogDerOverleverSkaermvending"/>
 
         <activity android:name="lekt09_recievers.OpdagAppInstallation"/>
         <activity android:name="lekt09_recievers.ModtagSMSer"/>
@@ -225,6 +219,16 @@
         <activity android:name="touchinput.BenytMultiTouchController"/>
 
 
+        <activity android:name="lekt10_livscyklus.ManglendeKaldTilSuperklasse"/>
+        <activity android:name="lekt10_livscyklus.LogAktivitet"/>
+        <activity android:name="lekt10_livscyklus.Liv1_singleton"/>
+        <activity android:name="lekt10_livscyklus.Liv2_gemIFil"/>
+        <activity android:name="lekt10_livscyklus.Liv3_nonConfigurationInstance"/>
+        <activity android:name="lekt10_livscyklus.Liv4_bundle"/>
+        <activity android:name="lekt10_livscyklus.DialogDerOverleverSkaermvending"/>
+        <activity android:name="ufaerdigt.ByvejrAktivitet2"/>
+
+
         <!-- aktivitet som kan ses fra startskærmen -->
         <activity
                 android:name="dk.nordfalk.aktivitetsliste.Aktivitetsliste"
@@ -241,7 +245,7 @@
             <!-- bruges af metoden VisKildekode.findWebUrl() -->
             <meta-data
                     android:name="web_url"
-                    android:value="http://code.google.com/p/android-eksempler/source/browse/trunk/AndroidElementer/"/>
+                    android:value="http://code.google.com/p/android-eksempler/source/browse/AndroidElementer/"/>
         </activity>
 
 

@@ -32,7 +32,7 @@ public class BenytMenuer extends Activity {
   public boolean onCreateOptionsMenu(Menu menu) {
     textView.append("\nonCreateOptionsMenu");
     menu.add(Menu.NONE, 101, Menu.NONE, "javabog.dk");
-    menu.add(Menu.NONE, 102, Menu.NONE, "En bil").setIcon(R.drawable.bil);
+    menu.add(Menu.NONE, 102, Menu.NONE, "Kør bil").setIcon(R.drawable.bil);
     menu.add(Menu.NONE, 103, Menu.NONE, "Indstillinger").setIcon(android.R.drawable.ic_menu_preferences);
     menu.add(Menu.NONE, 104, Menu.NONE, "Afslut").setIcon(android.R.drawable.ic_menu_close_clear_cancel);
     return true;

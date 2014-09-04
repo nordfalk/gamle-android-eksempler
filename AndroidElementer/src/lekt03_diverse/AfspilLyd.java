@@ -27,7 +27,7 @@ public class AfspilLyd extends Activity implements OnClickListener {
     setContentView(enKnap);
 
     // Opret lyden
-    enLyd = MediaPlayer.create(this, R.raw.jeg_bremser_haardt);
+    enLyd = MediaPlayer.create(this, R.raw.dyt);
     enLyd.setVolume(1, 1);
 
     // Trykker brugeren på volumen op/ned i denne aktivitet skal det altid styre lydstyrken af medieafspilleren

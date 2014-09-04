@@ -7,8 +7,10 @@ Alle eksemplerne er som udgangspunkt open source under GPLv3, med mindre andet e
 
 Kontakt mig hvis du ønsker at bygge videre på eksemplerne under en anden licens eller hvis du ønsker skriveadgang så du kan arbejde videre på en af projekterne.
 
-Eksempelsamlingen kan hentes ned fra Android Marked:
+Eksempelsamlingen kan hentes ned fra Google Play fra:
 https://market.android.com/details?id=dk.nordfalk.android.elementer
+
+Båt-hornet (dyt.ogg) er taget fra http://opengameart.org/content/bicycle-horn
 
 19. april 2011
 

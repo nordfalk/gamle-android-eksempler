@@ -1,4 +1,4 @@
-package lekt04x_lister;
+package lekt04_lister2;
 
 import android.app.Activity;
 import android.os.Bundle;

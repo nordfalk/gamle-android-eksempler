@@ -8,7 +8,7 @@
 // adb logcat -v tag ActivityManager:I Vejret:V System.err:V *:S
 // Fremtidig geokodning bliver med
 // http://www.geonames.org/postal-codes/postal-codes-denmark.html
-package lekt03_net;
+package ufaerdigt;
 
 import android.app.Activity;
 import android.app.AlertDialog.Builder;

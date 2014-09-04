@@ -29,7 +29,7 @@ import lekt05_grafik.Tegneprogram;
  */
 public class BenytDialogerOgToasts extends Activity implements OnClickListener {
 
-  Button visStandardToast, visToastMedBillede, visAlertDialog, visAlertDialog1, visAlertDialog2, visProgressDialog, visProgressDialog1, visNoitification;
+  Button visStandardToast, visToastMedBillede, visAlertDialog, visAlertDialog1, visAlertDialog2, visProgressDialog, visProgressDialogMedBillede, visNoitification;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -61,9 +61,9 @@ public class BenytDialogerOgToasts extends Activity implements OnClickListener {
     visProgressDialog.setText("visProgressDialog");
     tl.addView(visProgressDialog);
 
-    visProgressDialog1 = new Button(this);
-    visProgressDialog1.setText("visProgressDialog1");
-    tl.addView(visProgressDialog1);
+    visProgressDialogMedBillede = new Button(this);
+    visProgressDialogMedBillede.setText("visProgressDialogMedBillede");
+    tl.addView(visProgressDialogMedBillede);
 
     visNoitification = new Button(this);
     visNoitification.setText("visNoitification");
@@ -72,7 +72,7 @@ public class BenytDialogerOgToasts extends Activity implements OnClickListener {
     visStandardToast.setOnClickListener(this);
     visToastMedBillede.setOnClickListener(this);
     visProgressDialog.setOnClickListener(this);
-    visProgressDialog1.setOnClickListener(this);
+    visProgressDialogMedBillede.setOnClickListener(this);
     visAlertDialog.setOnClickListener(this);
     visAlertDialog1.setOnClickListener(this);
     visAlertDialog2.setOnClickListener(this);
@@ -127,7 +127,7 @@ public class BenytDialogerOgToasts extends Activity implements OnClickListener {
       dialog.show();
     } else if (hvadBlevDerKlikketPå == visProgressDialog) {
       ProgressDialog.show(this, "", "En ProgressDialog", true).setCancelable(true);
-    } else if (hvadBlevDerKlikketPå == visProgressDialog1) {
+    } else if (hvadBlevDerKlikketPå == visProgressDialogMedBillede) {
       ProgressDialog dialog = new ProgressDialog(this);
       dialog.setIndeterminate(true); // drejende hjul
       dialog.setTitle("En ProgressDialog");

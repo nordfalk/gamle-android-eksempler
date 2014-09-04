@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+            android:id="@+id/javabog"
+            android:showAsAction="never"
+            android:title="javabog.dk"/>
+    <item
+            android:id="@+id/bil"
+            android:icon="@drawable/bil"
+            android:showAsAction="always"
+            android:title="Kør bil"/>
+    <item
+            android:id="@+id/indstillinger"
+            android:icon="@android:drawable/ic_menu_preferences"
+            android:showAsAction="always"
+            android:title="Indstillinger"/>
+    <item
+            android:id="@+id/afslut"
+            android:icon="@android:drawable/ic_menu_close_clear_cancel"
+            android:showAsAction="ifRoom"
+            android:title="Afslut"/>
+
+</menu>

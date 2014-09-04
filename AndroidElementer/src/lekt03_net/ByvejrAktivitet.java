@@ -14,6 +14,7 @@ import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Rect;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -35,36 +36,38 @@ import java.net.URL;
  *
  * @author Jacob Nordfalk
  */
-public class ByvejrAktivitet extends Activity {
+public class ByvejrAktivitet extends Activity implements OnClickListener {
 
-  private static final String TAG = "Vejret";
   ImageView imageView_dag1;
   ImageView imageView_dag3_9;
   ImageView imageView_dag10_14;
-  TextView postnrByTextView;
   int valgtPostNr = 2500;
   String valgtBy = "Valby";
+  EditText editText_postnr;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
-
-		/*
-     * Opsætning af de grafiske komponenter
-		 */
     LinearLayout linearLayout = new LinearLayout(this);
     linearLayout.setOrientation(LinearLayout.VERTICAL);
 
-    // Lav en række med teksten "Vejret for 2500 Valby" (det sidste blåt)
+    // række hvor postnr kan indtastes
     LinearLayout række = new LinearLayout(this);
     TextView textView = new TextView(this);
-    textView.setText("Vejret for ");
+    textView.setText("Vælg postnummer");
     række.addView(textView);
 
-    postnrByTextView = new TextView(this);
-    postnrByTextView.setText(valgtPostNr + " " + valgtBy);
-    række.addView(postnrByTextView);
+    editText_postnr = new EditText(this);
+    editText_postnr.setText("2500");
+    række.addView(editText_postnr);
+
+    Button button_postnr = new Button(this);
+    button_postnr.setText("OK");
+    række.addView(button_postnr);
+
+    // når bruger trykker OK skal det indlæses
+    button_postnr.setOnClickListener(this);
 
     // tilføj rækken
     linearLayout.addView(række);
@@ -96,34 +99,6 @@ public class ByvejrAktivitet extends Activity {
     linearLayout.addView(imageView_dag10_14);
 
 
-		/**/
-    // alternativ række hvor postnr kan indtastes
-    række = new LinearLayout(this);
-    textView = new TextView(this);
-    textView.setText("Vælg postnummer");
-    række.addView(textView);
-    //((LinearLayout.LayoutParams) textView.getLayoutParams()).weight = 1;
-
-    final EditText editText_postnr = new EditText(this);
-    editText_postnr.setText("2500");
-    række.addView(editText_postnr);
-
-    Button button_postnr = new Button(this);
-    button_postnr.setText("OK");
-    række.addView(button_postnr);
-
-    // når bruger trykker OK skal det indlæses
-    button_postnr.setOnClickListener(new OnClickListener() {
-
-      public void onClick(View arg0) {
-        valgtPostNr = Integer.parseInt("" + editText_postnr.getText());
-        valgtBy = "ukendt";
-        postnrByTextView.setText(valgtPostNr + " " + valgtBy);
-        hentBilleder(); // max 1 time gamle
-      }
-    });
-    // tilføj rækken
-    linearLayout.addView(række);
 
     ScrollView scrollView = new ScrollView(this);
     scrollView.addView(linearLayout);
@@ -132,21 +107,43 @@ public class ByvejrAktivitet extends Activity {
     hentBilleder();
   }
 
+  @Override
+  public void onClick(View v) {
+    valgtPostNr = Integer.parseInt("" + editText_postnr.getText());
+    hentBilleder(); // max 1 time gamle
+  }
+
   private void hentBilleder() {
-    // Dette skulle egentlig ikke gøres i GUI-tråden, men det tager vi senere
-    // http://android-developers.blogspot.com/2009/05/painless-threading.html
-    // http://developer.android.com/reference/android/os/AsyncTask.html
+    new AsyncTask() {
+
+      public Bitmap byvejr_dag1;
+      public Bitmap byvejr_dag3_9;
+      public Bitmap byvejr_dag10_14;
+
+      @Override
+      protected Object doInBackground(Object[] params) {
+        try {
+          byvejr_dag1 = opretBitmapFraUrl("http://servlet.dmi.dk/byvejr/servlet/byvejr_dag1?by=" + valgtPostNr + "&mode=long");
+          byvejr_dag3_9 = opretBitmapFraUrl("http://servlet.dmi.dk/byvejr/servlet/byvejr?by=" + valgtPostNr + "&tabel=dag3_9");
+          byvejr_dag10_14 = opretBitmapFraUrl("http://servlet.dmi.dk/byvejr/servlet/byvejr?by=" + valgtPostNr + "&tabel=dag10_14");
+        } catch (Exception e) {
+          e.printStackTrace();
+          return e;
+        }
+        return null;
+      }
+
+      @Override
+      protected void onPostExecute(Object o) {
+        // Dette skal gøres i GUI-tråden
+        imageView_dag1.setImageBitmap(byvejr_dag1);
+        // Sørg for at den er synlig på skærmen
+        imageView_dag1.requestRectangleOnScreen(new Rect());
+        imageView_dag3_9.setImageBitmap(byvejr_dag3_9);
+        imageView_dag10_14.setImageBitmap(byvejr_dag10_14);
+      }
+    }.execute();
     try {
-      Bitmap byvejr_dag1 = opretBitmapFraUrl("http://servlet.dmi.dk/byvejr/servlet/byvejr_dag1?by=" + valgtPostNr + "&mode=long");
-      imageView_dag1.setImageBitmap(byvejr_dag1);
-      // Sørg for at den er synlig på skærmen
-      imageView_dag1.requestRectangleOnScreen(new Rect());
-
-      Bitmap byvejr_dag3_9 = opretBitmapFraUrl("http://servlet.dmi.dk/byvejr/servlet/byvejr?by=" + valgtPostNr + "&tabel=dag3_9");
-      imageView_dag3_9.setImageBitmap(byvejr_dag3_9);
-
-      Bitmap byvejr_dag10_14 = opretBitmapFraUrl("http://servlet.dmi.dk/byvejr/servlet/byvejr?by=" + valgtPostNr + "&tabel=dag10_14");
-      imageView_dag10_14.setImageBitmap(byvejr_dag10_14);
     } catch (Exception ex) {
       ex.printStackTrace();
       advarBruger("Kunne ikke få data fra DMI");
@@ -155,7 +152,7 @@ public class ByvejrAktivitet extends Activity {
   }
 
   private void advarBruger(String advarsel) {
-    Log.w(TAG, advarsel);
+    Log.w("Vejret", advarsel);
     Toast.makeText(this, advarsel, Toast.LENGTH_LONG).show();
   }
 

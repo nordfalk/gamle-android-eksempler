@@ -52,7 +52,7 @@ public class VisSensorer extends Activity implements SensorEventListener {
       sensorManager.registerListener(this, sensor, hyppighed);
     }
     /**/
-    enLyd = MediaPlayer.create(this, R.raw.jeg_bremser_haardt);
+    enLyd = MediaPlayer.create(this, R.raw.dyt);
   }
 
   @Override

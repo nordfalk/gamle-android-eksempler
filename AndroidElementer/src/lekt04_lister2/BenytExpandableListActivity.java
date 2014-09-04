@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package lekt04x_lister;
+package lekt04_lister2;
 
 import android.app.ExpandableListActivity;
 import android.os.Bundle;

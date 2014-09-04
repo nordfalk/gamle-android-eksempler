@@ -1,4 +1,4 @@
-package lekt10_livscyklus;
+package lekt04_arkitektur;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

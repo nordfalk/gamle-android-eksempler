@@ -21,6 +21,7 @@ import android.widget.EditText;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -39,7 +40,12 @@ public class VisKildekode extends Activity {
 	private static int onCreateTæller = 0;
 	public final static String KILDEKODE_FILNAVN = "filen der skal vises";
 	final static String LOKAL_PRÆFIX = "file:///android_asset/";
-	static String HS_PRÆFIX = "http://code.google.com/p/android-eksempler/source/browse/trunk/AndroidElementer/";
+
+  // Subversion - gammel
+  //static String HS_PRÆFIX = "http://code.google.com/p/android-eksempler/source/browse/trunk/AndroidElementer/";
+
+  // GIT
+	static String HS_PRÆFIX = "http://code.google.com/p/android-eksempler/source/browse/AndroidElementer/";
 
 	static void findWebUrl(Context ctx) {
 		try {

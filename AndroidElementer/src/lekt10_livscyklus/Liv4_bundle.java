@@ -5,6 +5,8 @@ import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TextView;
 
+import lekt04_arkitektur.Programdata;
+
 /**
  * @author Jacob Nordfalk
  */
@@ -18,13 +20,13 @@ public class Liv4_bundle extends LogAktivitet {
 
     data = new Programdata();
     if (savedInstanceState == null) {
-      data.liste.add("første element");
+      data.noter.add("første element");
     } else {
       data.alder = savedInstanceState.getInt("alder");
       data.navn = savedInstanceState.getString("navn");
-      data.liste = savedInstanceState.getStringArrayList("liste");
+      data.noter = savedInstanceState.getStringArrayList("noter");
       //data = (Programdata) savedInstanceState.getSerializable("data");
-      data.liste.add("dataFraForrigeAkrivitet " + data.liste.size());
+      data.noter.add("dataFraForrigeAkrivitet " + data.noter.size());
     }
 
     // Koden herunder er overflødig i nedarvinger, men forstørrer ikke,
@@ -62,7 +64,7 @@ public class Liv4_bundle extends LogAktivitet {
   protected void onSaveInstanceState(Bundle outState) {
     outState.putInt("alder", ++data.alder);
     outState.putString("navn", data.navn);
-    outState.putStringArrayList("liste", data.liste);
+    outState.putStringArrayList("noter", data.noter);
     outState.putSerializable("data", data);
     super.onSaveInstanceState(outState); // gem indhold for alle views med id
   }

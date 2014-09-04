@@ -18,7 +18,7 @@ public class Splash_akt extends Activity implements Runnable {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
-    Log.d(getClass().getSimpleName(), "aktiviteten blev startet!");
+    Log.d("Splash_akt", "aktiviteten blev startet!");
 
     ImageView iv = new ImageView(this);
     iv.setImageResource(R.drawable.logo);

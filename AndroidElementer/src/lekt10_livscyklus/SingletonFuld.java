@@ -4,6 +4,8 @@
  */
 package lekt10_livscyklus;
 
+import lekt04_arkitektur.Programdata;
+
 public class SingletonFuld {
   private Programdata programdata = new Programdata();
 

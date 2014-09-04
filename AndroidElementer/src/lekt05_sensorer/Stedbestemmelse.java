@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package lekt03_diverse;
+package lekt05_sensorer;
 
 import android.app.Activity;
 import android.content.Intent;

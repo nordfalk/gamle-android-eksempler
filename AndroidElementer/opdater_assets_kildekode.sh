@@ -3,7 +3,7 @@ svn up
 cd assets/
 rm -rf src AndroidManifest.xml
 cp -a ../src ../AndroidManifest.xml .
-svn commit -m "Ny kildekode" .
+#svn commit -m "Ny kildekode" .
 
 cd ..
 ant clean
