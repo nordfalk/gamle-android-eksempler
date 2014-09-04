@@ -106,7 +106,6 @@
         <activity android:name="lekt03_diverse.BenytWebView2"/>
         <activity android:name="lekt03_diverse.BenytMenuer2"/>
         <activity android:name="lekt03_diverse.BenytDialogerOgToasts"/>
-        <activity android:name="lekt05_sensorer.Stedbestemmelse"/>
         <activity android:name="lekt03_diverse.TekstTilTale"/>
 
         <activity android:name="lekt03_net.BenytNetOgAsyncTask"/>
@@ -151,6 +150,7 @@
                 android:name="lekt05_sensorer.Balancespil"
                 android:screenOrientation="portrait"/>
 
+        <activity android:name="lekt05_sensorer.Stedbestemmelse"/>
 
 
         <activity android:name="lekt06_data.CSVParsning"/>

@@ -43,7 +43,6 @@ public class AfspilLyd extends Activity implements OnClickListener {
     if (aktuelStyrke < fuldStyrke / 5) {
       audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, fuldStyrke / 5, AudioManager.FLAG_SHOW_UI);
     }
-
   }
 
   public void onClick(View arg0) {
@@ -56,5 +55,4 @@ public class AfspilLyd extends Activity implements OnClickListener {
     enLyd.release();
     super.onDestroy();
   }
-
 }
