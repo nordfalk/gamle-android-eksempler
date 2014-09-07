@@ -107,6 +107,7 @@
         <activity android:name="lekt03_diverse.BenytMenuer2"/>
         <activity android:name="lekt03_diverse.BenytDialogerOgToasts"/>
         <activity android:name="lekt03_diverse.TekstTilTale"/>
+        <activity android:name="lekt03_diverse.Taleeventyr"/>
 
         <activity android:name="lekt03_net.BenytNetOgAsyncTask"/>
         <activity android:name="lekt03_net.ByvejrAktivitet"/>
