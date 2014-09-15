@@ -23,14 +23,16 @@
                 android:id="@+id/listeelem_overskrift"
                 android:textSize="20sp"
                 android:text="overskrift"
-                android:shadowRadius="5"
                 android:textColor="#ffffff"
-                android:shadowColor="#00ffff"
-                android:shadowDy="3"
-                android:shadowDx="5"
+                android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
-
+<!--
+                android:shadowColor="#00ffff"
+                android:shadowRadius="5"
+                android:shadowDy="3"
+                android:shadowDx="5"
+-->
         <TextView
                 android:id="@+id/listeelem_beskrivelse"
                 android:textSize="12sp"

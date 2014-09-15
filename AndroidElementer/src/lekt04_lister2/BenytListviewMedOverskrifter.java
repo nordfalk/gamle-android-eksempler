@@ -1,7 +1,6 @@
 package lekt04_lister2;
 
 import android.app.Activity;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,16 +13,16 @@ import dk.nordfalk.android.elementer.R;
 public class BenytListviewMedOverskrifter extends Activity {
 
   String[] landeOgOverskrifter = {
-      "*En overskrift",
-      "-Europas lande",
-      "Danmark", "Norge", "Sverige", "Finland", "Holland", "Italien",
-      "-Asien",
-      "Nepal", "Kina",
-      "*En overskrift mere",
-      "-Flere lande i Europa",
-      "Tyskland", "Finland", "Holland", "Italien",
-      "-Flere lande i Asien",
-      "Indien", "Nepal",
+      "0En overskrift",
+      "1Europas lande",
+      "2Danmark", "2Norge", "2Sverige", "2Finland", "2Holland", "2Italien",
+      "1Asien",
+      "2Nepal", "2Kina",
+      "0En overskrift mere",
+      "1Flere lande i Europa",
+      "2Tyskland", "2Finland", "2Holland", "2Italien",
+      "1Flere lande i Asien",
+      "2Indien", "2Nepal",
   };
 
   @Override
@@ -31,13 +30,12 @@ public class BenytListviewMedOverskrifter extends Activity {
     super.onCreate(savedInstanceState);
     ListView listView = new ListView(this);
     listView.setAdapter(new MinAdapterMedOverskrifter());
-    listView.setDividerHeight(3);
+    listView.setDivider(null);
 
     setContentView(listView);
   }
 
   public class MinAdapterMedOverskrifter extends BaseAdapter {
-    Resources res = getResources();
 
     public int getCount() {
       return landeOgOverskrifter.length;
@@ -58,9 +56,9 @@ public class BenytListviewMedOverskrifter extends Activity {
     @Override
     public int getItemViewType(int position) {
       String landEllerOverskrift = landeOgOverskrifter[position];
-      if (landEllerOverskrift.startsWith("-")) return 1;
-      if (landEllerOverskrift.startsWith("*")) return 2;
-      return 0;
+      if (landEllerOverskrift.startsWith("0")) return 0;
+      if (landEllerOverskrift.startsWith("1")) return 1;
+      return 2;
     }
 
     @Override
@@ -83,12 +81,11 @@ public class BenytListviewMedOverskrifter extends Activity {
         }
       }
 
-      String landEllerOverskrift = landeOgOverskrifter[position];
+      String landEllerOverskrift = landeOgOverskrifter[position].substring(1);
       // Sæt indholdet afhængig af typen
       if (typen == 0) {
         TextView tv = (TextView) view.findViewById(android.R.id.text1);
-        tv.setTextSize(12);
-        tv.setMinHeight(0);
+        tv.setTextSize(36);
         tv.setText(landEllerOverskrift);
       } else if (typen == 1) {
         TextView tv = (TextView) view.findViewById(android.R.id.text1);
@@ -99,6 +96,11 @@ public class BenytListviewMedOverskrifter extends Activity {
       }
 
       return view;
+    }
+
+    @Override
+    public boolean isEnabled(int position) {
+      return getItemViewType(position)>1;
     }
   }
 

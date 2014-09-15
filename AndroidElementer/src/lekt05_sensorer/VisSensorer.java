@@ -18,7 +18,7 @@ import dk.nordfalk.android.elementer.R;
  */
 public class VisSensorer extends Activity implements SensorEventListener {
   TextView textView;
-  String[] senesteMålinger = new String[20];
+  String[] senesteMålinger = new String[100];
   SensorManager sensorManager;
   MediaPlayer enLyd;
 
@@ -37,7 +37,7 @@ public class VisSensorer extends Activity implements SensorEventListener {
   protected void onResume() {
     super.onResume();
     //int hyppighed = SensorManager.SENSOR_DELAY_NORMAL;
-    int hyppighed = 250000; // 4 gange i sekundet
+    int hyppighed = 250000000; // 4 gange i sekundet
 
 		/*
     Sensor orienteringsSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION);
@@ -75,7 +75,6 @@ public class VisSensorer extends Activity implements SensorEventListener {
 
     if (sensortype == Sensor.TYPE_ORIENTATION) {
       måling = måling + "\nnordvinkel hældning krængning";
-
     }
 
     if (sensortype == Sensor.TYPE_ACCELEROMETER) {

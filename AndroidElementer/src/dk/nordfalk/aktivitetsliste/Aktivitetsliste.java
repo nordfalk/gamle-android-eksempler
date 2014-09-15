@@ -9,6 +9,7 @@ import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
@@ -222,19 +223,19 @@ public class Aktivitetsliste extends Activity implements OnItemClickListener, On
     try {
       // Tjek at klassen faktisk kan indlæses (så prg ikke crasher hvis den ikke kan!)
       Class klasse = Class.forName(akt);
+
+      if (akt.toLowerCase().contains("fragment") && Build.VERSION.SDK_INT<Build.VERSION_CODES.HONEYCOMB_MR2) {
+        visDialog("Denne aktivitet kan kun køre på Android 4\nSkal den køre på Android 2 skal et kompatibilitetsbibliotek inkluderes og koden ændres til at bruge kompatibilitetsbiblioteket.");
+        return;
+      }
       startActivity(new Intent(this, klasse));
       overridePendingTransition(0, 0); // hurtigt skift
-      Toast.makeText(this, "Starter " + akt, Toast.LENGTH_SHORT).show();
+      Toast.makeText(this, akt+" startet", Toast.LENGTH_SHORT).show();
     } catch (Throwable e) {
       e.printStackTrace();
       //while (e.getCause() != null) e = e.getCause(); // Hop hen til grunden
-      AlertDialog.Builder dialog = new AlertDialog.Builder(this);
-      dialog.setTitle("Kunne ikke starte");
-      TextView tv = new TextView(this);
-      tv.setText(akt + " gav fejlen:\n" + Log.getStackTraceString(e));
-      dialog.setView(tv);
-      //dialog.setMessage(aktivitetsinfo.name+" gav fejlen:\n"+Log.getStackTraceString(e));
-      dialog.show();
+      String tekst = akt + " gav fejlen:\n" + Log.getStackTraceString(e);
+      visDialog(tekst);
     }
 
     // Find position i fuld liste
@@ -244,6 +245,15 @@ public class Aktivitetsliste extends Activity implements OnItemClickListener, On
         putInt("position", position).
         putInt("kategoriPos", kategorivalg.getSelectedItemPosition()).
         commit();
+  }
+
+  private void visDialog(String tekst) {
+    AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+    dialog.setTitle("Kunne ikke starte");
+    TextView tv = new TextView(this);
+    tv.setText(tekst);
+    dialog.setView(tv);
+    dialog.show();
   }
 
   public boolean onItemLongClick(AdapterView<?> listView, View v, int position, long id) {

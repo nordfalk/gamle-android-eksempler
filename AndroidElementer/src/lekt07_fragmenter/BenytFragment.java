@@ -1,7 +1,9 @@
 package lekt07_fragmenter;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.Fragment;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +15,7 @@ import android.widget.ImageView;
 import dk.nordfalk.android.elementer.R;
 
 
+@TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
 public class BenytFragment extends Activity {
 
 
@@ -35,7 +38,7 @@ public class BenytFragment extends Activity {
 
 
   /**
-   * Et simpelt fragment. Fragmenter SKAL erklæres static
+   * Et simpelt fragment. Fragmenter som indre klasser SKAL erklæres static
    * Sammenlign med BenytFlereKnapperXml
    *
    * @see lekt01_views.BenytKnapperDeklarativ

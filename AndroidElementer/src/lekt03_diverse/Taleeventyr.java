@@ -109,7 +109,7 @@ public class Taleeventyr extends Activity implements OnInitListener, OnClickList
     handlinger.add("kaster op.\n");
     handlinger.add("elsker at");
     handlinger.add("kan ikke lide at");
-    handlinger.add("går.");
+    handlinger.add("går.\n");
     handlinger.add("er MEGET glad, fordi:");
     handlinger.add("er træt og går i seng.\n");
 

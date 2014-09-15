@@ -50,7 +50,6 @@ public class BenytIntents extends Activity implements OnClickListener {
     super.onCreate(savedInstanceState);
 
     TableLayout tl = new TableLayout(this);
-
     tekstfelt = new EditText(this);
     tekstfelt.setText("Skriv tekst her");
     tl.addView(tekstfelt);
@@ -93,6 +92,10 @@ public class BenytIntents extends Activity implements OnClickListener {
     wifiIndstillinger.setText("Indstillinger (f.eks. wifi)");
     tl.addView(wifiIndstillinger);
 
+    ScrollView sv = new ScrollView(this);
+    sv.addView(tl);
+    setContentView(sv);
+
 
     ringOp.setOnClickListener(this);
     ringOpDirekte.setOnClickListener(this);
@@ -101,16 +104,18 @@ public class BenytIntents extends Activity implements OnClickListener {
     sendEpost.setOnClickListener(this);
     webadresse.setOnClickListener(this);
     wifiIndstillinger.setOnClickListener(this);
-
-    ScrollView sv = new ScrollView(this);
-    sv.addView(tl);
-    setContentView(sv);
   }
 
 
   public void onClick(View v) {
     String nummer = nummerfelt.getText().toString();
     String tekst = tekstfelt.getText().toString();
+    if (nummer.length()==0 && (v==ringOp||v==ringOpDirekte)) {
+      Toast.makeText(this, "Skriv et telefonnummer", Toast.LENGTH_LONG).show();
+      return;
+    }
+
+
     if (v == ringOp) {
       Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + nummer));
       startActivity(intent);
@@ -127,12 +132,14 @@ public class BenytIntents extends Activity implements OnClickListener {
       // Åbner et SMS-vindue og lader brugeren sende SMS'en
       // Kilde: http://andmobidev.blogspot.com/2010/01/launching-smsmessages-activity-using.html
       //Intent intent=new Intent(Intent.ACTION_VIEW, Uri.parse("sms:"+number));
+      tekst = tekst + lavTelefoninfo();
       Intent intent = new Intent(Intent.ACTION_VIEW);
       intent.setType("vnd.android-dir/mms-sms");
-      intent.putExtra("sms_body", tekst + lavTelefoninfo());
+      intent.putExtra("sms_body", tekst);
       intent.putExtra("address", nummer);
       startActivity(intent);
     } else if (v == sendEpost) {
+      tekst = tekst + lavTelefoninfo();
       Intent i = new Intent(Intent.ACTION_SEND);
       i.setType("message/rfc822");
       i.putExtra(Intent.EXTRA_EMAIL, new String[]{tekst});

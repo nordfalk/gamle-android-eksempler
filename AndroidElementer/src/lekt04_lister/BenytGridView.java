@@ -17,7 +17,12 @@ public class BenytGridView extends Activity implements OnItemClickListener {
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
-    String[] lande = {"Danmark", "Norge", "Sverige", "Finland", "Holland", "Italien", "Nepal", "Danmark", "Norge", "Sverige", "Finland", "Holland", "Italien", "Nepal", "Danmark", "Norge", "Sverige", "Finland", "Holland", "Italien", "Nepal", "Danmark", "Norge", "Sverige", "Finland", "Holland", "Italien", "Nepal", "Danmark", "Norge", "Sverige", "Finland", "Holland", "Italien", "Nepal", "Danmark", "Norge", "Sverige", "Finland", "Holland", "Italien", "Nepal"};
+    String[] lande = {"Danmark", "Norge", "Sverige", "Finland",
+        "Holland", "Italien", "Tyskland", "Frankrig", "Spanien", "Portugal",
+        "Nepal", "Indien", "Kina", "Japan", "Thailand",
+        "Danmark", "Norge", "Sverige", "Finland",
+        "Holland", "Italien", "Tyskland", "Frankrig", "Spanien", "Portugal",
+        "Nepal", "Indien", "Kina", "Japan", "Thailand" };
     ArrayAdapter adapter = new ArrayAdapter(this, R.layout.listeelement, R.id.listeelem_overskrift, lande);
 
     GridView gridView = new GridView(this);

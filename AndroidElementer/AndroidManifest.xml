@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="dk.nordfalk.android.elementer"
-          android:versionCode="38"
+          android:versionCode="39"
           android:versionName="2.01 7. sept 2014">
 
     <!--
@@ -89,16 +89,22 @@
         <activity android:name="lekt02_intents.FangBrowseIntent">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
-
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.BROWSABLE"/>
-
                 <data
                         android:scheme="http"
                         android:host="javabog.dk"
                         android:pathPrefix="/OOP/"/>
             </intent-filter>
         </activity>
+
+        <!-- Dette filter fanger tryk på HJEM-knappen
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.HOME"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        -->
 
 
         <activity android:name="lekt03_diverse.AfspilLyd"/>
@@ -119,7 +125,7 @@
         <activity android:name="lekt04_lister.BenytGallery"/>
         <activity android:name="lekt04_lister.BenytGridView"/>
         <activity android:name="lekt04_lister.BenytSpinner"/>
-        <activity android:name="lekt04_lister2.BenytListViewMedEgetLayout"/>
+        <activity android:name="lekt04_lister.BenytListViewMedEgetLayout"/>
         <activity android:name="lekt04_lister2.BenytListViewMedEgetLayout2"/>
         <activity android:name="lekt04_lister2.VisAlleAndroidDrawables"/>
         <activity android:name="lekt04_lister2.BenytListviewMedOverskrifter"/>

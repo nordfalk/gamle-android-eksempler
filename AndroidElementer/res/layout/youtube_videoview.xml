@@ -1,43 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout
+<RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
     <TextView
-            android:id="@+id/youtube_overskrift"
-            android:text="overskrift"
-            android:textSize="20sp"
-            android:textColor="#ffffff"
-            android:shadowDx="5"
-            android:shadowDy="3"
-            android:shadowRadius="5"
-            android:shadowColor="#00ffff"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-    <TableRow
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Overskrift"
+            android:id="@+id/youtube_overskrift"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_toLeftOf="@+id/youtube_infoknap"
+            android:layout_toStartOf="@+id/youtube_infoknap"
+            android:layout_margin="4dp"/>
 
-        <TextView
-                android:id="@+id/youtube_beskrivelse"
-                android:text="beskrivelse"
-                android:textSize="12sp"
-                android:layout_weight="1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Beskrivelse"
+            android:id="@+id/youtube_beskrivelse"
+            android:layout_below="@+id/youtube_overskrift"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_toLeftOf="@+id/youtube_infoknap"
+            android:layout_toStartOf="@+id/youtube_infoknap"
+            android:layout_marginLeft="4dp"/>
 
-        <ImageButton
-                android:id="@+id/youtube_infoknap"
-                android:src="@android:drawable/ic_media_next"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-    </TableRow>
+    <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/youtube_infoknap"
+            android:src="@android:drawable/ic_dialog_info"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"/>
 
     <VideoView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:id="@+id/youtube_videoView"
-            android:layout_gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-</TableLayout>
+            android:layout_below="@+id/youtube_beskrivelse"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+</RelativeLayout>

@@ -1,4 +1,4 @@
-package lekt04_lister2;
+package lekt04_lister;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -17,7 +17,9 @@ public class BenytListViewMedEgetLayout extends Activity implements OnItemClickL
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
-    String[] lande = {"Danmark", "Norge", "Sverige", "Finland", "Holland", "Italien", "Nepal"};
+    String[] lande = {"Danmark", "Norge", "Sverige", "Finland",
+        "Holland", "Italien", "Tyskland", "Frankrig", "Spanien", "Portugal",
+        "Nepal", "Indien", "Kina", "Japan", "Thailand"};
     ArrayAdapter adapter = new ArrayAdapter(this, R.layout.listeelement, R.id.listeelem_overskrift, lande);
 
     ListView liste = new ListView(this);

@@ -3,7 +3,6 @@ package lekt05_grafik;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.animation.AlphaAnimation;
@@ -11,7 +10,10 @@ import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
+import android.view.animation.BounceInterpolator;
+import android.view.animation.DecelerateInterpolator;
 import android.view.animation.RotateAnimation;
+import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.ScrollView;
@@ -84,7 +86,6 @@ public class BenytAnimationer extends Activity implements OnClickListener {
 
     if (hvadBlevDerKlikketPå == knap1) {
       Animation animation = AnimationUtils.makeOutAnimation(this, true);
-      Log.d("åndsvage tag!", "besked");
       knap1.startAnimation(animation);
     } else if (hvadBlevDerKlikketPå == knap2) {
       knap1.startAnimation(AnimationUtils.makeInAnimation(this, true));
@@ -93,16 +94,26 @@ public class BenytAnimationer extends Activity implements OnClickListener {
       knap1.startAnimation(AnimationUtils.loadAnimation(this, R.anim.egen_anim));
       knap2.startAnimation(AnimationUtils.makeInChildBottomAnimation(this));
     } else if (hvadBlevDerKlikketPå == knap4) {
-      TranslateAnimation translationsanim = new TranslateAnimation(-100.0f, 10f, 0, 0);
+      TranslateAnimation translationsanim = new TranslateAnimation(-100.0f, 0, 0, 0);
       translationsanim.setDuration(5000); // 5 sekunder
-      translationsanim.setInterpolator(AnimationUtils.loadInterpolator(this, android.R.anim.bounce_interpolator));
-      knap3.startAnimation(translationsanim);
+      translationsanim.setInterpolator(new BounceInterpolator());
+      knap2.startAnimation(translationsanim);
+
       AlphaAnimation alfaanim = new AlphaAnimation(0.0f, 1.0f);
-      alfaanim.setDuration(2000); // 2 sekunder
-      alfaanim.setRepeatCount(2); //evt Animation.INFINITE);
-      alfaanim.setInterpolator(AnimationUtils.loadInterpolator(this, android.R.anim.decelerate_interpolator));
-      knap4.startAnimation(alfaanim);
-      AnimationSet sæt = new AnimationSet(true);
+      alfaanim.setDuration(200);
+      alfaanim.setRepeatCount(4); //evt Animation.INFINITE);
+      alfaanim.setRepeatMode(Animation.REVERSE);
+      knap3.startAnimation(alfaanim);
+
+      ScaleAnimation skalaanim = new ScaleAnimation(1, 0.7f, 1, 1.5f, knap4.getWidth()/2, knap4.getHeight()/2);
+      skalaanim.setDuration(300);
+      skalaanim.setRepeatCount(1); // skalér ind og ud igen
+      skalaanim.setRepeatMode(Animation.REVERSE);
+      skalaanim.setInterpolator(new DecelerateInterpolator());
+      knap4.startAnimation(skalaanim);
+
+      AnimationSet sæt = new AnimationSet(false);
+      sæt.addAnimation(skalaanim);
       sæt.addAnimation(translationsanim);
       sæt.addAnimation(alfaanim);
       knap5.startAnimation(sæt);
@@ -124,7 +135,7 @@ public class BenytAnimationer extends Activity implements OnClickListener {
       overridePendingTransition(R.anim.egen_anim, android.R.anim.fade_out);
     } else if (hvadBlevDerKlikketPå == knap6) {
 
-      int[] animationer = {R.anim.egen_anim, R.anim.hyperspace_in, R.anim.hyperspace_out,
+      int[] animationer = {R.anim.egen_anim, R.anim.hyperspace_out,
           R.anim.push_left_in, R.anim.push_left_out, R.anim.push_up_in, R.anim.push_up_out
       };
       int animResId = animationer[animIndeks++ % animationer.length];
@@ -148,7 +159,7 @@ public class BenytAnimationer extends Activity implements OnClickListener {
       r.setRepeatCount(-1);
       r.setRepeatMode(RotateAnimation.REVERSE);
       animationSet.addAnimation(r);
-      knap5.startAnimation(animationSet);
+      knap1.startAnimation(animationSet);
     }
   }
 
