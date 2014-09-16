@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.TextToSpeech.OnInitListener;
-import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -14,7 +12,7 @@ import java.util.Locale;
 /**
  * @author Jacob Nordfalk
  */
-public class Taleeventyr extends Activity implements OnInitListener, OnClickListener {
+public class Taleeventyr extends Activity implements OnInitListener {
 
   TextView udtaleTekst;
   TextToSpeech tts;
@@ -24,7 +22,7 @@ public class Taleeventyr extends Activity implements OnInitListener, OnClickList
     super.onCreate(savedInstanceState);
 
     udtaleTekst = new TextView(this);
-    udtaleTekst.setText("Min danske oot tale - med Locale US - eer maiet dorli.");
+    udtaleTekst.setTextSize(18);
 
     setContentView(udtaleTekst);
     tts = new TextToSpeech(this, this);
@@ -68,11 +66,6 @@ public class Taleeventyr extends Activity implements OnInitListener, OnClickList
     }
   }
 
-  public void onClick(View arg0) {
-    String tekst = udtaleTekst.getText().toString();
-    tts.speak(tekst, TextToSpeech.QUEUE_ADD, null);
-  }
-
 
   public static String lavEventyr()
   {
@@ -90,40 +83,44 @@ public class Taleeventyr extends Activity implements OnInitListener, OnClickList
     personer.add("Hr Knivkniv");
     personer.add("Tumbe");
     personer.add("Sebastian");
-    personer.add("Ven");
+    personer.add("min ven");
     personer.add("Alexander");
     personer.add("Albert");
 
     ArrayList<String> handlinger = new ArrayList<String>();
     handlinger.add("slikker sig om munden.\n");
     handlinger.add("kysser.\n");
+    handlinger.add("griner.\n");
+    handlinger.add("er meget tilfreds.\n");
+    handlinger.add("gaber.\n");
+    handlinger.add("hopper og danser.\n");
     handlinger.add("hopper og danser med sin dollarautomat.\n");
     handlinger.add("laver lort.\n");
-    handlinger.add("tegner på");
     handlinger.add("tisser.\n");
     handlinger.add("ser fjernsyn.\n");
     handlinger.add("slår en prut.\n");
-    handlinger.add("og");
+    handlinger.add("kaster op.\n");
+    handlinger.add("går.\n");
+    handlinger.add("går sin vej.\n");
+    handlinger.add("er træt og går i seng.\n");
+    handlinger.add("tegner på");
     handlinger.add("og");
     handlinger.add("eller");
-    handlinger.add("kaster op.\n");
     handlinger.add("elsker at");
     handlinger.add("kan ikke lide at");
-    handlinger.add("går.\n");
     handlinger.add("er MEGET glad, fordi:");
-    handlinger.add("er træt og går i seng.\n");
 
     String eventyr = "";
 
-    for (int i=0; i<20; i++) {
-      int antalPersoner = personer.size(); // antal personer i listen, dvs 3
-      int personNummer = (int) (Math.random()*antalPersoner); // giver 0-2
+    for (int i=0; i<50; i++) {
+      int antalPersoner = personer.size(); // antal personer i listen
+      int personNummer = (int) (Math.random()*antalPersoner);
       String person = personer.get( personNummer );
       String handling = handlinger.get( (int)(Math.random()*handlinger.size()));
       System.out.println(person + " " + handling);
       eventyr = eventyr + person + " " + handling + " ";
     }
-    return eventyr;
+    return eventyr+". Og de levede lykkeligt til deres dages ende.";
   }
 
 }

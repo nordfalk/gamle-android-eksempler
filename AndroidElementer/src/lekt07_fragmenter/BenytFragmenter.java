@@ -162,7 +162,7 @@ public class BenytFragmenter extends Activity {
 
 
 class MinInterpolator implements Interpolator {
-  private final float mTension = 40;
+  private final float mTension = 10;
 
   /**
    * Maps a value representing the elapsed fraction of an animation to a value that represents

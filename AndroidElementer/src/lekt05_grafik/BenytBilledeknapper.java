@@ -52,7 +52,7 @@ public class BenytBilledeknapper extends Activity {
         //log("farve "+me);
         ib.setColorFilter(0xFFA0A0A0, PorterDuff.Mode.MULTIPLY);
       } else if (me.getAction() == MotionEvent.ACTION_MOVE) {
-      } else {
+      } else if (me.getAction() == MotionEvent.ACTION_UP) {
         //log("ikke farve "+me);
         ib.setColorFilter(null);
       }
