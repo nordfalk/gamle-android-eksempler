@@ -91,8 +91,24 @@ public class BenytAnimationer extends Activity implements OnClickListener {
       knap1.startAnimation(AnimationUtils.makeInAnimation(this, true));
       knap2.startAnimation(AnimationUtils.makeOutAnimation(this, false));
     } else if (hvadBlevDerKlikketPå == knap3) {
-      knap1.startAnimation(AnimationUtils.loadAnimation(this, R.anim.egen_anim));
-      knap2.startAnimation(AnimationUtils.makeInChildBottomAnimation(this));
+      Animation a = AnimationUtils.loadAnimation(this, R.anim.egen_anim);
+      a.setAnimationListener(new AnimationListener() {
+        @Override
+        public void onAnimationStart(Animation animation) {
+
+        }
+
+        @Override
+        public void onAnimationEnd(Animation animation) {
+          knap2.startAnimation(AnimationUtils.makeInChildBottomAnimation(BenytAnimationer.this));
+        }
+
+        @Override
+        public void onAnimationRepeat(Animation animation) {
+
+        }
+      });
+      knap1.startAnimation(a);
     } else if (hvadBlevDerKlikketPå == knap4) {
       TranslateAnimation translationsanim = new TranslateAnimation(-100.0f, 0, 0, 0);
       translationsanim.setDuration(5000); // 5 sekunder

@@ -34,11 +34,14 @@ public class BenytFragmenter extends Activity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     requestWindowFeature(Window.FEATURE_ACTION_BAR);
-    FrameLayout fragmentcontainer = new FrameLayout(this);
-    fragmentcontainer.setId(android.R.id.content);
-
     statustekst = new TextView(this);
+    statustekst.setText("Dette er statusteksten");
+
+    FrameLayout fragmentcontainer = new FrameLayout(this);
+    fragmentcontainer.setId(R.id.indhold);
+
     LinearLayout ll = new LinearLayout(this);
+    ll.setOrientation(LinearLayout.VERTICAL);
     ll.addView(statustekst);
     ll.addView(fragmentcontainer);
     setContentView(ll);
@@ -46,7 +49,7 @@ public class BenytFragmenter extends Activity {
     if (savedInstanceState == null) {
       StartFragment fragment = new StartFragment();
       getFragmentManager().beginTransaction()
-          .add(android.R.id.content, fragment)
+          .add(R.id.indhold, fragment)
           .commit();
     }
 
@@ -125,7 +128,7 @@ public class BenytFragmenter extends Activity {
       if (v == knap1) {
         getFragmentManager().beginTransaction()
             .setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out, android.R.animator.fade_in, android.R.animator.fade_out)
-            .replace(android.R.id.content, new BenytFragment.MitFragment())
+            .replace(R.id.indhold, new BenytFragment.MitFragment())
             .addToBackStack(null)
             .commit();
         ;
@@ -136,7 +139,7 @@ public class BenytFragmenter extends Activity {
         // ... eller som et fragment
         getFragmentManager().beginTransaction()
             .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-            .replace(android.R.id.content, new TekstDialogFragment())
+            .replace(R.id.indhold, new TekstDialogFragment())
             .addToBackStack(null)
             .commit();
       }

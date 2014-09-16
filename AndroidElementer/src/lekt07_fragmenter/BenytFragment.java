@@ -24,13 +24,13 @@ public class BenytFragment extends Activity {
     super.onCreate(savedInstanceState);
     // Her kunne også pakkes et FrameLayout ud fra XML
     FrameLayout layout = new FrameLayout(this);
-    layout.setId(android.R.id.content); // i XML android:id="@+id/layout"
+    layout.setId(R.id.indhold); // i XML android:id="@+id/layout"
     setContentView(layout);
 
     if (savedInstanceState == null) {
       MitFragment fragment = new MitFragment();
       getFragmentManager().beginTransaction()
-          .add(android.R.id.content, fragment)  // i XML R.id.layout
+          .add(R.id.indhold, fragment)  // i XML R.id.layout
           .commit();
     }
 
