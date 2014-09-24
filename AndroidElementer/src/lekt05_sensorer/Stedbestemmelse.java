@@ -39,14 +39,6 @@ public class Stedbestemmelse extends Activity implements LocationListener {
     setContentView(scrollView);
     locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
 
-		/*
-    // Start denne aktivitet igen hvis vi nærmer os eller forlader Valby!
-		Intent intent = new Intent(this, Stedbestemmelse.class);
-		PendingIntent pi = PendingIntent.getActivity(this, 0, intent, 0);
-		locationManager.addProximityAlert(55.654074f, 12.493775f, 5000, 60*60*24*1000, pi);
-		 */
-
-
     textView.append("locationManager.getAllProviders() : " + locationManager.getAllProviders() + "\n\n");
     // Løb igennem alle udbyderne (typisk "gps", "network" og "passive")
     for (String udbyder : locationManager.getAllProviders()) {
@@ -56,6 +48,12 @@ public class Stedbestemmelse extends Activity implements LocationListener {
       textView.append(udbyder + " - tændt: " + locationManager.isProviderEnabled(udbyder) + "\n" + "præcision=" + lp.getAccuracy() + " " + "strømforbrug=" + lp.getPowerRequirement() + "\n" + "requiresSatellite=" + lp.requiresSatellite() + " requiresNetwork=" + lp.requiresNetwork() + "\n" + "sted=" + sted + "\n\n");
 
     }
+		/*
+    // Geofencing: Start denne aktivitet igen hvis vi nærmer os eller forlader Valby!
+		Intent intent = new Intent(this, Stedbestemmelse.class);
+		PendingIntent pi = PendingIntent.getActivity(this, 0, intent, 0);
+		locationManager.addProximityAlert(55.654074f, 12.493775f, 5000, 60*60*24*1000, pi);
+		 */
   }
 
   @Override

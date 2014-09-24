@@ -36,8 +36,8 @@ public class VisSensorer extends Activity implements SensorEventListener {
   @Override
   protected void onResume() {
     super.onResume();
-    //int hyppighed = SensorManager.SENSOR_DELAY_NORMAL;
-    int hyppighed = 250000000; // 4 gange i sekundet
+    int hyppighed = SensorManager.SENSOR_DELAY_NORMAL;
+    //int hyppighed = 250000000; // 4 gange i sekundet
 
 		/*
     Sensor orienteringsSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION);
