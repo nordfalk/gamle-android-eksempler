@@ -90,9 +90,7 @@ public class VisAlleAndroidDrawables extends Activity {
 
     public View getView(final int position, View view, ViewGroup parent) {
       final ListeelemViewholder listeelem;
-      if (genbrugElementer && view != null) {
-        listeelem = (ListeelemViewholder) view.getTag();
-      } else {
+      if (view == null || !genbrugElementer) {
         view = getLayoutInflater().inflate(R.layout.listeelement, null);
 
         // For at spare CPU-cykler cacher vi opslagene i findViewById(). Se
@@ -102,6 +100,8 @@ public class VisAlleAndroidDrawables extends Activity {
         listeelem.beskrivelse = (TextView) view.findViewById(R.id.listeelem_beskrivelse);
         listeelem.billede = (ImageView) view.findViewById(R.id.listeelem_billede);
         view.setTag(listeelem);
+      } else {
+        listeelem = (ListeelemViewholder) view.getTag();
       }
 
       final int resurseId = android.R.drawable.alert_dark_frame + position; // første resurse
