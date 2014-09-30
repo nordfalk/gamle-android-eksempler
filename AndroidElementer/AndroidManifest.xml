@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="dk.nordfalk.android.elementer"
-          android:versionCode="39"
-          android:versionName="2.01 7. sept 2014">
+          android:versionCode="41"
+          android:versionName="2.03 30. sept 2014">
 
     <!--
     denne app virker fra Android 2.1 (API 7) og frem
@@ -110,6 +110,7 @@
         <activity android:name="lekt03_diverse.AfspilLyd"/>
         <activity android:name="lekt03_diverse.AfspilVideo"/>
         <activity android:name="lekt03_diverse.BenytWebView2"/>
+        <activity android:name="lekt03_diverse.BenytLayoutInflater"/>
         <activity android:name="lekt03_diverse.BenytMenuer2"/>
         <activity android:name="lekt03_diverse.BenytDialogerOgToasts"/>
         <activity android:name="lekt03_diverse.TekstTilTale"/>
@@ -144,9 +145,11 @@
         <!-- android:configChanges gør at aktiviteten selv håndterer skærvendingen, dvs den bliver ikke mere genstartet -->
         <activity
                 android:name="lekt05_sensorer.VisSensorer"
-                android:configChanges="orientation"/>
+                android:screenOrientation="portrait"/>
         <activity android:name="lekt05_grafik.ProgrammatiskLayout2"/>
-        <!-- android:screenOrientation slår vending af skærmen fra på denne aktivitet -->
+        <!-- android:screenOrientation slår vending af skærmen fra på denne aktivitet
+                android:configChanges="orientation"/>
+        -->
         <activity
                 android:name="lekt05_sensorer.Kompas"
                 android:screenOrientation="portrait"/>

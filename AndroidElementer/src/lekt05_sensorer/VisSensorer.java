@@ -26,7 +26,6 @@ public class VisSensorer extends Activity implements SensorEventListener {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     textView = new TextView(this);
-    //textView.setTypeface(Typeface.MONOSPACE);
     ScrollView scrollView = new ScrollView(this);
     scrollView.addView(textView);
     setContentView(scrollView);
@@ -39,19 +38,11 @@ public class VisSensorer extends Activity implements SensorEventListener {
     int hyppighed = SensorManager.SENSOR_DELAY_NORMAL;
     //int hyppighed = 250000000; // 4 gange i sekundet
 
-		/*
-    Sensor orienteringsSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION);
-		if (orienteringsSensor != null) {
-		sensorManager.registerListener(this, orienteringsSensor, hyppighed);
-		} else {
-		textView.setText("Fejl. Din telefon har ikke en orienteringssensor");
-		}
-		/**/
     for (Sensor sensor : sensorManager.getSensorList(Sensor.TYPE_ALL)) {
       System.out.println("sensor=" + sensor);
       sensorManager.registerListener(this, sensor, hyppighed);
     }
-    /**/
+
     enLyd = MediaPlayer.create(this, R.raw.dyt);
   }
 

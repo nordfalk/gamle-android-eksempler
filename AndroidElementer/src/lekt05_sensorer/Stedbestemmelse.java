@@ -45,7 +45,10 @@ public class Stedbestemmelse extends Activity implements LocationListener {
       LocationProvider lp = locationManager.getProvider(udbyder);
       Location sted = locationManager.getLastKnownLocation(udbyder);
 
-      textView.append(udbyder + " - tændt: " + locationManager.isProviderEnabled(udbyder) + "\n" + "præcision=" + lp.getAccuracy() + " " + "strømforbrug=" + lp.getPowerRequirement() + "\n" + "requiresSatellite=" + lp.requiresSatellite() + " requiresNetwork=" + lp.requiresNetwork() + "\n" + "sted=" + sted + "\n\n");
+      textView.append(udbyder + " - tændt: " + locationManager.isProviderEnabled(udbyder)
+          + "\n præcision=" + lp.getAccuracy() + " strømforbrug=" + lp.getPowerRequirement()
+          + "\n kræver satellit=" + lp.requiresSatellite() + " kræver net=" + lp.requiresNetwork()
+          + "\n sted=" + sted + "\n\n");
 
     }
 		/*

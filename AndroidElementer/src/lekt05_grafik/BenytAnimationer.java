@@ -18,6 +18,7 @@ import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.ScrollView;
 import android.widget.TableLayout;
+import android.widget.Toast;
 
 import dk.nordfalk.android.elementer.R;
 
@@ -29,6 +30,8 @@ public class BenytAnimationer extends Activity implements OnClickListener {
   Button knap1, knap2, knap3, knap4, knap5, knap6;
   private int animIndeks;
   private Button knap7;
+  private View tk2k1;
+  private View tk1k1;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +51,10 @@ public class BenytAnimationer extends Activity implements OnClickListener {
     knap3.setText("loadAnimation(R.anim.egen_anim)\nInChildBottomAnimation");
     tl.addView(knap3);
 
+    View tk1 = getLayoutInflater().inflate(R.layout.tre_knapper, tl, false);
+    tk1k1 = tk1.findViewById(R.id.knap1);
+    tl.addView(tk1);
+
     knap4 = new Button(this);
     knap4.setText("Programmatiske animationer");
     tl.addView(knap4);
@@ -55,6 +62,13 @@ public class BenytAnimationer extends Activity implements OnClickListener {
     knap5 = new Button(this);
     knap5.setText("Animeret skift af aktivitet");
     tl.addView(knap5);
+
+    View tk2 = getLayoutInflater().inflate(R.layout.tre_knapper, tl, false);
+    tk2k1 = tk2.findViewById(R.id.knap1);
+    tl.addView(tk2);
+
+    tk1k1.setOnClickListener(this);
+    tk2k1.setOnClickListener(this);
 
     knap6 = new Button(this);
     knap6.setText("Eksempler på animationer");
@@ -82,7 +96,18 @@ public class BenytAnimationer extends Activity implements OnClickListener {
     setContentView(sv);
   }
 
+
+  public void knap1trykket(View hvadBlevDerKlikketPå) {
+
+  }
+
   public void onClick(View hvadBlevDerKlikketPå) {
+    if (hvadBlevDerKlikketPå == tk1k1) {
+      Toast.makeText(this, "tk1k1", Toast.LENGTH_LONG).show();
+    }
+    if (hvadBlevDerKlikketPå == tk2k1) {
+      Toast.makeText(this, "tk2k1", Toast.LENGTH_LONG).show();
+    }
 
     if (hvadBlevDerKlikketPå == knap1) {
       Animation animation = AnimationUtils.makeOutAnimation(this, true);
