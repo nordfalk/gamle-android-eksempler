@@ -18,7 +18,6 @@ import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.ScrollView;
 import android.widget.TableLayout;
-import android.widget.Toast;
 
 import dk.nordfalk.android.elementer.R;
 
@@ -30,8 +29,6 @@ public class BenytAnimationer extends Activity implements OnClickListener {
   Button knap1, knap2, knap3, knap4, knap5, knap6;
   private int animIndeks;
   private Button knap7;
-  private View tk2k1;
-  private View tk1k1;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -48,12 +45,8 @@ public class BenytAnimationer extends Activity implements OnClickListener {
     tl.addView(knap2);
 
     knap3 = new Button(this);
-    knap3.setText("loadAnimation(R.anim.egen_anim)\nInChildBottomAnimation");
+    knap3.setText("Hægte to animationer sammen der 'vender et kort'");
     tl.addView(knap3);
-
-    View tk1 = getLayoutInflater().inflate(R.layout.tre_knapper, tl, false);
-    tk1k1 = tk1.findViewById(R.id.knap1);
-    tl.addView(tk1);
 
     knap4 = new Button(this);
     knap4.setText("Programmatiske animationer");
@@ -62,13 +55,6 @@ public class BenytAnimationer extends Activity implements OnClickListener {
     knap5 = new Button(this);
     knap5.setText("Animeret skift af aktivitet");
     tl.addView(knap5);
-
-    View tk2 = getLayoutInflater().inflate(R.layout.tre_knapper, tl, false);
-    tk2k1 = tk2.findViewById(R.id.knap1);
-    tl.addView(tk2);
-
-    tk1k1.setOnClickListener(this);
-    tk2k1.setOnClickListener(this);
 
     knap6 = new Button(this);
     knap6.setText("Eksempler på animationer");
@@ -96,19 +82,7 @@ public class BenytAnimationer extends Activity implements OnClickListener {
     setContentView(sv);
   }
 
-
-  public void knap1trykket(View hvadBlevDerKlikketPå) {
-
-  }
-
   public void onClick(View hvadBlevDerKlikketPå) {
-    if (hvadBlevDerKlikketPå == tk1k1) {
-      Toast.makeText(this, "tk1k1", Toast.LENGTH_LONG).show();
-    }
-    if (hvadBlevDerKlikketPå == tk2k1) {
-      Toast.makeText(this, "tk2k1", Toast.LENGTH_LONG).show();
-    }
-
     if (hvadBlevDerKlikketPå == knap1) {
       Animation animation = AnimationUtils.makeOutAnimation(this, true);
       knap1.startAnimation(animation);
@@ -116,24 +90,26 @@ public class BenytAnimationer extends Activity implements OnClickListener {
       knap1.startAnimation(AnimationUtils.makeInAnimation(this, true));
       knap2.startAnimation(AnimationUtils.makeOutAnimation(this, false));
     } else if (hvadBlevDerKlikketPå == knap3) {
-      Animation a = AnimationUtils.loadAnimation(this, R.anim.egen_anim);
-      a.setAnimationListener(new AnimationListener() {
+      // Se også http://developer.android.com/training/animation/cardflip.html
+      Animation vende1 = AnimationUtils.loadAnimation(this, R.anim.vende1);
+      final Animation vende2 = AnimationUtils.loadAnimation(this, R.anim.vende2);
+      vende1.setAnimationListener(new AnimationListener() {
         @Override
         public void onAnimationStart(Animation animation) {
-
         }
 
         @Override
         public void onAnimationEnd(Animation animation) {
-          knap2.startAnimation(AnimationUtils.makeInChildBottomAnimation(BenytAnimationer.this));
+          knap1.setText("Her er bagsiden");
+          knap1.startAnimation(vende2);
         }
 
         @Override
         public void onAnimationRepeat(Animation animation) {
-
         }
       });
-      knap1.startAnimation(a);
+      knap1.setText("FORSIDE");
+      knap1.startAnimation(vende1);
     } else if (hvadBlevDerKlikketPå == knap4) {
       TranslateAnimation translationsanim = new TranslateAnimation(-100.0f, 0, 0, 0);
       translationsanim.setDuration(5000); // 5 sekunder
@@ -177,7 +153,8 @@ public class BenytAnimationer extends Activity implements OnClickListener {
     } else if (hvadBlevDerKlikketPå == knap6) {
 
       int[] animationer = {R.anim.egen_anim, R.anim.hyperspace_out,
-          R.anim.push_left_in, R.anim.push_left_out, R.anim.push_up_in, R.anim.push_up_out
+          R.anim.push_left_in, R.anim.push_left_out, R.anim.push_up_in, R.anim.push_up_out,
+          R.anim.vende1, R.anim.vende2,
       };
       int animResId = animationer[animIndeks++ % animationer.length];
       String navn = getResources().getResourceEntryName(animResId);
