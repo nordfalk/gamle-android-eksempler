@@ -51,10 +51,6 @@ public class BenytAnimationer extends Activity implements OnClickListener {
     knap3.setText("loadAnimation(R.anim.egen_anim)\nInChildBottomAnimation");
     tl.addView(knap3);
 
-    View tk1 = getLayoutInflater().inflate(R.layout.tre_knapper, tl, false);
-    tk1k1 = tk1.findViewById(R.id.knap1);
-    tl.addView(tk1);
-
     knap4 = new Button(this);
     knap4.setText("Programmatiske animationer");
     tl.addView(knap4);
@@ -62,13 +58,6 @@ public class BenytAnimationer extends Activity implements OnClickListener {
     knap5 = new Button(this);
     knap5.setText("Animeret skift af aktivitet");
     tl.addView(knap5);
-
-    View tk2 = getLayoutInflater().inflate(R.layout.tre_knapper, tl, false);
-    tk2k1 = tk2.findViewById(R.id.knap1);
-    tl.addView(tk2);
-
-    tk1k1.setOnClickListener(this);
-    tk2k1.setOnClickListener(this);
 
     knap6 = new Button(this);
     knap6.setText("Eksempler på animationer");
@@ -177,7 +166,8 @@ public class BenytAnimationer extends Activity implements OnClickListener {
     } else if (hvadBlevDerKlikketPå == knap6) {
 
       int[] animationer = {R.anim.egen_anim, R.anim.hyperspace_out,
-          R.anim.push_left_in, R.anim.push_left_out, R.anim.push_up_in, R.anim.push_up_out
+          R.anim.push_left_in, R.anim.push_left_out, R.anim.push_up_in, R.anim.push_up_out,
+          R.anim.vende1, R.anim.vende2,
       };
       int animResId = animationer[animIndeks++ % animationer.length];
       String navn = getResources().getResourceEntryName(animResId);
