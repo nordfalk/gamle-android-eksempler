@@ -28,6 +28,13 @@ public class TekstDialog_frag extends DialogFragment {
 
     TextView rod = new TextView(getActivity());
     rod.setText("Dette er TekstDialog_frag - tryk tilbage");
+
+
+    // Fik vi argumenter med? Så vis dem
+    if (getArguments()!=null) {
+      rod.setText(getArguments().getString("TEKST"));
+    }
+
     rod.setBackgroundColor(0xFF660000);
     rod.setPadding(20,20,20,20);
     return rod;
