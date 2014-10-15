@@ -20,11 +20,11 @@ import dk.nordfalk.android.elementer.R;
 @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
 public class Animation_frag extends Fragment {
   private Button knap1, knap2, knap3;
+  private View rod;
 
   @Override
   public View onCreateView(LayoutInflater i, ViewGroup container, Bundle savedInstanceState) {
-    View rod = i.inflate(R.layout.tre_knapper, container, false);
-    rod.findViewById(R.id.ikon).setVisibility(View.GONE);
+    rod = i.inflate(R.layout.tre_knapper, container, false);
     knap1 = (Button) rod.findViewById(R.id.knap1);
     knap1.setText("Animation");
     knap2 = (Button) rod.findViewById(R.id.knap2);
@@ -33,17 +33,21 @@ public class Animation_frag extends Fragment {
     knap3.setText("Sprængfuld af energi");
 
     knap1.setOnTouchListener(new View.OnTouchListener() {
+      public float knap1x0;
+
       @Override
-      public boolean onTouch(View arg0, MotionEvent arg1) {
-        if (arg1.getAction() == MotionEvent.ACTION_DOWN) {
-          knap1.animate().translationY(200);
-        } else if (arg1.getAction() == MotionEvent.ACTION_MOVE) {
-          // Flyt knappen
-          knap1.setX(arg1.getRawX());
-        } else if (arg1.getAction() == MotionEvent.ACTION_UP) {
+      public boolean onTouch(View v, MotionEvent me) {
+        if (me.getAction() == MotionEvent.ACTION_DOWN) {
+          knap1.animate().translationY(150).rotationX(135).alpha(0.5f);
+          knap1x0 = me.getRawX() + knap1.getX();
+        } else if (me.getAction() == MotionEvent.ACTION_MOVE) {
+          // Flyt knappen vandret så den følger trykpunktet
+          knap1.setX(me.getRawX()-knap1x0);
+        } else if (me.getAction() == MotionEvent.ACTION_UP) {
           knap1.animate().translationY(0).translationX(0)
               .setInterpolator(new OvershootInterpolator())
-              .setDuration(500);
+              .rotationX(0).alpha(1)
+              .setDuration(750);
         }
         return false;
       }
@@ -52,14 +56,14 @@ public class Animation_frag extends Fragment {
     // Kilde: LiveButton-eksempel på DevBytes kanalen på developer.android.com
     final DecelerateInterpolator sDecelerator = new DecelerateInterpolator();
     final OvershootInterpolator sOvershooter = new OvershootInterpolator(10f);
-    knap2.animate().setDuration(300);
+    knap2.animate().setDuration(200);
     knap2.setOnTouchListener(new View.OnTouchListener() {
       @Override
-      public boolean onTouch(View arg0, MotionEvent arg1) {
-        if (arg1.getAction() == MotionEvent.ACTION_DOWN) {
+      public boolean onTouch(View v, MotionEvent me) {
+        if (me.getAction() == MotionEvent.ACTION_DOWN) {
           knap2.animate().setInterpolator(sDecelerator).
               scaleX(.7f).scaleY(.7f);
-        } else if (arg1.getAction() == MotionEvent.ACTION_UP) {
+        } else if (me.getAction() == MotionEvent.ACTION_UP) {
           knap2.animate().setInterpolator(sOvershooter).
               scaleX(1f).scaleY(1f);
         }
@@ -69,10 +73,16 @@ public class Animation_frag extends Fragment {
 
     knap3.setOnTouchListener(new View.OnTouchListener() {
       @Override
-      public boolean onTouch(View arg0, MotionEvent arg1) {
-        if (arg1.getAction() == MotionEvent.ACTION_DOWN) {
+      public boolean onTouch(View v, MotionEvent me) {
+        if (me.getAction() == MotionEvent.ACTION_DOWN) {
           knap3.animate().setInterpolator(new AnimationInterpolator()).
-              scaleX(2f).scaleY(2f);
+              scaleX(1.5f).scaleY(1.5f).rotation(10);
+          rod.animate().setInterpolator(sDecelerator).
+              scaleX(.9f).scaleY(.9f).rotationX(10);
+        } else if (me.getAction() == MotionEvent.ACTION_UP) {
+          knap3.animate().scaleX(1).scaleY(1).rotation(0);
+          rod.animate().setInterpolator(sOvershooter).
+              scaleX(1f).scaleY(1f).rotationX(0);
         }
         return false;
       }
