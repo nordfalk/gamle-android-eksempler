@@ -6,8 +6,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.Window;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,28 +15,18 @@ import dk.nordfalk.android.elementer.R;
 @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
 public class BenytFragmenter extends Activity {
 
-  private TextView statustekst;
+  private TextView textView;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     requestWindowFeature(Window.FEATURE_ACTION_BAR);
-    statustekst = new TextView(this);
-    statustekst.setText("Dette er statusteksten");
-
-    FrameLayout fragmentcontainer = new FrameLayout(this);
-    fragmentcontainer.setId(R.id.indhold);
-
-    LinearLayout ll = new LinearLayout(this);
-    ll.setOrientation(LinearLayout.VERTICAL);
-    ll.addView(statustekst);
-    ll.addView(fragmentcontainer);
-    setContentView(ll);
+    setContentView(R.layout.lekt07_fragmenter);
 
     if (savedInstanceState == null) {
       StartFragment fragment = new StartFragment();
       getFragmentManager().beginTransaction()
-          .add(R.id.indhold, fragment)
+          .add(R.id.fragmentindhold, fragment)
           .commit();
     }
 

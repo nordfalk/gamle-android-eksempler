@@ -4,7 +4,6 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
-import android.widget.FrameLayout;
 
 import dk.nordfalk.android.elementer.R;
 
@@ -16,15 +15,12 @@ public class BenytFragment extends Activity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    // Her kunne også pakkes et FrameLayout ud fra XML
-    FrameLayout layout = new FrameLayout(this);
-    layout.setId(R.id.indhold); // i XML android:id="@+id/layout"
-    setContentView(layout);
+    setContentView(R.layout.lekt07_fragmenter);
 
     if (savedInstanceState == null) {
       MitFragment fragment = new MitFragment();
       getFragmentManager().beginTransaction()
-          .add(R.id.indhold, fragment)  // i XML R.id.layout
+          .add(R.id.fragmentindhold, fragment)  // i XML R.id.layout
           .commit();
     }
 

@@ -2,6 +2,7 @@
 <!-- Filnavn: res/layout/tre_knapper.xml -->
 <TableLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/indhold"
         android:background="#ff333399"
         android:padding="10dip"
         android:layout_gravity="center"

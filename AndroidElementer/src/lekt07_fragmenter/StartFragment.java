@@ -25,14 +25,13 @@ public class StartFragment extends Fragment implements View.OnClickListener {
   @Override
   public View onCreateView(LayoutInflater i, ViewGroup container, Bundle savedInstanceState) {
     View rod = i.inflate(R.layout.tre_knapper, container, false);
-
     rod.findViewById(R.id.ikon).setVisibility(View.GONE);
     knap1 = (Button) rod.findViewById(R.id.knap1);
     knap1.setText("MitFragment");
     knap2 = (Button) rod.findViewById(R.id.knap2);
-    knap2.setText("TekstDialogFragment som dialog");
+    knap2.setText("TekstDialogFragment\nsom dialog");
     knap3 = (Button) rod.findViewById(R.id.knap3);
-    knap3.setText("TekstDialogFragment som fragment");
+    knap3.setText("TekstDialogFragment\nsom fragment");
 
     knap1.setOnClickListener(this);
     knap2.setOnClickListener(this);
@@ -75,8 +74,8 @@ public class StartFragment extends Fragment implements View.OnClickListener {
 
     if (v == knap1) {
       getFragmentManager().beginTransaction()
-          .setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out, android.R.animator.fade_in, android.R.animator.fade_out)
-          .replace(R.id.indhold, new MitFragment())
+          .replace(R.id.fragmentindhold, new MitFragment())
+          .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
           .addToBackStack(null)
           .commit();
       ;
@@ -86,8 +85,8 @@ public class StartFragment extends Fragment implements View.OnClickListener {
     } else if (v == knap3) {
       // ... eller som et fragment
       getFragmentManager().beginTransaction()
-          .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-          .replace(R.id.indhold, new TekstDialogFragment())
+          .setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out, android.R.animator.fade_in, android.R.animator.fade_out)
+          .replace(R.id.fragmentindhold, new TekstDialogFragment())
           .addToBackStack(null)
           .commit();
     }
