@@ -20,20 +20,22 @@ import dk.nordfalk.android.elementer.R;
 @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
 public class Animation_frag extends Fragment {
   private Button knap1, knap2, knap3;
-  private View rod;
+  private ViewGroup rod;
+  public ViewGroup animerFraLayout;
 
   @Override
   public View onCreateView(LayoutInflater i, ViewGroup container, Bundle savedInstanceState) {
-    rod = i.inflate(R.layout.tre_knapper, container, false);
+    if (rod!=null) return rod;
+    rod = (ViewGroup) i.inflate(R.layout.tre_knapper, container, false);
     knap1 = (Button) rod.findViewById(R.id.knap1);
     knap1.setText("Animation");
     knap2 = (Button) rod.findViewById(R.id.knap2);
-    knap2.setText("Plastisk knap");
+    knap2.setText("Elastisk knap");
     knap3 = (Button) rod.findViewById(R.id.knap3);
     knap3.setText("Sprængfuld af energi");
 
     knap1.setOnTouchListener(new View.OnTouchListener() {
-      public float knap1x0;
+      float knap1x0;
 
       @Override
       public boolean onTouch(View v, MotionEvent me) {
@@ -80,7 +82,7 @@ public class Animation_frag extends Fragment {
           rod.animate().setInterpolator(sDecelerator).
               scaleX(.9f).scaleY(.9f).rotationX(10);
         } else if (me.getAction() == MotionEvent.ACTION_UP) {
-          knap3.animate().scaleX(1).scaleY(1).rotation(0);
+          knap3.animate().scaleX(1).scaleY(1).rotation(0).setInterpolator(sOvershooter);
           rod.animate().setInterpolator(sOvershooter).
               scaleX(1f).scaleY(1f).rotationX(0);
         }
