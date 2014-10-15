@@ -9,7 +9,7 @@ import dk.nordfalk.android.elementer.R;
 
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
-public class BenytFragment extends Activity {
+public class BenytMitFragment_akt extends Activity {
 
 
   @Override
@@ -18,7 +18,7 @@ public class BenytFragment extends Activity {
     setContentView(R.layout.lekt07_fragmenter);
 
     if (savedInstanceState == null) {
-      MitFragment fragment = new MitFragment();
+      MitFragment_frag fragment = new MitFragment_frag();
       getFragmentManager().beginTransaction()
           .add(R.id.fragmentindhold, fragment)  // i XML R.id.layout
           .commit();

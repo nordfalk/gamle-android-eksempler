@@ -14,7 +14,7 @@ import android.widget.TextView;
 * Created by j on 30-09-14.
 */
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-public class TekstDialogFragment extends DialogFragment {
+public class TekstDialog_frag extends DialogFragment {
 
   @Override
   public View onCreateView(LayoutInflater i, ViewGroup container, Bundle savedInstanceState) {
@@ -27,7 +27,7 @@ public class TekstDialogFragment extends DialogFragment {
     }
 
     TextView rod = new TextView(getActivity());
-    rod.setText("Dette er Fragment2 - tryk tilbage");
+    rod.setText("Dette er TekstDialog_frag - tryk tilbage");
     rod.setBackgroundColor(0xFF660000);
     rod.setPadding(20,20,20,20);
     return rod;

@@ -178,8 +178,8 @@
         <activity android:name="lekt06_asynkron.Asynkron3Korrekt"/>
         <activity android:name="lekt06_asynkron.Asynkron3KorrektStatic"/>
 
-        <activity android:name="lekt07_fragmenter.BenytFragment"/>
-        <activity android:name="lekt07_fragmenter.BenytFragmenter"/>
+        <activity android:name="lekt07_fragmenter.BenytMitFragment_akt"/>
+        <activity android:name="lekt07_fragmenter.BenytHovedmenu_akt"/>
 
 
         <activity android:name="lekt08_providers.VisOpkald"/>

@@ -36,6 +36,7 @@ public class Spillet_akt extends Activity implements View.OnClickListener {
 
     spilKnap = new Button(this);
     spilKnap.setText("Spil");
+    spilKnap.setCompoundDrawablesWithIntrinsicBounds(android.R.drawable.ic_media_play, 0, 0, 0);
     tl.addView(spilKnap);
 
     spilKnap.setOnClickListener(this);

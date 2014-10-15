@@ -30,7 +30,7 @@ public class BenytLayoutInflater extends Activity implements OnClickListener {
 
     textView = new TextView(this);
     textView.setText("Man kan tilføje views til et eksisterende layout, både programmatisk og deklarativt." +
-        "\nBemærk at der er en fejl så tryk på den midterste overskrift herunder ikke fungerer");
+        "\nBemærk at der er en fejl: Tryk på den midterste overskrift herunder fungerer ikke");
     indhold.addView(textView); // Tilføj view programmatisk til 'indhold'
 
     getLayoutInflater().inflate(R.layout.listeelement, indhold, true); // tilføj deklarativt til 'indhold'

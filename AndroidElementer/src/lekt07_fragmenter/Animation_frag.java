@@ -2,7 +2,6 @@ package lekt07_fragmenter;
 
 import android.annotation.TargetApi;
 import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -17,30 +16,43 @@ import dk.nordfalk.android.elementer.R;
 
 /**
 * Created by j on 30-09-14.
-*/ // Bemærk, fragmenter i indre klasser SKAL erklæres static
+*/
 @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
-public class StartFragment extends Fragment implements View.OnClickListener {
-  Button knap1, knap2, knap3;
+public class Animation_frag extends Fragment {
+  private Button knap1, knap2, knap3;
 
   @Override
   public View onCreateView(LayoutInflater i, ViewGroup container, Bundle savedInstanceState) {
     View rod = i.inflate(R.layout.tre_knapper, container, false);
     rod.findViewById(R.id.ikon).setVisibility(View.GONE);
     knap1 = (Button) rod.findViewById(R.id.knap1);
-    knap1.setText("MitFragment");
+    knap1.setText("Animation");
     knap2 = (Button) rod.findViewById(R.id.knap2);
-    knap2.setText("TekstDialogFragment\nsom dialog");
+    knap2.setText("Plastisk knap");
     knap3 = (Button) rod.findViewById(R.id.knap3);
-    knap3.setText("TekstDialogFragment\nsom fragment");
+    knap3.setText("Sprængfuld af energi");
 
-    knap1.setOnClickListener(this);
-    knap2.setOnClickListener(this);
-    knap3.setOnClickListener(this);
+    knap1.setOnTouchListener(new View.OnTouchListener() {
+      @Override
+      public boolean onTouch(View arg0, MotionEvent arg1) {
+        if (arg1.getAction() == MotionEvent.ACTION_DOWN) {
+          knap1.animate().translationY(200);
+        } else if (arg1.getAction() == MotionEvent.ACTION_MOVE) {
+          // Flyt knappen
+          knap1.setX(arg1.getRawX());
+        } else if (arg1.getAction() == MotionEvent.ACTION_UP) {
+          knap1.animate().translationY(0).translationX(0)
+              .setInterpolator(new OvershootInterpolator())
+              .setDuration(500);
+        }
+        return false;
+      }
+    });
 
     // Kilde: LiveButton-eksempel på DevBytes kanalen på developer.android.com
     final DecelerateInterpolator sDecelerator = new DecelerateInterpolator();
     final OvershootInterpolator sOvershooter = new OvershootInterpolator(10f);
-    //knap2.animate().setDuration(2000);
+    knap2.animate().setDuration(300);
     knap2.setOnTouchListener(new View.OnTouchListener() {
       @Override
       public boolean onTouch(View arg0, MotionEvent arg1) {
@@ -54,11 +66,12 @@ public class StartFragment extends Fragment implements View.OnClickListener {
         return false;
       }
     });
+
     knap3.setOnTouchListener(new View.OnTouchListener() {
       @Override
       public boolean onTouch(View arg0, MotionEvent arg1) {
         if (arg1.getAction() == MotionEvent.ACTION_DOWN) {
-          knap3.animate().setInterpolator(new MinInterpolator()).
+          knap3.animate().setInterpolator(new AnimationInterpolator()).
               scaleX(2f).scaleY(2f);
         }
         return false;
@@ -66,30 +79,5 @@ public class StartFragment extends Fragment implements View.OnClickListener {
     });
 
     return rod;
-  }
-
-
-  public void onClick(View v) {
-    System.out.println("Der blev trykket på knap " + v.getContentDescription());
-
-    if (v == knap1) {
-      getFragmentManager().beginTransaction()
-          .replace(R.id.fragmentindhold, new MitFragment())
-          .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-          .addToBackStack(null)
-          .commit();
-      ;
-    } else if (v == knap2) {
-      // DialogFragment har mulighed for at vises som en dialog
-      new TekstDialogFragment().show(getFragmentManager(), "dialog");
-    } else if (v == knap3) {
-      // ... eller som et fragment
-      getFragmentManager().beginTransaction()
-          .setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out, android.R.animator.fade_in, android.R.animator.fade_out)
-          .replace(R.id.fragmentindhold, new TekstDialogFragment())
-          .addToBackStack(null)
-          .commit();
-    }
-
   }
 }

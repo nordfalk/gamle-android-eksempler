@@ -5,7 +5,7 @@ import android.view.animation.Interpolator;
 /**
  * Created by j on 30-09-14.
  */
-class MinInterpolator implements Interpolator {
+class AnimationInterpolator implements Interpolator {
   private final float mTension = 10;
 
   /**

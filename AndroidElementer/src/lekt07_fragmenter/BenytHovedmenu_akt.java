@@ -13,7 +13,7 @@ import dk.nordfalk.android.elementer.R;
 
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
-public class BenytFragmenter extends Activity {
+public class BenytHovedmenu_akt extends Activity {
 
   private TextView textView;
 
@@ -24,7 +24,7 @@ public class BenytFragmenter extends Activity {
     setContentView(R.layout.lekt07_fragmenter);
 
     if (savedInstanceState == null) {
-      StartFragment fragment = new StartFragment();
+      Hovedmenu_frag fragment = new Hovedmenu_frag();
       getFragmentManager().beginTransaction()
           .add(R.id.fragmentindhold, fragment)
           .commit();
