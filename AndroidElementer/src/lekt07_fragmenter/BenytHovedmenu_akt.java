@@ -39,7 +39,9 @@ public class BenytHovedmenu_akt extends Activity {
   public boolean onOptionsItemSelected(MenuItem item) {
     if (item.getItemId() == android.R.id.home) {
       // brugeren vil navigere op i hierakiet - afslut aktiviteten
-      Toast.makeText(this, "OP blev trykket, afslutter", Toast.LENGTH_LONG).show();
+      Toast.makeText(this, "OP blev trykket, afslutter "
+          +getFragmentManager().getBackStackEntryCount()
+          +" niveauer nede i hierakiet", Toast.LENGTH_SHORT).show();
       finish();
       return true;
     }

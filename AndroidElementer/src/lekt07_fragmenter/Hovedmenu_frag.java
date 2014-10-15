@@ -42,7 +42,6 @@ public class Hovedmenu_frag extends Fragment implements View.OnClickListener {
 
 
   public void onClick(View v) {
-    System.out.println("Der blev trykket på knap " + v.getContentDescription());
 
     if (v == knap1) {
       getFragmentManager().beginTransaction()
