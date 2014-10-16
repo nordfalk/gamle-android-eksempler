@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import dk.nordfalk.android.elementer.R;
@@ -37,8 +38,11 @@ public class VisKontakterIListView extends Activity implements OnItemClickListen
         // ... skal afbildes over i disse views i res/layout/listeelement.xml
         new int[]{R.id.listeelem_overskrift, R.id.listeelem_beskrivelse}
     );
+    TextView textView = new TextView(this);
+    textView.setText("Der er "+cursor.getCount()+" kontakter på telefonen.");
 
     ListView listView = new ListView(this);
+    listView.addHeaderView(textView);
     listView.setAdapter(adapter);
     listView.setOnItemClickListener(this);
 

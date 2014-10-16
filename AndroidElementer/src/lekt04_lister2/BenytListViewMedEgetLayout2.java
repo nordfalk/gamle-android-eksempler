@@ -27,13 +27,13 @@ public class BenytListViewMedEgetLayout2 extends Activity implements OnItemClick
       public View getView(int position, View cachedView, ViewGroup parent) {
         View view = super.getView(position, cachedView, parent);
 
-        TextView listeelem_beskrivelse = (TextView) view.findViewById(R.id.listeelem_beskrivelse);
-        listeelem_beskrivelse.setText("Land nummer " + position);
-        ImageView listeelem_billede = (ImageView) view.findViewById(R.id.listeelem_billede);
+        TextView beskrivelse = (TextView) view.findViewById(R.id.listeelem_beskrivelse);
+        beskrivelse.setText("Land nummer " + position);
+        ImageView billede = (ImageView) view.findViewById(R.id.listeelem_billede);
         if (position % 3 == 2) {
-          listeelem_billede.setImageResource(android.R.drawable.sym_action_call);
+          billede.setImageResource(android.R.drawable.sym_action_call);
         } else {
-          listeelem_billede.setImageResource(android.R.drawable.sym_action_email);
+          billede.setImageResource(android.R.drawable.sym_action_email);
         }
 
         return view;

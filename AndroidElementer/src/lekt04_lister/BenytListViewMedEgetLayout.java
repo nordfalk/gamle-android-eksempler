@@ -22,11 +22,11 @@ public class BenytListViewMedEgetLayout extends Activity implements OnItemClickL
         "Nepal", "Indien", "Kina", "Japan", "Thailand"};
     ArrayAdapter adapter = new ArrayAdapter(this, R.layout.listeelement, R.id.listeelem_overskrift, lande);
 
-    ListView liste = new ListView(this);
-    liste.setOnItemClickListener(this);
-    liste.setAdapter(adapter);
+    ListView listView = new ListView(this);
+    listView.setOnItemClickListener(this);
+    listView.setAdapter(adapter);
 
-    setContentView(liste);
+    setContentView(listView);
   }
 
   public void onItemClick(AdapterView<?> liste, View v, int position, long id) {

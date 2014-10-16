@@ -4,13 +4,16 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
+import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import dk.nordfalk.android.elementer.R;
 
-public class BenytListviewMedOverskrifter extends Activity {
+public class BenytListviewMedOverskrifter extends Activity implements AdapterView.OnItemClickListener {
 
   String[] landeOgOverskrifter = {
       "0En overskrift",
@@ -29,9 +32,13 @@ public class BenytListviewMedOverskrifter extends Activity {
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     ListView listView = new ListView(this);
+    // Det er også muligt at tilføje views som top- og bundelementer
+    listView.addHeaderView(new RatingBar(this));
+    listView.addHeaderView(new RatingBar(this));
+    listView.addFooterView(getLayoutInflater().inflate(R.layout.tre_knapper, null));
     listView.setAdapter(new MinAdapterMedOverskrifter());
     listView.setDivider(null);
-
+    listView.setOnItemClickListener(this);
     setContentView(listView);
   }
 
@@ -91,8 +98,10 @@ public class BenytListviewMedOverskrifter extends Activity {
         TextView tv = (TextView) view.findViewById(android.R.id.text1);
         tv.setText(landEllerOverskrift);
       } else {
-        TextView tv = (TextView) view.findViewById(R.id.listeelem_overskrift);
-        tv.setText(landEllerOverskrift);
+        TextView tvo = (TextView) view.findViewById(R.id.listeelem_overskrift);
+        tvo.setText(landEllerOverskrift);
+        TextView beskrivelse = (TextView) view.findViewById(R.id.listeelem_beskrivelse);
+        beskrivelse.setText("Position nummer " + position);
       }
 
       return view;
@@ -104,4 +113,8 @@ public class BenytListviewMedOverskrifter extends Activity {
     }
   }
 
+
+  public void onItemClick(AdapterView<?> l, View v, int position, long id) {
+    Toast.makeText(this, "Klik på " + position, Toast.LENGTH_SHORT).show();
+  }
 }
