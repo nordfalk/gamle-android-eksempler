@@ -55,13 +55,12 @@ public class BenytDialoger_frag extends Fragment implements View.OnClickListener
       // Send argumenter med, som påvirker udseendet
       Bundle args = new Bundle();
       args.putString("TEKST", "Denne tekst kommer fra BenytDialoger_frag, " +
-          "der har overført den som et argument til TekstDialog_frag.\n\n" +
-          "addToBackStack() blev ikke kaldt, så begge fragmenter lukkes " +
-          "og du kommer til Hovedmenu_frag når du går tilbage.");
+          "der har overført den som et argument til TekstDialog_frag.");
       TekstDialog_frag tekstDialogFrag = new TekstDialog_frag();
       tekstDialogFrag.setArguments(args);
       getFragmentManager().beginTransaction()
           .replace(R.id.fragmentindhold, tekstDialogFrag)
+          .addToBackStack(null)
           .commit();
     }
   }
