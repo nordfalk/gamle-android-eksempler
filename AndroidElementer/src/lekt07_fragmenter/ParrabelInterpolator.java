@@ -5,7 +5,7 @@ import android.view.animation.Interpolator;
 /**
  * Created by j on 30-09-14.
  */
-class AnimationInterpolator implements Interpolator {
+class ParrabelInterpolator implements Interpolator {
   private final float mTension = 10;
 
   /**
@@ -21,10 +21,8 @@ class AnimationInterpolator implements Interpolator {
    *         interpolators that undershoot their targets.
    */
   public float getInterpolation(float t) {
-    // _o(t) = t * t * ((tension + 1) * t + tension)
-    // o(t) = _o(t - 1) + 1
-    //t -= 1.0f;
-    //return t * t * ((mTension + 1) * t + mTension) + 1.0f;
+    // bemærk, for t=1 skullle vi egentlig ende på 1,
+    // så det her er ikke nogen helt velfungerende interpolator, da den ender på 0!
     return t * (1-t) * mTension;
   }
 }

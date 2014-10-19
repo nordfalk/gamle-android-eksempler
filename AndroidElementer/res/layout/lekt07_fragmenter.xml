@@ -1,27 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="#ff400000">
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="#ff400000">
 
   <TextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="Tekst, der ikke er en del af nogle fragmenter.\nNedenfor en container for fragmenter"
-      />
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Tekst, der ikke er en del af nogle fragmenter.\nNedenfor en container for fragmenter" />
 
   <FrameLayout
-      android:layout_width="match_parent"
-      android:layout_height="0dp"
-      android:layout_weight="1"
-      android:id="@+id/fragmentindhold"/>
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:id="@+id/fragmentindhold" />
 
   <TextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="Her er en bundtekst, f.eks en status"
-      />
-
-
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Her er en bundtekst, f.eks en status" />
 </LinearLayout>

@@ -26,7 +26,7 @@ public class BenytHovedmenu_akt extends Activity {
     if (savedInstanceState == null) {
       Hovedmenu_frag fragment = new Hovedmenu_frag();
       getFragmentManager().beginTransaction()
-          .add(R.id.fragmentindhold, fragment)
+          .add(R.id.fragmentindhold, fragment)  // tom container i layout
           .commit();
     }
 

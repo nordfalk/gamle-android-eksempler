@@ -30,7 +30,7 @@ public class BenytDialoger_frag extends Fragment implements View.OnClickListener
     knap2.setText("TekstDialog_frag\nsom fragment");
 
     knap3 = (Button) rod.findViewById(R.id.knap3);
-    knap3.setText("TekstDialog_frag\nsom fragment\nmed argument og uden addToBackStack()");
+    knap3.setText("TekstDialog_frag\nsom fragment\nmed argument");
 
     knap1.setOnClickListener(this);
     knap2.setOnClickListener(this);
@@ -52,6 +52,7 @@ public class BenytDialoger_frag extends Fragment implements View.OnClickListener
           .addToBackStack(null)
           .commit();
     } else if (v == knap3) {
+
       // Send argumenter med, som påvirker udseendet
       Bundle args = new Bundle();
       args.putString("TEKST", "Denne tekst kommer fra BenytDialoger_frag, " +

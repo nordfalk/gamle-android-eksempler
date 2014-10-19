@@ -11,7 +11,6 @@ import dk.nordfalk.android.elementer.R;
 @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
 public class BenytMitFragment_akt extends Activity {
 
-
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -20,11 +19,8 @@ public class BenytMitFragment_akt extends Activity {
     if (savedInstanceState == null) {
       MitFragment_frag fragment = new MitFragment_frag();
       getFragmentManager().beginTransaction()
-          .add(R.id.fragmentindhold, fragment)  // i XML R.id.layout
+          .add(R.id.fragmentindhold, fragment)  // tom container i layout
           .commit();
     }
-
   }
-
-
 }

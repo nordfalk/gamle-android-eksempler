@@ -67,6 +67,40 @@ public class Hovedmenu_frag extends Fragment implements View.OnClickListener {
       if (Build.VERSION.SDK_INT>=19) {
         // Brug Scene animation
         animationFrag.animerFraLayout = rod;
+        /*
+        Scene scene = new Scene(rod, vx);
+69	        AutoTransition tr = new AutoTransition();
+70	        tr.addListener(new Transition.TransitionListener() {
+71	          @Override
+72	          public void onTransitionStart(Transition transition) {
+73	          }
+74
+75	          @Override
+76	          public void onTransitionEnd(Transition transition) {
+77	            getFragmentManager().beginTransaction()
+78	                .replace(R.id.fragmentindhold, af)
+79	                .addToBackStack(null)
+80	                .commit();
+81	          }
+82
+83	          @Override
+84	          public void onTransitionCancel(Transition transition) {
+85
+86	          }
+87
+88	          @Override
+89	          public void onTransitionPause(Transition transition) {
+90
+91	          }
+92
+93	          @Override
+94	          public void onTransitionResume(Transition transition) {
+95
+96	          }
+97	        });
+98	        TransitionManager.go(scene, tr);
+         */
+
       } else {
         // Brug almindelig animation
         t.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
