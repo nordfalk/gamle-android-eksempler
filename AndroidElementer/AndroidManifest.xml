@@ -186,6 +186,14 @@
         <activity android:name="lekt08_providers.VisKontakter"/>
         <activity android:name="lekt08_providers.VisKontakterIListView"/>
 
+        <!-- provider til at modtage og sende filer. Bruges til:
+              - at modtage billeddata fra kamera-intents
+              - at sende data med et intent via f.eks gmail
+        -->
+        <provider android:name="lekt08_providers.KamerabilledeProvider"
+            android:authorities="dk.nordfalk.android.elementer.KamerabilledeProvider"
+            android:exported="true" />
+        <activity android:name="lekt08_providers.BenytIntentsMedProvider"/>
 
         <activity android:name="lekt09_recievers.OpdagAppInstallation"/>
         <activity android:name="lekt09_recievers.ModtagSMSer"/>
