@@ -32,6 +32,7 @@ public class Animation_frag extends Fragment {
     rod = (ViewGroup) i.inflate(R.layout.tre_knapper, container, false);
     ikon = (ImageView) rod.findViewById(R.id.ikon);
     // animer layoutændringer, dvs når ikon forsvinder eller bliver synligt igen:
+    // Kunne også havde sat det deklarativt med android:animateLayoutChanges="true"
     rod.setLayoutTransition(new LayoutTransition());
     knap1 = (Button) rod.findViewById(R.id.knap1);
     knap1.setText("Animation");

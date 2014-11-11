@@ -10,8 +10,13 @@ public class Programdata implements Serializable {
   public int alder = 0;
   public String navn = "(ukendt)";
   public ArrayList<String> noter = new ArrayList<String>();
+  public transient ArrayList<Runnable> observatører = new ArrayList<Runnable>();
 
   public String toString() {
     return navn + " på " + alder + " år med noter: " + noter;
+  }
+
+  public void notifyObservatører() {
+    for (Runnable r : observatører) r.run();
   }
 }

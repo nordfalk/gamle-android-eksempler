@@ -60,7 +60,7 @@ public class BenytIntentsMedProvider extends Activity implements OnClickListener
         // Vi vil have billedet gemt i vores content provider:
         File fil = new File(Environment.getExternalStorageDirectory(),"billede.jpg");
         //i.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(fil));
-        i.putExtra(MediaStore.EXTRA_OUTPUT, KamerabilledeProvider.URI);
+        i.putExtra(MediaStore.EXTRA_OUTPUT, MinProvider.URI);
         startActivityForResult(i, 42);
 
       } else {
@@ -70,7 +70,7 @@ public class BenytIntentsMedProvider extends Activity implements OnClickListener
         i.putExtra(Intent.EXTRA_CC, new String[]{"jacob.nordfalk@gmail.com"});
         i.putExtra(Intent.EXTRA_SUBJECT, "Et billede fra AndroidElementer");
         i.putExtra(Intent.EXTRA_TEXT, "Her er et billede");
-        i.putExtra(Intent.EXTRA_STREAM, KamerabilledeProvider.URI);
+        i.putExtra(Intent.EXTRA_STREAM, MinProvider.URI);
 
         startActivity(Intent.createChooser(i, "Send e-post..."));
       }
@@ -85,7 +85,7 @@ public class BenytIntentsMedProvider extends Activity implements OnClickListener
 
     if (resultCode == Activity.RESULT_OK) {
       ImageView iv = new ImageView(this);
-      iv.setImageURI(KamerabilledeProvider.URI);
+      iv.setImageURI(MinProvider.URI);
       resultatHolder.addView(iv);
       iv = new ImageView(this);
       iv.setImageResource(android.R.drawable.btn_star);

@@ -36,13 +36,17 @@ import lekt06_youtube.FilCache;
 public class MinApp extends Application {
   // Globale data (kunne godt være gemt i en klassevariabel andetsteds)
   public static SharedPreferences prefs;
-  public static Programdata data;
+  private static Programdata data;
   public static MinApp instans;
 
   /**
    * Håndtag til forgrundstråden
    */
   public static Handler forgrundstråd = new Handler();
+
+  public static Programdata getData() {
+    return data;
+  }
 
   @Override
   public void onCreate() {
@@ -63,6 +67,12 @@ public class MinApp extends Application {
       System.out.println("programdata oprettet fra ny: " + ex);
     }
 
+    data.observatører.add(new Runnable() {
+      @Override
+      public void run() {
+        MinApp.gemData();
+      }
+    });
 
     // Initialisering af hjælpeklasser, f.eks. mappen som en cache af filer
     // hentet over netværket behøver, er en fin ide at lægge her, for ellers

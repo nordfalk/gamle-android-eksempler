@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="dk.nordfalk.android.elementer"
           android:versionCode="41"
-          android:versionName="2.04 19. okt 2014 - fragmenter">
+          android:versionName="2.05 11. nov 2014 - arkitektur">
 
     <!--
     denne app virker fra Android 2.1 (API 7) og frem
@@ -120,6 +120,7 @@
         <activity android:name="lekt03_net.ByvejrAktivitet"/>
 
         <activity android:name="lekt04_arkitektur.NoteAktivitet"/>
+        <activity android:name="lekt04_arkitektur.NoteAktivitet2"/>
 
         <activity android:name="lekt04_lister.BenytListView"/>
         <activity android:name="lekt04_lister.BenytListActivity"/>
@@ -190,10 +191,10 @@
               - at modtage billeddata fra kamera-intents
               - at sende data med et intent via f.eks gmail
         -->
-        <provider android:name="lekt08_providers.KamerabilledeProvider"
-            android:authorities="dk.nordfalk.android.elementer.KamerabilledeProvider"
+        <provider android:name="lekt08_providers.MinProvider"
+            android:authorities="dk.nordfalk.android.elementer.MinProvider"
             android:exported="true" />
-        <activity android:name="lekt08_providers.BenytIntentsMedProvider"/>
+        <activity android:name="lekt08_providers.BenytIntentsMedProvider" android:screenOrientation="portrait"/>
 
         <activity android:name="lekt09_recievers.OpdagAppInstallation"/>
         <activity android:name="lekt09_recievers.ModtagSMSer"/>

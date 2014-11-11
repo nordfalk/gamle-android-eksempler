@@ -27,7 +27,7 @@ import android.widget.TextView;
  * det første når en app (gen)startes
  * @author Jacob Nordfalk
  */
-public class NoteAktivitet extends Activity implements OnClickListener {
+public class NoteAktivitet2 extends Activity implements Runnable, OnClickListener {
 
   EditText editText_postnr;
   private TextView alleNoterTv;
@@ -59,19 +59,26 @@ public class NoteAktivitet extends Activity implements OnClickListener {
     scrollView.addView(linearLayout);
     setContentView(scrollView);
 
-    visNoter();
+    MinApp.getData().observatører.add(this);
+    run();
+  }
+
+  @Override
+  protected void onDestroy() {
+    super.onDestroy();
+    MinApp.getData().observatører.remove(this);
   }
 
   @Override
   public void onClick(View v) {
     String note = editText_postnr.getText().toString();
-    MinApp.getData().noter.add(note);
-    MinApp.gemData();
     editText_postnr.setText("");
-    visNoter(); // max 1 time gamle
+    MinApp.getData().noter.add(note);
+    MinApp.getData().notifyObservatører(); // kalder run() på os (og evt andre observatører), og MinApp.gemData();
   }
 
-  private void visNoter() {
+  @Override
+  public void run() {
     String notetekst = MinApp.getData().noter.toString().replaceAll(", ", "\n");
     alleNoterTv.setText( "Noter:\n"+notetekst );
   }
