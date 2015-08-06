@@ -65,7 +65,7 @@ public class VisKontakterMedBillede extends Activity {
     Set<String> ks = kontakter.keySet();
 
     ArrayAdapter adapter = new ArrayAdapter<String>(this,
-        R.layout.listeelement, R.id.listeelem_overskrift, numre) {
+        R.layout.lekt04_listeelement, R.id.listeelem_overskrift, numre) {
       @Override
       public View getView(int position, View convertView, ViewGroup parent) {
         View view = super.getView(position, convertView, parent);

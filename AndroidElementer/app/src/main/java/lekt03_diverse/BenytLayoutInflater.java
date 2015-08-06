@@ -33,20 +33,20 @@ public class BenytLayoutInflater extends Activity implements OnClickListener {
         "\nBemærk at der er en fejl: Tryk på den midterste overskrift herunder fungerer ikke");
     indhold.addView(textView); // Tilføj view programmatisk til 'indhold'
 
-    getLayoutInflater().inflate(R.layout.listeelement, indhold, true); // tilføj deklarativt til 'indhold'
+    getLayoutInflater().inflate(R.layout.lekt04_listeelement, indhold, true); // tilføj deklarativt til 'indhold'
     findViewById(R.id.listeelem_billede).setOnClickListener(this);
     findViewById(R.id.listeelem_overskrift).setOnClickListener(this);
     findViewById(R.id.listeelem_beskrivelse).setOnClickListener(this);
 
     // Hvis det samme layout 'blæses op' flere gange vil der være flere views med det samme id!
     // I så tilfælde vil findViewById() give det FØRSTE view den kan finde med det pågældende id.
-    getLayoutInflater().inflate(R.layout.listeelement, indhold, true); // FORKERT!
+    getLayoutInflater().inflate(R.layout.lekt04_listeelement, indhold, true); // FORKERT!
     findViewById(R.id.listeelem_billede).setOnClickListener(this);     // FORKERT!
     findViewById(R.id.listeelem_overskrift).setOnClickListener(this);  // FORKERT!
     findViewById(R.id.listeelem_beskrivelse).setOnClickListener(this); // FORKERT!
 
     // Løsningen er at vente med at fæstne viesne til layoutet til EFTER kald til findViewById()
-    View rod = getLayoutInflater().inflate(R.layout.listeelement, indhold, false); // false=fæsn ikke
+    View rod = getLayoutInflater().inflate(R.layout.lekt04_listeelement, indhold, false); // false=fæsn ikke
     rod.findViewById(R.id.listeelem_billede).setOnClickListener(this);    // rigtigt
     rod.findViewById(R.id.listeelem_overskrift).setOnClickListener(this); // rigtigt
     rod.findViewById(R.id.listeelem_beskrivelse).setOnClickListener(this);// rigtigt

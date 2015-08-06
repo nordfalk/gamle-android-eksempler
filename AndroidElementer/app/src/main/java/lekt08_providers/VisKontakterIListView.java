@@ -32,10 +32,10 @@ public class VisKontakterIListView extends Activity implements OnItemClickListen
         Contacts.IN_VISIBLE_GROUP + " = '1'", null, Contacts.DISPLAY_NAME + " COLLATE LOCALIZED ASC");
     startManagingCursor(cursor); // Lad cursoren følge aktivitetens livscyklus
 
-    adapter = new SimpleCursorAdapter(this, R.layout.listeelement, cursor,
+    adapter = new SimpleCursorAdapter(this, R.layout.lekt04_listeelement, cursor,
         // Disse kolonner i cursoren...
         new String[]{Contacts.DISPLAY_NAME, Email.DATA},
-        // ... skal afbildes over i disse views i res/layout/listeelement.xml
+        // ... skal afbildes over i disse views i res/layout/lekt04_listeelementelement.xml
         new int[]{R.id.listeelem_overskrift, R.id.listeelem_beskrivelse}
     );
     TextView textView = new TextView(this);

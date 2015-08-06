@@ -91,7 +91,7 @@ public class VisAlleAndroidDrawables extends Activity {
     public View getView(final int position, View view, ViewGroup parent) {
       final ListeelemViewholder listeelem;
       if (view == null || !genbrugElementer) {
-        view = getLayoutInflater().inflate(R.layout.listeelement, null);
+        view = getLayoutInflater().inflate(R.layout.lekt04_listeelement, null);
 
         // For at spare CPU-cykler cacher vi opslagene i findViewById(). Se
         // http://developer.android.com/training/improving-layouts/smooth-scrolling.html

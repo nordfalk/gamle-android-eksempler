@@ -33,7 +33,7 @@ public class BenytMenuer2 extends Activity {
     super.onCreateOptionsMenu(menu); // tilføj systemets standardmenuer
     textView.append("\nonCreateOptionsMenu " + menu);
     // oftes vil man lægge menupunkterne ud i en XML-fil og pakke den ud således
-    getMenuInflater().inflate(R.menu.benytmenuer2, menu);
+    getMenuInflater().inflate(R.menu.lekt03_benytmenuer2, menu);
     return true;
   }
 

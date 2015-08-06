@@ -10,6 +10,6 @@ public class Indstillinger_akt extends PreferenceActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		addPreferencesFromResource(R.xml.indstillinger);
+		addPreferencesFromResource(R.xml.lekt02_indstillinger);
 	}
 }

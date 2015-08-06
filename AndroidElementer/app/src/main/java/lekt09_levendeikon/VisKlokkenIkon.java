@@ -58,7 +58,7 @@ public class VisKlokkenIkon extends AppWidgetProvider {
    */
   private static void opdaterIkoner(Context ctx, AppWidgetManager appWidgetManager, final int[] appWidgetIds) {
 
-    RemoteViews remoteViews = new RemoteViews(ctx.getPackageName(), R.layout.levendeikon_visklokken);
+    RemoteViews remoteViews = new RemoteViews(ctx.getPackageName(), R.layout.lekt09_levendeikon_visklokken);
 
     remoteViews.setTextViewText(R.id.etTextView, "Klokken er:\n" + new Date());
     // Vis en tilfældig farve på TextViewet

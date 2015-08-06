@@ -84,7 +84,7 @@ public class BenytListviewMedOverskrifter extends Activity implements AdapterVie
         } else if (typen == 1) {
           view = getLayoutInflater().inflate(android.R.layout.simple_list_item_1, null);
         } else {
-          view = getLayoutInflater().inflate(R.layout.listeelement, null);
+          view = getLayoutInflater().inflate(R.layout.lekt04_listeelement, null);
         }
       }
 

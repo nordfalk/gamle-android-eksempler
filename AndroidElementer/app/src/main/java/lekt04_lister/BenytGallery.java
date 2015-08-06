@@ -25,7 +25,7 @@ public class BenytGallery extends Activity implements OnItemClickListener {
     gallery.setOnItemClickListener(this);
     gallery.setSpacing(25); // 25 punkter
 
-    gallery.setAdapter(new ArrayAdapter(this, R.layout.listeelement, R.id.listeelem_overskrift, lande));
+    gallery.setAdapter(new ArrayAdapter(this, R.layout.lekt04_listeelement, R.id.listeelem_overskrift, lande));
     setContentView(gallery);
 
   }

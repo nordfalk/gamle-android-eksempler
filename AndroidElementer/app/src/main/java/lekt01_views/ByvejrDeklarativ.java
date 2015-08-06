@@ -24,7 +24,7 @@ public class ByvejrDeklarativ extends Activity implements OnClickListener {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
-    setContentView(R.layout.byvejr); // Hvis layout ligger i res/layout/byvejr.xml
+    setContentView(R.layout.lekt01_byvejr); // Hvis layout ligger i res/layout/lekt01_byvejr.xmlejr.xml
     // findViewById() kan først kaldes efter setContentView()
     postnrEditText = (EditText) findViewById(R.id.postnrEditText);
     okKnap = (Button) findViewById(R.id.okKnap);

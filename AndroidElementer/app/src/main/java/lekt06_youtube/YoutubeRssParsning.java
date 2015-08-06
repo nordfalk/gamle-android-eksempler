@@ -235,7 +235,7 @@ public class YoutubeRssParsning extends Activity implements OnItemClickListener 
 
     public View getView(int position, View view, ViewGroup parent) {
       if (view == null) {
-        view = getLayoutInflater().inflate(R.layout.listeelement, null);
+        view = getLayoutInflater().inflate(R.layout.lekt04_listeelement, null);
       }
       TextView listeelem_overskrift = (TextView) view.findViewById(R.id.listeelem_overskrift);
       TextView listeelem_beskrivelse = (TextView) view.findViewById(R.id.listeelem_beskrivelse);

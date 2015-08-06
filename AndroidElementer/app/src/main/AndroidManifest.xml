@@ -218,7 +218,7 @@
             </intent-filter>
             <meta-data
                     android:name="android.service.wallpaper"
-                    android:resource="@xml/levendebaggrund_esperanto"/>
+                    android:resource="@xml/lekt09_levendebaggrund_esperanto"/>
         </service>
 
 
@@ -229,7 +229,7 @@
             </intent-filter>
             <meta-data
                     android:name="android.appwidget.provider"
-                    android:resource="@xml/levendeikon_visklokken"/>
+                    android:resource="@xml/lekt09_levendeikon_visklokken"/>
         </receiver>
 
 

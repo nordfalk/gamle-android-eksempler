@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Filnavn: res/layout/byvejr.xml -->
+<!-- Filnavn: res/layout/lekt01_byvejr_byvejr.xml -->
 <ScrollView
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
