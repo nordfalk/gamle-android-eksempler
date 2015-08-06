@@ -266,7 +266,7 @@ public class Aktivitetsliste extends Activity implements OnItemClickListener, On
     if (filnavn.equals("AndroidManifest.xml")) {
       // ingen ekstra sti eller andet
     } else {
-      filnavn = "src/" + filnavn;
+      filnavn = "java/" + filnavn;
       if (!filnavn.endsWith(".java")) {
         filnavn = filnavn.replace('.', '/') + ".java";
       }
@@ -309,7 +309,7 @@ public class Aktivitetsliste extends Activity implements OnItemClickListener, On
       //System.out.println(klasserDerVisesNu);
       String mappe = pnavn.replace(".", "/");
         ydre:
-      for (String fil : getAssets().list("src/" + mappe)) {
+      for (String fil : getAssets().list("java/" + mappe)) {
         Log.d("fil", fil);
         int filendelsePos = fil.lastIndexOf(".");
         if (filendelsePos == -1) continue;
