@@ -1,4 +1,4 @@
-package touchinput;
+package lekt20_touchinput;
 
 /**
  * MultiTouchController.java

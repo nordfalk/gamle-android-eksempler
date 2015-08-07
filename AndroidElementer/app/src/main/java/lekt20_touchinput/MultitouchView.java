@@ -4,7 +4,7 @@
  * PhotoSorterView.java er (c) Luke Hutchison (luke.hutch@mit.edu)
  * Released under the Apache License v2.
  */
-package touchinput;
+package lekt20_touchinput;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -17,9 +17,9 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import dk.nordfalk.android.elementer.R;
-import touchinput.MultiTouchController.MultiTouchObjectCanvas;
-import touchinput.MultiTouchController.PointInfo;
-import touchinput.MultiTouchController.PositionAndScale;
+import lekt20_touchinput.MultiTouchController.MultiTouchObjectCanvas;
+import lekt20_touchinput.MultiTouchController.PointInfo;
+import lekt20_touchinput.MultiTouchController.PositionAndScale;
 
 public class MultitouchView extends View implements MultiTouchObjectCanvas {
 

@@ -65,6 +65,8 @@
           aktiviteter som ikke kan ses fra startskærmen men som kan kaldes
           internt i programmet
         -->
+        <activity android:name="lekt31_design.BenytEnKnap"/>
+
         <activity android:name="lekt01_views.BenytEnKnap"/>
         <activity android:name="lekt01_views.BenytKnapperProgrammatisk"/>
         <activity android:name="lekt01_views.BenytKnapperDeklarativ"/>
@@ -233,9 +235,9 @@
         </receiver>
 
 
-        <activity android:name="touchinput.BenytGestureDetector"/>
-        <activity android:name="touchinput.BenytScaleGestureDetector"/>
-        <activity android:name="touchinput.BenytMultiTouchController"/>
+        <activity android:name="lekt20_touchinput.BenytGestureDetector"/>
+        <activity android:name="lekt20_touchinput.BenytScaleGestureDetector"/>
+        <activity android:name="lekt20_touchinput.BenytMultiTouchController"/>
 
 
         <activity android:name="lekt10_livscyklus.ManglendeKaldTilSuperklasse"/>

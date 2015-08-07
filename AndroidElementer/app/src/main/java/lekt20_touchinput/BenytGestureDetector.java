@@ -1,4 +1,4 @@
-package touchinput;
+package lekt20_touchinput;
 
 import android.app.Activity;
 import android.os.Bundle;
