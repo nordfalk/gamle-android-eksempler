@@ -25,7 +25,7 @@ public class BenytKnapperDeklarativ extends Activity implements OnClickListener 
     // Hvis vi erklærer variabler herinde så er de ikke tilgængelige i andre metoder
     //Button knap1, knap2, knap3;
 
-    setContentView(R.layout.tre_knapper);
+    setContentView(R.layout.lekt01_tre_knapper);
     // findViewById() kan først kaldes efter setContentView()
     knap1 = (Button) findViewById(R.id.knap1);
     knap2 = (Button) findViewById(R.id.knap2);

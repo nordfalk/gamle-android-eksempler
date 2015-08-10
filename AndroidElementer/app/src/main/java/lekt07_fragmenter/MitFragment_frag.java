@@ -26,7 +26,7 @@ public class MitFragment_frag extends Fragment implements View.OnClickListener {
 
   @Override
   public View onCreateView(LayoutInflater i, ViewGroup container, Bundle savedInstanceState) {
-    rod = i.inflate(R.layout.tre_knapper, container, false);
+    rod = i.inflate(R.layout.lekt01_tre_knapper, container, false);
 
     knap1 = (Button) rod.findViewById(R.id.knap1);
     knap2 = (Button) rod.findViewById(R.id.knap2);

@@ -4,6 +4,7 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.Window;
 import android.widget.TextView;
@@ -13,14 +14,14 @@ import dk.nordfalk.android.elementer.R;
 
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
-public class BenytHovedmenu_akt extends Activity {
+public class BenytHovedmenu_akt extends AppCompatActivity {
 
   private TextView textView;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
     requestWindowFeature(Window.FEATURE_ACTION_BAR);
+    super.onCreate(savedInstanceState);
     setContentView(R.layout.lekt07_fragmenter);
 
     if (savedInstanceState == null) {
@@ -32,7 +33,7 @@ public class BenytHovedmenu_akt extends Activity {
 
     // Man kan trykke på app-ikonet i øverste venstre hjørne
     // (og det betyder at brugeren vil navigere op i hierakiet)
-    getActionBar().setDisplayHomeAsUpEnabled(true);
+    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
   }
 
   @Override

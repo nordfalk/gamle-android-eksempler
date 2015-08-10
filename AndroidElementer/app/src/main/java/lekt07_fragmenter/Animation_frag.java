@@ -23,13 +23,12 @@ import dk.nordfalk.android.elementer.R;
 public class Animation_frag extends Fragment {
   private Button knap1, knap2, knap3;
   private ViewGroup rod;
-  public ViewGroup animerFraLayout;
   private ImageView ikon;
 
   @Override
   public View onCreateView(LayoutInflater i, ViewGroup container, Bundle savedInstanceState) {
     if (rod!=null) return rod;
-    rod = (ViewGroup) i.inflate(R.layout.tre_knapper, container, false);
+    rod = (ViewGroup) i.inflate(R.layout.lekt01_tre_knapper, container, false);
     ikon = (ImageView) rod.findViewById(R.id.ikon);
     // animer layoutændringer, dvs når ikon forsvinder eller bliver synligt igen:
     // Kunne også havde sat det deklarativt med android:animateLayoutChanges="true"

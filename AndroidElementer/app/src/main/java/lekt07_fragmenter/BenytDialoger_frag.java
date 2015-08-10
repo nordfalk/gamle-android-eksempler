@@ -20,7 +20,7 @@ public class BenytDialoger_frag extends Fragment implements View.OnClickListener
 
   @Override
   public View onCreateView(LayoutInflater i, ViewGroup container, Bundle savedInstanceState) {
-    View rod = i.inflate(R.layout.tre_knapper, container, false);
+    View rod = i.inflate(R.layout.lekt01_tre_knapper, container, false);
     rod.findViewById(R.id.ikon).setVisibility(View.GONE);
 
     knap1 = (Button) rod.findViewById(R.id.knap1);

@@ -35,7 +35,7 @@ public class BenytListviewMedOverskrifter extends Activity implements AdapterVie
     // Det er også muligt at tilføje views som top- og bundelementer
     listView.addHeaderView(new RatingBar(this));
     listView.addHeaderView(new RatingBar(this));
-    listView.addFooterView(getLayoutInflater().inflate(R.layout.tre_knapper, null));
+    listView.addFooterView(getLayoutInflater().inflate(R.layout.lekt01_tre_knapper, null));
     listView.setAdapter(new MinAdapterMedOverskrifter());
     listView.setDivider(null);
     listView.setOnItemClickListener(this);

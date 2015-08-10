@@ -20,7 +20,7 @@ public class BenytLayoutInflater extends Activity implements OnClickListener {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
-    setContentView(R.layout.tre_knapper);
+    setContentView(R.layout.lekt01_tre_knapper);
     findViewById(R.id.knap1).setOnClickListener(this);
     findViewById(R.id.knap2).setOnClickListener(this);
     findViewById(R.id.knap3).setVisibility(View.INVISIBLE); // tager stadig plads
