@@ -12,7 +12,7 @@
     -->
     <uses-sdk
             android:minSdkVersion="8"
-            android:targetSdkVersion="20"/>
+            android:targetSdkVersion="22"/>
 
     <!-- tilladelser -->
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
@@ -60,12 +60,17 @@
 
     <application
             android:icon="@drawable/logo"
+            android:theme="@style/AppTheme"
             android:name="lekt04_arkitektur.MinApp">
         <!--
+            android:theme="@style/Theme.DesignDemo"
           aktiviteter som ikke kan ses fra startskærmen men som kan kaldes
           internt i programmet
         -->
         <activity android:name="lekt31_design.BenytEnKnap"/>
+        <activity android:name="lekt32_overgange.AktivitetsovergangBegynd"/>
+        <activity android:name="lekt32_overgange.AktivitetsovergangSlut"/>
+        <activity android:name="lekt32_overgange.FragmentActivity"/>
 
         <activity android:name="lekt01_views.BenytEnKnap"/>
         <activity android:name="lekt01_views.BenytKnapperProgrammatisk"/>

@@ -27,7 +27,6 @@ public class Animation_frag extends Fragment {
 
   @Override
   public View onCreateView(LayoutInflater i, ViewGroup container, Bundle savedInstanceState) {
-    if (rod!=null) return rod;
     rod = (ViewGroup) i.inflate(R.layout.lekt01_tre_knapper, container, false);
     ikon = (ImageView) rod.findViewById(R.id.ikon);
     // animer layoutændringer, dvs når ikon forsvinder eller bliver synligt igen:

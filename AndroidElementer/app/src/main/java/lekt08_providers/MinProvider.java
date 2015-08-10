@@ -42,13 +42,15 @@ public class MinProvider extends ContentProvider {
   }
 
   private void log(final String tekst) {
-    Log.d("KamerabilledeProvider", tekst);
+    Log.d("MinProvider", tekst);
+      /*
     MinApp.forgrundstråd.post(new Runnable() {
       @Override
       public void run() {
-        Toast.makeText(getContext(), "KamerabilledeProvider +"+tekst, Toast.LENGTH_LONG).show();
+        Toast.makeText(getContext(), "MinProvider +"+tekst, Toast.LENGTH_LONG).show();
       }
     });
+    */
   }
 
   @Override

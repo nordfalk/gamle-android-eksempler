@@ -51,6 +51,8 @@ public class Aktivitetsliste extends Activity implements OnItemClickListener, On
   int onStartTæller;
   ToggleButton seKildekode;
   Gallery kategorivalg;
+    static final boolean FEJLFINDING = false;
+
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
@@ -290,7 +292,7 @@ public class Aktivitetsliste extends Activity implements OnItemClickListener, On
     Aktivitetsdata.instans.manglerTjekForAndreFiler.remove(position);
     String pnavn = Aktivitetsdata.instans.pakkenavne.get(position);
     ArrayList<String> klasser = Aktivitetsdata.instans.klasselister.get(position);
-    Log.d("Aktivitetsliste", "pakkeTilKlasseliste.get " + position + " = " + klasser + " " + pnavn);
+    if (FEJLFINDING) Log.d("Aktivitetsliste", "pakkeTilKlasseliste.get " + position + " = " + klasser + " " + pnavn);
 
     // if (a.toLowerCase().contains(kategori)) klasserDerVisesNu.add(a); // kun nødvendig til søgning
     try { // Skan efter filer der ikke er aktiviteter og vis også dem
@@ -298,7 +300,7 @@ public class Aktivitetsliste extends Activity implements OnItemClickListener, On
       String mappe = pnavn.replace(".", "/");
         ydre:
       for (String fil : getAssets().list("java/" + mappe)) {
-        Log.d("fil", fil);
+        if (FEJLFINDING) Log.d("fil", fil);
         int filendelsePos = fil.lastIndexOf(".");
         if (filendelsePos == -1) continue;
         String klassenavn = fil.substring(0, filendelsePos); // stryg filendelse
@@ -396,7 +398,7 @@ public class Aktivitetsliste extends Activity implements OnItemClickListener, On
           for (int i = 1; i < Aktivitetsdata.instans.pakkekategorier.size(); i++) {
             SystemClock.sleep(500); // Vent lidt for at lade systemet starte op
             tjekForAndreFilerIPakken(i);
-            Log.d("Aktivitetsliste", "T " + i + " tid: " + (System.currentTimeMillis() - tid));
+            if (FEJLFINDING) Log.d("Aktivitetsliste", "T " + i + " tid: " + (System.currentTimeMillis() - tid));
 
             try { // Gem alle resultater for hurtig opstart
               ObjectOutputStream objektstrøm = new ObjectOutputStream(new FileOutputStream(cachefil));

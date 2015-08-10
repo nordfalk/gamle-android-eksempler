@@ -8,7 +8,7 @@
   <TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="Tekst, der ikke er en del af nogle fragmenter.\nNedenfor en container for fragmenter" />
+    android:text="Nedenfor er et FrameLayout til fragmenter" />
 
   <FrameLayout
     android:layout_width="match_parent"
