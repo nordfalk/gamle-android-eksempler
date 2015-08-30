@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import dk.nordfalk.android.elementer.R;
 
-public class FragmentActivity extends AppCompatActivity {
+public class VisFragmentoverrgange extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
