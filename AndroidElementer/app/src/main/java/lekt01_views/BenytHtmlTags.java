@@ -16,8 +16,6 @@ public class BenytHtmlTags extends Activity {
     super.onCreate(savedInstanceState);
     TextView tv = new TextView(this);
 
-    System.out.println("HEJSA!!!");
-
     // B (bold), I (italic), U (underline), TT (monospace),
     // BIG, SMALL, SUP (superscript), SUB (subscript), and STRIKE (strikethrough).
     String htmltekst = "<b>Fed skrift</b><br />"
