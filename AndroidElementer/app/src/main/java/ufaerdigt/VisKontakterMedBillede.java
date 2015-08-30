@@ -45,10 +45,10 @@ public class VisKontakterMedBillede extends Activity {
     Uri uri = ContactsContract.CommonDataKinds.Phone.CONTENT_URI;
 
     String[] kolonner = {
-        ContactsContract.Contacts._ID,
-        ContactsContract.Contacts.DISPLAY_NAME,
-        ContactsContract.CommonDataKinds.Phone.NUMBER,
-        //          Contacts.PHOTO_ID
+            ContactsContract.Contacts._ID,
+            ContactsContract.Contacts.DISPLAY_NAME,
+            ContactsContract.CommonDataKinds.Phone.NUMBER,
+            //          Contacts.PHOTO_ID
     };
     String where = ContactsContract.Contacts.IN_VISIBLE_GROUP + " = '1'";
     String orderBy = ContactsContract.Contacts.DISPLAY_NAME + " COLLATE LOCALIZED ASC";
@@ -65,7 +65,7 @@ public class VisKontakterMedBillede extends Activity {
     Set<String> ks = kontakter.keySet();
 
     ArrayAdapter adapter = new ArrayAdapter<String>(this,
-        R.layout.lekt04_listeelement, R.id.listeelem_overskrift, numre) {
+            R.layout.lekt04_listeelement, R.id.listeelem_overskrift, numre) {
       @Override
       public View getView(int position, View convertView, ViewGroup parent) {
         View view = super.getView(position, convertView, parent);

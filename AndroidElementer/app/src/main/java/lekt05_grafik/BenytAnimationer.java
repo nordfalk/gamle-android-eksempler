@@ -122,7 +122,7 @@ public class BenytAnimationer extends Activity implements OnClickListener {
       alfaanim.setRepeatMode(Animation.REVERSE);
       knap3.startAnimation(alfaanim);
 
-      ScaleAnimation skalaanim = new ScaleAnimation(1, 0.7f, 1, 1.5f, knap4.getWidth()/2, knap4.getHeight()/2);
+      ScaleAnimation skalaanim = new ScaleAnimation(1, 0.7f, 1, 1.5f, knap4.getWidth() / 2, knap4.getHeight() / 2);
       skalaanim.setDuration(300);
       skalaanim.setRepeatCount(1); // skalér ind og ud igen
       skalaanim.setRepeatMode(Animation.REVERSE);
@@ -153,8 +153,8 @@ public class BenytAnimationer extends Activity implements OnClickListener {
     } else if (hvadBlevDerKlikketPå == knap6) {
 
       int[] animationer = {R.anim.egen_anim, R.anim.hyperspace_out,
-          R.anim.push_left_in, R.anim.push_left_out, R.anim.push_up_in, R.anim.push_up_out,
-          R.anim.vende1, R.anim.vende2,
+              R.anim.push_left_in, R.anim.push_left_out, R.anim.push_up_in, R.anim.push_up_out,
+              R.anim.vende1, R.anim.vende2,
       };
       int animResId = animationer[animIndeks++ % animationer.length];
       String navn = getResources().getResourceEntryName(animResId);

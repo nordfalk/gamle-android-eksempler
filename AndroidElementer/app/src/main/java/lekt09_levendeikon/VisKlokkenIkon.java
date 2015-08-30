@@ -20,35 +20,6 @@ public class VisKlokkenIkon extends AppWidgetProvider {
 
   private static final String TAG = "VisKlokkenIkon";
 
-
-  /**
-   * Broadcastrecieverens onRecieve().
-   * BØR NORMALT IKKE OMDEFINERES da det er den som superklassen AppWidgetProvider bruger til
-   * at kalde de andre metoder
-   */
-  @Override
-  public void onReceive(Context c, Intent intent) {
-    super.onReceive(c, intent);
-    Log.d(TAG, "onReceive:" + intent);
-  }
-
-  @Override
-  public void onDeleted(Context context, int[] appWidgetIds) {
-    Log.d(TAG, "onDeleted");
-  }
-
-  @Override
-  public void onEnabled(Context context) {
-    Log.d(TAG, "onEnabled");
-  }
-
-
-  @Override
-  public void onDisabled(Context context) {
-    Log.d(TAG, "onDisabled");
-  }
-
-
   /**
    * Hjælpemetode der opdaterer et antal ikoner på hjemmeskærmen
    *
@@ -76,6 +47,43 @@ public class VisKlokkenIkon extends AppWidgetProvider {
     appWidgetManager.updateAppWidget(appWidgetIds, remoteViews);
   }
 
+  /**
+   * Eksempel på hvordan man selv kan opdatere sine ikoner når man har brug for det
+   */
+  public static void opdaterIkoner(Context context) {
+
+    AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
+    int[] appWidgetIds = appWidgetManager.getAppWidgetIds(new ComponentName(context, VisKlokkenIkon.class));
+    Log.d(TAG, "opdaterIkoner - der er følgende ikoner " + Arrays.asList(appWidgetIds));
+
+    opdaterIkoner(context, appWidgetManager, appWidgetIds);
+  }
+
+  /**
+   * Broadcastrecieverens onRecieve().
+   * BØR NORMALT IKKE OMDEFINERES da det er den som superklassen AppWidgetProvider bruger til
+   * at kalde de andre metoder
+   */
+  @Override
+  public void onReceive(Context c, Intent intent) {
+    super.onReceive(c, intent);
+    Log.d(TAG, "onReceive:" + intent);
+  }
+
+  @Override
+  public void onDeleted(Context context, int[] appWidgetIds) {
+    Log.d(TAG, "onDeleted");
+  }
+
+  @Override
+  public void onEnabled(Context context) {
+    Log.d(TAG, "onEnabled");
+  }
+
+  @Override
+  public void onDisabled(Context context) {
+    Log.d(TAG, "onDisabled");
+  }
 
   @Override
   public void onUpdate(final Context ctx, final AppWidgetManager appWidgetManager, final int[] appWidgetIds) {
@@ -101,19 +109,6 @@ public class VisKlokkenIkon extends AppWidgetProvider {
     }.start();
 
 
-  }
-
-
-  /**
-   * Eksempel på hvordan man selv kan opdatere sine ikoner når man har brug for det
-   */
-  public static void opdaterIkoner(Context context) {
-
-    AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
-    int[] appWidgetIds = appWidgetManager.getAppWidgetIds(new ComponentName(context, VisKlokkenIkon.class));
-    Log.d(TAG, "opdaterIkoner - der er følgende ikoner " + Arrays.asList(appWidgetIds));
-
-    opdaterIkoner(context, appWidgetManager, appWidgetIds);
   }
 
 

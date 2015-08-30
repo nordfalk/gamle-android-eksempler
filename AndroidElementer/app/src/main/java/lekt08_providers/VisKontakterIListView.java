@@ -29,17 +29,17 @@ public class VisKontakterIListView extends Activity implements OnItemClickListen
     String[] kolonnner = {Contacts._ID, Contacts.DISPLAY_NAME, Email.DATA};
 
     Cursor cursor = getContentResolver().query(Email.CONTENT_URI, kolonnner,
-        Contacts.IN_VISIBLE_GROUP + " = '1'", null, Contacts.DISPLAY_NAME + " COLLATE LOCALIZED ASC");
+            Contacts.IN_VISIBLE_GROUP + " = '1'", null, Contacts.DISPLAY_NAME + " COLLATE LOCALIZED ASC");
     startManagingCursor(cursor); // Lad cursoren følge aktivitetens livscyklus
 
     adapter = new SimpleCursorAdapter(this, R.layout.lekt04_listeelement, cursor,
-        // Disse kolonner i cursoren...
-        new String[]{Contacts.DISPLAY_NAME, Email.DATA},
-        // ... skal afbildes over i disse views i res/layout/lekt04_listeelementelement.xml
-        new int[]{R.id.listeelem_overskrift, R.id.listeelem_beskrivelse}
+            // Disse kolonner i cursoren...
+            new String[]{Contacts.DISPLAY_NAME, Email.DATA},
+            // ... skal afbildes over i disse views i res/layout/lekt04_listeelementelement.xml
+            new int[]{R.id.listeelem_overskrift, R.id.listeelem_beskrivelse}
     );
     TextView textView = new TextView(this);
-    textView.setText("Der er "+cursor.getCount()+" kontakter på telefonen.");
+    textView.setText("Der er " + cursor.getCount() + " kontakter på telefonen.");
 
     ListView listView = new ListView(this);
     listView.addHeaderView(textView);

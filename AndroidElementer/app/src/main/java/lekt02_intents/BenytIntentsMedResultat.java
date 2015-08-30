@@ -105,7 +105,7 @@ public class BenytIntentsMedResultat extends Activity implements OnClickListener
 
       } else {
         startActivity(new Intent(Intent.ACTION_VIEW,
-            Uri.parse("http://developer.android.com/reference/android/content/Intent.html")));
+                Uri.parse("http://developer.android.com/reference/android/content/Intent.html")));
       }
     } catch (ActivityNotFoundException e) {
       Toast.makeText(this, "Du mangler Googles udvidelser på denne telefon:\n" + e.getMessage(), Toast.LENGTH_LONG).show();
@@ -133,7 +133,7 @@ public class BenytIntentsMedResultat extends Activity implements OnClickListener
 //								+ c.getString(c.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME)));
             }
             Uri uri = ContentUris.withAppendedId(ContactsContract.Contacts.CONTENT_URI,
-                c.getInt(c.getColumnIndex(ContactsContract.Contacts._ID)));
+                    c.getInt(c.getColumnIndex(ContactsContract.Contacts._ID)));
             ImageView iv = new ImageView(this);
             InputStream input = ContactsContract.Contacts.openContactPhotoInputStream(cr, uri);
             if (input != null) {

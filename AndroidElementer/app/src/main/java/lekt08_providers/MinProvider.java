@@ -61,7 +61,7 @@ public class MinProvider extends ContentProvider {
 
   @Override
   public String getType(Uri uri) {
-    log("getType("+uri);
+    log("getType(" + uri);
     return "image/jpg";
   }
 
@@ -69,7 +69,7 @@ public class MinProvider extends ContentProvider {
   @Override
   public void attachInfo(Context context, ProviderInfo info) {
     super.attachInfo(context, info);
-    log("attachInfo("+info.toString());
+    log("attachInfo(" + info.toString());
 
     // Sanity check our security
     if (info.exported) {

@@ -22,6 +22,39 @@ public class BenytNetOgAsyncTask extends Activity implements OnClickListener {
   Button knap1, knap2, knap3;
   TextView textView;
 
+  public static String hentUrl(String url) throws IOException {
+    BufferedReader br = new BufferedReader(new InputStreamReader(new URL(url).openStream()));
+    StringBuilder sb = new StringBuilder();
+    String linje = br.readLine();
+    while (linje != null) {
+      sb.append(linje + "\n");
+      linje = br.readLine();
+      Log.d("LÆST LINJE", "" + linje);
+    }
+    return sb.toString();
+  }
+
+  private static String findTitler(String rssdata) {
+    String titler = "";
+    while (true) {
+      int tit1 = rssdata.indexOf("<title>") + 7;
+      int tit2 = rssdata.indexOf("</title>");
+      if (tit2 == -1) break; // hop ud hvis der ikke er flere titler
+      if (titler.length() > 400) break; // .. eller hvis vi har nok
+      String titel = rssdata.substring(tit1, tit2);
+      System.out.println(titel);
+      titler = titler + titel + "\n";
+      rssdata = rssdata.substring(tit2 + 8); // Søg videre i teksten efter næste titel
+    }
+    return titler;
+  }
+
+  // Til afprøvning af logikken i standard Java (meget hurtigere)
+  public static void main(String[] args) throws IOException {
+    String rssdata = hentUrl("http://www.version2.dk/it-nyheder/rss");
+    String titler = findTitler(rssdata);
+  }
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -120,41 +153,5 @@ public class BenytNetOgAsyncTask extends Activity implements OnClickListener {
       setProgressBarIndeterminateVisibility(false);
     }
 
-  }
-
-
-  public static String hentUrl(String url) throws IOException {
-    BufferedReader br = new BufferedReader(new InputStreamReader(new URL(url).openStream()));
-    StringBuilder sb = new StringBuilder();
-    String linje = br.readLine();
-    while (linje != null) {
-      sb.append(linje + "\n");
-      linje = br.readLine();
-      Log.d("LÆST LINJE", "" + linje);
-    }
-    return sb.toString();
-  }
-
-
-  private static String findTitler(String rssdata) {
-    String titler = "";
-    while (true) {
-      int tit1 = rssdata.indexOf("<title>") + 7;
-      int tit2 = rssdata.indexOf("</title>");
-      if (tit2 == -1) break; // hop ud hvis der ikke er flere titler
-      if (titler.length() > 400) break; // .. eller hvis vi har nok
-      String titel = rssdata.substring(tit1, tit2);
-      System.out.println(titel);
-      titler = titler + titel + "\n";
-      rssdata = rssdata.substring(tit2 + 8); // Søg videre i teksten efter næste titel
-    }
-    return titler;
-  }
-
-
-  // Til afprøvning af logikken i standard Java (meget hurtigere)
-  public static void main(String[] args) throws IOException {
-    String rssdata = hentUrl("http://www.version2.dk/it-nyheder/rss");
-    String titler = findTitler(rssdata);
   }
 }

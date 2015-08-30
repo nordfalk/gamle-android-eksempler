@@ -16,16 +16,16 @@ import dk.nordfalk.android.elementer.R;
 public class BenytListviewMedOverskrifter extends Activity implements AdapterView.OnItemClickListener {
 
   String[] landeOgOverskrifter = {
-      "0En overskrift",
-      "1Europas lande",
-      "2Danmark", "2Norge", "2Sverige", "2Finland", "2Holland", "2Italien",
-      "1Asien",
-      "2Nepal", "2Kina",
-      "0En overskrift mere",
-      "1Flere lande i Europa",
-      "2Tyskland", "2Finland", "2Holland", "2Italien",
-      "1Flere lande i Asien",
-      "2Indien", "2Nepal",
+          "0En overskrift",
+          "1Europas lande",
+          "2Danmark", "2Norge", "2Sverige", "2Finland", "2Holland", "2Italien",
+          "1Asien",
+          "2Nepal", "2Kina",
+          "0En overskrift mere",
+          "1Flere lande i Europa",
+          "2Tyskland", "2Finland", "2Holland", "2Italien",
+          "1Flere lande i Asien",
+          "2Indien", "2Nepal",
   };
 
   @Override
@@ -40,6 +40,10 @@ public class BenytListviewMedOverskrifter extends Activity implements AdapterVie
     listView.setDivider(null);
     listView.setOnItemClickListener(this);
     setContentView(listView);
+  }
+
+  public void onItemClick(AdapterView<?> l, View v, int position, long id) {
+    Toast.makeText(this, "Klik på " + position, Toast.LENGTH_SHORT).show();
   }
 
   public class MinAdapterMedOverskrifter extends BaseAdapter {
@@ -109,12 +113,7 @@ public class BenytListviewMedOverskrifter extends Activity implements AdapterVie
 
     @Override
     public boolean isEnabled(int position) {
-      return getItemViewType(position)>1;
+      return getItemViewType(position) > 1;
     }
-  }
-
-
-  public void onItemClick(AdapterView<?> l, View v, int position, long id) {
-    Toast.makeText(this, "Klik på " + position, Toast.LENGTH_SHORT).show();
   }
 }

@@ -50,6 +50,12 @@ public class Esperantotapet extends WallpaperService {
     PointF center = new PointF();
     float offset;
     private String tekst = "Esperantostjerne fra AndroidElementer";
+    private final Runnable gentegnRunnable = new Runnable() {
+
+      public void run() {
+        gentegn();
+      }
+    };
 
     @Override
     public void onCreate(SurfaceHolder surfaceHolder) {
@@ -133,13 +139,6 @@ public class Esperantotapet extends WallpaperService {
         }
       }
     }
-
-    private final Runnable gentegnRunnable = new Runnable() {
-
-      public void run() {
-        gentegn();
-      }
-    };
 
     /*
      * Tegn tapetet

@@ -27,13 +27,13 @@ public class BenytService extends Activity implements OnClickListener {
     TableLayout tl = new TableLayout(this);
     TextView tv = new TextView(this);
     tv.setText("Når en service er startet vil systemet prøve at holde programmet "
-        + "i hukommelsen.\n"
-        + "Hvis det programmet alligevel ryger ud vil systemet genstarte processen "
-        + "og reinstantiere servicen igen hurtigst muligt.\n"
-        + "Hvis ens program SKAL blive i hukommelsen skal det starte en forgrundsservice, "
-        + "der er knyttet til en notifikation som brugeren kan se.\n"
-        + "Nederste knap kalder System.exit() for at simulere at processen afsluttes, "
-        + "hvorefter systemet straks vil genstarte processen og reinstantiere servicen.");
+            + "i hukommelsen.\n"
+            + "Hvis det programmet alligevel ryger ud vil systemet genstarte processen "
+            + "og reinstantiere servicen igen hurtigst muligt.\n"
+            + "Hvis ens program SKAL blive i hukommelsen skal det starte en forgrundsservice, "
+            + "der er knyttet til en notifikation som brugeren kan se.\n"
+            + "Nederste knap kalder System.exit() for at simulere at processen afsluttes, "
+            + "hvorefter systemet straks vil genstarte processen og reinstantiere servicen.");
     tl.addView(tv);
 
     knap1 = new Button(this);

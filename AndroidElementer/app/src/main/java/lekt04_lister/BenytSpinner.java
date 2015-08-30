@@ -19,8 +19,8 @@ public class BenytSpinner extends Activity implements OnItemSelectedListener {
     super.onCreate(savedInstanceState);
 
     String[] lande = {"Danmark", "Norge", "Sverige", "Finland",
-        "Holland", "Italien", "Tyskland", "Frankrig", "Spanien", "Portugal",
-        "Nepal", "Indien", "Kina", "Japan", "Thailand"};
+            "Holland", "Italien", "Tyskland", "Frankrig", "Spanien", "Portugal",
+            "Nepal", "Indien", "Kina", "Japan", "Thailand"};
     Spinner spinner = new Spinner(this);
     spinner.setOnItemSelectedListener(this);
     // Standard-udseende

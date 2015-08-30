@@ -11,8 +11,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 /**
-* Created by j on 30-09-14.
-*/
+ * Created by j on 30-09-14.
+ */
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class TekstDialog_frag extends DialogFragment {
 
@@ -20,7 +20,7 @@ public class TekstDialog_frag extends DialogFragment {
   public View onCreateView(LayoutInflater i, ViewGroup container, Bundle savedInstanceState) {
 
     Dialog dialog = getDialog();
-    if (dialog!=null) { // Hvis fragmentet bruges som dialog, så sæt titlen
+    if (dialog != null) { // Hvis fragmentet bruges som dialog, så sæt titlen
       dialog.setTitle("Overskrift");
       // Se http://developer.android.com/reference/android/app/DialogFragment.html#AlertDialog
       // for flere muligheder for at tilrette dialogers udseende
@@ -31,12 +31,12 @@ public class TekstDialog_frag extends DialogFragment {
 
 
     // Fik vi argumenter med? Så vis dem
-    if (getArguments()!=null) {
+    if (getArguments() != null) {
       rod.setText(getArguments().getString("TEKST"));
     }
 
     rod.setBackgroundColor(0xFF660000);
-    rod.setPadding(20,20,20,20);
+    rod.setPadding(20, 20, 20, 20);
     return rod;
   }
 }

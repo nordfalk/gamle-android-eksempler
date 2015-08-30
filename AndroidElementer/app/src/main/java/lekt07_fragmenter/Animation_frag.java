@@ -17,8 +17,8 @@ import android.widget.ImageView;
 import dk.nordfalk.android.elementer.R;
 
 /**
-* Created by j on 30-09-14.
-*/
+ * Created by j on 30-09-14.
+ */
 @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
 public class Animation_frag extends Fragment {
   private Button knap1, knap2, knap3;
@@ -49,12 +49,12 @@ public class Animation_frag extends Fragment {
           knap1x0 = me.getRawX() + knap1.getX();
         } else if (me.getAction() == MotionEvent.ACTION_MOVE) {
           // Flyt knappen vandret så den følger trykpunktet
-          knap1.setX(me.getRawX()-knap1x0);
+          knap1.setX(me.getRawX() - knap1x0);
         } else if (me.getAction() == MotionEvent.ACTION_UP) {
           knap1.animate().translationY(0).translationX(0)
-              .setInterpolator(new OvershootInterpolator())
-              .rotationX(0).alpha(1)
-              .setDuration(750);
+                  .setInterpolator(new OvershootInterpolator())
+                  .rotationX(0).alpha(1)
+                  .setDuration(750);
         }
         return false;
       }

@@ -7,32 +7,32 @@
 
     <ImageView
         android:id="@+id/listeelem_billede"
-        android:layout_margin="5dip"
         android:layout_width="60dip"
         android:layout_height="40dip"
+        android:layout_margin="5dip"
         android:scaleType="centerCrop"
         android:src="@drawable/logo"/>
 
     <TextView
         android:id="@+id/listeelem_overskrift"
-        android:textSize="20sp"
-        android:text="overskrift"
-        android:textColor="#ffffff"
-        android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/listeelem_billede"
+        android:layout_toEndOf="@+id/listeelem_billede"
         android:layout_toRightOf="@+id/listeelem_billede"
-        android:layout_toEndOf="@+id/listeelem_billede" />
+        android:text="overskrift"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/listeelem_beskrivelse"
-        android:textSize="12sp"
-        android:text="beskrivelse"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/listeelem_overskrift"
-        android:layout_toRightOf="@+id/listeelem_billede" />
+        android:layout_toRightOf="@+id/listeelem_billede"
+        android:text="beskrivelse"
+        android:textSize="12sp"/>
 
 
 </RelativeLayout>

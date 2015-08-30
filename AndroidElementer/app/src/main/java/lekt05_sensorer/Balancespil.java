@@ -38,6 +38,7 @@ public class Balancespil extends Activity implements SensorEventListener {
   int maxPointOpnået = 0;
 
   SpilView spilView;
+  long sidsteTid = 0;
 
   @Override
   protected void onCreate(Bundle icicle) {
@@ -53,7 +54,7 @@ public class Balancespil extends Activity implements SensorEventListener {
       PowerManager powerManager = (PowerManager) getSystemService(POWER_SERVICE);
       // Hold skærmen helt tændt, også lidt efter...
       wakeLock = powerManager.newWakeLock(
-          PowerManager.SCREEN_BRIGHT_WAKE_LOCK | PowerManager.ON_AFTER_RELEASE, "Spil");
+              PowerManager.SCREEN_BRIGHT_WAKE_LOCK | PowerManager.ON_AFTER_RELEASE, "Spil");
     } catch (Exception e) {
       e.printStackTrace();
       Toast.makeText(this, "Kunne ikke holde skærmen tændt:\n" + e, Toast.LENGTH_LONG).show();
@@ -83,8 +84,6 @@ public class Balancespil extends Activity implements SensorEventListener {
     sensorManager.unregisterListener(this); // Stop med at modtage sensordata
     if (wakeLock != null) wakeLock.release(); // Frigiv låsen på at holde skærmen tændt
   }
-
-  long sidsteTid = 0;
 
   public void onSensorChanged(SensorEvent event) {
     float dt = (event.timestamp - sidsteTid) / 1000000000f; // sekunder siden sidste måling

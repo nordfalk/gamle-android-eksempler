@@ -13,11 +13,10 @@ import android.widget.TextView;
  */
 public class Spillet_akt extends Activity implements View.OnClickListener {
 
+  Galgelogik logik = new Galgelogik();
   private TextView info;
   private Button spilKnap;
   private EditText et;
-
-  Galgelogik logik = new Galgelogik();
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {

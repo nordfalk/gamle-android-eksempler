@@ -59,10 +59,10 @@ public class BenytExpandableListActivity extends ExpandableListActivity {
 
   private String[] groups = {"People Names", "Dog Names", "Cat Names", "Fish Names"};
   private String[][] children = {
-      {"Arnold", "Barry", "Chuck", "David"},
-      {"Ace", "Bandit", "Cha-Cha", "Deuce"},
-      {"Fluffy", "Snuggles"},
-      {"Goldy", "Bubbles"}
+          {"Arnold", "Barry", "Chuck", "David"},
+          {"Ace", "Bandit", "Cha-Cha", "Deuce"},
+          {"Fluffy", "Snuggles"},
+          {"Goldy", "Bubbles"}
   };
 
   /**

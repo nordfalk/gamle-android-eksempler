@@ -11,8 +11,8 @@ import dk.nordfalk.android.elementer.R;
 
 public class Splash_akt extends Activity implements Runnable {
 
-  Handler handler = new Handler();
   static Splash_akt aktivitetDerVisesNu = null;
+  Handler handler = new Handler();
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {

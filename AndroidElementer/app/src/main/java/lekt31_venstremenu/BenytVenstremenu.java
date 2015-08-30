@@ -39,6 +39,7 @@ public class BenytVenstremenu extends Activity implements OnClickListener {
       setupDrawerContent(navigationView);
     }
   }
+
   private void setupDrawerContent(NavigationView navigationView) {
     navigationView.setNavigationItemSelectedListener(
             new NavigationView.OnNavigationItemSelectedListener() {

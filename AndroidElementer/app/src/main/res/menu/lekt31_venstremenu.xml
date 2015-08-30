@@ -5,38 +5,38 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@android:drawable/ic_btn_speak_now"
-            android:title="Din mening" />
+            android:title="Din mening"/>
         <item
             android:id="@+id/nav_messages"
             android:icon="@android:drawable/ic_dialog_email"
-            android:title="Kontakt" />
+            android:title="Kontakt"/>
         <item
             android:id="@+id/nav_hjaelp"
             android:icon="@android:drawable/ic_menu_help"
-            android:title="Hjælp" />
+            android:title="Hjælp"/>
         <item
             android:id="@+id/nav_kamera"
             android:icon="@android:drawable/ic_menu_camera"
-            android:title="Tag billede" />
+            android:title="Tag billede"/>
     </group>
 
     <item android:title="Undermenu">
         <menu>
             <item
                 android:icon="@drawable/bil"
-                android:title="Punkt 1" />
+                android:title="Punkt 1"/>
             <item
                 android:icon="@drawable/bil"
-                android:title="Punkt 2" />
+                android:title="Punkt 2"/>
             <item
                 android:icon="@drawable/bil"
-                android:title="Punkt 3" />
+                android:title="Punkt 3"/>
             <item
                 android:icon="@drawable/bil"
-                android:title="Punkt 4" />
+                android:title="Punkt 4"/>
             <item
                 android:icon="@drawable/bil"
-                android:title="Punkt 5" />
+                android:title="Punkt 5"/>
         </menu>
     </item>
 

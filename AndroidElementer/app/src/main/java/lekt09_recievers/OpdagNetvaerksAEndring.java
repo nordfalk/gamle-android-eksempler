@@ -20,7 +20,6 @@ import android.widget.Toast;
  */
 public class OpdagNetvaerksAEndring extends Activity implements OnClickListener {
 
-  Button registrer, afregistrer;
   static BroadcastReceiver reciever = new BroadcastReceiver() {
 
     @Override
@@ -31,6 +30,7 @@ public class OpdagNetvaerksAEndring extends Activity implements OnClickListener 
       // for flere muligheder
     }
   };
+  Button registrer, afregistrer;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {

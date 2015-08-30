@@ -19,8 +19,8 @@ public class BenytMitFragment_akt extends Activity {
     if (savedInstanceState == null) {
       MitFragment_frag fragment = new MitFragment_frag();
       getFragmentManager().beginTransaction()
-          .add(R.id.fragmentindhold, fragment)  // tom container i layout
-          .commit();
+              .add(R.id.fragmentindhold, fragment)  // tom container i layout
+              .commit();
     }
   }
 }

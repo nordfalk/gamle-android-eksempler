@@ -33,8 +33,8 @@ public class Liv4_bundle extends LogAktivitet {
     // så længe nedarvingerne også kalder setContentView()
     TextView tv = new TextView(this);
     tv.setText("Redigér i de to tekstfelter. "
-        + "Det med id vil få genskabt sine data når telefonen vendes (i emulatoren tryk Ctrl-F11)\n"
-        + data.toString());
+            + "Det med id vil få genskabt sine data når telefonen vendes (i emulatoren tryk Ctrl-F11)\n"
+            + data.toString());
 
     EditText et1 = new EditText(this);
     et1.setText("Et view uden id");

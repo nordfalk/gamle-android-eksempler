@@ -12,8 +12,8 @@ import android.widget.Button;
 import dk.nordfalk.android.elementer.R;
 
 /**
-* Created by j on 30-09-14.
-*/ // Bemærk, fragmenter i indre klasser SKAL erklæres static
+ * Created by j on 30-09-14.
+ */ // Bemærk, fragmenter i indre klasser SKAL erklæres static
 @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
 public class BenytDialoger_frag extends Fragment implements View.OnClickListener {
   private Button knap1, knap2, knap3;
@@ -48,21 +48,21 @@ public class BenytDialoger_frag extends Fragment implements View.OnClickListener
     } else if (v == knap2) {
       // ... eller som et fragment
       getFragmentManager().beginTransaction()
-          .replace(R.id.fragmentindhold, new TekstDialog_frag())
-          .addToBackStack(null)
-          .commit();
+              .replace(R.id.fragmentindhold, new TekstDialog_frag())
+              .addToBackStack(null)
+              .commit();
     } else if (v == knap3) {
 
       // Send argumenter med, som påvirker udseendet
       Bundle args = new Bundle();
       args.putString("TEKST", "Denne tekst kommer fra BenytDialoger_frag, " +
-          "der har overført den som et argument til TekstDialog_frag.");
+              "der har overført den som et argument til TekstDialog_frag.");
       TekstDialog_frag tekstDialogFrag = new TekstDialog_frag();
       tekstDialogFrag.setArguments(args);
       getFragmentManager().beginTransaction()
-          .replace(R.id.fragmentindhold, tekstDialogFrag)
-          .addToBackStack(null)
-          .commit();
+              .replace(R.id.fragmentindhold, tekstDialogFrag)
+              .addToBackStack(null)
+              .commit();
     }
   }
 }

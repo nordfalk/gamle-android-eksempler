@@ -15,9 +15,9 @@ import android.widget.ImageView;
 import dk.nordfalk.android.elementer.R;
 
 public class AktivitetsovergangBegynd extends AppCompatActivity implements View.OnClickListener {
-    private Button knap1, knap2, knap3;
-    private ViewGroup rod;
-    private ImageView ikon;
+  private Button knap1, knap2, knap3;
+  private ViewGroup rod;
+  private ImageView ikon;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {

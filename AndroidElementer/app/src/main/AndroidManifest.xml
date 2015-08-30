@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="dk.nordfalk.android.elementer"
-          android:versionCode="42"
+<manifest package="dk.nordfalk.android.elementer"
+          xmlns:android="http://schemas.android.com/apk/res/android"
+          android:versionCode="44"
           android:versionName="2.1 30 aug 2015">
 
     <!-- tilladelser -->
@@ -26,32 +26,32 @@
       http://developer.android.com/guide/topics/manifest/uses-feature-element.html
     -->
     <uses-feature
-            android:name="android.hardware.telephony"
-            android:required="false"/>
+        android:name="android.hardware.telephony"
+        android:required="false"/>
     <uses-feature
-            android:name="android.hardware.location"
-            android:required="false"/>
+        android:name="android.hardware.location"
+        android:required="false"/>
     <uses-feature
-            android:name="android.hardware.location.gps"
-            android:required="false"/>
+        android:name="android.hardware.location.gps"
+        android:required="false"/>
     <uses-feature
-            android:name="android.hardware.location.network"
-            android:required="false"/>
+        android:name="android.hardware.location.network"
+        android:required="false"/>
     <uses-feature
-            android:name="android.hardware.touchscreen"
-            android:required="false"/>
+        android:name="android.hardware.touchscreen"
+        android:required="false"/>
     <uses-feature
-            android:name="android.software.live_wallpaper"
-            android:required="false"/>
+        android:name="android.software.live_wallpaper"
+        android:required="false"/>
     <uses-feature
-            android:name="android.hardware.screen.portrait"
-            android:required="false"/>
+        android:name="android.hardware.screen.portrait"
+        android:required="false"/>
 
 
     <application
-            android:icon="@drawable/logo"
-            android:theme="@style/AppTheme"
-            android:name="lekt04_arkitektur.MinApp">
+        android:name="lekt04_arkitektur.MinApp"
+        android:icon="@drawable/logo"
+        android:theme="@style/AppTheme">
         <!--
             android:theme="@style/Theme.DesignDemo"
           aktiviteter som ikke kan ses fra startskærmen men som kan kaldes
@@ -76,18 +76,22 @@
 
         <activity android:name="lekt02_intents.BenytIntents"/>
         <activity android:name="lekt02_intents.BenytIntentsFraGoogle"/>
-        <activity android:name="lekt02_intents.BenytIntentsMedResultat" android:screenOrientation="portrait"/>
+        <activity
+            android:name="lekt02_intents.BenytIntentsMedResultat"
+            android:screenOrientation="portrait"/>
 
         <!-- Denne aktivitet fanger browsning af URLer der starter med http://javabog.dk/OOP/ -->
         <activity android:name="lekt02_intents.FangBrowseIntent">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
+
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.BROWSABLE"/>
+
                 <data
-                        android:scheme="http"
-                        android:host="javabog.dk"
-                        android:pathPrefix="/OOP/"/>
+                    android:host="javabog.dk"
+                    android:pathPrefix="/OOP/"
+                    android:scheme="http"/>
             </intent-filter>
         </activity>
 
@@ -138,21 +142,21 @@
 
         <!-- android:configChanges gør at aktiviteten selv håndterer skærvendingen, dvs den bliver ikke mere genstartet -->
         <activity
-                android:name="lekt05_sensorer.VisSensorer"
-                android:screenOrientation="portrait"/>
+            android:name="lekt05_sensorer.VisSensorer"
+            android:screenOrientation="portrait"/>
         <activity android:name="lekt05_grafik.ProgrammatiskLayout2"/>
         <!-- android:screenOrientation slår vending af skærmen fra på denne aktivitet
                 android:configChanges="orientation"/>
         -->
         <activity
-                android:name="lekt05_sensorer.Kompas"
-                android:screenOrientation="portrait"/>
+            android:name="lekt05_sensorer.Kompas"
+            android:screenOrientation="portrait"/>
         <activity
-                android:name="lekt05_sensorer.Kompas2"
-                android:screenOrientation="portrait"/>
+            android:name="lekt05_sensorer.Kompas2"
+            android:screenOrientation="portrait"/>
         <activity
-                android:name="lekt05_sensorer.Balancespil"
-                android:screenOrientation="portrait"/>
+            android:name="lekt05_sensorer.Balancespil"
+            android:screenOrientation="portrait"/>
 
         <activity android:name="lekt05_sensorer.Stedbestemmelse"/>
 
@@ -164,7 +168,9 @@
         <activity android:name="lekt06_data.BenytSQLite"/>
 
         <activity android:name="lekt06_youtube.YoutubeRssParsning"/>
-        <activity android:name="lekt06_youtube.BenytVideoView" android:configChanges="orientation"/>
+        <activity
+            android:name="lekt06_youtube.BenytVideoView"
+            android:configChanges="orientation"/>
 
         <activity android:name="lekt06_asynkron.Asynkron1Thread"/>
         <activity android:name="lekt06_asynkron.Asynkron2AsyncTask"/>
@@ -184,10 +190,14 @@
               - at modtage billeddata fra kamera-intents
               - at sende data med et intent via f.eks gmail
         -->
-        <provider android:name="lekt08_providers.MinProvider"
+        <provider
+            android:name="lekt08_providers.MinProvider"
             android:authorities="dk.nordfalk.android.elementer.MinProvider"
-            android:exported="true" />
-        <activity android:name="lekt08_providers.BenytIntentsMedProvider" android:screenOrientation="portrait"/>
+            android:exported="true"/>
+
+        <activity
+            android:name="lekt08_providers.BenytIntentsMedProvider"
+            android:screenOrientation="portrait"/>
 
         <activity android:name="lekt09_recievers.OpdagAppInstallation"/>
         <activity android:name="lekt09_recievers.ModtagSMSer"/>
@@ -204,14 +214,14 @@
 
         <!-- Levende baggrund på hjemmeskærmen der viser en esperanto-stjerne -->
         <service
-                android:name="lekt09_levendebaggrund.Esperantotapet"
-                android:permission="android.permission.BIND_WALLPAPER">
+            android:name="lekt09_levendebaggrund.Esperantotapet"
+            android:permission="android.permission.BIND_WALLPAPER">
             <intent-filter>
                 <action android:name="android.service.wallpaper.WallpaperService"/>
             </intent-filter>
             <meta-data
-                    android:name="android.service.wallpaper"
-                    android:resource="@xml/lekt09_levendebaggrund_esperanto"/>
+                android:name="android.service.wallpaper"
+                android:resource="@xml/lekt09_levendebaggrund_esperanto"/>
         </service>
 
 
@@ -221,10 +231,9 @@
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
             </intent-filter>
             <meta-data
-                    android:name="android.appwidget.provider"
-                    android:resource="@xml/lekt09_levendeikon_visklokken"/>
+                android:name="android.appwidget.provider"
+                android:resource="@xml/lekt09_levendeikon_visklokken"/>
         </receiver>
-
 
 
         <activity android:name="lekt10_livscyklus.ManglendeKaldTilSuperklasse"/>
@@ -248,8 +257,8 @@
 
         <!-- aktivitet som kan ses fra startskærmen -->
         <activity
-                android:name="dk.nordfalk.aktivitetsliste.Aktivitetsliste"
-                android:label="AndroidElementer">
+            android:name="dk.nordfalk.aktivitetsliste.Aktivitetsliste"
+            android:label="AndroidElementer">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -261,8 +270,8 @@
         <activity android:name="dk.nordfalk.aktivitetsliste.VisKildekode">
             <!-- bruges af metoden VisKildekode.findWebUrl() -->
             <meta-data
-                    android:name="web_url"
-                    android:value="http://code.google.com/p/android-eksempler/source/browse/AndroidElementer/"/>
+                android:name="web_url"
+                android:value="http://code.google.com/p/android-eksempler/source/browse/AndroidElementer/"/>
         </activity>
 
 

@@ -61,7 +61,7 @@ public class BenytMenuer extends Activity {
     } else if (item.getItemId() == 104) {
 
       Toast.makeText(this, "Bemærk at det er generelt ikke er nødvendigt med afslut-knapper\n"
-          + "Da brugeren godt ved hvad TILBAGE-knappen gør", Toast.LENGTH_LONG).show();
+              + "Da brugeren godt ved hvad TILBAGE-knappen gør", Toast.LENGTH_LONG).show();
       finish();
 
     }

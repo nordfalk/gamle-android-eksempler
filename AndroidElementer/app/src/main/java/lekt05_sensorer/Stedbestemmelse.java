@@ -46,12 +46,12 @@ public class Stedbestemmelse extends Activity implements LocationListener {
       Location sted = locationManager.getLastKnownLocation(udbyder);
 
       textView.append(udbyder + " - tændt: " + locationManager.isProviderEnabled(udbyder)
-          + "\n præcision=" + lp.getAccuracy() + " strømforbrug=" + lp.getPowerRequirement()
-          + "\n kræver satellit=" + lp.requiresSatellite() + " kræver net=" + lp.requiresNetwork()
-          + "\n sted=" + sted + "\n\n");
+              + "\n præcision=" + lp.getAccuracy() + " strømforbrug=" + lp.getPowerRequirement()
+              + "\n kræver satellit=" + lp.requiresSatellite() + " kræver net=" + lp.requiresNetwork()
+              + "\n sted=" + sted + "\n\n");
 
     }
-		/*
+    /*
     // Geofencing: Start denne aktivitet igen hvis vi nærmer os eller forlader Valby!
 		Intent intent = new Intent(this, Stedbestemmelse.class);
 		PendingIntent pi = PendingIntent.getActivity(this, 0, intent, 0);

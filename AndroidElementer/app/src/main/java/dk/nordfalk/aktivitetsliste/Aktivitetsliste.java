@@ -51,7 +51,7 @@ public class Aktivitetsliste extends Activity implements OnItemClickListener, On
   int onStartTæller;
   ToggleButton seKildekode;
   Gallery kategorivalg;
-    static final boolean FEJLFINDING = false;
+  static final boolean FEJLFINDING = false;
 
 
   @Override
@@ -73,7 +73,7 @@ public class Aktivitetsliste extends Activity implements OnItemClickListener, On
         // ... og tænd skærmen 30 sekunder, og også lidt efter...
         PowerManager powerManager = (PowerManager) getSystemService(POWER_SERVICE);
         WakeLock wakeLock = powerManager.newWakeLock(
-            PowerManager.SCREEN_DIM_WAKE_LOCK | PowerManager.ON_AFTER_RELEASE, "Aktivitetsliste");
+                PowerManager.SCREEN_DIM_WAKE_LOCK | PowerManager.ON_AFTER_RELEASE, "Aktivitetsliste");
         wakeLock.acquire(30000);
       } catch (Exception e) {
         e.printStackTrace();
@@ -215,13 +215,13 @@ public class Aktivitetsliste extends Activity implements OnItemClickListener, On
       // Tjek at klassen faktisk kan indlæses (så prg ikke crasher hvis den ikke kan!)
       Class klasse = Class.forName(akt);
 
-      if (akt.toLowerCase().contains("fragment") && Build.VERSION.SDK_INT<Build.VERSION_CODES.HONEYCOMB_MR2) {
+      if (akt.toLowerCase().contains("fragment") && Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB_MR2) {
         visDialog("Denne aktivitet kan kun køre på Android 4\nSkal den køre på Android 2 skal et kompatibilitetsbibliotek inkluderes og koden ændres til at bruge kompatibilitetsbiblioteket.");
         return;
       }
       startActivity(new Intent(this, klasse));
       overridePendingTransition(0, 0); // hurtigt skift
-      Toast.makeText(this, akt+" startet", Toast.LENGTH_SHORT).show();
+      Toast.makeText(this, akt + " startet", Toast.LENGTH_SHORT).show();
     } catch (Throwable e) {
       e.printStackTrace();
       //while (e.getCause() != null) e = e.getCause(); // Hop hen til grunden
@@ -233,9 +233,9 @@ public class Aktivitetsliste extends Activity implements OnItemClickListener, On
     position = Aktivitetsdata.instans.alleAktiviteter.indexOf(akt);
     // Gem position og 'start aktivitet direkte' til næste gang
     PreferenceManager.getDefaultSharedPreferences(this).edit().
-        putInt("position", position).
-        putInt("kategoriPos", kategorivalg.getSelectedItemPosition()).
-        commit();
+            putInt("position", position).
+            putInt("kategoriPos", kategorivalg.getSelectedItemPosition()).
+            commit();
   }
 
   private void visDialog(String tekst) {
@@ -284,7 +284,6 @@ public class Aktivitetsliste extends Activity implements OnItemClickListener, On
   }
 
 
-
   private synchronized void tjekForAndreFilerIPakken(int position) {
     if (!Aktivitetsdata.instans.manglerTjekForAndreFiler.contains(position)) {
       return;
@@ -292,13 +291,14 @@ public class Aktivitetsliste extends Activity implements OnItemClickListener, On
     Aktivitetsdata.instans.manglerTjekForAndreFiler.remove(position);
     String pnavn = Aktivitetsdata.instans.pakkenavne.get(position);
     ArrayList<String> klasser = Aktivitetsdata.instans.klasselister.get(position);
-    if (FEJLFINDING) Log.d("Aktivitetsliste", "pakkeTilKlasseliste.get " + position + " = " + klasser + " " + pnavn);
+    if (FEJLFINDING)
+      Log.d("Aktivitetsliste", "pakkeTilKlasseliste.get " + position + " = " + klasser + " " + pnavn);
 
     // if (a.toLowerCase().contains(kategori)) klasserDerVisesNu.add(a); // kun nødvendig til søgning
     try { // Skan efter filer der ikke er aktiviteter og vis også dem
       //System.out.println(klasserDerVisesNu);
       String mappe = pnavn.replace(".", "/");
-        ydre:
+      ydre:
       for (String fil : getAssets().list("java/" + mappe)) {
         if (FEJLFINDING) Log.d("fil", fil);
         int filendelsePos = fil.lastIndexOf(".");
@@ -322,7 +322,7 @@ public class Aktivitetsliste extends Activity implements OnItemClickListener, On
     // Førstegangsinitialisering af programdata
     try {
       for (ActivityInfo a : getPackageManager().
-          getPackageInfo(getPackageName(), PackageManager.GET_ACTIVITIES).activities) {
+              getPackageInfo(getPackageName(), PackageManager.GET_ACTIVITIES).activities) {
         Aktivitetsdata.instans.alleAktiviteter.add(a.name);
       }
     } catch (NameNotFoundException ex) {
@@ -398,7 +398,8 @@ public class Aktivitetsliste extends Activity implements OnItemClickListener, On
           for (int i = 1; i < Aktivitetsdata.instans.pakkekategorier.size(); i++) {
             SystemClock.sleep(500); // Vent lidt for at lade systemet starte op
             tjekForAndreFilerIPakken(i);
-            if (FEJLFINDING) Log.d("Aktivitetsliste", "T " + i + " tid: " + (System.currentTimeMillis() - tid));
+            if (FEJLFINDING)
+              Log.d("Aktivitetsliste", "T " + i + " tid: " + (System.currentTimeMillis() - tid));
 
             try { // Gem alle resultater for hurtig opstart
               ObjectOutputStream objektstrøm = new ObjectOutputStream(new FileOutputStream(cachefil));

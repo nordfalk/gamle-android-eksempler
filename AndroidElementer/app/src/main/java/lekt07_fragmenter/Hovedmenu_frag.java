@@ -13,8 +13,8 @@ import android.widget.Button;
 import dk.nordfalk.android.elementer.R;
 
 /**
-* Created by j on 30-09-14.
-*/ // Bemærk, fragmenter i indre klasser SKAL erklæres static
+ * Created by j on 30-09-14.
+ */ // Bemærk, fragmenter i indre klasser SKAL erklæres static
 @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
 public class Hovedmenu_frag extends Fragment implements View.OnClickListener {
   private Button knap1, knap2, knap3;
@@ -46,22 +46,22 @@ public class Hovedmenu_frag extends Fragment implements View.OnClickListener {
 
     if (v == knap1) {
       getFragmentManager().beginTransaction()
-          .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-          .replace(R.id.fragmentindhold, new MitFragment_frag())
-          .addToBackStack(null)
-          .commit();
+              .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+              .replace(R.id.fragmentindhold, new MitFragment_frag())
+              .addToBackStack(null)
+              .commit();
     } else if (v == knap2) {
       getFragmentManager().beginTransaction()
-          // Animationer - bemærk, skal være af type R.animator (ikke R.anim), og at
-          // kompatibilitetsbiblioteket kræver typen R.anim (ikke R.animator).
-          .setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out, android.R.animator.fade_in, android.R.animator.fade_out)
-          .replace(R.id.fragmentindhold, new BenytDialoger_frag())
-          .addToBackStack(null)
-          .commit();
+              // Animationer - bemærk, skal være af type R.animator (ikke R.anim), og at
+              // kompatibilitetsbiblioteket kræver typen R.anim (ikke R.animator).
+              .setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out, android.R.animator.fade_in, android.R.animator.fade_out)
+              .replace(R.id.fragmentindhold, new BenytDialoger_frag())
+              .addToBackStack(null)
+              .commit();
     } else if (v == knap3) {
-        getFragmentManager().beginTransaction()
-          .replace(R.id.fragmentindhold, new Animation_frag())
-          .addToBackStack(null).commit();
+      getFragmentManager().beginTransaction()
+              .replace(R.id.fragmentindhold, new Animation_frag())
+              .addToBackStack(null).commit();
     }
 
   }

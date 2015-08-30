@@ -72,66 +72,6 @@ public class YoutubeRssParsning extends Activity implements OnItemClickListener 
   ListView listView;
   KlipAdapter klipadapter = new KlipAdapter();
 
-  @Override
-  public void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-
-    // Burde nok bruge SD-kortet, men det kan forsvinde midt i det hele
-    FilCache.init(getCacheDir());
-    if (videoklip.isEmpty()) {
-      klipAsyncTask.execute();
-    }
-
-    listView = new ListView(this);
-    listView.setAdapter(klipadapter);
-    listView.setOnItemClickListener(this);
-    listView.setId(117); // sæt ID så tilstand blir gemt ved skærmvending
-    setContentView(listView);
-  }
-
-  public class ParseKlipAsyncTask extends AsyncTask {
-
-    @Override
-    protected Object doInBackground(Object... arg0) {
-      try {
-
-        InputStream is;
-        // gør aldrig det her:
-        //is = new URL("http://gdata.youtube.com/feeds/api/users/Esperantoestas/uploads").openStream();
-        is = new URL("http://gdata.youtube.com/feeds/api/users/javabog/uploads").openStream();
-        // brug en cache
-        //is = new FileInputStream(FilCache.hentFil("http://gdata.youtube.com/feeds/api/users/Esperantoestas/uploads", false));
-        is = new FileInputStream(FilCache.hentFil("http://gdata.youtube.com/feeds/api/users/javabog/uploads", false));
-        //is = getResources().openRawResource(R.raw.youtubefeed_eksempel);
-        ArrayList<Klip> klip = parseRss(is);
-        is.close();
-        videoklip.addAll(klip);
-      } catch (Exception ex) {
-        ex.printStackTrace();
-      }
-      publishProgress();
-      for (Klip k : videoklip) {
-        try {
-          System.out.println(k.titel + " " + k.videourl);
-          System.out.println("k.thumburl = " + k.thumburl);
-          if (k.thumburl != null) {
-            k.thumb = BitmapFactory.decodeFile(FilCache.hentFil(k.thumburl, true));
-          }
-          publishProgress();
-        } catch (Exception ex) {
-          ex.printStackTrace();
-        }
-      }
-      return "ok";
-    }
-
-    @Override
-    protected void onProgressUpdate(Object... values) {
-      //System.out.println("onProgressUpdate()");
-      klipadapter.notifyDataSetChanged();
-    }
-  }
-
   /**
    * Parser et youtube RSS feed og returnerer det som en liste at Klip-objekter
    */
@@ -219,6 +159,76 @@ public class YoutubeRssParsning extends Activity implements OnItemClickListener 
     return liste;
   }
 
+  @Override
+  public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+
+    // Burde nok bruge SD-kortet, men det kan forsvinde midt i det hele
+    FilCache.init(getCacheDir());
+    if (videoklip.isEmpty()) {
+      klipAsyncTask.execute();
+    }
+
+    listView = new ListView(this);
+    listView.setAdapter(klipadapter);
+    listView.setOnItemClickListener(this);
+    listView.setId(117); // sæt ID så tilstand blir gemt ved skærmvending
+    setContentView(listView);
+  }
+
+  public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
+    Klip k = videoklip.get(position);
+    Intent i = new Intent(this, BenytVideoView.class);
+    i.putExtra("titel", k.titel);
+    i.putExtra("beskrivelse", k.egenskaber.get("content"));
+    i.putExtra("videourl", k.videourl);
+    i.putExtra("link", k.link);
+    startActivity(i);
+  }
+
+  public class ParseKlipAsyncTask extends AsyncTask {
+
+    @Override
+    protected Object doInBackground(Object... arg0) {
+      try {
+
+        InputStream is;
+        // gør aldrig det her:
+        //is = new URL("http://gdata.youtube.com/feeds/api/users/Esperantoestas/uploads").openStream();
+        is = new URL("http://gdata.youtube.com/feeds/api/users/javabog/uploads").openStream();
+        // brug en cache
+        //is = new FileInputStream(FilCache.hentFil("http://gdata.youtube.com/feeds/api/users/Esperantoestas/uploads", false));
+        is = new FileInputStream(FilCache.hentFil("http://gdata.youtube.com/feeds/api/users/javabog/uploads", false));
+        //is = getResources().openRawResource(R.raw.youtubefeed_eksempel);
+        ArrayList<Klip> klip = parseRss(is);
+        is.close();
+        videoklip.addAll(klip);
+      } catch (Exception ex) {
+        ex.printStackTrace();
+      }
+      publishProgress();
+      for (Klip k : videoklip) {
+        try {
+          System.out.println(k.titel + " " + k.videourl);
+          System.out.println("k.thumburl = " + k.thumburl);
+          if (k.thumburl != null) {
+            k.thumb = BitmapFactory.decodeFile(FilCache.hentFil(k.thumburl, true));
+          }
+          publishProgress();
+        } catch (Exception ex) {
+          ex.printStackTrace();
+        }
+      }
+      return "ok";
+    }
+
+    @Override
+    protected void onProgressUpdate(Object... values) {
+      //System.out.println("onProgressUpdate()");
+      klipadapter.notifyDataSetChanged();
+    }
+  }
+
   public class KlipAdapter extends BaseAdapter {
 
     public int getCount() {
@@ -248,15 +258,5 @@ public class YoutubeRssParsning extends Activity implements OnItemClickListener 
 
       return view;
     }
-  }
-
-  public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
-    Klip k = videoklip.get(position);
-    Intent i = new Intent(this, BenytVideoView.class);
-    i.putExtra("titel", k.titel);
-    i.putExtra("beskrivelse", k.egenskaber.get("content"));
-    i.putExtra("videourl", k.videourl);
-    i.putExtra("link", k.link);
-    startActivity(i);
   }
 }

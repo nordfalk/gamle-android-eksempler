@@ -40,7 +40,8 @@ public class MinIntentService extends IntentService {
 //      if (aktivitetDerSkalOpdateres != null) Farligt: Sættes af hovedtråd, aflæses fra baggrundstråd.
       forgrundstråd.post(new Runnable() {
         public void run() {
-          if (aktivitetDerSkalOpdateres == null) return;  // OK: Sættes af hovedtråd, aflæses fra hovedtråd
+          if (aktivitetDerSkalOpdateres == null)
+            return;  // OK: Sættes af hovedtråd, aflæses fra hovedtråd
           aktivitetDerSkalOpdateres.progressBar.setProgress(progress);
           aktivitetDerSkalOpdateres.knap.setText("progress = " + progress);
         }

@@ -37,7 +37,7 @@ public class BaggrundsService extends Service {
   public int onStartCommand(Intent intent, int flags, int startId) {
     Bundle b = intent.getExtras();
     Toast.makeText(this, TAG + " onStartCommand(\n"
-        + intent + " " + " " + flags + " " + startId, Toast.LENGTH_LONG).show();
+            + intent + " " + " " + flags + " " + startId, Toast.LENGTH_LONG).show();
     return START_STICKY;
   }
 }

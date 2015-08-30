@@ -55,25 +55,25 @@ public class BenytIntentsMedProvider extends Activity implements OnClickListener
   }
 
   public void onClick(View hvadBlevDerKlikketPå) {
-      if (hvadBlevDerKlikketPå == tagBillede) {
-        Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        // Vi vil have billedet gemt i vores content provider:
-        File fil = new File(Environment.getExternalStorageDirectory(),"billede.jpg");
-        //i.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(fil));
-        i.putExtra(MediaStore.EXTRA_OUTPUT, MinProvider.URI);
-        startActivityForResult(i, 42);
+    if (hvadBlevDerKlikketPå == tagBillede) {
+      Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+      // Vi vil have billedet gemt i vores content provider:
+      File fil = new File(Environment.getExternalStorageDirectory(), "billede.jpg");
+      //i.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(fil));
+      i.putExtra(MediaStore.EXTRA_OUTPUT, MinProvider.URI);
+      startActivityForResult(i, 42);
 
-      } else {
-        Intent i = new Intent(Intent.ACTION_SEND);
-        i.setType("text/plain");
-        i.putExtra(Intent.EXTRA_EMAIL, new String[]{"jacob.nordfalk@gmail.com"});
-        i.putExtra(Intent.EXTRA_CC, new String[]{"jacob.nordfalk@gmail.com"});
-        i.putExtra(Intent.EXTRA_SUBJECT, "Et billede fra AndroidElementer");
-        i.putExtra(Intent.EXTRA_TEXT, "Her er et billede");
-        i.putExtra(Intent.EXTRA_STREAM, MinProvider.URI);
+    } else {
+      Intent i = new Intent(Intent.ACTION_SEND);
+      i.setType("text/plain");
+      i.putExtra(Intent.EXTRA_EMAIL, new String[]{"jacob.nordfalk@gmail.com"});
+      i.putExtra(Intent.EXTRA_CC, new String[]{"jacob.nordfalk@gmail.com"});
+      i.putExtra(Intent.EXTRA_SUBJECT, "Et billede fra AndroidElementer");
+      i.putExtra(Intent.EXTRA_TEXT, "Her er et billede");
+      i.putExtra(Intent.EXTRA_STREAM, MinProvider.URI);
 
-        startActivity(Intent.createChooser(i, "Send e-post..."));
-      }
+      startActivity(Intent.createChooser(i, "Send e-post..."));
+    }
   }
 
   @Override

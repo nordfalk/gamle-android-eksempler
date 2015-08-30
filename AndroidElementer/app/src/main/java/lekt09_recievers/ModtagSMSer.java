@@ -41,8 +41,8 @@ class SMSReciever extends BroadcastReceiver {
  */
 public class ModtagSMSer extends Activity implements OnClickListener {
 
-  Button registrer, afregistrer;
   static SMSReciever reciever;
+  Button registrer, afregistrer;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {

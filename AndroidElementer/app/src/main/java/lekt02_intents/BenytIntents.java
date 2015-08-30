@@ -28,7 +28,6 @@ public class BenytIntents extends Activity implements OnClickListener {
   Button ringOp, ringOpDirekte, sendSms, delApp, sendEpost, webadresse, wifiIndstillinger;
 
 
-
   /**
    * Ofte har man som udvikler brug for info om den telefon brugeren har.
    * Denne metode giver telefonmodel, Androidversion og programversion etc.
@@ -42,7 +41,7 @@ public class BenytIntents extends Activity implements OnClickListener {
       e.printStackTrace();
     }
     return "\nProgram: " + getPackageName() + " version " + version + "\nTelefonmodel: " + Build.MODEL + "\n" + Build.PRODUCT + "\nAndroid v" + Build.VERSION.RELEASE + "\nsdk: r" + Build.VERSION.SDK_INT
-        + "\nAndroid ID: " + Secure.getString(getContentResolver(), Secure.ANDROID_ID);
+            + "\nAndroid ID: " + Secure.getString(getContentResolver(), Secure.ANDROID_ID);
   }
 
 
@@ -112,7 +111,7 @@ public class BenytIntents extends Activity implements OnClickListener {
     String nummer = nummerfelt.getText().toString();
     String tekst = tekstfelt.getText().toString();
     nummerfelt.setError(null);
-    if (nummer.length()==0 && (v==ringOp||v==ringOpDirekte)) {
+    if (nummer.length() == 0 && (v == ringOp || v == ringOpDirekte)) {
       nummerfelt.setError("Skriv et telefonnummer");
       Toast.makeText(this, "Skriv et telefonnummer", Toast.LENGTH_LONG).show();
       return;
@@ -152,9 +151,9 @@ public class BenytIntents extends Activity implements OnClickListener {
       startActivity(Intent.createChooser(i, "Send e-post..."));
     } else if (v == delApp) {
       Intent i = new Intent(Intent.ACTION_SEND).putExtra(Intent.EXTRA_SUBJECT, "Prøv AndroidElementer").putExtra(Intent.EXTRA_TEXT, "Hej!\n\n" +
-          "Hvis du programmerer til Android så prøv denne her eksempelsamling\n" +
-          "AndroidElementer\n" +
-          "https://play.google.com/store/apps/details?id=dk.nordfalk.android.elementer").setType("text/plain");
+              "Hvis du programmerer til Android så prøv denne her eksempelsamling\n" +
+              "AndroidElementer\n" +
+              "https://play.google.com/store/apps/details?id=dk.nordfalk.android.elementer").setType("text/plain");
       startActivity(Intent.createChooser(i, "Del via"));
     } else if (v == webadresse) {
       Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://javabog.dk"));

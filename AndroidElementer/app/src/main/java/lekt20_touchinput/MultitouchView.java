@@ -1,6 +1,6 @@
 /**
  * MultitouchView - simplificeret udgave af PhotoSorterView.java
- *
+ * <p/>
  * PhotoSorterView.java er (c) Luke Hutchison (luke.hutch@mit.edu)
  * Released under the Apache License v2.
  */

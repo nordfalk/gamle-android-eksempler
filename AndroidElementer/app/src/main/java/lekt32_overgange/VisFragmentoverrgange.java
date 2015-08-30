@@ -8,15 +8,15 @@ import dk.nordfalk.android.elementer.R;
 
 public class VisFragmentoverrgange extends AppCompatActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.lekt07_fragmenter);
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.lekt07_fragmenter);
 
-        FragmentovergangBegynd fragmentovergangBegynd = new FragmentovergangBegynd();
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction()
-                .replace(R.id.fragmentindhold, fragmentovergangBegynd)
-                .commit();
-    }
+    FragmentovergangBegynd fragmentovergangBegynd = new FragmentovergangBegynd();
+    FragmentManager fragmentManager = getSupportFragmentManager();
+    fragmentManager.beginTransaction()
+            .replace(R.id.fragmentindhold, fragmentovergangBegynd)
+            .commit();
+  }
 }

@@ -35,7 +35,7 @@ public class BenytScaleGestureDetector extends Activity implements OnScaleGestur
 
   public void log(String tekst, ScaleGestureDetector sgd) {
     tekst = tekst + "\n" + sgd.getScaleFactor()
-        + "\n(" + sgd.getFocusX() + "," + sgd.getFocusY() + ")";
+            + "\n(" + sgd.getFocusX() + "," + sgd.getFocusY() + ")";
     tv.setText(tekst);
     Log.d("Gestus", tekst);
   }

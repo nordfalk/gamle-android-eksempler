@@ -23,6 +23,33 @@ import dk.nordfalk.android.elementer.R;
  */
 public class BenytBilledeknapper extends Activity {
 
+  private static OnTouchListener farvKnapNårDenErTrykketNed = new OnTouchListener() {
+    public boolean onTouch(View view, MotionEvent me) {
+      Log.d("onTouch()", me.toString());
+      ImageView ib = (ImageView) view;
+      if (me.getAction() == MotionEvent.ACTION_DOWN) {
+        //log("farve "+me);
+        ib.setColorFilter(0xFFA0A0A0, PorterDuff.Mode.MULTIPLY);
+      } else if (me.getAction() == MotionEvent.ACTION_MOVE) {
+      } else if (me.getAction() == MotionEvent.ACTION_UP) {
+        //log("ikke farve "+me);
+        ib.setColorFilter(null);
+      }
+      return true;
+    }
+  };
+  OnFocusChangeListener farvKnapNårFokus = new OnFocusChangeListener() {
+    public void onFocusChange(View v, boolean hasFocus) {
+      Log.d("onFocusChange()", "hasFocus=" + hasFocus);
+      ImageView ib = (ImageView) v;
+      if (hasFocus) {
+        ib.setColorFilter(0xFFC0C0C0, PorterDuff.Mode.MULTIPLY);
+      } else {
+        ib.setColorFilter(null);
+      }
+    }
+  };
+
   /**
    * Laver et TextView med en tekst
    */
@@ -44,34 +71,6 @@ public class BenytBilledeknapper extends Activity {
     return tr;
   }
 
-  private static OnTouchListener farvKnapNårDenErTrykketNed = new OnTouchListener() {
-    public boolean onTouch(View view, MotionEvent me) {
-      Log.d("onTouch()", me.toString());
-      ImageView ib = (ImageView) view;
-      if (me.getAction() == MotionEvent.ACTION_DOWN) {
-        //log("farve "+me);
-        ib.setColorFilter(0xFFA0A0A0, PorterDuff.Mode.MULTIPLY);
-      } else if (me.getAction() == MotionEvent.ACTION_MOVE) {
-      } else if (me.getAction() == MotionEvent.ACTION_UP) {
-        //log("ikke farve "+me);
-        ib.setColorFilter(null);
-      }
-      return true;
-    }
-  };
-
-  OnFocusChangeListener farvKnapNårFokus = new OnFocusChangeListener() {
-    public void onFocusChange(View v, boolean hasFocus) {
-      Log.d("onFocusChange()", "hasFocus=" + hasFocus);
-      ImageView ib = (ImageView) v;
-      if (hasFocus) {
-        ib.setColorFilter(0xFFC0C0C0, PorterDuff.Mode.MULTIPLY);
-      } else {
-        ib.setColorFilter(null);
-      }
-    }
-  };
-
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -79,8 +78,8 @@ public class BenytBilledeknapper extends Activity {
     TableLayout tl = new TableLayout(this);
 
     tl.addView(tv("Dette eksempel viser billeder der kan fungere som knapper.\n"
-        + "Men hvis man vil slippe for knap-rammen så kan man ikke se at knapppen bliver trykket ned.\n"
-        + "Det kan løses ved at farve billedet når det berøres ('trykkes ned').\n"));
+            + "Men hvis man vil slippe for knap-rammen så kan man ikke se at knapppen bliver trykket ned.\n"
+            + "Det kan løses ved at farve billedet når det berøres ('trykkes ned').\n"));
 
 
     tl.addView(tr(tv("ImageButton"), tv("Med farvefilter")));

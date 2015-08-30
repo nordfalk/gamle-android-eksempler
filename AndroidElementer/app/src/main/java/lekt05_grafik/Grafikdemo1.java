@@ -52,20 +52,6 @@ public class Grafikdemo1 extends Activity {
     setContentView(grafikView);
   }
 
-
-  class GrafikView1 extends View {
-    // programmatisk konstruktør
-    public GrafikView1(Context a) {
-      super(a);
-    }
-
-    @Override
-    protected void onDraw(Canvas c) {
-      tegnGrafik(c);
-    }
-  }
-
-
   void tegnGrafik(Canvas c) {
     int t = (int) (System.currentTimeMillis() - t0) / 10; // millisekunder sekunder siden start
     int x = t * 20 / 1000; // går fra 0 til 200
@@ -83,6 +69,18 @@ public class Grafikdemo1 extends Activity {
       grafikView.postInvalidateDelayed(10); // tegn igen om 1/100 sekund
     } else {
       finish(); // afslut aktiviteten hvis der er gået 10 sekunder
+    }
+  }
+
+  class GrafikView1 extends View {
+    // programmatisk konstruktør
+    public GrafikView1(Context a) {
+      super(a);
+    }
+
+    @Override
+    protected void onDraw(Canvas c) {
+      tegnGrafik(c);
     }
   }
 

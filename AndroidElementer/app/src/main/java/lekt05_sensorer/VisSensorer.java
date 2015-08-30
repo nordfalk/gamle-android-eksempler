@@ -58,8 +58,8 @@ public class VisSensorer extends Activity implements SensorEventListener {
     int sensortype = e.sensor.getType();
 
     String måling = "Type " + sensortype + " " + e.sensor.getName() + "\n"
-        + "Fra: " + e.sensor.getVendor() + "  (" + e.sensor.getPower() + " mA)\n"
-        + "Tid: " + e.timestamp + "  præcision: " + e.accuracy + "\n";
+            + "Fra: " + e.sensor.getVendor() + "  (" + e.sensor.getPower() + " mA)\n"
+            + "Tid: " + e.timestamp + "  præcision: " + e.accuracy + "\n";
 
     for (float v : e.values)
       måling = måling + String.format("%9.4f", v); // Normalt 3, men det er set på en Nexus 5 at der er en sensor med kun 1 værdi og med 5 værdier

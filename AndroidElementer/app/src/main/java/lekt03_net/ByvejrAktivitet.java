@@ -99,7 +99,6 @@ public class ByvejrAktivitet extends Activity implements OnClickListener {
     linearLayout.addView(imageView_dag10_14);
 
 
-
     ScrollView scrollView = new ScrollView(this);
     scrollView.addView(linearLayout);
     setContentView(scrollView);

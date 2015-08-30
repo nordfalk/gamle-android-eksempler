@@ -25,6 +25,7 @@ import android.widget.TextView;
  * Benytter MinApp.data - som vi er SIKRE på er initialiseret,
  * da Application Singletons onCreate() metode bliver kaldt som
  * det første når en app (gen)startes
+ *
  * @author Jacob Nordfalk
  */
 public class NoteAktivitet extends Activity implements OnClickListener {
@@ -40,7 +41,7 @@ public class NoteAktivitet extends Activity implements OnClickListener {
     linearLayout.setOrientation(LinearLayout.VERTICAL);
 
     TextView textView = new TextView(this);
-    textView.setText("Velkommen, "+MinApp.getData().navn+", skriv dine noter herunder:");
+    textView.setText("Velkommen, " + MinApp.getData().navn + ", skriv dine noter herunder:");
     linearLayout.addView(textView);
 
     editText_postnr = new EditText(this);
@@ -73,6 +74,6 @@ public class NoteAktivitet extends Activity implements OnClickListener {
 
   private void visNoter() {
     String notetekst = MinApp.getData().noter.toString().replaceAll(", ", "\n");
-    alleNoterTv.setText( "Noter:\n"+notetekst );
+    alleNoterTv.setText("Noter:\n" + notetekst);
   }
 }
