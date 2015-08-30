@@ -77,10 +77,9 @@ public class Taleeventyr extends Activity implements OnInitListener {
     personer.add("Mormor");
     personer.add("Axel");
     personer.add("Freja");
-    personer.add("Gülsen");
-    personer.add("Numsen");
+    personer.add("Søren");
     personer.add("Diller");
-    personer.add("Hr Knivkniv");
+    personer.add("Jacob");
     personer.add("Tumbe");
     personer.add("Sebastian");
     personer.add("min ven");
@@ -94,8 +93,7 @@ public class Taleeventyr extends Activity implements OnInitListener {
     handlinger.add("er meget tilfreds.\n");
     handlinger.add("gaber.\n");
     handlinger.add("hopper og danser.\n");
-    handlinger.add("hopper og danser med sin dollarautomat.\n");
-    handlinger.add("laver lort.\n");
+    handlinger.add("går på toilettet.\n");
     handlinger.add("tisser.\n");
     handlinger.add("ser fjernsyn.\n");
     handlinger.add("slår en prut.\n");
@@ -103,24 +101,24 @@ public class Taleeventyr extends Activity implements OnInitListener {
     handlinger.add("går.\n");
     handlinger.add("går sin vej.\n");
     handlinger.add("er træt og går i seng.\n");
-    handlinger.add("tegner på");
-    handlinger.add("og");
-    handlinger.add("eller");
-    handlinger.add("elsker at");
-    handlinger.add("kan ikke lide at");
-    handlinger.add("er MEGET glad, fordi:");
+    handlinger.add("tegner på ");
+    handlinger.add("og ");
+    handlinger.add("eller ");
+    handlinger.add("elsker at ");
+    handlinger.add("kan ikke lide at ");
+    handlinger.add("er MEGET glad, fordi ");
 
     String eventyr = "";
 
-    for (int i=0; i<50; i++) {
+    for (int i=0; i<20; i++) {
       int antalPersoner = personer.size(); // antal personer i listen
       int personNummer = (int) (Math.random()*antalPersoner);
       String person = personer.get( personNummer );
       String handling = handlinger.get( (int)(Math.random()*handlinger.size()));
       System.out.println(person + " " + handling);
-      eventyr = eventyr + person + " " + handling + " ";
+      eventyr = eventyr + person + " " + handling;
     }
-    return eventyr+". Og de levede lykkeligt til deres dages ende.";
+    return eventyr+"\nOg de levede lykkeligt til deres dages ende.";
   }
 
 }

@@ -111,7 +111,9 @@ public class BenytIntents extends Activity implements OnClickListener {
   public void onClick(View v) {
     String nummer = nummerfelt.getText().toString();
     String tekst = tekstfelt.getText().toString();
+    nummerfelt.setError(null);
     if (nummer.length()==0 && (v==ringOp||v==ringOpDirekte)) {
+      nummerfelt.setError("Skriv et telefonnummer");
       Toast.makeText(this, "Skriv et telefonnummer", Toast.LENGTH_LONG).show();
       return;
     }

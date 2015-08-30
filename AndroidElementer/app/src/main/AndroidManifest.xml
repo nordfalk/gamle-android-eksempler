@@ -1,18 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="dk.nordfalk.android.elementer"
-          android:versionCode="41"
-          android:versionName="2.05 11. nov 2014 - arkitektur">
-
-    <!--
-    denne app virker fra Android 2.1 (API 7) og frem
-    men den er beregnet til Android 2.3.2 (API 9)
-    Bemærk at man ikke må bruge hovedtråden til netværk fra Android 2.3.3,
-    så f.eks Byvejr vil ikke virke med android:targetSdkVersion="10" og højere
-    -->
-    <uses-sdk
-            android:minSdkVersion="8"
-            android:targetSdkVersion="22"/>
+          android:versionCode="42"
+          android:versionName="2.1 30 aug 2015">
 
     <!-- tilladelser -->
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
@@ -67,10 +57,6 @@
           aktiviteter som ikke kan ses fra startskærmen men som kan kaldes
           internt i programmet
         -->
-        <activity android:name="lekt31_venstremenu.BenytVenstremenu"/>
-        <activity android:name="lekt32_overgange.AktivitetsovergangBegynd"/>
-        <activity android:name="lekt32_overgange.AktivitetsovergangSlut"/>
-        <activity android:name="lekt32_overgange.VisFragmentoverrgange"/>
 
         <activity android:name="lekt01_views.BenytEnKnap"/>
         <activity android:name="lekt01_views.BenytKnapperProgrammatisk"/>
@@ -240,10 +226,6 @@
         </receiver>
 
 
-        <activity android:name="lekt20_touchinput.BenytGestureDetector"/>
-        <activity android:name="lekt20_touchinput.BenytScaleGestureDetector"/>
-        <activity android:name="lekt20_touchinput.BenytMultiTouchController"/>
-
 
         <activity android:name="lekt10_livscyklus.ManglendeKaldTilSuperklasse"/>
         <activity android:name="lekt10_livscyklus.LogAktivitet"/>
@@ -254,6 +236,15 @@
         <activity android:name="lekt10_livscyklus.DialogDerOverleverSkaermvending"/>
         <activity android:name="ufaerdigt.ByvejrAktivitet2"/>
 
+        <activity android:name="lekt20_touchinput.BenytGestureDetector"/>
+        <activity android:name="lekt20_touchinput.BenytScaleGestureDetector"/>
+        <activity android:name="lekt20_touchinput.BenytMultiTouchController"/>
+
+        <activity android:name="lekt31_venstremenu.BenytVenstremenu"/>
+
+        <activity android:name="lekt32_overgange.AktivitetsovergangBegynd"/>
+        <activity android:name="lekt32_overgange.AktivitetsovergangSlut"/>
+        <activity android:name="lekt32_overgange.VisFragmentoverrgange"/>
 
         <!-- aktivitet som kan ses fra startskærmen -->
         <activity
