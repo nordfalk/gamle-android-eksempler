@@ -67,7 +67,7 @@
           aktiviteter som ikke kan ses fra startskærmen men som kan kaldes
           internt i programmet
         -->
-        <activity android:name="lekt31_design.BenytEnKnap"/>
+        <activity android:name="lekt31_venstremenu.BenytVenstremenu"/>
         <activity android:name="lekt32_overgange.AktivitetsovergangBegynd"/>
         <activity android:name="lekt32_overgange.AktivitetsovergangSlut"/>
         <activity android:name="lekt32_overgange.VisFragmentoverrgange"/>
