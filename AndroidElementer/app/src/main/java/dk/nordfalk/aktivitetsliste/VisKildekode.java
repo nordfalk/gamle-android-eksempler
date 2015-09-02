@@ -45,7 +45,7 @@ public class VisKildekode extends Activity {
   //static String HS_PRÆFIX = "http://code.google.com/p/android-eksempler/source/browse/trunk/AndroidElementer/";
 
   // GIT
-  static String HS_PRÆFIX = "http://code.google.com/p/android-eksempler/source/browse/AndroidElementer/";
+  static String HS_PRÆFIX = "https://raw.githubusercontent.com/nordfalk/android-eksempler/master/AndroidElementer/app/src/main/";
 
   static void findWebUrl(Context ctx) {
     try {
@@ -146,7 +146,7 @@ public class VisKildekode extends Activity {
         filter = new TransformFilter() {
           public final String transformUrl(final Matcher match, String url) {
             // LOKAL_PRÆFIX dur ikke her da vi starter et webbrowserintent
-            return HS_PRÆFIX + "src/" + match.group(1).replace('.', '/') + ".java";
+            return HS_PRÆFIX + "java/" + match.group(1).replace('.', '/') + ".java";
           }
         };
         Linkify.addLinks(tv, Pattern.compile("import ([a-zA-Z0-9_\\.]+)"), null, null, filter);
@@ -162,7 +162,7 @@ public class VisKildekode extends Activity {
         Linkify.addLinks(tv, Pattern.compile("(http[a-zA-Z0-9_/:\\.\\?\\&\\=\\-]+)"), null, null, filter);
 
       } catch (FileNotFoundException ex) {
-        Toast.makeText(this, "Filen mangler i assets/src.\nViser " + filnavn + " fra nettet i stedet.", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Filen mangler i assets/.\nViser " + filnavn + " fra nettet i stedet.", Toast.LENGTH_LONG).show();
         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(HS_PRÆFIX + filnavn)));
         finish(); // Afslut denne aktivitet
       } catch (IOException ex) {

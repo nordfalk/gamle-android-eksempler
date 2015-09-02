@@ -271,7 +271,7 @@
             <!-- bruges af metoden VisKildekode.findWebUrl() -->
             <meta-data
                 android:name="web_url"
-                android:value="http://code.google.com/p/android-eksempler/source/browse/AndroidElementer/"/>
+                android:value="https://raw.githubusercontent.com/nordfalk/android-eksempler/master/AndroidElementer/app/src/main/"/>
         </activity>
 
 
