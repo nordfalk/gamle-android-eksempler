@@ -25,11 +25,11 @@ Du kan se kildekoden til eksemplerne INDE FRA SELVE app'en, lige efter at du har
 
 
 Eksemplerne kan gennemses på
-http://code.google.com/p/android-eksempler/source/browse/#git%2FAndroidElementer
+https://github.com/nordfalk/android-eksempler/tree/master/AndroidElementer/app/src/main/java
 
 De kan hentes fra Google Play på https://market.android.com/details?id=dk.nordfalk.android.elementer
 
-Du kan klone dem til dig eget værktøj - se http://code.google.com/p/android-eksempler/source/checkout
+Du kan klone dem til dig eget værktøj - se https://github.com/nordfalk/android-eksempler
 
 Eller du kan hente dem som ZIP-fil fra http://javabog.dk/filer/android/AndroidElementer.zip
 
