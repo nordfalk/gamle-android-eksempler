@@ -3,7 +3,7 @@
 Forskellige eksempler på hvordan man programmerer til Android-platformen.
 
 
-  * AndroidElementer viser forskellige elementer i Android-programmering. Kildekoden til eksemplerne kan ses INDE FRA SELVE app'en
+  * AndroidElementer viser forskellige elementer i Android-programmering. Kildekoden til eksemplerne kan ses INDE FRA SELVE app'en - se https://github.com/nordfalk/android-eksempler/blob/wiki/AndroidElementer.md
   * VejrFanen viser dagens vejr fra DMI og meget andet
   * BoulderDash er et lille spil - se http://da.wikipedia.org/wiki/Boulder_Dash
   * SpaceInvaders - en klassiker http://da.wikipedia.org/wiki/Space_Invaders_%28computerspil%29
