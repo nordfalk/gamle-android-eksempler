@@ -18,7 +18,7 @@ public class VisKildekodeIWebView extends Activity {
     super.onCreate(savedInstanceState);
     webView = new WebView(this);
 
-    VisKildekode.findWebUrl(this);
+    VisKildekode.find_HS_PRÆFIX(this);
 
     Intent kaldtMedIntent = getIntent();
     if (kaldtMedIntent.getExtras() != null) {

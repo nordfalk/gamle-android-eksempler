@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest package="dk.nordfalk.android.elementer"
-          xmlns:android="http://schemas.android.com/apk/res/android"
-          android:versionCode="44"
-          android:versionName="2.1 30 aug 2015">
+          xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- tilladelser -->
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
@@ -270,8 +268,8 @@
         <activity android:name="dk.nordfalk.aktivitetsliste.VisKildekode">
             <!-- bruges af metoden VisKildekode.findWebUrl() -->
             <meta-data
-                android:name="web_url"
-                android:value="https://raw.githubusercontent.com/nordfalk/android-eksempler/master/AndroidElementer/app/src/main/"/>
+                android:name="HS_PRÆFIX"
+                android:value="https://github.com/nordfalk/android-eksempler/tree/master/AndroidElementer/app/src/main/"/>
         </activity>
 
 

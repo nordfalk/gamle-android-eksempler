@@ -12,6 +12,10 @@ android {
 //      Bemærk at man ikke må bruge hovedtråden til netværk fra Android 2.3.3,
 //      så f.eks Byvejr vil ikke virke med targetSdkVersion 10 og højere
         targetSdkVersion 22
+
+        versionCode 46
+        versionName '2.1.1 4 sept 2015 - lokal kopi af kildekode virker'
+
     }
     buildTypes {
         release {
@@ -21,6 +25,8 @@ android {
     }
     productFlavors {
     }
+    // i assets/ skal, udover src/main/assets, også være al kildekoden og alle resurserne (src/main)
+    sourceSets { main { assets.srcDirs = ['src/main/assets', 'src/main'] } }
 }
 dependencies {
     // Støttebiblioteker - se http://developer.android.com/tools/support-library/
@@ -30,6 +36,4 @@ dependencies {
     compile 'com.android.support:appcompat-v7:22.2.1'
     // Understøttelse af venstremenu
     compile 'com.android.support:design:22.2.1'
-
-
 }

@@ -45,23 +45,23 @@ public class VisKildekode extends Activity {
   //static String HS_PRÆFIX = "http://code.google.com/p/android-eksempler/source/browse/trunk/AndroidElementer/";
 
   // GIT
-  static String HS_PRÆFIX = "https://raw.githubusercontent.com/nordfalk/android-eksempler/master/AndroidElementer/app/src/main/";
+  static String HS_PRÆFIX = "https://github.com/nordfalk/android-eksempler/tree/master/AndroidElementer/app/src/main/";
 
-  static void findWebUrl(Context ctx) {
+  static void find_HS_PRÆFIX(Context ctx) {
     try {
       Bundle metaData = ctx.getPackageManager().
               getActivityInfo(new ComponentName(ctx, VisKildekode.class), PackageManager.GET_META_DATA).metaData;
-      HS_PRÆFIX = metaData.getString("web_url");
+      HS_PRÆFIX = metaData.getString("HS_PRÆFIX");
     } catch (Exception ex) {
       ex.printStackTrace();
-      Toast.makeText(ctx, "Kunne ikke læse web_url fra manifestet. Eksterne henvisninger er muligvis forkerte", Toast.LENGTH_LONG).show();
+      Toast.makeText(ctx, "Kunne ikke læse HS_PRÆFIX fra manifestet. Eksterne henvisninger er muligvis forkerte", Toast.LENGTH_LONG).show();
     }
   }
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    findWebUrl(this);
+    find_HS_PRÆFIX(this);
 
     tv = new TextView(this);
 
@@ -100,17 +100,17 @@ public class VisKildekode extends Activity {
         tv.setText(str);
 
 
-        TransformFilter filter = new TransformFilter() {
+        TransformFilter dokFilter = new TransformFilter() {
           public final String transformUrl(final Matcher match, String url) {
             String klassenavn = match.group(1);
             return "http://developer.android.com/reference/" + klassenavn.replace('.', '/') + ".html";
           }
         };
-        Linkify.addLinks(tv, Pattern.compile("import (android.*?);"), null, null, filter);
-        Linkify.addLinks(tv, Pattern.compile("import (java.*?);"), null, null, filter);
+        Linkify.addLinks(tv, Pattern.compile("import (android.*?);"), null, null, dokFilter);
+        Linkify.addLinks(tv, Pattern.compile("import (java.*?);"), null, null, dokFilter);
 
 
-        filter = new TransformFilter() {
+        TransformFilter andResFilter = new TransformFilter() {
           public final String transformUrl(final Matcher match, String url) {
             // http://android.git.kernel.org/?p=platform/frameworks/base.git;a=blob;f=core/res/res/layout/simple_list_item_1.xml"
             // http://android.git.kernel.org/?p=platform/frameworks/base.git;a=blob;f=core/res/res/" + match.group(1).replace('.', '/') + ".xml";
@@ -125,41 +125,41 @@ public class VisKildekode extends Activity {
             return "https://github.com/android/platform_frameworks_base/blob/master/core/res/res/" + match.group(1).replace('.', '/') + ".xml";
           }
         };
-        Linkify.addLinks(tv, Pattern.compile("android.R.(layout.[a-z0-9_]+)"), null, null, filter);
-        Linkify.addLinks(tv, Pattern.compile("android.R.(xml.[a-z0-9_]+)"), null, null, filter);
-        Linkify.addLinks(tv, Pattern.compile("android.R.(raw.[a-z0-9_]+)"), null, null, filter);
-        Linkify.addLinks(tv, Pattern.compile("android.R.(drawable.[a-z0-9_]+)"), null, null, filter);
-        Linkify.addLinks(tv, Pattern.compile("android.R.(anim.[a-z0-9_]+)"), null, null, filter);
+        Linkify.addLinks(tv, Pattern.compile("android.R.(layout.[a-z0-9_]+)"), null, null, andResFilter);
+        Linkify.addLinks(tv, Pattern.compile("android.R.(xml.[a-z0-9_]+)"), null, null, andResFilter);
+        Linkify.addLinks(tv, Pattern.compile("android.R.(raw.[a-z0-9_]+)"), null, null, andResFilter);
+        Linkify.addLinks(tv, Pattern.compile("android.R.(drawable.[a-z0-9_]+)"), null, null, andResFilter);
+        Linkify.addLinks(tv, Pattern.compile("android.R.(anim.[a-z0-9_]+)"), null, null, andResFilter);
 
 
-        filter = new TransformFilter() {
+        TransformFilter resFilter = new TransformFilter() {
           public final String transformUrl(final Matcher match, String url) {
             // LOKAL_PRÆFIX dur ikke her da vi starter et webbrowserintent
             return HS_PRÆFIX + "res/" + match.group(1).replace('.', '/') + ".xml";
           }
         };
-        Linkify.addLinks(tv, Pattern.compile("R.(layout.[a-z0-9_]+)"), null, null, filter);
-        Linkify.addLinks(tv, Pattern.compile("R.(xml.[a-z0-9_]+)"), null, null, filter);
-        Linkify.addLinks(tv, Pattern.compile("R.(anim.[a-z0-9_]+)"), null, null, filter);
+        Linkify.addLinks(tv, Pattern.compile("R.(layout.[a-z0-9_]+)"), null, null, resFilter);
+        Linkify.addLinks(tv, Pattern.compile("R.(xml.[a-z0-9_]+)"), null, null, resFilter);
+        Linkify.addLinks(tv, Pattern.compile("R.(anim.[a-z0-9_]+)"), null, null, resFilter);
 
         //
-        filter = new TransformFilter() {
+        TransformFilter javaFilter = new TransformFilter() {
           public final String transformUrl(final Matcher match, String url) {
             // LOKAL_PRÆFIX dur ikke her da vi starter et webbrowserintent
             return HS_PRÆFIX + "java/" + match.group(1).replace('.', '/') + ".java";
           }
         };
-        Linkify.addLinks(tv, Pattern.compile("import ([a-zA-Z0-9_\\.]+)"), null, null, filter);
+        Linkify.addLinks(tv, Pattern.compile("import ([a-zA-Z0-9_\\.]+)"), null, null, javaFilter);
         //
 
 
         // Almindelig HTTP
-        filter = new TransformFilter() {
+        TransformFilter httpFlter = new TransformFilter() {
           public final String transformUrl(final Matcher match, String url) {
             return match.group(1);
           }
         };
-        Linkify.addLinks(tv, Pattern.compile("(http[a-zA-Z0-9_/:\\.\\?\\&\\=\\-]+)"), null, null, filter);
+        Linkify.addLinks(tv, Pattern.compile("(http[a-zA-Z0-9_/:\\.\\?\\&\\=\\-]+)"), null, null, httpFlter);
 
       } catch (FileNotFoundException ex) {
         Toast.makeText(this, "Filen mangler i assets/.\nViser " + filnavn + " fra nettet i stedet.", Toast.LENGTH_LONG).show();
