@@ -56,7 +56,7 @@ public class Grafikdemo1 extends Activity {
     int t = (int) (System.currentTimeMillis() - t0) / 10; // millisekunder sekunder siden start
     int x = t * 20 / 1000; // går fra 0 til 200
     int y = t * 40 / 1000; // går fra 0 til 400
-    System.out.println(t + " x=" + x + " y=" + y);
+    //System.out.println(t + " x=" + x + " y=" + y);
 
     c.drawPath(cirkel, cirkelstreg);
     c.drawTextOnPath("Hvornår er en Tuborg bedst?", cirkel, x, y - 100, tekststreg);

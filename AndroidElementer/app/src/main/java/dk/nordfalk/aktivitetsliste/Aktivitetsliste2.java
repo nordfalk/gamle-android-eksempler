@@ -12,6 +12,8 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,7 +34,7 @@ import java.util.ArrayList;
 
 import dk.nordfalk.android.elementer.R;
 
-public class Aktivitetsliste2 extends FragmentActivity {
+public class Aktivitetsliste2 extends AppCompatActivity {
   int onStartTæller;
   ToggleButton seKildekode;
   ViewPager kategorivalg;
@@ -44,65 +46,35 @@ public class Aktivitetsliste2 extends FragmentActivity {
 
     Aktivitetsdata.instans.init(getApplication());
 
-    // Layout
-    TableLayout tl = new TableLayout(this);
-    //tl.addView(textView);
-    getLayoutInflater().inflate(R.layout.viewpager_med_titel, tl, true); // tilføj deklarativt til 'indhold'
-    kategorivalg = (ViewPager) tl.findViewById(R.id.viewPager);
+    setContentView(R.layout.viewpager_med_titel);
+    kategorivalg = (ViewPager) findViewById(R.id.viewPager);
     kategorivalg.setAdapter(new VPAdapter(getSupportFragmentManager()));
-    ((TableLayout.LayoutParams) kategorivalg.getLayoutParams()).height = 0;
-    ((TableLayout.LayoutParams) kategorivalg.getLayoutParams()).weight = 1;
-    /*
-  <android.support.v4.view.PagerTitleStrip
-      android:id="@+id/pager_title_strip"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_gravity="top"/>
-
-     */
-
-    if (savedInstanceState == null) // Frisk start - vis animation
-    {
-      kategorivalg.startAnimation(AnimationUtils.loadAnimation(this, R.anim.egen_anim2));
-    }
-
 
     seKildekode = new ToggleButton(this);
     seKildekode.setTextOff("Se kilde");
     seKildekode.setTextOn("Se kilde");
     seKildekode.setChecked(false);
 
-
-    // Layout
-    //TableLayout tl = new TableLayout(this);
-    //tl.addView(textView);
-    //tl.addView(kategorivalg, new TableLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, 1));
-    //tl.addView(visKlasserListView, new TableLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1));
-    //tl.addView(visKlasserListView);
-    //((LinearLayout.LayoutParams) visKlasserListView.getLayoutParams()).weight = 1; // Stræk listen
-    TableRow tr = new TableRow(this);
-    tr.addView(seKildekode);
-    //tr.addView(søgEditText);
+    ActionBar actionBar = getSupportActionBar();
+    actionBar.setDisplayShowCustomEnabled(true);
+    actionBar.setCustomView(seKildekode);
 
 
-    //tr.addView(kategorivalg, new TableRow.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT, 1));
-    tl.addView(tr);
-
-    setContentView(tl);
-
-
-    kategorivalg.setId(118);
     seKildekode.setId(119);
 
-    // Genskab valg fra sidst der blev startet en aktivitet
-    SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-    int position = prefs.getInt("position", 0);
 
-    // Sæt ID'er så vi understøtter vending
-    //XXXvisKlasserListView.setId(117);
-    //XXXvisKlasserListView.setSelectionFromTop(position, 30);
-    //XXXkategorivalg.setSelection(prefs.getInt("kategoriPos", 1));
+    if (savedInstanceState == null) // Frisk start - vis animation
+    {
+      //kategorivalg.startAnimation(AnimationUtils.loadAnimation(this, R.anim.egen_anim2));
+      // Genskab valg fra sidst der blev startet en aktivitet
+      SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 
+      // Sæt ID'er så vi understøtter vending
+      //XXXvisKlasserListView.setId(117);
+      //XXXint position = prefs.getInt("position", 0);
+      //XXXvisKlasserListView.setSelectionFromTop(position, 30);
+      kategorivalg.setCurrentItem(prefs.getInt("kategoriPos", 1));
+    }
   }
 
 
@@ -169,16 +141,16 @@ public class Aktivitetsliste2 extends FragmentActivity {
 
   public static class KarruselFrag extends Fragment implements OnItemClickListener, OnItemLongClickListener {
     ArrayList<String> klasserDerVisesNu = new ArrayList<String>();
-    private int position;
+    private int kategoriPos;
     private Aktivitetsliste2 a;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
       a = (Aktivitetsliste2) getActivity();
-      position = getArguments().getInt("position");
-      Aktivitetsdata.instans.tjekForAndreFilerIPakken(position);
-      klasserDerVisesNu.addAll(Aktivitetsdata.instans.klasselister.get(position));
+      kategoriPos = getArguments().getInt("position");
+      Aktivitetsdata.instans.tjekForAndreFilerIPakken(kategoriPos);
+      klasserDerVisesNu.addAll(Aktivitetsdata.instans.klasselister.get(kategoriPos));
 
       // Anonym nedarving af ArrayAdapter med omdefineret getView()
       ArrayAdapter<String> klasserDerVisesNuAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_2, android.R.id.text1, klasserDerVisesNu) {
@@ -247,12 +219,10 @@ public class Aktivitetsliste2 extends FragmentActivity {
       position = Aktivitetsdata.instans.alleAktiviteter.indexOf(akt);
       // Gem position og 'start aktivitet direkte' til næste gang
 
-      /*
-      PreferenceManager.getDefaultSharedPreferences(this).edit().
+      PreferenceManager.getDefaultSharedPreferences(getActivity()).edit().
               putInt("position", position).
-              putInt("kategoriPos", kategorivalg.getSelectedItemPosition()).
+              putInt("kategoriPos", kategoriPos).
               commit();
-              */
     }
 
     public boolean onItemLongClick(AdapterView<?> listView, View v, int position, long id) {

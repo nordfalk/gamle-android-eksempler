@@ -110,7 +110,7 @@ class GrafikView2 extends View {
     int x = getWidth() / 2;
     int y = getHeight() / 2;
     // rotér lærredet omkring tekstens center
-    c.rotate(rotation, x + tekstomrids.centerX(), y + tekstomrids.centerY());
+    c.rotate(rotation, x , y );
     // tegn teksten
     c.drawText(roteretTekst, x, y, paint);
 
