@@ -5,7 +5,6 @@ import android.app.Application;
 import android.app.KeyguardManager;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
-import android.os.Handler;
 import android.os.PowerManager;
 import android.os.SystemClock;
 import android.util.Log;
@@ -137,18 +136,15 @@ public class Aktivitetsdata {
 
       // Påbegynd asynkron indlæsning af klasselister
       new Thread() {
-        Handler h = new Handler();
-        int i;
+        @Override
+        public void run() {
+          for (int i = 1; i < Aktivitetsdata.instans.pakkekategorier.size(); i++) {
+            SystemClock.sleep(500); // Vent lidt for at lade systemet starte op
+            tjekForAndreFilerIPakken(i);
+            if (FEJLFINDING)
+              Log.d("Aktivitetsliste", "T " + i + " tid: " + (System.currentTimeMillis() - tid));
 
-        public Runnable tjek = new Runnable() {
-          @Override
-          public void run() {
-            try {
-              tjekForAndreFilerIPakken(i);
-              if (FEJLFINDING)
-                Log.d("Aktivitetsliste", "T " + i + " tid: " + (System.currentTimeMillis() - tid));
-
-              // Gem alle resultater for hurtig opstart
+            try { // Gem alle resultater for hurtig opstart
               ObjectOutputStream objektstrøm = new ObjectOutputStream(new FileOutputStream(cachefil));
               objektstrøm.writeObject(Aktivitetsdata.instans.alleAktiviteter);
               objektstrøm.writeObject(Aktivitetsdata.instans.pakkenavne);
@@ -159,14 +155,6 @@ public class Aktivitetsdata {
               ex.printStackTrace();
             }
           }
-        };
-
-        @Override
-        public void run() {
-          for (int i = 1; i < Aktivitetsdata.instans.pakkekategorier.size(); i++) {
-            SystemClock.sleep(500); // Vent lidt for at lade systemet starte op
-            h.post(tjek);
-          }
         }
       }.start();
 
@@ -174,7 +162,7 @@ public class Aktivitetsdata {
   }
 
 
-  public void tjekForAndreFilerIPakken(int position) {
+  public synchronized void tjekForAndreFilerIPakken(int position) {
     if (!Aktivitetsdata.instans.manglerTjekForAndreFiler.contains(position)) {
       return;
     }

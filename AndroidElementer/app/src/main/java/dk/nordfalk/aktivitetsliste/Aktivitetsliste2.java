@@ -193,7 +193,7 @@ public class Aktivitetsliste2 extends FragmentActivity {
             String pakkenavn = pakkeOgKlasse.substring(0, pakkeOgKlasse.lastIndexOf('/'));
             String klassenavn = pakkeOgKlasse.substring(pakkenavn.length() + 1);
             listeelem_overskrift.setText(klassenavn);
-            listeelem_beskrivelse.setText(pakkeOgKlasse);
+            listeelem_beskrivelse.setText(pakkenavn+"."+klassenavn.substring(0,klassenavn.length()-5)); // fjern .java
           } else if (pakkeOgKlasse.endsWith(".xml")) {
             listeelem_overskrift.setText(pakkeOgKlasse);
             listeelem_beskrivelse.setText("");
@@ -201,7 +201,7 @@ public class Aktivitetsliste2 extends FragmentActivity {
             String pakkenavn = pakkeOgKlasse.substring(0, pakkeOgKlasse.lastIndexOf('.'));
             String klassenavn = pakkeOgKlasse.substring(pakkenavn.length() + 1);
             listeelem_overskrift.setText(klassenavn);
-            listeelem_beskrivelse.setText(pakkenavn);
+            listeelem_beskrivelse.setText(pakkeOgKlasse);
           }
 
           return view;
