@@ -9,13 +9,16 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.v7.app.AppCompatActivity;
 import android.text.util.Linkify;
 import android.text.util.Linkify.TransformFilter;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.ScrollView;
@@ -32,7 +35,7 @@ import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class VisKildekode extends Activity {
+public class VisKildekode extends AppCompatActivity {
   String filnavn;
   TextView tv;
   ScrollView sv;
@@ -62,7 +65,6 @@ public class VisKildekode extends Activity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     find_HS_PRÆFIX(this);
-
     tv = new TextView(this);
 
     // Genskab foretrukken skriftstørrelse
@@ -93,6 +95,7 @@ public class VisKildekode extends Activity {
       tv.setText("Manglede ekstradata med filen der skal vises.\n"
               + "Du kan lave et 'langt tryk' på aktivitetslisten for at vise kildekoden til en aktivitet");
     } else {
+      setTitle(filnavn);
       try {
         byte[] b = læsAssetFil(filnavn);
         String str = new String(b, "UTF-8");
@@ -188,6 +191,7 @@ public class VisKildekode extends Activity {
 
   @Override
   public boolean onCreateOptionsMenu(Menu menu) {
+    if (Build.VERSION.SDK_INT>=19) menu.add(0, 115, 0, "Fuldskærm");
     menu.add(0, 105, 0, "Skriftstørrelse...");
     menu.add(0, 100, 0, "Vis i WebView");
     menu.add(0, 102, 0, "Vælg fil");
@@ -200,6 +204,15 @@ public class VisKildekode extends Activity {
   public boolean onOptionsItemSelected(MenuItem item) {
     if (item.getItemId() == 100) {
       startActivity(new Intent(this, VisKildekodeIWebView.class).putExtra(KILDEKODE_FILNAVN, filnavn));
+    } else if (item.getItemId() == 115) {
+      if (Build.VERSION.SDK_INT>=19)
+      getWindow().getDecorView().setSystemUiVisibility(
+              View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                      | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                      | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                      | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // hide nav bar
+                      | View.SYSTEM_UI_FLAG_FULLSCREEN // hide status bar
+                      | View.SYSTEM_UI_FLAG_IMMERSIVE);
     } else if (item.getItemId() == 102) {
       vælgFil();
     } else if (item.getItemId() == 103) {
