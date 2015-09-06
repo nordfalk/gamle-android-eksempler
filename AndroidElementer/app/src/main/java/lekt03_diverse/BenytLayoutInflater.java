@@ -46,7 +46,7 @@ public class BenytLayoutInflater extends Activity implements OnClickListener {
     findViewById(R.id.listeelem_beskrivelse).setOnClickListener(this); // FORKERT!
 
     // Løsningen er at vente med at fæstne viesne til layoutet til EFTER kald til findViewById()
-    View rod = getLayoutInflater().inflate(R.layout.lekt04_listeelement, indhold, false); // false=fæsn ikke
+    View rod = getLayoutInflater().inflate(R.layout.lekt04_listeelement, indhold, false); // false=fæstn ikke
     rod.findViewById(R.id.listeelem_billede).setOnClickListener(this);    // rigtigt
     rod.findViewById(R.id.listeelem_overskrift).setOnClickListener(this); // rigtigt
     rod.findViewById(R.id.listeelem_beskrivelse).setOnClickListener(this);// rigtigt

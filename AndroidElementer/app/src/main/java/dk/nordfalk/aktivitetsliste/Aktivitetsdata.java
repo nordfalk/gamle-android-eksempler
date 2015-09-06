@@ -5,6 +5,7 @@ import android.app.Application;
 import android.app.KeyguardManager;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
+import android.os.Handler;
 import android.os.PowerManager;
 import android.os.SystemClock;
 import android.util.Log;
@@ -33,7 +34,7 @@ public class Aktivitetsdata {
   ArrayList<ArrayList<String>> klasselister = new ArrayList<ArrayList<String>>();
   HashSet<Integer> manglerTjekForAndreFiler = new HashSet<Integer>();
   private Application app;
-  static final boolean FEJLFINDING = false;
+  static final boolean FEJLFINDING = true;
 
 
   public void init(Application application) {
@@ -136,15 +137,18 @@ public class Aktivitetsdata {
 
       // Påbegynd asynkron indlæsning af klasselister
       new Thread() {
-        @Override
-        public void run() {
-          for (int i = 1; i < Aktivitetsdata.instans.pakkekategorier.size(); i++) {
-            SystemClock.sleep(500); // Vent lidt for at lade systemet starte op
-            tjekForAndreFilerIPakken(i);
-            if (FEJLFINDING)
-              Log.d("Aktivitetsliste", "T " + i + " tid: " + (System.currentTimeMillis() - tid));
+        Handler h = new Handler();
+        int i;
 
-            try { // Gem alle resultater for hurtig opstart
+        public Runnable tjek = new Runnable() {
+          @Override
+          public void run() {
+            try {
+              tjekForAndreFilerIPakken(i);
+              if (FEJLFINDING)
+                Log.d("Aktivitetsliste", "T " + i + " tid: " + (System.currentTimeMillis() - tid));
+
+              // Gem alle resultater for hurtig opstart
               ObjectOutputStream objektstrøm = new ObjectOutputStream(new FileOutputStream(cachefil));
               objektstrøm.writeObject(Aktivitetsdata.instans.alleAktiviteter);
               objektstrøm.writeObject(Aktivitetsdata.instans.pakkenavne);
@@ -155,6 +159,14 @@ public class Aktivitetsdata {
               ex.printStackTrace();
             }
           }
+        };
+
+        @Override
+        public void run() {
+          for (int i = 1; i < Aktivitetsdata.instans.pakkekategorier.size(); i++) {
+            SystemClock.sleep(500); // Vent lidt for at lade systemet starte op
+            h.post(tjek);
+          }
         }
       }.start();
 
@@ -162,7 +174,7 @@ public class Aktivitetsdata {
   }
 
 
-  public synchronized void tjekForAndreFilerIPakken(int position) {
+  public void tjekForAndreFilerIPakken(int position) {
     if (!Aktivitetsdata.instans.manglerTjekForAndreFiler.contains(position)) {
       return;
     }

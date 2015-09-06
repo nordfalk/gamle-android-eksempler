@@ -255,7 +255,7 @@
 
         <!-- aktivitet som kan ses fra startskærmen -->
         <activity
-            android:name="dk.nordfalk.aktivitetsliste.Aktivitetsliste"
+            android:name="dk.nordfalk.aktivitetsliste.Aktivitetsliste2"
             android:label="AndroidElementer">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
