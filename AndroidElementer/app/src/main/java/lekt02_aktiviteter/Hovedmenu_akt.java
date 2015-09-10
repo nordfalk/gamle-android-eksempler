@@ -5,8 +5,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TableLayout;
+
+import dk.nordfalk.android.elementer.R;
 
 /**
  * @author Jacob Nordfalk
@@ -19,27 +22,16 @@ public class Hovedmenu_akt extends Activity implements OnClickListener {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
-    // Programmatisk layout
-    TableLayout tl = new TableLayout(this);
+    setContentView(R.layout.lekt01_tre_knapper);
 
-    spilKnap = new Button(this);
+    spilKnap = (Button) findViewById(R.id.knap1);
     spilKnap.setText("Spil");
-    tl.addView(spilKnap);
 
-    indstillingerKnap = new Button(this);
+    indstillingerKnap = (Button) findViewById(R.id.knap2);
     indstillingerKnap.setText("Indstillinger");
-    tl.addView(indstillingerKnap);
 
-    hjaelpKnap = new Button(this);
+    hjaelpKnap = (Button) findViewById(R.id.knap3);
     hjaelpKnap.setText("Hjælp");
-    tl.addView(hjaelpKnap);
-
-    setContentView(tl);
-    // Havde vi brugt deklarativt layout i XML havde vi i stedet her skrevet
-    //setContentView(R.layout.mit_layout);
-    //spilKnap = (Button) findViewById(R.id.spilKnap);
-    //indstillingerKnap = (Button) findViewById(R.id.indstillingerKnap);
-    //hjaelpKnap = (Button) findViewById(R.id.hjaelpKnap);
 
     spilKnap.setOnClickListener(this);
     indstillingerKnap.setOnClickListener(this);

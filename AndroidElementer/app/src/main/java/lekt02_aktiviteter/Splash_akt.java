@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 import dk.nordfalk.android.elementer.R;
@@ -22,6 +23,7 @@ public class Splash_akt extends Activity implements Runnable {
 
     ImageView iv = new ImageView(this);
     iv.setImageResource(R.drawable.logo);
+    iv.startAnimation(AnimationUtils.loadAnimation(this, R.anim.egen_anim));
     setContentView(iv);
 
     // Hvis savedInstanceState ikke er null er det en aktivitet der er ved at blive genstartet

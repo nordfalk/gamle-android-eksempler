@@ -1,14 +1,14 @@
 
 Dette er en samling af let forståelige eksempler der viser elementer i Android-programmering.
 
-De er udarbejdet i forbindelse med Android-kurser jeg har holdt på http://ihk.dk og http://lundogbendsen.dk/
+De er udarbejdet i forbindelse med Android-kurser jeg holder på DTU og http://lundogbendsen.dk/
 
 Alle eksemplerne er som udgangspunkt open source under GPLv3, med mindre andet er i en specifik kildekode-fil.
 
 Kontakt mig hvis du ønsker at bygge videre på eksemplerne under en anden licens eller hvis du ønsker skriveadgang så du kan arbejde videre på en af projekterne.
 
-Eksempelsamlingen kan hentes ned fra Google Play fra:
-https://market.android.com/details?id=dk.nordfalk.android.elementer
+Eksempelsamlingen kan hentes fra Google Play på:
+https://play.google.com/store/apps/details?id=dk.nordfalk.android.elementer
 
 Båt-hornet (dyt.ogg) er taget fra http://opengameart.org/content/bicycle-horn
 
