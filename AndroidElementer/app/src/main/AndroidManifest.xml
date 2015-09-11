@@ -48,10 +48,9 @@
 
     <application
         android:name="lekt04_arkitektur.MinApp"
-        android:icon="@drawable/logo"
-        android:theme="@style/AppTheme">
+        android:theme="@style/Theme.AppCompat"
+        android:icon="@drawable/logo">
         <!--
-            android:theme="@style/Theme.DesignDemo"
           aktiviteter som ikke kan ses fra startskærmen men som kan kaldes
           internt i programmet
         -->

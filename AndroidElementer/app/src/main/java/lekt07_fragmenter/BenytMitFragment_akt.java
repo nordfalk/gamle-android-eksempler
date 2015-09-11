@@ -14,7 +14,7 @@ public class BenytMitFragment_akt extends Activity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.lekt07_fragmenter);
+    setContentView(R.layout.lekt04_fragmenter);
 
     if (savedInstanceState == null) {
       MitFragment_frag fragment = new MitFragment_frag();

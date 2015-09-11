@@ -16,7 +16,7 @@ public class Hovedaktivitet extends AppCompatActivity {
   protected void onCreate(Bundle savedInstanceState) {
     requestWindowFeature(Window.FEATURE_ACTION_BAR);
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.lekt07_fragmenter);
+    setContentView(R.layout.lekt04_fragmenter);
 
     if (savedInstanceState == null) {
       Fragment fragment = new Splash_frag();
@@ -25,6 +25,7 @@ public class Hovedaktivitet extends AppCompatActivity {
               .commit();
     }
 
+    setTitle("Hovedaktivitet");
     // Man kan trykke på app-ikonet i øverste venstre hjørne
     // (og det betyder at brugeren vil navigere op i hierakiet)
     getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -33,12 +34,7 @@ public class Hovedaktivitet extends AppCompatActivity {
   @Override
   public boolean onOptionsItemSelected(MenuItem item) {
     if (item.getItemId() == android.R.id.home) {
-      // brugeren vil navigere op i hierakiet
-      if (getSupportFragmentManager().getBackStackEntryCount() == 0)
-        finish(); // ikke flere fragmenter - afslut aktiviteten
-      else
-        getSupportFragmentManager().popBackStack(); // gå en tilbage i fragmentbunken
-      return true;
+      onBackPressed(); // brugeren vil navigere op i hierakiet
     }
     return super.onOptionsItemSelected(item);
   }

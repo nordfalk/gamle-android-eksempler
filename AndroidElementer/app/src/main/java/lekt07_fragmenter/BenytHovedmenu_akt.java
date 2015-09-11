@@ -1,7 +1,6 @@
 package lekt07_fragmenter;
 
 import android.annotation.TargetApi;
-import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -22,7 +21,7 @@ public class BenytHovedmenu_akt extends AppCompatActivity {
   protected void onCreate(Bundle savedInstanceState) {
     requestWindowFeature(Window.FEATURE_ACTION_BAR);
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.lekt07_fragmenter);
+    setContentView(R.layout.lekt04_fragmenter);
 
     if (savedInstanceState == null) {
       Hovedmenu_frag fragment = new Hovedmenu_frag();

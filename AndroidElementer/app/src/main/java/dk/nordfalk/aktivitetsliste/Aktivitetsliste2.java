@@ -91,9 +91,7 @@ public class Aktivitetsliste2 extends AppCompatActivity {
 
   void visKildekode(String klasse) {
     String filnavn = klasse;
-    if (filnavn.equals("AndroidManifest.xml")) {
-      // ingen ekstra sti eller andet
-    } else {
+    if (!filnavn.equals("AndroidManifest.xml")) {
       filnavn = "java/" + filnavn;
       if (!filnavn.endsWith(".java")) {
         filnavn = filnavn.replace('.', '/') + ".java";
@@ -140,7 +138,7 @@ public class Aktivitetsliste2 extends AppCompatActivity {
   }
 
   public static class KarruselFrag extends Fragment implements OnItemClickListener, OnItemLongClickListener {
-    ArrayList<String> klasserDerVisesNu = new ArrayList<String>();
+    ArrayList<String> klasserDerVisesNu = new ArrayList<>();
     private int kategoriPos;
     private Aktivitetsliste2 a;
 
@@ -201,10 +199,12 @@ public class Aktivitetsliste2 extends AppCompatActivity {
         // Tjek at klassen faktisk kan indlæses (så prg ikke crasher hvis den ikke kan!)
         Class klasse = Class.forName(akt);
 
+        /*
         if (akt.toLowerCase().contains("fragment") && Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB_MR2) {
           a.visDialog("Denne aktivitet kan kun køre på Android 4\nSkal den køre på Android 2 skal et kompatibilitetsbibliotek inkluderes og koden ændres til at bruge kompatibilitetsbiblioteket.");
           return;
         }
+        */
         startActivity(new Intent(getActivity(), klasse));
         a.overridePendingTransition(0, 0); // hurtigt skift
         Toast.makeText(getActivity(), akt + " startet", Toast.LENGTH_SHORT).show();

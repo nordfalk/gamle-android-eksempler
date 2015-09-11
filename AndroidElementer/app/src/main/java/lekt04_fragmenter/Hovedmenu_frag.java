@@ -13,11 +13,10 @@ import lekt02_aktiviteter.*;
 
 public class Hovedmenu_frag extends Fragment implements View.OnClickListener {
   private Button spilKnap, indstillingerKnap, hjaelpKnap;
-  private ViewGroup rod;
 
   @Override
   public View onCreateView(LayoutInflater i, ViewGroup container, Bundle savedInstanceState) {
-    rod = (ViewGroup) i.inflate(R.layout.lekt01_tre_knapper, container, false);
+    View rod = i.inflate(R.layout.lekt01_tre_knapper, container, false);
 
     spilKnap = (Button) rod.findViewById(R.id.knap1);
     spilKnap.setText("Spil");
@@ -43,7 +42,7 @@ public class Hovedmenu_frag extends Fragment implements View.OnClickListener {
               .addToBackStack(null)
               .commit();
     } else if (v == indstillingerKnap) {
-
+      // Der er ikke lavet et fragment for indstillinger, så her bruger vi aktiviteten
       Intent i = new Intent(getActivity(), Indstillinger_akt.class);
       startActivity(i);
     } else if (v == hjaelpKnap) {

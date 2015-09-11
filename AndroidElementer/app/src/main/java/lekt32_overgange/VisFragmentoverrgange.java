@@ -11,7 +11,7 @@ public class VisFragmentoverrgange extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.lekt07_fragmenter);
+    setContentView(R.layout.lekt04_fragmenter);
 
     FragmentovergangBegynd fragmentovergangBegynd = new FragmentovergangBegynd();
     FragmentManager fragmentManager = getSupportFragmentManager();

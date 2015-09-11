@@ -35,6 +35,8 @@ public class Splash_akt extends Activity implements Runnable {
 
   public void run() {
     startActivity(new Intent(this, Hovedmenu_akt.class));
+    overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+
     aktivitetDerVisesNu.finish();  // <2> Luk velkomsaktiviteten
     aktivitetDerVisesNu = null;
   }

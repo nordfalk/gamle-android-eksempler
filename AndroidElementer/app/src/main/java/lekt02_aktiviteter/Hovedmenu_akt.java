@@ -57,6 +57,5 @@ public class Hovedmenu_akt extends Activity implements OnClickListener {
       startActivity(i);
 
     }
-
   }
 }
