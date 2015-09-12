@@ -13,18 +13,22 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TableLayout;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import java.io.File;
 
 /**
- * Demonstrerer hvordan man benytter en ccontent providerintents til at vælg en
- * kontaktperson, et billede eller tage et billede med kameraet
+ * Demonstrerer hvordan man benytter en content provider intents til
+ * 1) få et billede fra kameraet i fuld opløsning
+ * 2) sende store data i et intent (billedet som vedhæftning i f.eks. gmail)
  *
+ * Se også https://developer.android.com/training/secure-file-sharing/
  * @author Jacob Nordfalk
  */
 public class BenytIntentsMedProvider extends Activity implements OnClickListener {
 
   Button tagBillede, sendBillede;
+  ToggleButton visLog;
   TextView resultatTextView;
   LinearLayout resultatHolder;
 
@@ -33,6 +37,13 @@ public class BenytIntentsMedProvider extends Activity implements OnClickListener
     super.onCreate(savedInstanceState);
 
     TableLayout tl = new TableLayout(this);
+    visLog = new ToggleButton(this);
+    visLog.setTextOff("Vis log af ContentProvider på skærmen");
+    visLog.setTextOn("Viser log af MinProvider på skærmen");
+    visLog.setChecked(MinProvider.visLogPåSkærm);
+    visLog.setOnClickListener(this);
+    tl.addView(visLog);
+
     tagBillede = new Button(this);
     tagBillede.setText("Tag billede med kameraet");
     tagBillede.setOnClickListener(this);
@@ -55,11 +66,11 @@ public class BenytIntentsMedProvider extends Activity implements OnClickListener
   }
 
   public void onClick(View hvadBlevDerKlikketPå) {
-    if (hvadBlevDerKlikketPå == tagBillede) {
+    if (hvadBlevDerKlikketPå == visLog) {
+      MinProvider.visLogPåSkærm = visLog.isChecked();
+    } else if (hvadBlevDerKlikketPå == tagBillede) {
       Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-      // Vi vil have billedet gemt i vores content provider:
-      File fil = new File(Environment.getExternalStorageDirectory(), "billede.jpg");
-      //i.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(fil));
+      // Vi vil have billedet gemt i vores content provider
       i.putExtra(MediaStore.EXTRA_OUTPUT, MinProvider.URI);
       startActivityForResult(i, 42);
 

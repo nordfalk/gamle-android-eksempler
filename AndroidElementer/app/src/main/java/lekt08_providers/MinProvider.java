@@ -17,6 +17,11 @@ import java.io.IOException;
 import lekt04_arkitektur.MinApp;
 
 /**
+ * En contentprovider, der kan rumme ét billede
+ * Se BenytIntentsMedProvider for hvordan denne klasse benyttes.
+ * BEMÆRK: Dette er ikke en sikker implementering. Alle kan læse og skrive i billedet.
+ * Se https://developer.android.com/training/secure-file-sharing/ for en sikker implementation
+ *
  * Taget fra:
  * http://stackoverflow.com/questions/10042695/how-to-get-camera-result-as-a-uri-in-data-folder
  * http://dharmendra4android.blogspot.in/2012/04/save-captured-image-to-applications.html
@@ -24,6 +29,7 @@ import lekt04_arkitektur.MinApp;
 public class MinProvider extends ContentProvider {
   public static final Uri URI = Uri.parse("content://dk.nordfalk.android.elementer.MinProvider/1");
   public static final String FILNAVN = "billede.jpg";
+  public static boolean visLogPåSkærm = false;
 
   @Override
   public ParcelFileDescriptor openFile(Uri uri, String mode) throws FileNotFoundException {
@@ -43,14 +49,13 @@ public class MinProvider extends ContentProvider {
 
   private void log(final String tekst) {
     Log.d("MinProvider", tekst);
-      /*
+    if (!visLogPåSkærm) return;
     MinApp.forgrundstråd.post(new Runnable() {
       @Override
       public void run() {
         Toast.makeText(getContext(), "MinProvider +"+tekst, Toast.LENGTH_LONG).show();
       }
     });
-    */
   }
 
   @Override
@@ -70,14 +75,6 @@ public class MinProvider extends ContentProvider {
   public void attachInfo(Context context, ProviderInfo info) {
     super.attachInfo(context, info);
     log("attachInfo(" + info.toString());
-
-    // Sanity check our security
-    if (info.exported) {
-      //throw new SecurityException("Provider must not be exported");
-    }
-    if (!info.grantUriPermissions) {
-      //throw new SecurityException("Provider must grant uri permissions");
-    }
   }
 
 

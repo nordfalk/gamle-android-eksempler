@@ -188,11 +188,11 @@
         <!-- provider til at modtage og sende filer. Bruges til:
               - at modtage billeddata fra kamera-intents
               - at sende data med et intent via f.eks gmail
+             bemærk at det ikke sikkert, da alle installerede apps kan læse og skrive til billedet
         -->
         <provider
             android:name="lekt08_providers.MinProvider"
-            android:authorities="dk.nordfalk.android.elementer.MinProvider"
-            android:exported="true"/>
+            android:authorities="dk.nordfalk.android.elementer.MinProvider"/>
 
         <activity
             android:name="lekt08_providers.BenytIntentsMedProvider"
