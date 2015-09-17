@@ -65,7 +65,7 @@
         <activity android:name="lekt01_views.BenytMenuer"/>
 
 
-        <activity android:name="lekt02_aktiviteter.Splash_akt"/>
+        <activity android:name="lekt02_aktiviteter.Velkomst_akt"/>
         <activity android:name="lekt02_aktiviteter.Hovedmenu_akt"/>
         <activity android:name="lekt02_aktiviteter.Hjaelp_akt"/>
         <activity android:name="lekt02_aktiviteter.Indstillinger_akt"/>

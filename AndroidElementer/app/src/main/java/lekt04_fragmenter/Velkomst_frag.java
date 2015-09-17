@@ -12,13 +12,13 @@ import android.widget.ImageView;
 
 import dk.nordfalk.android.elementer.R;
 
-public class Splash_frag extends Fragment implements Runnable {
+public class Velkomst_frag extends Fragment implements Runnable {
 
   Handler handler = new Handler();
 
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-    Log.d("Splash_frag", "fragmentet blev vist!");
+    Log.d("Velkomst_frag", "fragmentet blev vist!");
 
     ImageView iv = new ImageView(getActivity());
     iv.setImageResource(R.drawable.logo);

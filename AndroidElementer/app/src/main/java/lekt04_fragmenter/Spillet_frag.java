@@ -25,7 +25,7 @@ public class Spillet_frag extends Fragment implements View.OnClickListener {
 
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-    Log.d("Splash_frag", "fragmentet blev vist!");
+    Log.d("Velkomst_frag", "fragmentet blev vist!");
 
     // Programmatisk layout
     TableLayout tl = new TableLayout(getActivity());

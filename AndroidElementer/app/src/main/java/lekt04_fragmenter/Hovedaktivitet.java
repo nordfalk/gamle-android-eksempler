@@ -19,7 +19,7 @@ public class Hovedaktivitet extends AppCompatActivity {
     setContentView(R.layout.lekt04_fragmenter);
 
     if (savedInstanceState == null) {
-      Fragment fragment = new Splash_frag();
+      Fragment fragment = new Velkomst_frag();
       getSupportFragmentManager().beginTransaction()
               .add(R.id.fragmentindhold, fragment)  // tom container i layout
               .commit();

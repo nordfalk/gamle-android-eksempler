@@ -10,16 +10,16 @@ import android.widget.ImageView;
 
 import dk.nordfalk.android.elementer.R;
 
-public class Splash_akt extends Activity implements Runnable {
+public class Velkomst_akt extends Activity implements Runnable {
 
-  static Splash_akt aktivitetDerVisesNu = null;
+  static Velkomst_akt aktivitetDerVisesNu = null;
   Handler handler = new Handler();
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
-    Log.d("Splash_akt", "aktiviteten blev startet!");
+    Log.d("Velkomst_akt", "aktiviteten blev startet!");
 
     ImageView iv = new ImageView(this);
     iv.setImageResource(R.drawable.logo);
