@@ -16,7 +16,7 @@ import dk.nordfalk.android.elementer.R;
  */
 public class Hovedmenu_akt extends Activity implements OnClickListener {
   // Vi erklærer variabler herude så de huskes fra metode til metode
-  Button spilKnap, indstillingerKnap, hjaelpKnap;
+  Button hjaelpKnap, indstillingerKnap, spilKnap;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -24,26 +24,25 @@ public class Hovedmenu_akt extends Activity implements OnClickListener {
 
     setContentView(R.layout.lekt01_tre_knapper);
 
-    spilKnap = (Button) findViewById(R.id.knap1);
-    spilKnap.setText("Spil");
+    hjaelpKnap = (Button) findViewById(R.id.knap1);
+    hjaelpKnap.setText("Hjælp");
 
     indstillingerKnap = (Button) findViewById(R.id.knap2);
     indstillingerKnap.setText("Indstillinger");
 
-    hjaelpKnap = (Button) findViewById(R.id.knap3);
-    hjaelpKnap.setText("Hjælp");
+    spilKnap = (Button) findViewById(R.id.knap3);
+    spilKnap.setText("Spil");
 
-    spilKnap.setOnClickListener(this);
-    indstillingerKnap.setOnClickListener(this);
     hjaelpKnap.setOnClickListener(this);
+    indstillingerKnap.setOnClickListener(this);
+    spilKnap.setOnClickListener(this);
   }
 
   public void onClick(View v) {
     System.out.println("Der blev trykket på en knap");
+    if (v == hjaelpKnap) {
 
-    if (v == spilKnap) {
-
-      Intent i = new Intent(this, Spillet_akt.class);
+      Intent i = new Intent(this, Hjaelp_akt.class);
       startActivity(i);
 
     } else if (v == indstillingerKnap) {
@@ -51,9 +50,10 @@ public class Hovedmenu_akt extends Activity implements OnClickListener {
       Intent i = new Intent(this, Indstillinger_akt.class);
       startActivity(i);
 
-    } else if (v == hjaelpKnap) {
+    } else if (v == spilKnap) {
 
-      Intent i = new Intent(this, Hjaelp_akt.class);
+      Intent i = new Intent(this, Spillet_akt.class);
+      i.putExtra("velkomst", "\n\nHalløj fra Hovedmenu_akt!\n");
       startActivity(i);
 
     }

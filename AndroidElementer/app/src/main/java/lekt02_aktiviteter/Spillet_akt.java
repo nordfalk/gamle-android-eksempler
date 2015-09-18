@@ -26,7 +26,11 @@ public class Spillet_akt extends Activity implements View.OnClickListener {
     TableLayout tl = new TableLayout(this);
 
     info = new TextView(this);
-    info.setText("Velkommen til mit fantastiske spil.\nSkriv et bogstav herunder og tryk 'Spil'.");
+    info.setText("Velkommen til mit fantastiske spil." +
+            "\nDu skal gætte dette ord: "+logik.getSynligtOrd() +
+            "\nSkriv et bogstav herunder og tryk 'Spil'.\n");
+    String velkomst = getIntent().getStringExtra("velkomst");
+    if (velkomst!=null) info.append(velkomst);
     tl.addView(info);
 
     et = new EditText(this);
@@ -41,21 +45,25 @@ public class Spillet_akt extends Activity implements View.OnClickListener {
     spilKnap.setOnClickListener(this);
 
     setContentView(tl);
-    opdaterSkærm();
   }
 
   @Override
   public void onClick(View view) {
     String bogstav = et.getText().toString();
+    if (bogstav.length() != 1) {
+      et.setError("Skriv præcis ét bogstav");
+      return;
+    }
     logik.gætBogstav(bogstav);
     et.setText("");
+    et.setError(null);
     opdaterSkærm();
   }
 
 
   private void opdaterSkærm() {
-    info.setText("Gæt ordet: " + logik.getSynligtOrd() + "\n" + logik.getBrugteBogstaver());
-    info.append("\nDu har " + logik.getAntalForkerteBogstaver() + " forkerte.");
+    info.setText("Gæt ordet: " + logik.getSynligtOrd());
+    info.append("\n\nDu har " + logik.getAntalForkerteBogstaver() + " forkerte:" + logik.getBrugteBogstaver());
 
     if (logik.erSpilletVundet()) {
       info.append("\nDu har vundet");
@@ -65,6 +73,4 @@ public class Spillet_akt extends Activity implements View.OnClickListener {
     }
 
   }
-
-
 }
