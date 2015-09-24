@@ -137,9 +137,14 @@ public class Galgelogik {
 
   public void hentOrdFraDr() throws Exception {
     String data = hentUrl("http://dr.dk");
-    System.out.println("data = " + data);
+    //System.out.println("data = " + data);
 
-    data = data.replaceAll("<.+?>", " ").toLowerCase().replaceAll("[^a-zæøå]", " ");
+    data = data.substring(data.indexOf("<body")). // fjern headere
+            replaceAll("<.+?>", " ").toLowerCase(). // fjern tags
+            replaceAll("[^a-zæøå]", " "). // fjern tegn der ikke er bogstaver
+            replaceAll(" [a-zæøå] "," "). // fjern 1-bogstavsord
+            replaceAll(" [a-zæøå][a-zæøå] "," "); // fjern 2-bogstavsord
+
     System.out.println("data = " + data);
     muligeOrd.clear();
     muligeOrd.addAll(new HashSet<String>(Arrays.asList(data.split(" "))));
