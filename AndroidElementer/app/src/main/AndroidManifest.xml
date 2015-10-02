@@ -234,7 +234,10 @@
         <activity android:name="lekt32_overgange.AktivitetsovergangBegynd" />
         <activity android:name="lekt32_overgange.AktivitetsovergangSlut" />
         <activity android:name="lekt32_overgange.VisFragmentoverrgange" />
-        <activity android:name="lekt40_design.ScrollingActivity" android:theme="@style/AppTheme.NoActionBar" android:label="Bla bla"/>
+
+        <activity android:name="lekt40_design.ScrollingActivity"
+                  android:theme="@style/AppTheme.NoActionBar"
+                  android:label="Bla bla"/>
 
         <!-- aktivitet som kan ses fra startskærmen -->
         <activity

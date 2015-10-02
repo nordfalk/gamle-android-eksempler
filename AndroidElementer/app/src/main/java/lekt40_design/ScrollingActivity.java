@@ -1,6 +1,9 @@
+// Se http://android-developers.blogspot.de/2015/05/android-design-support-library.html
+// for Design Support Library
 package lekt40_design;
 
 import android.os.Bundle;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -16,8 +19,10 @@ public class ScrollingActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.lekt40_scrolling);
     Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-    toolbar.setTitle("hej");
     setSupportActionBar(toolbar);
+
+    CollapsingToolbarLayout ctl = (CollapsingToolbarLayout) findViewById(R.id.collapsingToolbarLayout);
+    ctl.setTitle("CollapsingToolbar");
 
     FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
     fab.setOnClickListener(new View.OnClickListener() {

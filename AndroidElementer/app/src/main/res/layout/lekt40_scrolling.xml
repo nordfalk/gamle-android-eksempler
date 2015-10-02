@@ -19,15 +19,18 @@
             android:fitsSystemWindows="true"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:id="@+id/collapsingToolbarLayout"
+            android:background="@drawable/bil"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:contentScrim="?attr/colorPrimary">
+            app:contentScrim="?attr/colorPrimaryDark">
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_height="?attr/actionBarSize"
                 android:layout_width="match_parent"
                 app:layout_collapseMode="pin"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                />
 
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
@@ -42,27 +45,33 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:text="New RadioButton"
-                android:id="@+id/radioButton"/>
-
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:text="New Button"
-                android:id="@+id/button"/>
+                android:text="En knap"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:text="Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla "/>
+                android:text="Det sjove kommer når man scoller opad, så prøv det. Herunder inkluderer vi layout/lekt01_tre_knapper, bare for at fylde skærmen ud "/>
 
-            <include layout="@layout/lekt01_tre_knapper" />
+            <include layout="@layout/lekt01_tre_knapper"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Vi tager også byvejret med, bare for at fylde"/>
+
+
+            <include layout="@layout/lekt01_byvejr"
+                     android:layout_margin="16dp"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"/>
 
         </LinearLayout>
 
