@@ -2,9 +2,9 @@ package lekt07_fragmenter;
 
 import android.animation.LayoutTransition;
 import android.annotation.TargetApi;
-import android.app.Fragment;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -12,27 +12,25 @@ import android.view.ViewGroup;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.OvershootInterpolator;
 import android.widget.Button;
-import android.widget.ImageView;
 
 import dk.nordfalk.android.elementer.R;
 
 /**
  * Created by j on 30-09-14.
  */
-@TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
 public class Animation_frag extends Fragment {
-  private Button knap1, knap2, knap3;
   private ViewGroup rod;
-  private ImageView ikon;
+  private Button knap1, knap2, knap3;
 
+  @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR1)
   @Override
   public View onCreateView(LayoutInflater i, ViewGroup container, Bundle savedInstanceState) {
     rod = (ViewGroup) i.inflate(R.layout.lekt01_tre_knapper, container, false);
-    ikon = (ImageView) rod.findViewById(R.id.ikon);
-    // animer layoutændringer, dvs når ikon forsvinder eller bliver synligt igen:
-    // Kunne også havde sat det deklarativt med android:animateLayoutChanges="true"
-    rod.setLayoutTransition(new LayoutTransition());
     knap1 = (Button) rod.findViewById(R.id.knap1);
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB_MR1) {
+      knap1.setText("Beklager, din telefon er for gammel til at bruge animationer");
+      return rod;
+    }
     knap1.setText("Animation");
     knap2 = (Button) rod.findViewById(R.id.knap2);
     knap2.setText("Elastisk knap");
@@ -71,7 +69,7 @@ public class Animation_frag extends Fragment {
           knap2.animate().setInterpolator(sDecelerator).scaleX(.7f).scaleY(.7f);
         } else if (me.getAction() == MotionEvent.ACTION_UP) {
           knap2.animate().setInterpolator(sOvershooter).scaleX(1f).scaleY(1f);
-          ikon.setVisibility(View.VISIBLE);
+          rod.findViewById(R.id.ikon).setVisibility(View.VISIBLE);
         }
         return false;
       }
@@ -86,12 +84,15 @@ public class Animation_frag extends Fragment {
         } else if (me.getAction() == MotionEvent.ACTION_UP) {
           knap3.animate().scaleX(1).scaleY(1).rotation(0).setInterpolator(sOvershooter);
           rod.animate().setInterpolator(sOvershooter).scaleX(1f).scaleY(1f).rotationX(0);
-          ikon.setVisibility(View.GONE);
+          rod.findViewById(R.id.ikon).setVisibility(View.GONE);
         }
         return false;
       }
     });
 
+    // animer layoutændringer, dvs når ikon forsvinder eller bliver synligt igen:
+    // Kunne også havde sat det deklarativt med android:animateLayoutChanges="true"
+    rod.setLayoutTransition(new LayoutTransition());
     return rod;
   }
 }

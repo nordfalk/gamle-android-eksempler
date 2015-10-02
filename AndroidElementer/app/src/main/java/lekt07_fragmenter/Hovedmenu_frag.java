@@ -1,10 +1,10 @@
 package lekt07_fragmenter;
 
 import android.annotation.TargetApi;
-import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +15,6 @@ import dk.nordfalk.android.elementer.R;
 /**
  * Created by j on 30-09-14.
  */ // Bemærk, fragmenter i indre klasser SKAL erklæres static
-@TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
 public class Hovedmenu_frag extends Fragment implements View.OnClickListener {
   private Button knap1, knap2, knap3;
   private ViewGroup rod;
@@ -52,9 +51,12 @@ public class Hovedmenu_frag extends Fragment implements View.OnClickListener {
               .commit();
     } else if (v == knap2) {
       getFragmentManager().beginTransaction()
-              // Animationer - bemærk, skal være af type R.animator (ikke R.anim), og at
-              // kompatibilitetsbiblioteket kræver typen R.anim (ikke R.animator).
-              .setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out, android.R.animator.fade_in, android.R.animator.fade_out)
+              // Animationer - bemærk:
+              // MED  kompativilitetsbibliotek SKAL de være af typen R.anim (ikke R.animator),
+              // UDEN kompatibilitetsbibliotek SKAL de være af typen R.animator (ikke R.anim).
+              .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out, android.R.anim.fade_in, android.R.anim.fade_out)
+              // uden kompativilitetsbibliotek ville det være
+              // .setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out, android.R.animator.fade_in, android.R.animator.fade_out)
               .replace(R.id.fragmentindhold, new BenytDialoger_frag())
               .addToBackStack(null)
               .commit();

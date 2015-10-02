@@ -10,6 +10,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.view.Gravity;
@@ -146,12 +148,13 @@ public class BenytDialogerOgToasts extends Activity implements OnClickListener {
       PendingIntent pi = PendingIntent.getActivity(this, 0, intent, 0);
 
       NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
-              .setSmallIcon(R.drawable.logo)
+              .setContentIntent(pi)
+              .setSmallIcon(R.drawable.bil)
+              .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.logo))
               .setTicker("Der skal tegnes!")
               .setContentTitle("Tegn!")
               .setContentText("Du er nødt til at tegne lidt")
-              .setSubText("Bla bla bla og en længere forklaring")
-      ;
+              .setSubText("Bla bla bla og en længere forklaring");
 
       long[] vibrate = {0, 100, 300, 400, 500, 510, 550, 560, 600, 610, 650, 610, -1};
       builder.setVibrate(vibrate);

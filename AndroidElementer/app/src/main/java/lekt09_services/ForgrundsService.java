@@ -42,9 +42,8 @@ public class ForgrundsService extends Service {
     Toast.makeText(this, TAG + " onStartCommand(\n"
             + intent + " " + flags + " " + startId, Toast.LENGTH_LONG).show();
     Intent i = new Intent(this, BenytService.class);
-    PendingIntent pi = PendingIntent.getActivity(this, 0, i, 0);
-    NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
-    builder.setSmallIcon(R.drawable.logo)
+    NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
+            .setContentIntent(PendingIntent.getActivity(this, 0, i, 0))
             .setTicker("AndroidElementer holdes i hukommelsen")
             .setContentTitle("Bliver i hukommelsen")
             .setContentText("Klik her for at stoppe servicen")

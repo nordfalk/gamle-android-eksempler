@@ -12,7 +12,6 @@ import android.widget.Toast;
 import dk.nordfalk.android.elementer.R;
 
 
-@TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
 public class BenytHovedmenu_akt extends AppCompatActivity {
 
   private TextView textView;
@@ -25,7 +24,7 @@ public class BenytHovedmenu_akt extends AppCompatActivity {
 
     if (savedInstanceState == null) {
       Hovedmenu_frag fragment = new Hovedmenu_frag();
-      getFragmentManager().beginTransaction()
+      getSupportFragmentManager().beginTransaction()
               .add(R.id.fragmentindhold, fragment)  // tom container i layout
               .commit();
     }
@@ -40,7 +39,7 @@ public class BenytHovedmenu_akt extends AppCompatActivity {
     if (item.getItemId() == android.R.id.home) {
       // brugeren vil navigere op i hierakiet - afslut aktiviteten
       Toast.makeText(this, "OP blev trykket, afslutter "
-              + getFragmentManager().getBackStackEntryCount()
+              + getSupportFragmentManager().getBackStackEntryCount()
               + " niveauer nede i hierakiet", Toast.LENGTH_SHORT).show();
       finish();
       return true;

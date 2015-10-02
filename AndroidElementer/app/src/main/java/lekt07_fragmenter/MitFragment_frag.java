@@ -1,9 +1,9 @@
 package lekt07_fragmenter;
 
 import android.annotation.TargetApi;
-import android.app.Fragment;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +18,6 @@ import dk.nordfalk.android.elementer.R;
  *
  * @see lekt01_views.BenytKnapperDeklarativ
  */
-@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class MitFragment_frag extends Fragment implements View.OnClickListener {
   // Vi erklærer variabler herude så de huskes fra metode til metode
   private Button knap1, knap2, knap3;

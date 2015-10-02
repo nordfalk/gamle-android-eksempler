@@ -47,8 +47,7 @@
 
     <application
         android:name="lekt04_arkitektur.MinApp"
-        android:icon="@drawable/logo"
-        android:theme="@style/Theme.AppCompat" >
+        android:icon="@drawable/logo">
 
         <!--
           aktiviteter som ikke kan ses fra startskærmen men som kan kaldes
@@ -108,7 +107,7 @@
         <activity android:name="lekt03_diverse.Taleeventyr" />
         <activity android:name="lekt03_net.BenytNetOgAsyncTask" />
         <activity android:name="lekt03_net.ByvejrAktivitet" />
-        <activity android:name="lekt04_fragmenter.Hovedaktivitet" />
+        <activity android:name="lekt04_fragmenter.Hovedaktivitet" android:theme="@style/Theme.AppCompat"/>
         <activity android:name="lekt04_arkitektur.NoteAktivitet" />
         <activity android:name="lekt04_arkitektur.NoteAktivitet2" />
         <activity android:name="lekt04_lister.BenytListView" />
@@ -163,8 +162,8 @@
         <activity android:name="lekt06_asynkron.Asynkron2Handler" />
         <activity android:name="lekt06_asynkron.Asynkron3Korrekt" />
         <activity android:name="lekt06_asynkron.Asynkron3KorrektStatic" />
-        <activity android:name="lekt07_fragmenter.BenytMitFragment_akt" />
-        <activity android:name="lekt07_fragmenter.BenytHovedmenu_akt" />
+        <activity android:name="lekt07_fragmenter.BenytMitFragment_akt" android:theme="@style/Theme.AppCompat"/>
+        <activity android:name="lekt07_fragmenter.BenytHovedmenu_akt" android:theme="@style/Theme.AppCompat"/>
         <activity android:name="lekt08_providers.VisOpkald" />
         <activity android:name="lekt08_providers.VisKontakter" />
         <activity android:name="lekt08_providers.VisKontakterIListView" />
@@ -239,6 +238,7 @@
         <!-- aktivitet som kan ses fra startskærmen -->
         <activity
             android:name="dk.nordfalk.aktivitetsliste.Aktivitetsliste2"
+            android:theme="@style/Theme.AppCompat"
             android:label="AndroidElementer" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -248,8 +248,8 @@
         </activity>
 
         <!-- Jeg skjuler alle aktiviteter der står herunder fra Aktivitetsliste -->
-        <activity android:name="dk.nordfalk.aktivitetsliste.VisKildekodeIWebView" />
-        <activity android:name="dk.nordfalk.aktivitetsliste.VisKildekode" >
+        <activity android:name="dk.nordfalk.aktivitetsliste.VisKildekodeIWebView" android:theme="@style/Theme.AppCompat"/>
+        <activity android:name="dk.nordfalk.aktivitetsliste.VisKildekode" android:theme="@style/Theme.AppCompat">
 
             <!-- bruges af metoden VisKildekode.findWebUrl() -->
             <meta-data

@@ -36,6 +36,7 @@ class InstallationsReciever extends BroadcastReceiver {
     Intent intent = new Intent(ctx, OpdagAppInstallation.class);
     PendingIntent aktivitet = PendingIntent.getActivity(ctx, 0, intent, 0);
     NotificationCompat.Builder builder = new NotificationCompat.Builder(ctx)
+            .setContentIntent(aktivitet)
             .setSmallIcon(R.drawable.logo)
             .setTicker("Installation")
             .setContentTitle(i.getAction())
