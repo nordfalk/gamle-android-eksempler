@@ -11,6 +11,7 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.NotificationCompat;
 import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -143,14 +144,20 @@ public class BenytDialogerOgToasts extends Activity implements OnClickListener {
     } else if (hvadBlevDerKlikketPå == visNoitification) {
       Intent intent = new Intent(this, Tegneprogram.class);
       PendingIntent pi = PendingIntent.getActivity(this, 0, intent, 0);
-      Notification notification = new Notification(R.drawable.logo, "Der skal tegnes!", System.currentTimeMillis());
-      notification.setLatestEventInfo(this, "Tegn!", "Du er nødt til at tegne lidt", pi);
+
+      NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
+              .setSmallIcon(R.drawable.logo)
+              .setTicker("Der skal tegnes!")
+              .setContentTitle("Tegn!")
+              .setContentText("Du er nødt til at tegne lidt")
+              .setSubText("Bla bla bla og en længere forklaring")
+      ;
 
       long[] vibrate = {0, 100, 300, 400, 500, 510, 550, 560, 600, 610, 650, 610, -1};
-      notification.vibrate = vibrate;
+      builder.setVibrate(vibrate);
 
       NotificationManager notificationManager = (NotificationManager) this.getSystemService(Context.NOTIFICATION_SERVICE);
-      notificationManager.notify(42, notification);
+      notificationManager.notify(42, builder.build());
     }
   }
 }

@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.support.v4.app.NotificationCompat;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -34,10 +35,14 @@ class InstallationsReciever extends BroadcastReceiver {
     // Vi viser også en notifikation så man kan komme hen og slå det fra
     Intent intent = new Intent(ctx, OpdagAppInstallation.class);
     PendingIntent aktivitet = PendingIntent.getActivity(ctx, 0, intent, 0);
-    Notification notification = new Notification(R.drawable.logo, "Installation", System.currentTimeMillis());
-    notification.setLatestEventInfo(ctx, i.getAction(), "" + i.getExtras(), aktivitet);
+    NotificationCompat.Builder builder = new NotificationCompat.Builder(ctx)
+            .setSmallIcon(R.drawable.logo)
+            .setTicker("Installation")
+            .setContentTitle(i.getAction())
+            .setContentText(""+i.getExtras());
+
     NotificationManager notificationManager = (NotificationManager) ctx.getSystemService(Context.NOTIFICATION_SERVICE);
-    notificationManager.notify(42, notification);
+    notificationManager.notify(42, builder.build());
 
   }
 }

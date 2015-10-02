@@ -5,6 +5,7 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
+import android.support.v4.app.NotificationCompat;
 import android.widget.Toast;
 
 import dk.nordfalk.android.elementer.R;
@@ -42,11 +43,13 @@ public class ForgrundsService extends Service {
             + intent + " " + flags + " " + startId, Toast.LENGTH_LONG).show();
     Intent i = new Intent(this, BenytService.class);
     PendingIntent pi = PendingIntent.getActivity(this, 0, i, 0);
-    Notification notification = new Notification(R.drawable.logo,
-            "AndroidElementer holdes i hukommelsen", System.currentTimeMillis());
-    notification.setLatestEventInfo(this,
-            "Bliver i hukommelsen", "Klik her for at stoppe servicen", pi);
-    startForeground(42, notification);
+    NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
+    builder.setSmallIcon(R.drawable.logo)
+            .setTicker("AndroidElementer holdes i hukommelsen")
+            .setContentTitle("Bliver i hukommelsen")
+            .setContentText("Klik her for at stoppe servicen")
+            ;
+    startForeground(42, builder.build());
     return START_STICKY;
   }
 }
