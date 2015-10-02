@@ -30,7 +30,7 @@ import android.widget.TextView;
  */
 public class NoteAktivitet extends Activity implements OnClickListener {
 
-  EditText editText_postnr;
+  EditText editText;
   private TextView alleNoterTv;
 
   @Override
@@ -44,8 +44,11 @@ public class NoteAktivitet extends Activity implements OnClickListener {
     textView.setText("Velkommen, " + MinApp.getData().navn + ", skriv dine noter herunder:");
     linearLayout.addView(textView);
 
-    editText_postnr = new EditText(this);
-    linearLayout.addView(editText_postnr);
+    editText = new EditText(this);
+    linearLayout.addView(editText);
+
+    String seneste_note = MinApp.prefs.getString("seneste_note","");
+    editText.setText(seneste_note);
 
     Button okKnap = new Button(this);
     okKnap.setText("OK");
@@ -65,11 +68,12 @@ public class NoteAktivitet extends Activity implements OnClickListener {
 
   @Override
   public void onClick(View v) {
-    String note = editText_postnr.getText().toString();
+    String note = editText.getText().toString();
+    MinApp.prefs.edit().putString("seneste_note", note).commit();
     MinApp.getData().noter.add(note);
     MinApp.gemData();
-    editText_postnr.setText("");
-    visNoter(); // max 1 time gamle
+    editText.setText("");
+    visNoter();
   }
 
   private void visNoter() {

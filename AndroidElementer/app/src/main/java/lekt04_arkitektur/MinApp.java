@@ -45,6 +45,7 @@ public class MinApp extends Application {
   private static Programdata data;
 
   public static Programdata getData() {
+    // if (data == null) data = new Programdata(); // klassisk singleon unødvendigt da den oprettes i onCreate()
     return data;
   }
 
