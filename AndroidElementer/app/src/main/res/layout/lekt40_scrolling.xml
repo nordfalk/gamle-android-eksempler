@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    android:id="@+id/rod"
     tools:context="lekt40_design.ScrollingActivity">
 
     <android.support.design.widget.AppBarLayout
@@ -45,45 +46,71 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <Button
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
+                android:text="Eksempel CoordinatorLayout, der koordinerer forskellige views' placering og synlighed:
+                 1) De to FloatingActionButton (FAB) flytter sig
+                 2) Toolbaren kollapser når man scoller opad
+                 3) Snackbar'en skubber FAB
+                 Herunder inkluderer vi layout/lekt01_tre_knapper, bare for at fylde skærmen ud "/>
+
+            <include layout="@layout/lekt01_tre_knapper"
+                     android:layout_margin="16dp"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Og så lige layout/lekt01_tre_knapper igen, denne gang uden en margen"/>
+
+            <include layout="@layout/lekt01_tre_knapper"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="16dp"
                 android:text="En knap"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:text="Det sjove kommer når man scoller opad, så prøv det. Herunder inkluderer vi layout/lekt01_tre_knapper, bare for at fylde skærmen ud "/>
-
-            <include layout="@layout/lekt01_tre_knapper"
-                     android:layout_width="match_parent"
-                     android:layout_height="wrap_content"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:text="Vi tager også byvejret med, bare for at fylde"/>
-
+                android:text="Vi tager også et andet layout med, bare for at fylde:"/>
 
             <include layout="@layout/lekt01_byvejr"
                      android:layout_margin="16dp"
                      android:layout_width="match_parent"
                      android:layout_height="wrap_content"/>
 
+
         </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
+        android:id="@+id/fab1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         app:layout_anchor="@id/app_bar"
         app:layout_anchorGravity="bottom|end"
         android:src="@android:drawable/ic_dialog_email"/>
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_anchor="@id/rod"
+        app:layout_anchorGravity="bottom|end"
+        android:src="@android:drawable/ic_media_ff"/>
 
 </android.support.design.widget.CoordinatorLayout>

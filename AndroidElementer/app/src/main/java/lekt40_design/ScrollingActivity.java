@@ -9,10 +9,14 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Toast;
 
 import dk.nordfalk.android.elementer.R;
 
 public class ScrollingActivity extends AppCompatActivity {
+
+  private CollapsingToolbarLayout ctl;
+  private FloatingActionButton fab1, fab2;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -21,17 +25,26 @@ public class ScrollingActivity extends AppCompatActivity {
     Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
-    CollapsingToolbarLayout ctl = (CollapsingToolbarLayout) findViewById(R.id.collapsingToolbarLayout);
+    ctl = (CollapsingToolbarLayout) findViewById(R.id.collapsingToolbarLayout);
     ctl.setTitle("CollapsingToolbar");
 
-    FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-    fab.setOnClickListener(new View.OnClickListener() {
+
+    fab1 = (FloatingActionButton) findViewById(R.id.fab1);
+    fab2 = (FloatingActionButton) findViewById(R.id.fab2);
+
+    fab1.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-        Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show();
+        Snackbar.make(view, "En Snackbar er dukker op i bunden og er synlig et par sekunder og kan swipes væk", Snackbar.LENGTH_LONG)
+                .setAction("OK", new View.OnClickListener() {
+                  @Override
+                  public void onClick(View v) {
+                    ctl.setTitle("Snackbar trykket");
+                  }
+                }).show();
       }
     });
+
   }
 
 }
