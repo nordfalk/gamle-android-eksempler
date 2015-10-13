@@ -176,6 +176,7 @@
         -->
         <provider
             android:name="lekt08_providers.MinProvider"
+            android:exported="true"
             android:authorities="dk.nordfalk.android.elementer.MinProvider" />
 
         <activity
@@ -241,7 +242,7 @@
 
         <!-- aktivitet som kan ses fra startskærmen -->
         <activity
-            android:name="dk.nordfalk.aktivitetsliste.Aktivitetsliste2"
+            android:name="dk.nordfalk.aktivitetsliste.Aktivitetsliste3"
             android:theme="@style/Theme.AppCompat"
             android:label="AndroidElementer" >
             <intent-filter>
@@ -259,10 +260,6 @@
             <meta-data
                 android:name="HS_PRÆFIX"
                 android:value="https://github.com/nordfalk/android-eksempler/tree/master/AndroidElementer/app/src/main/" />
-        </activity>
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/title_activity_main" >
         </activity>
     </application>
 
