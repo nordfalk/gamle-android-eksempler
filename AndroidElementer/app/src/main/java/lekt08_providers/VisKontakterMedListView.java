@@ -18,7 +18,7 @@ import dk.nordfalk.android.elementer.R;
 /**
  * @author Jacob Nordfalk
  */
-public class VisKontakterIListView extends Activity implements OnItemClickListener {
+public class VisKontakterMedListView extends Activity implements OnItemClickListener {
 
   private SimpleCursorAdapter adapter;
 

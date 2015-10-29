@@ -174,7 +174,7 @@
         <activity android:name="lekt07_fragmenter.BenytHovedmenu_akt" android:theme="@style/Theme.AppCompat"/>
         <activity android:name="lekt08_providers.VisOpkald" />
         <activity android:name="lekt08_providers.VisKontakter" />
-        <activity android:name="lekt08_providers.VisKontakterIListView" />
+        <activity android:name="lekt08_providers.VisKontakterMedListView" />
 
         <!--
              provider til at modtage og sende filer. Bruges til:
