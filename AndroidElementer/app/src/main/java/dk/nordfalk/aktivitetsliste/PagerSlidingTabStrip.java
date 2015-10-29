@@ -64,12 +64,6 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
     public String getPageContentDescription(int position);
   }
 
-  // @formatter:off
-  private static final int[] ATTRS = new int[]{
-      android.R.attr.textSize,
-      android.R.attr.textColor
-  };
-  // @formatter:on
 
   private LinearLayout.LayoutParams defaultTabLayoutParams;
   private LinearLayout.LayoutParams expandedTabLayoutParams;
@@ -96,8 +90,8 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
   private boolean textAllCaps = true;
 
   private int scrollOffset = 52;
-  private int indicatorHeight = 64;// 8; //64;//DR
-  private int underlineHeight = 1;// 2;
+  private int indicatorHeight = 3; //64;//DR
+  private int underlineHeight = 1;
   private int dividerPadding = 0;//12;
   private int tabPadding = 16;//24;
   private int dividerWidth = 1;
@@ -227,7 +221,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
     TextView tab = new TextView(getContext());
     tab.setText(title);
     tab.setGravity(Gravity.CENTER);
-    tab.setSingleLine();
+    //tab.setSingleLine();
 
     addTab(position, tab);
   }

@@ -42,7 +42,7 @@ public class VisOpkald extends Activity {
     textView.append("\nkolonner = " + Arrays.asList(kolonner)); // date, number, name, duration
     textView.append("\nwhere = " + where); // date >= 1304737637646
     textView.append("\nURI = " + Calls.CONTENT_URI); // content://call_log/calls
-    textView.append("\n\n");
+    textView.append("\n\nDer er "+c.getCount()+" rækker:\n\n");
     while (c.moveToNext()) {
       textView.append(df.format(new Date(c.getLong(0))) + "  " + c.getInt(1) + " " + c.getString(2) + "  " + c.getString(3) + "  " + c.getInt(4) + "  " + "\n");
     }

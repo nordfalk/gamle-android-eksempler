@@ -26,17 +26,17 @@ public class TekstDialog_frag extends DialogFragment {
       // for flere muligheder for at tilrette dialogers udseende
     }
 
-    TextView rod = new TextView(getActivity());
-    rod.setText("Dette er TekstDialog_frag - tryk tilbage");
+    TextView tv = new TextView(getActivity());
+    tv.setText("Dette er TekstDialog_frag - tryk tilbage");
 
 
     // Fik vi argumenter med? Så vis dem
     if (getArguments() != null) {
-      rod.setText(getArguments().getString("TEKST"));
+      tv.setText(getArguments().getString("TEKST"));
     }
 
-    rod.setBackgroundColor(0xFF660000);
-    rod.setPadding(20, 20, 20, 20);
-    return rod;
+    tv.setBackgroundColor(0xFF660000);
+    tv.setPadding(20, 20, 20, 20);
+    return tv;
   }
 }

@@ -125,13 +125,15 @@ public class Aktivitetsliste3 extends AppCompatActivity {
 
     @Override
     public CharSequence getPageTitle(int position) {
-      return Aktivitetsdata.instans.pakkekategorier.get(position);
+      return Aktivitetsdata.instans.pakkekategorier.get(position).replace('_','\n');
     }
 
+    /*
     @Override
     public float getPageWidth(int position) {
       return 0.95f;
     }
+    */
 
     @Override
     public Fragment getItem(int position) {

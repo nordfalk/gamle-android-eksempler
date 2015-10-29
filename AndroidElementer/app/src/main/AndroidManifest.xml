@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          android:installLocation="auto"
     package="dk.nordfalk.android.elementer" >
 
     <!-- tilladelser -->
@@ -43,6 +44,12 @@
         android:required="false" />
     <uses-feature
         android:name="android.hardware.screen.portrait"
+        android:required="false" />
+    <uses-feature
+        android:name="android.software.live_wallpaper"
+        android:required="false" />
+    <uses-feature
+        android:name="android.software.app_widgets"
         android:required="false" />
 
     <application
@@ -153,6 +160,7 @@
         <activity android:name="lekt06_data.JsonGenerering" />
         <activity android:name="lekt06_data.XmlParsning" />
         <activity android:name="lekt06_data.BenytSQLite" />
+        <activity android:name="lekt06_data.BenytSQLiteOpenHelper" />
         <activity android:name="lekt06_youtube.YoutubeRssParsning" />
         <activity
             android:name="lekt06_youtube.BenytVideoView"
@@ -231,7 +239,7 @@
         <activity android:name="lekt20_touchinput.BenytGestureDetector" />
         <activity android:name="lekt20_touchinput.BenytScaleGestureDetector" />
         <activity android:name="lekt20_touchinput.BenytMultiTouchController" />
-        <activity android:name="lekt31_venstremenu.BenytVenstremenu" />
+        <activity android:name="lekt31_venstremenu.BenytVenstremenu" android:theme="@style/Theme.AppCompat" />
         <activity android:name="lekt32_overgange.AktivitetsovergangBegynd" />
         <activity android:name="lekt32_overgange.AktivitetsovergangSlut" />
         <activity android:name="lekt32_overgange.VisFragmentoverrgange" />

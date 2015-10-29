@@ -1,9 +1,9 @@
 package lekt31_venstremenu;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -13,8 +13,13 @@ import android.widget.ImageView;
 import dk.nordfalk.android.elementer.R;
 
 /**
+ * BEMÆRK du skal have følgende i app/build.gradle før at eksemplet kan oversætte
+ dependencies {
+   // Understøttelse af venstremenu
+   compile 'com.android.support:design:22.2.1'
+ }
  */
-public class BenytVenstremenu extends Activity implements OnClickListener {
+public class BenytVenstremenu extends AppCompatActivity implements OnClickListener {
   // Vi erklærer variabler herude så de huskes fra metode til metode
   Button knap1, knap2, knap3;
   private DrawerLayout mDrawerLayout;
@@ -23,7 +28,7 @@ public class BenytVenstremenu extends Activity implements OnClickListener {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
-    setContentView(R.layout.lekt31_hovedaktivitet);
+    setContentView(R.layout.lekt31_benyt_venstremenu);
     // findViewById() kan først kaldes efter setContentView()
     knap1 = (Button) findViewById(R.id.knap1);
     knap2 = (Button) findViewById(R.id.knap2);

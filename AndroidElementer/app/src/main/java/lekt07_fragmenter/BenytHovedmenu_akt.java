@@ -21,7 +21,12 @@ public class BenytHovedmenu_akt extends AppCompatActivity {
     requestWindowFeature(Window.FEATURE_ACTION_BAR);
     super.onCreate(savedInstanceState);
     setContentView(R.layout.lekt04_fragmenter);
-
+/*
+  Hvis der i layoutet i stedet for <FrameLayout... havde stået:
+    <fragment
+        android:name="lekt07_fragmenter.Hovedmenu_frag"
+  ...ville fragmentet blive tilføjet af systemet og nedenstående kunne udelades
+*/
     if (savedInstanceState == null) {
       Hovedmenu_frag fragment = new Hovedmenu_frag();
       getSupportFragmentManager().beginTransaction()

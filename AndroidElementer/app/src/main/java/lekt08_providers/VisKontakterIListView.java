@@ -50,10 +50,12 @@ public class VisKontakterIListView extends Activity implements OnItemClickListen
   }
 
   public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-    position++; // pga addHeaderView(textView)
-    Cursor cursor = adapter.getCursor();
-    cursor.moveToPosition(position);
-    String navn = cursor.getString(1); // Contacts.DISPLAY_NAME
-    Toast.makeText(this, navn, Toast.LENGTH_LONG).show();
+    position--; // pga addHeaderView(textView)
+    if (position > 0) {
+      Cursor cursor = adapter.getCursor();
+      cursor.moveToPosition(position);
+      String navn = cursor.getString(1); // Contacts.DISPLAY_NAME
+      Toast.makeText(this, navn, Toast.LENGTH_LONG).show();
+    }
   }
 }

@@ -9,7 +9,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nedenfor er et FrameLayout til fragmenter"/>
-
+<!-- I stedet for <FrameLayout kunne også stå
+    <fragment
+        android:name="lekt07_fragmenter.Hovedmenu_frag"
+    så ville fragmentet blive oprettet og sat ind af systemet
+    i stedet for at du gør det i onCreate()
+-->
     <FrameLayout
         android:id="@+id/fragmentindhold"
         android:layout_width="match_parent"
