@@ -36,6 +36,8 @@ public class Aktivitetsliste3 extends AppCompatActivity {
   int onStartTæller;
   ToggleButton seKildekodeToggleButton;
   ViewPager viewPager;
+  private SharedPreferences prefs;
+  private String sidstKlikketPåAkt;
 
 
   @Override
@@ -43,6 +45,7 @@ public class Aktivitetsliste3 extends AppCompatActivity {
     super.onCreate(savedInstanceState);
 
     Aktivitetsdata.instans.init(getApplication());
+    prefs = PreferenceManager.getDefaultSharedPreferences(this);
 
     viewPager = new ViewPager(this);
     viewPager.setId(R.id.viewPager);
@@ -76,13 +79,8 @@ public class Aktivitetsliste3 extends AppCompatActivity {
     {
       //viewPager.startAnimation(AnimationUtils.loadAnimation(this, R.anim.egen_anim2));
       // Genskab valg fra sidst der blev startet en aktivitet
-      SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-
-      // Sæt ID'er så vi understøtter vending
-      //XXXvisKlasserListView.setId(117);
-      //XXXint position = prefs.getInt("position", 0);
-      //XXXvisKlasserListView.setSelectionFromTop(position, 30);
       viewPager.setCurrentItem(prefs.getInt("kategoriPos", 1));
+      sidstKlikketPåAkt = prefs.getString("sidstKlikketPåAkt","ukendt");
     }
   }
 
@@ -159,6 +157,7 @@ public class Aktivitetsliste3 extends AppCompatActivity {
       akt = (Aktivitetsliste3) getActivity();
       kategoriPos = getArguments().getInt("position");
       Aktivitetsdata.instans.tjekForAndreFilerIPakken(kategoriPos);
+      klasserDerVisesNu.clear();
       klasserDerVisesNu.addAll(Aktivitetsdata.instans.klasselister.get(kategoriPos));
 
       // Anonym nedarving af ArrayAdapter med omdefineret getView()
@@ -194,21 +193,26 @@ public class Aktivitetsliste3 extends AppCompatActivity {
       visKlasserListView.setOnItemClickListener(this);
       visKlasserListView.setOnItemLongClickListener(this);
 
+      int position = klasserDerVisesNu.indexOf(akt.sidstKlikketPåAkt);
+      if (position>0) {
+        visKlasserListView.setSelectionFromTop(position, 30);
+      }
+
       return visKlasserListView;
     }
 
 
     public void onItemClick(AdapterView<?> listView, View v, int position, long id) {
-      String akt = klasserDerVisesNu.get(position);
+      String aktKlik = klasserDerVisesNu.get(position);
 
-      if (this.akt.seKildekodeToggleButton.isChecked() || akt.endsWith(".java") || akt.endsWith(".xml")) {
-        this.akt.visKildekode(akt);
+      if (this.akt.seKildekodeToggleButton.isChecked() || aktKlik.endsWith(".java") || aktKlik.endsWith(".xml")) {
+        this.akt.visKildekode(aktKlik);
         return;
       }
 
       try {
         // Tjek at klassen faktisk kan indlæses (så prg ikke crasher hvis den ikke kan!)
-        Class klasse = Class.forName(akt);
+        Class klasse = Class.forName(aktKlik);
 
         /*
         if (akt.toLowerCase().contains("fragment") && Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB_MR2) {
@@ -218,20 +222,17 @@ public class Aktivitetsliste3 extends AppCompatActivity {
         */
         startActivity(new Intent(getActivity(), klasse));
         this.akt.overridePendingTransition(0, 0); // hurtigt skift
-        Toast.makeText(getActivity(), akt + " startet", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), aktKlik + " startet", Toast.LENGTH_SHORT).show();
       } catch (Throwable e) {
         e.printStackTrace();
         //while (e.getCause() != null) e = e.getCause(); // Hop hen til grunden
-        String tekst = akt + " gav fejlen:\n" + Log.getStackTraceString(e);
+        String tekst = aktKlik + " gav fejlen:\n" + Log.getStackTraceString(e);
         this.akt.visDialog(tekst);
       }
 
-      // Find position i fuld liste
-      position = Aktivitetsdata.instans.alleAktiviteter.indexOf(akt);
       // Gem position og 'start aktivitet direkte' til næste gang
-
-      PreferenceManager.getDefaultSharedPreferences(getActivity()).edit().
-              putInt("position", position).
+      akt.prefs.edit().
+              putString("sidstKlikketPåAkt", aktKlik).
               putInt("kategoriPos", kategoriPos).
               commit();
     }

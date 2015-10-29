@@ -27,11 +27,11 @@ public class Aktivitetsdata {
   /**
    * Programdata - static da de ikke fylder det store og vi dermed slipper for reinitialisering
    */
-  ArrayList<String> alleAktiviteter = new ArrayList<String>();
-  ArrayList<String> pakkenavne;
+  private ArrayList<String> alleAktiviteter = new ArrayList<String>();
+  private ArrayList<String> pakkenavne;
   ArrayList<String> pakkekategorier;
   ArrayList<ArrayList<String>> klasselister = new ArrayList<ArrayList<String>>();
-  HashSet<Integer> manglerTjekForAndreFiler = new HashSet<Integer>();
+  private HashSet<Integer> manglerTjekForAndreFiler = new HashSet<Integer>();
   private Application app;
   static final boolean FEJLFINDING = true;
 
