@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -36,7 +37,7 @@ import dk.nordfalk.android.elementer.R;
  *
  * @author j
  */
-public class VisAlleAndroidDrawables extends Activity {
+public class VisAlleAndroidDrawables extends Activity implements AdapterView.OnItemClickListener {
   /**
    * Om billeder og resurser skal indlæses i en baggrundstråd eller i GUI-tråden
    */
@@ -52,6 +53,7 @@ public class VisAlleAndroidDrawables extends Activity {
     ListView listView = new ListView(this);
     listView.setAdapter(new AndroidDrawablesAdapter());
     listView.setDividerHeight(3);
+    listView.setOnItemClickListener(this);
 
 
 		/*
@@ -129,12 +131,12 @@ public class VisAlleAndroidDrawables extends Activity {
           }
 
           @Override
-          protected void onPostExecute(Object result) {
+          protected void onPostExecute(Object resultat) {
             // Tjek om viewholderen er blevet genbrugt til anden position
-            if (listeelem.position != position) {
+            if (listeelem.position != position || resultat==null) {
               return;
             }
-            listeelem.billede.setImageDrawable((Drawable) result);
+            listeelem.billede.setImageDrawable((Drawable) resultat);
           }
         }.execute();
       }
@@ -143,6 +145,18 @@ public class VisAlleAndroidDrawables extends Activity {
       return view;
     }
   }
+
+
+  @Override
+  public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+    final int resurseId = android.R.drawable.alert_dark_frame + position; // første resurse
+    Toast t = new Toast(this);
+    ImageView im = new ImageView(this);
+    im.setImageResource(resurseId);
+    t.setView(im);
+    t.show();
+  }
+
 
   @Override
   public boolean onCreateOptionsMenu(Menu menu) {

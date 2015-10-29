@@ -127,7 +127,7 @@ public class Aktivitetsdata {
         String pakkenavn = Aktivitetsdata.instans.pakkekategorier.get(i);
         //pakkenavn = pakkenavn.replaceFirst("_","\n"); // Linjeskift
         if (pakkenavn.startsWith("lekt")) {
-          pakkenavn = pakkenavn.substring(4); // tag 'lekt' fra 'lekt_05'
+          pakkenavn = "lekt "+pakkenavn.substring(4); // lav 'lekt_05' om til 'lekt 05'
           Aktivitetsdata.instans.pakkekategorier.set(i, pakkenavn);
         }
         Aktivitetsdata.instans.manglerTjekForAndreFiler.add(i);

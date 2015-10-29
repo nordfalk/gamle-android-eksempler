@@ -54,7 +54,7 @@ public class VisKlokkenIkon extends AppWidgetProvider {
 
     AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
     int[] appWidgetIds = appWidgetManager.getAppWidgetIds(new ComponentName(context, VisKlokkenIkon.class));
-    Log.d(TAG, "opdaterIkoner - der er følgende ikoner " + Arrays.asList(appWidgetIds));
+    Log.d(TAG, "opdaterIkoner - der er følgende ikon-IDer " + Arrays.toString(appWidgetIds));
 
     opdaterIkoner(context, appWidgetManager, appWidgetIds);
   }
@@ -99,11 +99,6 @@ public class VisKlokkenIkon extends AppWidgetProvider {
         for (int i = 0; i < 60; i++) {
           SystemClock.sleep(1000);
           opdaterIkoner(ctx);
-          /*
-          remoteViews.setTextViewText(R.id.etTextView, "KL er:\n" + new Date());
-					remoteViews.setTextColor(R.id.etTextView, i % 2 == 0 ? Color.RED : Color.GREEN);
-					appWidgetManager.updateAppWidget(appWidgetIds, remoteViews);
-					*/
         }
       }
     }.start();
