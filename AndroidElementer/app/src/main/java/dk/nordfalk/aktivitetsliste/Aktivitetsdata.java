@@ -66,12 +66,12 @@ public class Aktivitetsdata {
     try {
       for (ActivityInfo a : app.getPackageManager().
               getPackageInfo(app.getPackageName(), PackageManager.GET_ACTIVITIES).activities) {
-        Aktivitetsdata.instans.alleAktiviteter.add(a.name);
+        alleAktiviteter.add(a.name);
       }
     } catch (PackageManager.NameNotFoundException ex) {
       ex.printStackTrace();
     }
-    Aktivitetsdata.instans.alleAktiviteter.add("AndroidManifest.xml");
+    alleAktiviteter.add("AndroidManifest.xml");
 
     final File cachefil = new File(app.getCacheDir(), "Aktivitetslistecache.ser");
 
@@ -81,11 +81,11 @@ public class Aktivitetsdata {
       Log.d("Aktivitetsliste", "deser1 tid: " + (System.currentTimeMillis() - tid));
       ArrayList<String> alleGemteAktiviteter = (ArrayList<String>) objektstrøm.readObject();
       Log.d("Aktivitetsliste", "deser2 tid: " + (System.currentTimeMillis() - tid));
-      if (alleGemteAktiviteter.equals(Aktivitetsdata.instans.alleAktiviteter)) {
+      if (alleGemteAktiviteter.equals(alleAktiviteter)) {
         // Gemte aktiviteter er de samme! Vi fortsætter...
-        Aktivitetsdata.instans.pakkenavne = (ArrayList<String>) objektstrøm.readObject();
-        Aktivitetsdata.instans.pakkekategorier = (ArrayList<String>) objektstrøm.readObject();
-        Aktivitetsdata.instans.klasselister = (ArrayList<ArrayList<String>>) objektstrøm.readObject();
+        pakkenavne = (ArrayList<String>) objektstrøm.readObject();
+        pakkekategorier = (ArrayList<String>) objektstrøm.readObject();
+        klasselister = (ArrayList<ArrayList<String>>) objektstrøm.readObject();
         Log.d("Aktivitetsliste", "deser3 tid: " + (System.currentTimeMillis() - tid));
       }
       objektstrøm.close();
@@ -93,13 +93,13 @@ public class Aktivitetsdata {
       ex.printStackTrace();
     }
 
-    if (Aktivitetsdata.instans.klasselister.isEmpty()) { // cache var ikke god, vi indlæser fra grunden
+    if (klasselister.isEmpty()) { // cache var ikke god, vi indlæser fra grunden
 
       LinkedHashMap<String, Integer> pakkeTilPosition = new LinkedHashMap<String, Integer>();
       //kategorier.add("(søg)");
       pakkeTilPosition.put(" = vis alle = ", 0);
-      Aktivitetsdata.instans.klasselister.add(Aktivitetsdata.instans.alleAktiviteter);
-      for (String navn : Aktivitetsdata.instans.alleAktiviteter) {
+      klasselister.add(alleAktiviteter);
+      for (String navn : alleAktiviteter) {
         int n = navn.lastIndexOf(".");
         String pakkenavn = navn.substring(0, n); // Fjern klassenavnet
         //String klassenavn = navn.substring(n+1); // Klassenavnet
@@ -110,9 +110,9 @@ public class Aktivitetsdata {
           position = pakkeTilPosition.size();
           pakkeTilPosition.put(pakkenavn, position);
           klasser = new ArrayList<String>();
-          Aktivitetsdata.instans.klasselister.add(klasser);
+          klasselister.add(klasser);
         } else {
-          klasser = Aktivitetsdata.instans.klasselister.get(position);
+          klasser = klasselister.get(position);
         }
         klasser.add(navn);
       }
@@ -121,16 +121,16 @@ public class Aktivitetsdata {
       //klasselister.add(new ArrayList<String>());
       //pakkeTilPosition.put("eks.levendeikon", pakkeTilPosition.size());
       //klasselister.add(new ArrayList<String>());
-      Aktivitetsdata.instans.pakkenavne = new ArrayList(pakkeTilPosition.keySet());
-      Aktivitetsdata.instans.pakkekategorier = new ArrayList(Aktivitetsdata.instans.pakkenavne); // tag kopi og ændr den
-      for (int i = 1; i < Aktivitetsdata.instans.pakkekategorier.size(); i++) {
-        String pakkenavn = Aktivitetsdata.instans.pakkekategorier.get(i);
+      pakkenavne = new ArrayList(pakkeTilPosition.keySet());
+      pakkekategorier = new ArrayList(pakkenavne); // tag kopi og ændr den
+      for (int i = 1; i < pakkekategorier.size(); i++) {
+        String pakkenavn = pakkekategorier.get(i);
         //pakkenavn = pakkenavn.replaceFirst("_","\n"); // Linjeskift
         if (pakkenavn.startsWith("lekt")) {
           pakkenavn = "lekt "+pakkenavn.substring(4); // lav 'lekt_05' om til 'lekt 05'
-          Aktivitetsdata.instans.pakkekategorier.set(i, pakkenavn);
+          pakkekategorier.set(i, pakkenavn);
         }
-        Aktivitetsdata.instans.manglerTjekForAndreFiler.add(i);
+        manglerTjekForAndreFiler.add(i);
       }
 
 
@@ -138,7 +138,7 @@ public class Aktivitetsdata {
       new Thread() {
         @Override
         public void run() {
-          for (int i = 1; i < Aktivitetsdata.instans.pakkekategorier.size(); i++) {
+          for (int i = 1; i < pakkekategorier.size(); i++) {
             SystemClock.sleep(500); // Vent lidt for at lade systemet starte op
             tjekForAndreFilerIPakken(i);
             if (FEJLFINDING)
@@ -146,10 +146,10 @@ public class Aktivitetsdata {
 
             try { // Gem alle resultater for hurtig opstart
               ObjectOutputStream objektstrøm = new ObjectOutputStream(new FileOutputStream(cachefil));
-              objektstrøm.writeObject(Aktivitetsdata.instans.alleAktiviteter);
-              objektstrøm.writeObject(Aktivitetsdata.instans.pakkenavne);
-              objektstrøm.writeObject(Aktivitetsdata.instans.pakkekategorier);
-              objektstrøm.writeObject(Aktivitetsdata.instans.klasselister);
+              objektstrøm.writeObject(alleAktiviteter);
+              objektstrøm.writeObject(pakkenavne);
+              objektstrøm.writeObject(pakkekategorier);
+              objektstrøm.writeObject(klasselister);
               objektstrøm.close();
             } catch (Exception ex) {
               ex.printStackTrace();
@@ -163,12 +163,12 @@ public class Aktivitetsdata {
 
 
   public synchronized void tjekForAndreFilerIPakken(int position) {
-    if (!Aktivitetsdata.instans.manglerTjekForAndreFiler.contains(position)) {
+    if (!manglerTjekForAndreFiler.contains(position)) {
       return;
     }
-    Aktivitetsdata.instans.manglerTjekForAndreFiler.remove(position);
-    String pnavn = Aktivitetsdata.instans.pakkenavne.get(position);
-    ArrayList<String> klasser = Aktivitetsdata.instans.klasselister.get(position);
+    manglerTjekForAndreFiler.remove(position);
+    String pnavn = pakkenavne.get(position);
+    ArrayList<String> klasser = klasselister.get(position);
     if (FEJLFINDING)
       Log.d("Aktivitetsliste", "pakkeTilKlasseliste.get " + position + " = " + klasser + " " + pnavn);
 

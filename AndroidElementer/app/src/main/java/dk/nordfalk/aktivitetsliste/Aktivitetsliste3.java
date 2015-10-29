@@ -1,8 +1,10 @@
 package dk.nordfalk.aktivitetsliste;
 
+import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
@@ -32,8 +34,8 @@ import dk.nordfalk.android.elementer.R;
 
 public class Aktivitetsliste3 extends AppCompatActivity {
   int onStartTæller;
-  ToggleButton seKildekode;
-  ViewPager kategorivalg;
+  ToggleButton seKildekodeToggleButton;
+  ViewPager viewPager;
 
 
   @Override
@@ -42,36 +44,37 @@ public class Aktivitetsliste3 extends AppCompatActivity {
 
     Aktivitetsdata.instans.init(getApplication());
 
+    viewPager = new ViewPager(this);
+    viewPager.setId(R.id.viewPager);
+    viewPager.setAdapter(new VPAdapter(getSupportFragmentManager()));
+    viewPager.setPageTransformer(false, new ZoomOutPageTransformer());
+
+    PagerSlidingTabStrip pagerSlidingTabStrip = new PagerSlidingTabStrip(this);
+    pagerSlidingTabStrip.setViewPager(viewPager);
+
     LinearLayout ll = new LinearLayout(this);
     ll.setOrientation(LinearLayout.VERTICAL);
-    PagerSlidingTabStrip pagerTitleStrip = new PagerSlidingTabStrip(this);
-    ll.addView(pagerTitleStrip);
-    kategorivalg = new ViewPager(this);
-    kategorivalg.setId(R.id.viewPager);
-    ll.addView(kategorivalg);
-    kategorivalg.setAdapter(new VPAdapter(getSupportFragmentManager()));
-    ((LinearLayout.LayoutParams) kategorivalg.getLayoutParams()).weight = 1;
-
-    //pagerTitleStrip.setTextSize(getResources().getDimensionPixelSize(R.dimen.metainfo_skrifstørrelse));
-    pagerTitleStrip.setViewPager(kategorivalg);
+    ll.addView(pagerSlidingTabStrip);
+    ll.addView(viewPager);
+    ((LinearLayout.LayoutParams) viewPager.getLayoutParams()).weight = 1;
     setContentView(ll);
 
-    seKildekode = new ToggleButton(this);
-    seKildekode.setTextOff("Se kilde");
-    seKildekode.setTextOn("Se kilde");
-    seKildekode.setChecked(false);
+    seKildekodeToggleButton = new ToggleButton(this);
+    seKildekodeToggleButton.setTextOff("Se kilde");
+    seKildekodeToggleButton.setTextOn("Se kilde");
+    seKildekodeToggleButton.setChecked(false);
 
     ActionBar actionBar = getSupportActionBar();
     actionBar.setDisplayShowCustomEnabled(true);
-    actionBar.setCustomView(seKildekode);
+    actionBar.setCustomView(seKildekodeToggleButton);
 
 
-    seKildekode.setId(119);
+    seKildekodeToggleButton.setId(119);
 
 
     if (savedInstanceState == null) // Frisk start - vis animation
     {
-      //kategorivalg.startAnimation(AnimationUtils.loadAnimation(this, R.anim.egen_anim2));
+      //viewPager.startAnimation(AnimationUtils.loadAnimation(this, R.anim.egen_anim2));
       // Genskab valg fra sidst der blev startet en aktivitet
       SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 
@@ -79,7 +82,7 @@ public class Aktivitetsliste3 extends AppCompatActivity {
       //XXXvisKlasserListView.setId(117);
       //XXXint position = prefs.getInt("position", 0);
       //XXXvisKlasserListView.setSelectionFromTop(position, 30);
-      kategorivalg.setCurrentItem(prefs.getInt("kategoriPos", 1));
+      viewPager.setCurrentItem(prefs.getInt("kategoriPos", 1));
     }
   }
 
@@ -148,12 +151,12 @@ public class Aktivitetsliste3 extends AppCompatActivity {
   public static class KarruselFrag extends Fragment implements OnItemClickListener, OnItemLongClickListener {
     ArrayList<String> klasserDerVisesNu = new ArrayList<>();
     private int kategoriPos;
-    private Aktivitetsliste3 a;
+    private Aktivitetsliste3 akt;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-      a = (Aktivitetsliste3) getActivity();
+      akt = (Aktivitetsliste3) getActivity();
       kategoriPos = getArguments().getInt("position");
       Aktivitetsdata.instans.tjekForAndreFilerIPakken(kategoriPos);
       klasserDerVisesNu.addAll(Aktivitetsdata.instans.klasselister.get(kategoriPos));
@@ -198,8 +201,8 @@ public class Aktivitetsliste3 extends AppCompatActivity {
     public void onItemClick(AdapterView<?> listView, View v, int position, long id) {
       String akt = klasserDerVisesNu.get(position);
 
-      if (a.seKildekode.isChecked() || akt.endsWith(".java") || akt.endsWith(".xml")) {
-        a.visKildekode(akt);
+      if (this.akt.seKildekodeToggleButton.isChecked() || akt.endsWith(".java") || akt.endsWith(".xml")) {
+        this.akt.visKildekode(akt);
         return;
       }
 
@@ -209,18 +212,18 @@ public class Aktivitetsliste3 extends AppCompatActivity {
 
         /*
         if (akt.toLowerCase().contains("fragment") && Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB_MR2) {
-          a.visDialog("Denne aktivitet kan kun køre på Android 4\nSkal den køre på Android 2 skal et kompatibilitetsbibliotek inkluderes og koden ændres til at bruge kompatibilitetsbiblioteket.");
+          akt.visDialog("Denne aktivitet kan kun køre på Android 4\nSkal den køre på Android 2 skal et kompatibilitetsbibliotek inkluderes og koden ændres til at bruge kompatibilitetsbiblioteket.");
           return;
         }
         */
         startActivity(new Intent(getActivity(), klasse));
-        a.overridePendingTransition(0, 0); // hurtigt skift
+        this.akt.overridePendingTransition(0, 0); // hurtigt skift
         Toast.makeText(getActivity(), akt + " startet", Toast.LENGTH_SHORT).show();
       } catch (Throwable e) {
         e.printStackTrace();
         //while (e.getCause() != null) e = e.getCause(); // Hop hen til grunden
         String tekst = akt + " gav fejlen:\n" + Log.getStackTraceString(e);
-        a.visDialog(tekst);
+        this.akt.visDialog(tekst);
       }
 
       // Find position i fuld liste
@@ -234,8 +237,10 @@ public class Aktivitetsliste3 extends AppCompatActivity {
     }
 
     public boolean onItemLongClick(AdapterView<?> listView, View v, int position, long id) {
-      a.visKildekode(klasserDerVisesNu.get(position));
+      akt.visKildekode(klasserDerVisesNu.get(position));
       return true;
     }
   }
 }
+
+
