@@ -1,10 +1,8 @@
 package dk.nordfalk.aktivitetsliste;
 
-import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
@@ -118,15 +116,15 @@ public class Aktivitetsliste3 extends AppCompatActivity {
     public VPAdapter(FragmentManager fm) {
       super(fm);
     }
-    // ArrayAdapter(this, android.R.layout.simple_gallery_item, android.R.id.text1, Aktivitetsdata.instans.pakkekategorier)
+    // ArrayAdapter(this, android.R.layout.simple_gallery_item, android.R.id.text1, Aktivitetsdata.instans.pakke_kategori)
     @Override
     public int getCount() {
-      return Aktivitetsdata.instans.pakkekategorier.size();
+      return Aktivitetsdata.instans.pakke_kategori.size();
     }
 
     @Override
     public CharSequence getPageTitle(int position) {
-      return Aktivitetsdata.instans.pakkekategorier.get(position).replace('_','\n');
+      return Aktivitetsdata.instans.pakke_kategori.get(position).replace('_','\n');
     }
 
     /*
@@ -158,7 +156,7 @@ public class Aktivitetsliste3 extends AppCompatActivity {
       kategoriPos = getArguments().getInt("position");
       Aktivitetsdata.instans.tjekForAndreFilerIPakken(kategoriPos);
       klasserDerVisesNu.clear();
-      klasserDerVisesNu.addAll(Aktivitetsdata.instans.klasselister.get(kategoriPos));
+      klasserDerVisesNu.addAll(Aktivitetsdata.instans.pakke_klasser.get(kategoriPos));
 
       // Anonym nedarving af ArrayAdapter med omdefineret getView()
       ArrayAdapter<String> klasserDerVisesNuAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_2, android.R.id.text1, klasserDerVisesNu) {
