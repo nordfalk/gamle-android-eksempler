@@ -69,11 +69,6 @@
         <activity android:name="lekt01_views.ByvejrDeklarativ" />
         <activity android:name="lekt01_views.BenytHtmlTags" />
         <activity android:name="lekt01_views.BenytMenuer" />
-        <activity android:name="lekt02_aktiviteter.Velkomst_akt" />
-        <activity android:name="lekt02_aktiviteter.Hovedmenu_akt" />
-        <activity android:name="lekt02_aktiviteter.Hjaelp_akt" />
-        <activity android:name="lekt02_aktiviteter.Indstillinger_akt" />
-        <activity android:name="lekt02_aktiviteter.Spillet_akt" />
         <activity android:name="lekt02_intents.BenytIntents" />
         <activity android:name="lekt02_intents.BenytIntentsFraGoogle" />
         <activity
@@ -103,6 +98,11 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         -->
+        <activity android:name="lekt02_aktiviteter.Velkomst_akt" />
+        <activity android:name="lekt02_aktiviteter.Hovedmenu_akt" />
+        <activity android:name="lekt02_aktiviteter.Hjaelp_akt" />
+        <activity android:name="lekt02_aktiviteter.Indstillinger_akt" />
+        <activity android:name="lekt02_aktiviteter.Spillet_akt" />
 
         <activity android:name="lekt03_diverse.AfspilLyd" />
         <activity android:name="lekt03_diverse.AfspilVideo" />

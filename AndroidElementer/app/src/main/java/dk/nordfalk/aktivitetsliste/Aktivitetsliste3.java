@@ -3,6 +3,7 @@ package dk.nordfalk.aktivitetsliste;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
@@ -77,7 +78,7 @@ public class Aktivitetsliste3 extends AppCompatActivity {
     {
       //viewPager.startAnimation(AnimationUtils.loadAnimation(this, R.anim.egen_anim2));
       // Genskab valg fra sidst der blev startet en aktivitet
-      viewPager.setCurrentItem(prefs.getInt("kategoriPos", 1));
+      viewPager.setCurrentItem(prefs.getInt("kategoriPos", 2));
       sidstKlikketPåAkt = prefs.getString("sidstKlikketPåAkt","ukendt");
     }
   }
@@ -119,12 +120,12 @@ public class Aktivitetsliste3 extends AppCompatActivity {
     // ArrayAdapter(this, android.R.layout.simple_gallery_item, android.R.id.text1, Aktivitetsdata.instans.pakke_kategori)
     @Override
     public int getCount() {
-      return Aktivitetsdata.instans.pakke_kategori.size();
+      return Aktivitetsdata.instans.pakker.size();
     }
 
     @Override
     public CharSequence getPageTitle(int position) {
-      return Aktivitetsdata.instans.pakke_kategori.get(position).replace('_','\n');
+      return Aktivitetsdata.instans.pakker.get(position).kategori.replace('_','\n');
     }
 
     /*
@@ -136,7 +137,7 @@ public class Aktivitetsliste3 extends AppCompatActivity {
 
     @Override
     public Fragment getItem(int position) {
-      Fragment f = new KarruselFrag();
+      Fragment f = new VisPakkeFrag();
       Bundle b = new Bundle();
       b.putInt("position", position);
       f.setArguments(b);
@@ -144,73 +145,94 @@ public class Aktivitetsliste3 extends AppCompatActivity {
     }
   }
 
-  public static class KarruselFrag extends Fragment implements OnItemClickListener, OnItemLongClickListener {
-    ArrayList<String> klasserDerVisesNu = new ArrayList<>();
+  public static class VisPakkeFrag extends Fragment implements OnItemClickListener, OnItemLongClickListener {
     private int kategoriPos;
     private Aktivitetsliste3 akt;
+    private Aktivitetsdata.Pakke pakke;
+    private ArrayList<String> elementer;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
       akt = (Aktivitetsliste3) getActivity();
       kategoriPos = getArguments().getInt("position");
-      Aktivitetsdata.instans.tjekForAndreFilerIPakken(kategoriPos);
-      klasserDerVisesNu.clear();
-      klasserDerVisesNu.addAll(Aktivitetsdata.instans.pakke_klasser.get(kategoriPos));
+      pakke = Aktivitetsdata.instans.pakker.get(kategoriPos);
+      Aktivitetsdata.instans.tjekForAndreFilerIPakken(pakke);
+
+      elementer = new ArrayList<>();
+      elementer.addAll(pakke.dokumenter.keySet());
+      elementer.addAll(pakke.aktiviteter);
+      elementer.addAll(pakke.andreFiler);
+
 
       // Anonym nedarving af ArrayAdapter med omdefineret getView()
-      ArrayAdapter<String> klasserDerVisesNuAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_2, android.R.id.text1, klasserDerVisesNu) {
+      ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_2, android.R.id.text1, elementer) {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
           View view = super.getView(position, convertView, parent);
           TextView listeelem_overskrift = (TextView) view.findViewById(android.R.id.text1);
           TextView listeelem_beskrivelse = (TextView) view.findViewById(android.R.id.text2);
 
-          String pakkeOgKlasse = klasserDerVisesNu.get(position);
-          if (pakkeOgKlasse.endsWith(".java")) {
-            String pakkenavn = pakkeOgKlasse.substring(0, pakkeOgKlasse.lastIndexOf('/'));
-            String klassenavn = pakkeOgKlasse.substring(pakkenavn.length() + 1);
+          String navn = elementer.get(position);
+          String dokUrl = pakke.dokumenter.get(navn);
+
+          if (dokUrl != null) {
+            listeelem_overskrift.setText(navn);
+            listeelem_beskrivelse.setText("");//"dokumentation");
+          } else if (pakke.aktiviteter.contains(navn)) {
+            String pakkenavn = navn.substring(0, navn.lastIndexOf('.'));
+            String klassenavn = navn.substring(pakkenavn.length() + 1);
             listeelem_overskrift.setText(klassenavn);
-            listeelem_beskrivelse.setText(pakkenavn+"."+klassenavn.substring(0,klassenavn.length()-5)); // fjern .java
-          } else if (pakkeOgKlasse.endsWith(".xml")) {
-            listeelem_overskrift.setText(pakkeOgKlasse);
-            listeelem_beskrivelse.setText("");
+            //listeelem_beskrivelse.setText(navn);
+            listeelem_beskrivelse.setText("aktivitet i "+pakkenavn);
+          } else if (navn.endsWith(".java")) {
+            String pakkenavn = navn.substring(0, navn.lastIndexOf('/'));
+            String klassenavn = navn.substring(pakkenavn.length() + 1);
+            listeelem_overskrift.setText(klassenavn);
+            //listeelem_beskrivelse.setText(pakkenavn+"."+klassenavn.substring(0,klassenavn.length()-5)); // fjern .java
+            listeelem_beskrivelse.setText("kildekode i "+pakkenavn);
           } else {
-            String pakkenavn = pakkeOgKlasse.substring(0, pakkeOgKlasse.lastIndexOf('.'));
-            String klassenavn = pakkeOgKlasse.substring(pakkenavn.length() + 1);
-            listeelem_overskrift.setText(klassenavn);
-            listeelem_beskrivelse.setText(pakkeOgKlasse);
+            listeelem_overskrift.setText(navn);
+            listeelem_beskrivelse.setText("andet");
           }
 
           return view;
         }
       };
-      ListView visKlasserListView = new ListView(getActivity());
-      visKlasserListView.setAdapter(klasserDerVisesNuAdapter);
+      ListView listView = new ListView(getActivity());
+      listView.setAdapter(adapter);
+      listView.setFastScrollEnabled(true);
 
-      visKlasserListView.setOnItemClickListener(this);
-      visKlasserListView.setOnItemLongClickListener(this);
 
-      int position = klasserDerVisesNu.indexOf(akt.sidstKlikketPåAkt);
+      listView.setOnItemClickListener(this);
+      listView.setOnItemLongClickListener(this);
+
+      int position = elementer.indexOf(akt.sidstKlikketPåAkt);
       if (position>0) {
-        visKlasserListView.setSelectionFromTop(position, 30);
+        listView.setSelectionFromTop(position, 30);
       }
 
-      return visKlasserListView;
+      return listView;
     }
 
 
     public void onItemClick(AdapterView<?> listView, View v, int position, long id) {
-      String aktKlik = klasserDerVisesNu.get(position);
+      String navn = elementer.get(position);
 
-      if (this.akt.seKildekodeToggleButton.isChecked() || aktKlik.endsWith(".java") || aktKlik.endsWith(".xml")) {
-        this.akt.visKildekode(aktKlik);
-        return;
-      }
+      // Gem position og 'start aktivitet direkte' til næste gang
+      akt.prefs.edit().
+              putString("sidstKlikketPåAkt", navn).
+              putInt("kategoriPos", kategoriPos).
+              commit();
 
-      try {
+      String dokUrl = pakke.dokumenter.get(navn);
+      if (dokUrl!=null) {
+        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(dokUrl)));
+      } else if (akt.seKildekodeToggleButton.isChecked() || !pakke.aktiviteter.contains(navn)) {
+        akt.visKildekode(navn);
+      } else try {
         // Tjek at klassen faktisk kan indlæses (så prg ikke crasher hvis den ikke kan!)
-        Class klasse = Class.forName(aktKlik);
+        Class klasse = Class.forName(navn);
 
         /*
         if (akt.toLowerCase().contains("fragment") && Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB_MR2) {
@@ -220,23 +242,19 @@ public class Aktivitetsliste3 extends AppCompatActivity {
         */
         startActivity(new Intent(getActivity(), klasse));
         this.akt.overridePendingTransition(0, 0); // hurtigt skift
-        Toast.makeText(getActivity(), aktKlik + " startet", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), navn + " startet", Toast.LENGTH_SHORT).show();
+        return;
       } catch (Throwable e) {
         e.printStackTrace();
         //while (e.getCause() != null) e = e.getCause(); // Hop hen til grunden
-        String tekst = aktKlik + " gav fejlen:\n" + Log.getStackTraceString(e);
+        String tekst = navn + " gav fejlen:\n" + Log.getStackTraceString(e);
         this.akt.visDialog(tekst);
       }
 
-      // Gem position og 'start aktivitet direkte' til næste gang
-      akt.prefs.edit().
-              putString("sidstKlikketPåAkt", aktKlik).
-              putInt("kategoriPos", kategoriPos).
-              commit();
     }
 
     public boolean onItemLongClick(AdapterView<?> listView, View v, int position, long id) {
-      akt.visKildekode(klasserDerVisesNu.get(position));
+      akt.visKildekode(elementer.get(position));
       return true;
     }
   }

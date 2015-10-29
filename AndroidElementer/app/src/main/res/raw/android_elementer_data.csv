@@ -1,0 +1,33 @@
+# Eksempel på en kommasepareret fil med kommentarer
+# pakke, dokumenttitel, url
+
+# Dokumenter
+lekt01_views, 01 Introduktion, https://drive.google.com/open?id=1Yzqk8DiprF4HwWdSRBP6c-h8tMQTtzetSUVoRfTo_hs
+lekt01_views, 02 I gang med Android, https://drive.google.com/open?id=1xJ-DDw7FQ6SyTVgtT7rEZ9ZYW76F1fxcAeddYFTsnpI
+lekt02_aktiviteter, 03 Skift mellem aktiviteter, https://drive.google.com/open?id=1g0Nfnc0bE4ZYGYIuw_1ozf32TsUFZFIe-PkHKV9JQvs
+lekt02_intents, 03 Skift mellem aktiviteter, https://drive.google.com/open?id=1g0Nfnc0bE4ZYGYIuw_1ozf32TsUFZFIe-PkHKV9JQvs
+lekt03_diverse, 04 Videre med Android, https://drive.google.com/open?id=1Rt11h3hyvUGCqeTHNXrJqtI85L-qndaAhDK2l4yhAhs
+lekt06_asynkron, 05 Flertrådet programmering, https://drive.google.com/open?id=15TRVIlBfyoIgT0eML9FFCZisQfpHUNcIgyqpY3Drz-4
+lekt04_arkitektur, 07 Anbefalinger og god praksis, https://drive.google.com/open?id=1369Ga09D8u6XZeyUSig_cd1m-eKckakdLNFf2POniX4
+
+lekt02_intents, F15 Intents - tilføje aftale til kalender, https://drive.google.com/open?id=1mvwMMfdaIhDKfCXiuZCpRdd5Cg7Ixat6jyuuqiJfs9k
+
+lekt04_lister2, F15 Lister med RecyclerView, https://drive.google.com/open?id=1LrrRYot17zRszpWjeI1ddS5jRtJMsoOuEDmP7HJfSHQ
+
+, 08 Styles og temaer, https://drive.google.com/open?id=1jEGY9A5vIqAG0j1ySoetAKzy-5-Z9edaN3_Yl_N8Yv8
+, 2x Dekompilering og obfuskering, https://drive.google.com/open?id=1lABp_3uz9-dllAmZfwUbAeuL_sbBnAK2tYq7Q9gx88E
+, E14 Publicering af sin android applikation via Google Play, https://drive.google.com/open?id=1rMuj7zOJI23PYKiKiVcc2UMq0UAr13g58ycIy_qfxDI
+
+
+# Videoer
+, Alle videoer samlet, https://www.youtube.com/watch?v=T0v0CDYmgdI&list=PLYt4JfDKMDDdcrVi4GQbN0-ugsO8ZRBYs
+lekt01_views, Videoer lektion 1, https://www.youtube.com/playlist?list=PLYt4JfDKMDDel5lADIA87Nfa8--6DdIV4
+
+lekt02_intents, Videoer lektion 2, https://www.youtube.com/playlist?list=PLYt4JfDKMDDcV85tKu_mCwpP5d0rIW9hP
+lekt02_aktiviteter, Video: Flere aktiviteter med Navigation Editor, https://www.youtube.com/watch?v=KuwijTk-C5M
+lekt03_diverse, Videoer lektion 3, http://www.youtube.com/playlist?list=PLYt4JfDKMDDf-X1UWLiajcPSDHOxBPT-_
+
+lekt04_lister, Videoer Lektion 4: Lister, http://youtu.be/_ziMhIYjy0E
+
+lekt05_grafik, Video lektion 5, http://www.youtube.com/playlist?list=PLYt4JfDKMDDdGYgh48d6nmCS484GyoWUN
+lekt05_sensorer, Video lektion 5, http://www.youtube.com/playlist?list=PLYt4JfDKMDDdGYgh48d6nmCS484GyoWUN

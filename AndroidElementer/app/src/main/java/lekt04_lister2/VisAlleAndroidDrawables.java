@@ -54,6 +54,7 @@ public class VisAlleAndroidDrawables extends Activity implements AdapterView.OnI
     listView.setAdapter(new AndroidDrawablesAdapter());
     listView.setDividerHeight(3);
     listView.setOnItemClickListener(this);
+    listView.setFastScrollEnabled(true);
 
 
 		/*
