@@ -76,7 +76,7 @@ public class BenytIntentsMedProvider extends Activity implements OnClickListener
 
     } else {
       Intent i = new Intent(Intent.ACTION_SEND);
-      i.setType("text/plain");
+      i.setType("message/rfc822");
       i.putExtra(Intent.EXTRA_EMAIL, new String[]{"jacob.nordfalk@gmail.com"});
       i.putExtra(Intent.EXTRA_CC, new String[]{"jacob.nordfalk@gmail.com"});
       i.putExtra(Intent.EXTRA_SUBJECT, "Et billede fra AndroidElementer");

@@ -3,6 +3,7 @@ package dk.nordfalk.aktivitetsliste;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -172,13 +173,18 @@ public class Aktivitetsliste3 extends AppCompatActivity {
           View view = super.getView(position, convertView, parent);
           TextView listeelem_overskrift = (TextView) view.findViewById(android.R.id.text1);
           TextView listeelem_beskrivelse = (TextView) view.findViewById(android.R.id.text2);
+          listeelem_overskrift.setTextColor(Color.WHITE);
+          listeelem_beskrivelse.setSingleLine(true);
+          listeelem_beskrivelse.setTextColor(Color.LTGRAY);
 
           String navn = elementer.get(position);
           String dokUrl = pakke.dokumenter.get(navn);
 
           if (dokUrl != null) {
             listeelem_overskrift.setText(navn);
-            listeelem_beskrivelse.setText("");//"dokumentation");
+            listeelem_beskrivelse.setText(dokUrl);//"dokumentation");
+            listeelem_overskrift.setTextColor(Color.LTGRAY);
+            listeelem_beskrivelse.setTextColor(Color.GRAY);
           } else if (pakke.aktiviteter.contains(navn)) {
             String pakkenavn = navn.substring(0, navn.lastIndexOf('.'));
             String klassenavn = navn.substring(pakkenavn.length() + 1);
@@ -210,6 +216,8 @@ public class Aktivitetsliste3 extends AppCompatActivity {
       int position = elementer.indexOf(akt.sidstKlikketPåAkt);
       if (position>0) {
         listView.setSelectionFromTop(position, 30);
+      } else {
+        listView.setSelectionFromTop(pakke.dokumenter.size(), 20);
       }
 
       return listView;
