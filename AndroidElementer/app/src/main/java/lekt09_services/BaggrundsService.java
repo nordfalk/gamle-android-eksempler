@@ -35,9 +35,9 @@ public class BaggrundsService extends Service {
 
   @Override
   public int onStartCommand(Intent intent, int flags, int startId) {
-    Bundle b = intent.getExtras();
-    Toast.makeText(this, TAG + " onStartCommand(\n"
-            + intent + " " + " " + flags + " " + startId, Toast.LENGTH_LONG).show();
-    return START_STICKY;
+    String tekst = " onStartCommand("+ flags + " " + startId;
+    if (intent!=null && intent.getExtras()!=null) tekst+="\n"+intent.getExtras().get("nøgle");
+    Toast.makeText(this, TAG + tekst, Toast.LENGTH_LONG).show();
+    return START_STICKY; // eller START_REDELIVER_INTENT hvis intent skal overleve procesgenstart
   }
 }

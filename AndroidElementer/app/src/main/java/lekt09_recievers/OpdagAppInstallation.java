@@ -20,35 +20,8 @@ import android.widget.Toast;
 import dk.nordfalk.android.elementer.R;
 
 /**
- * Eksempel på en broadcast
+ * Eksempel på en broadcast reciever
  *
- * @author j
- */
-class InstallationsReciever extends BroadcastReceiver {
-
-  @Override
-  public void onReceive(Context ctx, Intent i) {
-    System.out.println("onReceive" + ctx + ":\n" + i);
-    // I/System.out( 2870): Intent { act=android.intent.action.PACKAGE_REMOVED dat=package:dk.nordfalk.teoriproeve.ce flg=0x10000000 (has extras) }
-    Toast.makeText(ctx, "onReceive" + ctx + ":\n" + i, Toast.LENGTH_LONG).show();
-
-    // Vi viser også en notifikation så man kan komme hen og slå det fra
-    Intent intent = new Intent(ctx, OpdagAppInstallation.class);
-    PendingIntent aktivitet = PendingIntent.getActivity(ctx, 0, intent, 0);
-    NotificationCompat.Builder builder = new NotificationCompat.Builder(ctx)
-            .setContentIntent(aktivitet)
-            .setSmallIcon(R.drawable.logo)
-            .setTicker("Installation")
-            .setContentTitle(i.getAction())
-            .setContentText(""+i.getExtras());
-
-    NotificationManager notificationManager = (NotificationManager) ctx.getSystemService(Context.NOTIFICATION_SERVICE);
-    notificationManager.notify(42, builder.build());
-
-  }
-}
-
-/**
  * @author Jacob Nordfalk
  */
 public class OpdagAppInstallation extends Activity implements OnClickListener {
@@ -105,6 +78,30 @@ public class OpdagAppInstallation extends Activity implements OnClickListener {
       } catch (Exception e) {
         Toast.makeText(this, "Fejl: " + e, Toast.LENGTH_LONG).show();
       }
+    }
+  }
+
+  public static class InstallationsReciever extends BroadcastReceiver {
+
+    @Override
+    public void onReceive(Context ctx, Intent i) {
+      System.out.println("onReceive" + ctx + ":\n" + i);
+      // I/System.out( 2870): Intent { act=android.intent.action.PACKAGE_REMOVED dat=package:dk.nordfalk.teoriproeve.ce flg=0x10000000 (has extras) }
+      Toast.makeText(ctx, "onReceive" + ctx + ":\n" + i, Toast.LENGTH_LONG).show();
+
+      // Vi viser også en notifikation så man kan komme hen og slå det fra
+      Intent intent = new Intent(ctx, OpdagAppInstallation.class);
+      PendingIntent aktivitet = PendingIntent.getActivity(ctx, 0, intent, 0);
+      NotificationCompat.Builder builder = new NotificationCompat.Builder(ctx)
+              .setContentIntent(aktivitet)
+              .setSmallIcon(R.drawable.logo)
+              .setTicker("Installation")
+              .setContentTitle(i.getAction())
+              .setContentText(""+i.getExtras());
+
+      NotificationManager notificationManager = (NotificationManager) ctx.getSystemService(Context.NOTIFICATION_SERVICE);
+      notificationManager.notify(42, builder.build());
+
     }
   }
 }

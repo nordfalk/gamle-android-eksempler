@@ -193,6 +193,7 @@
         <activity android:name="lekt09_recievers.OpdagAppInstallation" />
         <activity android:name="lekt09_recievers.ModtagSMSer" />
         <activity android:name="lekt09_recievers.OpdagNetvaerksAEndring" />
+        <activity android:name="lekt09_recievers.BenytAlarmer" />
         <activity android:name="lekt09_services.BenytService" />
         <!-- Simpel service der, når startet, forsøger at holde app'en i hukommelsen -->
         <service android:name="lekt09_services.BaggrundsService" />

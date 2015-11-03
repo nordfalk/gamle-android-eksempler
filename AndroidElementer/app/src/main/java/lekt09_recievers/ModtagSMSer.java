@@ -14,28 +14,6 @@ import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-class SMSReciever extends BroadcastReceiver {
-
-  @Override
-  public void onReceive(Context ctx, Intent intent) {
-    System.out.println("intent.toURI() = " + intent.toURI());
-    Toast.makeText(ctx, intent.toURI(), Toast.LENGTH_LONG).show();
-    Bundle data = intent.getExtras();
-    if (data != null) {
-      Object pdus[] = ((Object[]) data.get("pdus"));
-      for (Object pdu : pdus) {
-        SmsMessage part = SmsMessage.createFromPdu((byte[]) pdu);
-        Toast.makeText(ctx, "SMS fra " + part.getDisplayOriginatingAddress(), Toast.LENGTH_SHORT).show();
-        Toast.makeText(ctx, part.getDisplayMessageBody(), Toast.LENGTH_LONG).show();
-
-        Intent i = new Intent(ctx, ModtagSMSer.class);
-        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        ctx.startActivity(i);
-      }
-    }
-  }
-}
-
 /**
  * @author Jacob Nordfalk
  */
@@ -81,4 +59,28 @@ public class ModtagSMSer extends Activity implements OnClickListener {
       Toast.makeText(this, "Recieveren er allerede " + (reciever == null ? "afregistreret" : "registreret"), Toast.LENGTH_SHORT).show();
     }
   }
+
+
+  public static class SMSReciever extends BroadcastReceiver {
+
+    @Override
+    public void onReceive(Context ctx, Intent intent) {
+      System.out.println("intent.toURI() = " + intent.toURI());
+      Toast.makeText(ctx, intent.toURI(), Toast.LENGTH_LONG).show();
+      Bundle data = intent.getExtras();
+      if (data != null) {
+        Object pdus[] = ((Object[]) data.get("pdus"));
+        for (Object pdu : pdus) {
+          SmsMessage part = SmsMessage.createFromPdu((byte[]) pdu);
+          Toast.makeText(ctx, "SMS fra " + part.getDisplayOriginatingAddress(), Toast.LENGTH_SHORT).show();
+          Toast.makeText(ctx, part.getDisplayMessageBody(), Toast.LENGTH_LONG).show();
+
+          Intent i = new Intent(ctx, ModtagSMSer.class);
+          i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+          ctx.startActivity(i);
+        }
+      }
+    }
+  }
+
 }
