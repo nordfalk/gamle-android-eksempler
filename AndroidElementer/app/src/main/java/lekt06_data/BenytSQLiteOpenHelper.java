@@ -31,8 +31,8 @@ class KundeDb extends SQLiteOpenHelper {
   @Override
   public void onCreate(SQLiteDatabase db) {
     db.execSQL("create table " + TABEL + " ("
-            + ID + " int primary key, "
-            + KREDIT + " text, " + NAVN + " text)");
+            + ID + " integer primary key, "
+            + KREDIT + " text not null, " + NAVN + " text)");
   }
 
   @Override

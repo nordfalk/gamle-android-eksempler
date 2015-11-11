@@ -28,7 +28,7 @@ public class ModtagSMSer extends Activity implements OnClickListener {
 
     TableLayout tl = new TableLayout(this);
     TextView tv = new TextView(this);
-    tv.setText("Broadcastreciever der opdager når der modages SMSer.\nDu kan sende SMSer til emulatoren ved at starte DDMS og vælge fanen 'Emulator Control'.");
+    tv.setText("Broadcastreciever, der opdager, når der modages SMSer.\nDu kan sende SMSer til emulatoren ved at starte 'Android Device Monitor' og vælge fanen 'Emulator Control'.");
     tl.addView(tv);
 
     registrer = new Button(this);

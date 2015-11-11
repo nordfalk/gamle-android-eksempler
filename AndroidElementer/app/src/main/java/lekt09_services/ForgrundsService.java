@@ -50,7 +50,7 @@ public class ForgrundsService extends Service {
             .setContentTitle("Bliver i hukommelsen")
             .setContentText("Klik her for at stoppe servicen")
             ;
-    startForeground(1142, builder.build());
-    return START_STICKY;
+    startForeground(42, builder.build());
+    return START_STICKY; // evt START_REDELIVER_INTENT hvis intentdata skal huskes i fald at processen bliver genstartet
   }
 }

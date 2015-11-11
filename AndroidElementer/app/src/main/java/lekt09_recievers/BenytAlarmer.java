@@ -53,11 +53,15 @@ public class BenytAlarmer extends Activity implements OnClickListener {
 
     if (klikketPå == knap1) {
       AlarmManager am = (AlarmManager) getSystemService(ALARM_SERVICE);
-      PendingIntent pi = PendingIntent.getService(this, 0, new Intent(this, MinIntentService.class), 0);
-      am.setRepeating(AlarmManager.RTC, System.currentTimeMillis() + 1000, 60000, pi);
+      PendingIntent pi = PendingIntent.getBroadcast(this, 0, new Intent(this, AlarmReciever.class), 0);
+//      am.setInexactRepeating(AlarmManager.RTC, System.currentTimeMillis() + 1000, 60000, pi);
+
+      am.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,
+              AlarmManager.INTERVAL_HALF_HOUR,
+              AlarmManager.INTERVAL_HALF_HOUR, pi);
     } else if (klikketPå == knap2) {
       AlarmManager am = (AlarmManager) getSystemService(ALARM_SERVICE);
-      PendingIntent pi = PendingIntent.getService(this, 0, new Intent(this, MinIntentService.class), 0);
+      PendingIntent pi = PendingIntent.getService(this, 0, new Intent(this, AlarmReciever.class), 0);
       am.cancel(pi);
     }
   }
@@ -67,10 +71,9 @@ public class BenytAlarmer extends Activity implements OnClickListener {
 
     @Override
     public void onReceive(Context ctx, Intent i) {
-      System.out.println("onReceive" + ctx + ":\n" + i);
-      // I/System.out( 2870): Intent { act=android.intent.action.PACKAGE_REMOVED dat=package:dk.nordfalk.teoriproeve.ce flg=0x10000000 (has extras) }
-      Toast.makeText(ctx, "onReceive" + ctx + ":\n" + i, Toast.LENGTH_LONG).show();
-
+      System.out.println("AndroidElementer AlarmReciever onReceive" + ctx + ":\n" + i);
+      Toast.makeText(ctx, "AndroidElementer AlarmReciever onReceive", Toast.LENGTH_LONG).show();
+      ctx.startActivity(new Intent(ctx, BenytAlarmer.class));
     }
   }
 

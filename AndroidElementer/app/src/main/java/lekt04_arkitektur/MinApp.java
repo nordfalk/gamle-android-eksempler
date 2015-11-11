@@ -33,6 +33,9 @@ import lekt06_youtube.FilCache;
  * Resten af programmet bliver først initialiseret efter at objektet og
  * kaldet til metoden onCreate() er afsluttet, så det er vigtigt kun at
  * udføre de allermest nødvendige ting her.
+ *
+ * BEMÆRK - Klassen her skal være nævnt i <application>-tagget i AndroidManifest.xml,
+ * <application android:name="lekt04_arkitektur.MinApp"
  */
 public class MinApp extends Application {
   // Globale data (kunne godt være gemt i en klassevariabel andetsteds)
@@ -47,14 +50,6 @@ public class MinApp extends Application {
   public static Programdata getData() {
     // if (data == null) data = new Programdata(); // klassisk singleon unødvendigt da den oprettes i onCreate()
     return data;
-  }
-
-  public static void gemData() {
-    try {  // nu er aktiviteten ikke synlig, så er det tid til at gemme data!
-      Serialisering.gem(data, instans.getFilesDir() + "/programdata.ser");
-    } catch (IOException ex) {
-      ex.printStackTrace();
-    }
   }
 
   @Override
@@ -89,5 +84,13 @@ public class MinApp extends Application {
     // skal tjek for denne initialisering ske i alle de aktiviteter, services
     // og recievers der er afhængig af hjælpeklasserne
     FilCache.init(this.getCacheDir());
+  }
+
+  public static void gemData() {
+    try {  // nu er aktiviteten ikke synlig, så er det tid til at gemme data!
+      Serialisering.gem(data, instans.getFilesDir() + "/programdata.ser");
+    } catch (IOException ex) {
+      ex.printStackTrace();
+    }
   }
 }
