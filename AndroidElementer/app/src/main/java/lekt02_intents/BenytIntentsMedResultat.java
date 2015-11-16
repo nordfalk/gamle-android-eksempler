@@ -11,8 +11,10 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.ContactsContract;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -23,6 +25,7 @@ import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -34,12 +37,13 @@ import java.io.InputStream;
  */
 public class BenytIntentsMedResultat extends Activity implements OnClickListener {
 
-  Button vælgKontakt, vælgKontaktFraBillede, vælgBillede, tagBillede, dokumentation;
+  Button vælgKontakt, vælgBillede, tagBillede, dokumentation;
   TextView resultatTextView;
   LinearLayout resultatHolder;
   private int VÆLG_KONTAKT = 1111;
   private int VÆLG_BILLEDE = 2222;
   private int TAG_BILLEDE = 3333;
+  private File filPåEksterntLager;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -51,11 +55,6 @@ public class BenytIntentsMedResultat extends Activity implements OnClickListener
     vælgKontakt.setText("Vælg kontakt");
     vælgKontakt.setOnClickListener(this);
     tl.addView(vælgKontakt);
-
-    vælgKontaktFraBillede = new Button(this);
-    vælgKontaktFraBillede.setText("Vælg kontakt fra billede");
-    vælgKontaktFraBillede.setOnClickListener(this);
-    tl.addView(vælgKontaktFraBillede);
 
     vælgBillede = new Button(this);
     vælgBillede.setText("Vælg billede fra galleri");
@@ -98,9 +97,9 @@ public class BenytIntentsMedResultat extends Activity implements OnClickListener
         // ikke blev vendt og jeg mistede billedet. I et rigtigt ville jeg forsyne mine views med
         // ID'er så deres indhold overlevede at skærmen skiftede orientering
         Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        //Hvis vi vil have billedet gemt
-        //File fil = new File(Environment.getExternalStorageDirectory(),"billede.jpg");
-        //i.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(fil));
+        // Hvis vi vil læse billedet i fuld opløsning fra ekstern lager/SD-kort skal vi give en URI
+        filPåEksterntLager = new File(Environment.getExternalStorageDirectory(),"billede.jpg");
+        i.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(filPåEksterntLager));
         startActivityForResult(i, TAG_BILLEDE);
 
       } else {
@@ -152,9 +151,14 @@ public class BenytIntentsMedResultat extends Activity implements OnClickListener
           iv.setImageBitmap(bmp);
           resultatHolder.addView(iv);
         } else if (requestCode == TAG_BILLEDE) {
-          Bitmap bmp = (Bitmap) resIntent.getExtras().get("data");
           ImageView iv = new ImageView(this);
-          iv.setImageBitmap(bmp);
+          if (filPåEksterntLager==null) {
+            Bitmap bmp = (Bitmap) resIntent.getExtras().get("data");
+            iv.setImageBitmap(bmp);
+          } else { // læs billedet i fuld opløsning fra ekstern lager/SD-kort
+            Bitmap bmp = BitmapFactory.decodeFile(filPåEksterntLager.getPath());
+            iv.setImageBitmap(bmp);
+          }
           resultatHolder.addView(iv);
           iv = new ImageView(this);
           iv.setImageResource(android.R.drawable.btn_star);
@@ -166,9 +170,5 @@ public class BenytIntentsMedResultat extends Activity implements OnClickListener
         Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show();
       }
     }
-    ImageView iv = new ImageView(this);
-    iv.setImageResource(android.R.drawable.ic_dialog_email);
-    resultatHolder.addView(iv);
-
   }
 }
