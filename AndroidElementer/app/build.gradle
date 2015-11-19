@@ -7,7 +7,7 @@ android {
 //      app'ens pakkenavn - dens unikke ID på telefonen
         applicationId "dk.nordfalk.android.elementer"
 //      denne app fungerer på telefoner med Android 2.2 (API 8) og frem
-        minSdkVersion 8
+        minSdkVersion 9
 //      men den er beregnet til Android 5.1 (API 22)
 //      Bemærk at man ikke må bruge hovedtråden til netværk fra Android 2.3.3,
 //      så f.eks Byvejr vil ikke virke med targetSdkVersion 10 og højere
@@ -36,4 +36,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:22.2.1'
     // Understøttelse af venstremenu
     compile 'com.android.support:design:22.2.1'
+
+    compile 'com.google.android.gms:play-services:8.3.0'
 }

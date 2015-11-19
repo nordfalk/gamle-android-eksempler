@@ -18,10 +18,15 @@
 package lekt04_arkitektur;
 
 import android.app.Application;
+import android.content.Context;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.Build;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -60,6 +65,7 @@ public class MinApp extends Application {
 
     // Initialisering der kræver en Context
     prefs = PreferenceManager.getDefaultSharedPreferences(this);
+    udvikling = MinApp.prefs.getBoolean("startIUdvikling", udvikling);
 
     // Programdata der skal være indlæst ved opstart
     try {
@@ -92,5 +98,45 @@ public class MinApp extends Application {
     } catch (IOException ex) {
       ex.printStackTrace();
     }
+  }
+
+
+  public static final boolean EMULATOR = Build.PRODUCT.contains("sdk") || Build.MODEL.contains("Emulator"); // false;
+  public static boolean udvikling = true;
+
+
+
+  public static void langToast(final String txt) {
+    forgrundstråd.post(new Runnable() {
+      @Override
+      public void run() {
+        Toast.makeText(instans, txt, Toast.LENGTH_LONG).show();
+      }
+    });
+  }
+
+  public static void kortToast(final String txt) {
+    forgrundstråd.post(new Runnable() {
+      @Override
+      public void run() {
+        Toast.makeText(instans, txt, Toast.LENGTH_SHORT).show();
+      }
+    });
+  }
+
+  /*
+   * Version fra
+   * http://developer.android.com/training/basics/network-ops/managing.html
+   */
+  public static boolean erOnline() {
+    ConnectivityManager connMgr = (ConnectivityManager) instans.getSystemService(Context.CONNECTIVITY_SERVICE);
+    NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+    return (networkInfo != null && networkInfo.isConnected());
+  }
+
+
+  public static void rapporterOgvisFejl(Throwable e) {
+    e.printStackTrace();
+    langToast("Der skete en fejl:\n" + e);
   }
 }

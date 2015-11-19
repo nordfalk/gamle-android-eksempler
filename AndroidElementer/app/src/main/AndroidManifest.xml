@@ -249,6 +249,9 @@
                   android:theme="@style/AppTheme.NoActionBar"
                   android:label="Bla bla"/>
 
+        <activity android:name="lekt50_googlested.Stedplacering_akt" />
+        <service android:name="lekt50_googlested.GeofenceIntentService" />
+
         <!-- aktivitet som kan ses fra startskærmen -->
         <activity
             android:name="dk.nordfalk.aktivitetsliste.Aktivitetsliste3"
