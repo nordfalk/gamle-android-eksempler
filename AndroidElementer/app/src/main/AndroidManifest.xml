@@ -127,6 +127,7 @@
         <activity android:name="lekt04_lister.BenytSpinner" />
         <activity android:name="lekt04_lister.BenytListViewMedEgetLayout" />
         <activity android:name="lekt04_lister2.BenytListViewMedEgetLayout2" />
+        <activity android:name="lekt04_lister2.BenytSpinnerMedEgetLayout2" />
         <activity android:name="lekt04_lister2.VisAlleAndroidDrawables" />
         <activity android:name="lekt04_lister2.BenytListviewMedOverskrifter" />
         <activity android:name="lekt04_lister2.BenytExpandableListActivity" />
@@ -252,6 +253,7 @@
                   android:theme="@style/AppTheme.NoActionBar"
                   android:label="Bla bla"/>
 
+        <activity android:name="lekt50_auth.Autorisering_akt" />
         <activity android:name="lekt50_aktivitetsgenkendelse.Aktivitetsgenkendelse_akt" />
         <receiver android:name="lekt50_aktivitetsgenkendelse.Aktivitetsgenkendelse_reciever" />
         <activity android:name="lekt50_googlested.Stedplacering_akt" />

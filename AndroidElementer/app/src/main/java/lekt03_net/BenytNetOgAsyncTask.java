@@ -31,6 +31,7 @@ public class BenytNetOgAsyncTask extends Activity implements OnClickListener {
       linje = br.readLine();
       Log.d("LÆST LINJE", "" + linje);
     }
+    br.close();
     return sb.toString();
   }
 
