@@ -12,9 +12,9 @@ import android.widget.TableLayout;
 /**
  * @author Jacob Nordfalk
  */
-public class Asynkron2Handler extends Activity implements OnClickListener {
+public class Asynk1Handler extends Activity implements OnClickListener {
 
-  Handler handler = new Handler(); // brug handler i stedet for runOnUiThread();
+  Handler handler = new Handler();
   Runnable opgave;
   Button knap1, knap2, knapAnnuller;
 
@@ -48,19 +48,18 @@ public class Asynkron2Handler extends Activity implements OnClickListener {
     knapAnnuller.setOnClickListener(this);
   }
 
-  public void onClick(View hvadBlevDerKlikketPå) {
+  public void onClick(View v) {
 
-    if (hvadBlevDerKlikketPå == knap1) {
+    if (v == knap1) {
       knap1.setText("arbejder");
       opgave = new Runnable() {
-
         public void run() {
           knap1.setText("færdig!");
         }
       };
       handler.postDelayed(opgave, 10000); // udfør om 10 sekunder
 
-    } else if (hvadBlevDerKlikketPå == knap2) {
+    } else if (v == knap2) {
 
       knap2.setText("arbejder");
       opgave = new Runnable() {
@@ -78,7 +77,7 @@ public class Asynkron2Handler extends Activity implements OnClickListener {
       };
       handler.postDelayed(opgave, 1000); // udfør om 1 sekund
 
-    } else if (hvadBlevDerKlikketPå == knapAnnuller) {
+    } else if (v == knapAnnuller) {
       handler.removeCallbacks(opgave);
     }
   }

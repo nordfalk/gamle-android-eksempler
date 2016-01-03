@@ -20,13 +20,13 @@ import android.widget.TableLayout;
  * Se også diskussionen på
  * http://groups.google.com/group/android-developers/browse_thread/thread/e1d5b8f8a3142892
  */
-public class Asynkron3KorrektStatic extends Activity implements OnClickListener {
+public class Asynk4Korrekt extends Activity implements OnClickListener {
 
   ProgressBar progressBar;
   Button knap, annullerknap;
 
-  static Asynkron3KorrektStatic akt;
-  static AsyncTaskMedUdskifteligAktivitet asyncTask;
+  static Asynk4Korrekt akt;
+  static AsyncTaskUdskifteligAktivitet asyncTask;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -78,7 +78,7 @@ public class Asynkron3KorrektStatic extends Activity implements OnClickListener 
   public void onClick(View hvadBlevDerKlikketPå) {
 
     if (hvadBlevDerKlikketPå == knap) {
-      asyncTask = new AsyncTaskMedUdskifteligAktivitet();
+      asyncTask = new AsyncTaskUdskifteligAktivitet();
       asyncTask.execute(500, 50);
       knap.setEnabled(false);
       annullerknap.setVisibility(View.VISIBLE);
@@ -90,7 +90,7 @@ public class Asynkron3KorrektStatic extends Activity implements OnClickListener 
   /**
    * en AsyncTask hvor input er int, progress er double, resultat er String
    */
-  static class AsyncTaskMedUdskifteligAktivitet extends AsyncTask<Integer, Double, String> {
+  static class AsyncTaskUdskifteligAktivitet extends AsyncTask<Integer, Double, String> {
 
     @Override
     protected String doInBackground(Integer... param) {

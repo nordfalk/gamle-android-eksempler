@@ -165,15 +165,11 @@
         <activity android:name="lekt06_data.XmlParsning" />
         <activity android:name="lekt06_data.BenytSQLite" />
         <activity android:name="lekt06_data.BenytSQLiteOpenHelper" />
-        <activity android:name="lekt06_youtube.YoutubeRssParsning" />
-        <activity
-            android:name="lekt06_youtube.BenytVideoView"
-            android:configChanges="orientation" />
-        <activity android:name="lekt06_asynkron.Asynkron1Thread" />
-        <activity android:name="lekt06_asynkron.Asynkron2AsyncTask" />
-        <activity android:name="lekt06_asynkron.Asynkron2Handler" />
-        <activity android:name="lekt06_asynkron.Asynkron3Korrekt" />
-        <activity android:name="lekt06_asynkron.Asynkron3KorrektStatic" />
+
+        <activity android:name="lekt06_asynkron.Asynk1Handler" />
+        <activity android:name="lekt06_asynkron.Asynk2Thread" />
+        <activity android:name="lekt06_asynkron.Asynk3AsyncTask" />
+        <activity android:name="lekt06_asynkron.Asynk4Korrekt" />
         <activity android:name="lekt07_fragmenter.BenytMitFragment_akt" android:theme="@style/Theme.AppCompat"/>
         <activity android:name="lekt07_fragmenter.BenytHovedmenu_akt" android:theme="@style/Theme.AppCompat"/>
         <activity android:name="lekt08_providers.VisOpkald" />
@@ -258,6 +254,11 @@
         <receiver android:name="lekt50_aktivitetsgenkendelse.Aktivitetsgenkendelse_reciever" />
         <activity android:name="lekt50_googlested.Stedplacering_akt" />
         <service android:name="lekt50_googlested.GeofenceIntentService" />
+
+        <activity android:name="lekt06_youtube.YoutubeRssParsning" />
+        <activity
+            android:name="lekt06_youtube.BenytVideoView"
+            android:configChanges="orientation" />
 
         <!-- aktivitet som kan ses fra startskærmen -->
         <activity

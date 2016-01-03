@@ -9,7 +9,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TableLayout;
 
-public class Asynkron1Thread extends Activity implements OnClickListener {
+/**
+ * Demonstrerer hvordan tråde kan benyttes - og ikke benyttes - direkte med Javas Thread-klasse
+ */
+public class Asynk2Thread extends Activity implements OnClickListener {
   Button knap1, knap2, knap3;
 
   @Override
@@ -40,24 +43,23 @@ public class Asynkron1Thread extends Activity implements OnClickListener {
     knap3.setOnClickListener(this);
   }
 
-  public void onClick(View hvadBlevDerKlikketPå) {
-    if (hvadBlevDerKlikketPå == knap1) {
+  public void onClick(View v) {
+    if (v == knap1) {
       knap1.setText("arbejder");  // <1>
       SystemClock.sleep(10000);
       knap1.setText("færdig!");
 
-    } else if (hvadBlevDerKlikketPå == knap2) {
-
+    } else if (v == knap2) {
       knap2.setText("arbejder");  // <2>
       Runnable r = new Runnable() {
         public void run() {
           SystemClock.sleep(10000);
-          knap2.setText("færdig!"); // Fejl - kun GUI-tråden må røre GUIen!
+          knap2.setText("færdig!"); // Fejl - kun hovedtråden må opdatere brugergrænsefladen!
         }
       };
       new Thread(r).start();
 
-    } else if (hvadBlevDerKlikketPå == knap3) {
+    } else if (v == knap3) {
 
       knap3.setText("arbejder");  // <3>
       System.out.println("arbejder");
@@ -70,7 +72,7 @@ public class Asynkron1Thread extends Activity implements OnClickListener {
               knap3.setText("færdig!");
             }
           };
-          runOnUiThread(r2);
+          runOnUiThread(r2); // beder hovedtråden om at køre r2
           // Her kunne handler.post(r2); også anvendes
         }
       };

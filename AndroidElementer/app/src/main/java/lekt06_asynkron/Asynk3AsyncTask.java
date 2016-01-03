@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TableLayout;
 
-public class Asynkron2AsyncTask extends Activity implements OnClickListener {
+public class Asynk3AsyncTask extends Activity implements OnClickListener {
   ProgressBar progressBar;
   Button knap1, knap2, knap3, knap3annuller;
   AsyncTask asyncTask3;
@@ -56,9 +56,9 @@ public class Asynkron2AsyncTask extends Activity implements OnClickListener {
     knap3annuller.setOnClickListener(this);
   }
 
-  public void onClick(View hvadBlevDerKlikketPå) {
+  public void onClick(View v) {
 
-    if (hvadBlevDerKlikketPå == knap1) {
+    if (v == knap1) {
 
       knap1.setText("arbejder");
 
@@ -77,7 +77,7 @@ public class Asynkron2AsyncTask extends Activity implements OnClickListener {
       new AsyncTask1().execute();
 
 
-    } else if (hvadBlevDerKlikketPå == knap2) {
+    } else if (v == knap2) {
 
       new AsyncTask() {
         @Override
@@ -104,7 +104,7 @@ public class Asynkron2AsyncTask extends Activity implements OnClickListener {
       }.execute(100); // <1>
 
 
-    } else if (hvadBlevDerKlikketPå == knap3) {
+    } else if (v == knap3) {
 
       // en AsyncTask hvor input er int, progress er double, resultat er String
       asyncTask3 = new AsyncTask<Integer, Double, String>() {
@@ -146,7 +146,7 @@ public class Asynkron2AsyncTask extends Activity implements OnClickListener {
         }
       }.execute(100, 50);
       knap3annuller.setVisibility(View.VISIBLE);
-    } else if (hvadBlevDerKlikketPå == knap3annuller) {
+    } else if (v == knap3annuller) {
       asyncTask3.cancel(false);
     }
   }
