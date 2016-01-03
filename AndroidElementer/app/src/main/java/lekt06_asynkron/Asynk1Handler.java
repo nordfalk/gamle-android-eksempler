@@ -61,14 +61,14 @@ public class Asynk1Handler extends Activity implements OnClickListener {
 
     } else if (v == knap2) {
 
-      knap2.setText("arbejder");
+      knap2.setText("arbejder...");
       opgave = new Runnable() {
 
         int antalSekunderGået = 0;
 
         public void run() {
           if (antalSekunderGået++ < 10) {
-            knap2.append(".");
+            knap2.setText(antalSekunderGået+"...");
             handler.postDelayed(this, 1000); // udfør denne Runnable igen om 1 sekund
           } else {
             knap2.setText("færdig!"); // Der er gået 10 sekunder
