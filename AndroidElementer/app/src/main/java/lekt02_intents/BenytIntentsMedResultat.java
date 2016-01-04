@@ -37,12 +37,13 @@ import java.io.InputStream;
  */
 public class BenytIntentsMedResultat extends Activity implements OnClickListener {
 
-  Button vælgKontakt, vælgBillede, tagBillede, dokumentation;
+  Button vælgKontakt, vælgBillede, tagBillede, beskærBillede, dokumentation;
   TextView resultatTextView;
   LinearLayout resultatHolder;
   private int VÆLG_KONTAKT = 1111;
   private int VÆLG_BILLEDE = 2222;
   private int TAG_BILLEDE = 3333;
+  private int BESKÆR_BILLEDE = 4444;
   private File filPåEksterntLager;
 
   @Override
@@ -66,6 +67,12 @@ public class BenytIntentsMedResultat extends Activity implements OnClickListener
     tagBillede.setOnClickListener(this);
     tl.addView(tagBillede);
 
+    beskærBillede = new Button(this);
+    beskærBillede.setText("Beskær billedet");
+    beskærBillede.setOnClickListener(this);
+    tl.addView(beskærBillede);
+
+
     dokumentation = new Button(this);
     dokumentation.setText("Dokumentation om intents");
     dokumentation.setOnClickListener(this);
@@ -82,17 +89,17 @@ public class BenytIntentsMedResultat extends Activity implements OnClickListener
     setContentView(sv);
   }
 
-  public void onClick(View hvadBlevDerKlikketPå) {
+  public void onClick(View v) {
     try {
-      if (hvadBlevDerKlikketPå == vælgKontakt) {
+      if (v == vælgKontakt) {
         Intent i = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
         startActivityForResult(i, VÆLG_KONTAKT);
 
-      } else if (hvadBlevDerKlikketPå == vælgBillede) {
+      } else if (v == vælgBillede) {
         Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
         startActivityForResult(i, VÆLG_BILLEDE);
 
-      } else if (hvadBlevDerKlikketPå == tagBillede) {
+      } else if (v == tagBillede) {
         // Bemærk at jeg måtte have android:configChanges="orientation" for at aktiviteten
         // ikke blev vendt og jeg mistede billedet. I et rigtigt ville jeg forsyne mine views med
         // ID'er så deres indhold overlevede at skærmen skiftede orientering
@@ -102,19 +109,38 @@ public class BenytIntentsMedResultat extends Activity implements OnClickListener
         i.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(filPåEksterntLager));
         startActivityForResult(i, TAG_BILLEDE);
 
+      } else if (v == beskærBillede) {
+        if (filPåEksterntLager==null) {
+          Toast.makeText(this, "Vælg først et billede", Toast.LENGTH_LONG).show();
+          return;
+        }
+        // Se http://stackoverflow.com/questions/18013406/is-com-android-camera-action-crop-not-available-for-android-jelly-bean-4-3
+        // overvej i stedet at bruge f.eks. https://github.com/biokys/cropimage
+        Toast.makeText(this, "Bemærk, der bruges et internt intent, der måske ikke fungerer nok ikke på alle telefoner", Toast.LENGTH_LONG).show();
+        Uri billedeUri = Uri.fromFile(filPåEksterntLager);
+        Intent i = new Intent("com.android.camera.action.CROP");
+        i.setDataAndType(billedeUri, "image/*");
+        i.putExtra("crop", "true");
+        i.putExtra("aspectX", 2);
+        i.putExtra("aspectY", 2);
+        i.putExtra("outputX", 200);
+        i.putExtra("outputY", 160);
+        i.putExtra("return-data", true);
+        startActivityForResult(i, BESKÆR_BILLEDE);
+
       } else {
         startActivity(new Intent(Intent.ACTION_VIEW,
                 Uri.parse("http://developer.android.com/reference/android/content/Intent.html")));
       }
-    } catch (ActivityNotFoundException e) {
-      Toast.makeText(this, "Du mangler Googles udvidelser på denne telefon:\n" + e.getMessage(), Toast.LENGTH_LONG).show();
+    } catch (Exception e) {
+      Toast.makeText(this, "Denne telefon mangler en funktion:\n" + e.getMessage(), Toast.LENGTH_LONG).show();
     }
   }
 
   @Override
-  protected void onActivityResult(int requestCode, int resultCode, Intent resIntent) {
-    resultatTextView.setText(requestCode + " gav resultat " + resultCode + " og data:\n" + resIntent);
-    System.out.println(requestCode + " gav resultat " + resultCode + " med data=" + resIntent);
+  protected void onActivityResult(int requestCode, int resultCode, Intent dataIntent) {
+    resultatTextView.setText(requestCode + " gav resultat " + resultCode + " og data:\n" + dataIntent);
+    System.out.println(requestCode + " gav resultat " + resultCode + " med data=" + dataIntent);
 
     resultatHolder.removeAllViews();
     ContentResolver cr = getContentResolver();
@@ -122,9 +148,9 @@ public class BenytIntentsMedResultat extends Activity implements OnClickListener
     if (resultCode == Activity.RESULT_OK) {
       try {
         if (requestCode == VÆLG_KONTAKT) {
-          resultatTextView.append("\n\nres.getData()=" + resIntent.getData());
-          resultatTextView.append("\n\nres.getExtras()=" + resIntent.getExtras());
-          Uri kontaktData = resIntent.getData();
+          resultatTextView.append("\n\nres.getData()=" + dataIntent.getData());
+          resultatTextView.append("\n\nres.getExtras()=" + dataIntent.getExtras());
+          Uri kontaktData = dataIntent.getData();
           Cursor c = cr.query(kontaktData, null, null, null, null);
           while (c.moveToNext()) {
             for (int i = 0; i < c.getColumnCount(); i++) {
@@ -145,7 +171,7 @@ public class BenytIntentsMedResultat extends Activity implements OnClickListener
           }
           c.close();
         } else if (requestCode == VÆLG_BILLEDE) {
-          AssetFileDescriptor filDS = getContentResolver().openAssetFileDescriptor(resIntent.getData(), "r");
+          AssetFileDescriptor filDS = getContentResolver().openAssetFileDescriptor(dataIntent.getData(), "r");
           Bitmap bmp = BitmapFactory.decodeStream(filDS.createInputStream());
           ImageView iv = new ImageView(this);
           iv.setImageBitmap(bmp);
@@ -153,15 +179,17 @@ public class BenytIntentsMedResultat extends Activity implements OnClickListener
         } else if (requestCode == TAG_BILLEDE) {
           ImageView iv = new ImageView(this);
           if (filPåEksterntLager==null) {
-            Bitmap bmp = (Bitmap) resIntent.getExtras().get("data");
+            Bitmap bmp = (Bitmap) dataIntent.getExtras().get("data");
             iv.setImageBitmap(bmp);
           } else { // læs billedet i fuld opløsning fra ekstern lager/SD-kort
             Bitmap bmp = BitmapFactory.decodeFile(filPåEksterntLager.getPath());
             iv.setImageBitmap(bmp);
           }
           resultatHolder.addView(iv);
-          iv = new ImageView(this);
-          iv.setImageResource(android.R.drawable.btn_star);
+        } else if (requestCode == BESKÆR_BILLEDE) {
+          ImageView iv = new ImageView(this);
+          Bitmap bmp = (Bitmap) dataIntent.getExtras().get("data");
+          iv.setImageBitmap(bmp);
           resultatHolder.addView(iv);
         }
 
