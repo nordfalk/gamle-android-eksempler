@@ -131,13 +131,13 @@
         <activity android:name="lekt04_lister2.VisAlleAndroidDrawables" />
         <activity android:name="lekt04_lister2.BenytListviewMedOverskrifter" />
         <activity android:name="lekt04_lister2.BenytExpandableListActivity" />
+        <activity android:name="lekt05_grafik.KnapperMedEgenGrafik" />
         <activity android:name="lekt05_grafik.Tegneprogram" />
         <activity android:name="lekt05_grafik.Grafikdemo0" />
         <activity android:name="lekt05_grafik.Grafikdemo1" />
         <activity android:name="lekt05_grafik.Braetspil" />
         <activity android:name="lekt05_grafik.Grafikdemo2" />
         <activity android:name="lekt05_grafik.BenytAnimationer" />
-        <activity android:name="lekt05_grafik.BenytBilledeknapper" />
         <activity android:name="lekt05_grafik.FlytbarVejrudsigt" />
 
         <!-- android:configChanges gør at aktiviteten selv håndterer skærvendingen, dvs den bliver ikke mere genstartet -->
@@ -263,7 +263,7 @@
         <!-- aktivitet som kan ses fra startskærmen -->
         <activity
             android:name="dk.nordfalk.aktivitetsliste.Aktivitetsliste3"
-            android:theme="@style/Theme.AppCompat"
+            android:theme="@style/AppTheme"
             android:label="AndroidElementer" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

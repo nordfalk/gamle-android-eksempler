@@ -26,6 +26,7 @@ public class Asynk1Handler extends Activity implements OnClickListener {
     TableLayout tl = new TableLayout(this);
     EditText editText = new EditText(this);
     editText.setText("Prøv at redigere her efter du har trykket på knapperne");
+    editText.setId(117); // Lad viewets indhold overleve en skærmvending
     tl.addView(editText);
 
     knap1 = new Button(this);
