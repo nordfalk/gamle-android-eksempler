@@ -13,8 +13,8 @@ android {
 //      så f.eks Byvejr vil ikke virke med targetSdkVersion 10 og højere
         targetSdkVersion 22
 
-        versionCode 53
-        versionName '2.2.1 19.nov 2015'
+        versionCode 54
+        versionName '2.3  4.jan 2016'
 
     }
     buildTypes {
