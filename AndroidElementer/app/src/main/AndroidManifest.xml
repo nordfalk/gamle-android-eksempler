@@ -87,9 +87,10 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
+                    android:scheme="http"
                     android:host="javabog.dk"
                     android:pathPrefix="/OOP/"
-                    android:scheme="http" />
+                    />
             </intent-filter>
         </activity>
 
@@ -113,7 +114,7 @@
         <activity android:name="lekt03_diverse.BenytLayoutInflater" />
         <activity android:name="lekt03_diverse.BenytMenuer2" />
         <activity android:name="lekt03_diverse.BenytDialogerOgToasts" />
-        <activity android:name="lekt03_diverse.TekstTilTale" />
+        <activity android:name="lekt03_diverse.BenytTekstTilTale" />
         <activity android:name="lekt03_diverse.Taleeventyr" />
         <activity android:name="lekt03_net.BenytNetOgAsyncTask" />
         <activity android:name="lekt03_net.ByvejrAktivitet" />
@@ -249,11 +250,11 @@
                   android:theme="@style/AppTheme.NoActionBar"
                   android:label="Bla bla"/>
 
-        <activity android:name="lekt50_auth.Autorisering_akt" />
         <activity android:name="lekt50_aktivitetsgenkendelse.Aktivitetsgenkendelse_akt" />
         <receiver android:name="lekt50_aktivitetsgenkendelse.Aktivitetsgenkendelse_reciever" />
         <activity android:name="lekt50_googlested.Stedplacering_akt" />
         <service android:name="lekt50_googlested.GeofenceIntentService" />
+        <activity android:name="lekt50_auth.Autorisering_akt" />
 
         <activity android:name="lekt06_youtube.YoutubeRssParsning" />
         <activity

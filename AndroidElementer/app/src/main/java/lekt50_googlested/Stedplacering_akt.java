@@ -94,81 +94,16 @@ public class Stedplacering_akt extends Activity implements LocationListener, Vie
     TekstTilTale.instans(this);
   }
 
-  /* Kaldes af klienten hvis connect()-kaldet går godt */
-  @Override
-  public void onConnected(Bundle bundle) {
-    log("onConnected( " + bundle);
-    if (MinApp.udvikling) MinApp.langToast("ny stedplacering onConnected()");
-  }
-
   void log(String s) {
     Log.d(s);
     tv.append(s + "\n");
   }
 
-
+  /* Kaldes af klienten hvis connect()-kaldet går godt */
   @Override
-  public void onClick(View v) {
-    if (v==knap1) {
-      LocationRequest locationRequest = LocationRequest.create();
-      locationRequest.setSmallestDisplacement(50); // 50 meter
-      locationRequest.setInterval(1000 * 60 * 10); // 10 min
-      locationRequest.setFastestInterval(1000 * 60 * 3); // 3 min
-      locationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
-      log("Anmoder om "+locationRequest);
-      LocationServices.FusedLocationApi.requestLocationUpdates(googleApiClient, locationRequest, this);
-    }
-    if (v==knap2) {
-      LocationRequest locationRequest = LocationRequest.create();
-      locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
-      locationRequest.setExpirationDuration(10000);
-      locationRequest.setNumUpdates(1);
-      log("Anmoder om "+locationRequest);
-      LocationServices.FusedLocationApi.requestLocationUpdates(googleApiClient, locationRequest, this);
-    }
-    if (v==knap3) {
-      LocationServices.FusedLocationApi.removeLocationUpdates(googleApiClient, this);
-    }
-    if (v==knap4) {
-      Location her = LocationServices.FusedLocationApi.getLastLocation(googleApiClient);
-      ArrayList<Geofence> geofenceliste = new ArrayList<Geofence>();
-      geofenceliste.add(new Geofence.Builder()
-              .setCircularRegion(her.getLatitude(), her.getLongitude(), 10) // 10 meter
-              .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_EXIT | Geofence.GEOFENCE_TRANSITION_ENTER)
-              .setExpirationDuration(1000 * 60 * 60 * 2) // 2 timer
-              .setRequestId("100meter")
-              .build());
-      log("Anmoder om " + geofenceliste);
-      LocationServices.GeofencingApi.addGeofences(googleApiClient, geofenceliste, geofencePi)
-              .setResultCallback(new ResultCallback<Status>() {
-                @Override
-                public void onResult(Status status) {
-                  log("onAddGeofencesResult status=" + status);
-                  TekstTilTale.instans(null).tal("Gå nu 100 meter væk");
-                }
-              });
-    }
-    if (v==knap5) {
-      /*
-      String[] requestId = { "100meter"};
-      locationClient.removeGeofences(Arrays.asList(requestId), new LocationClient.OnRemoveGeofencesResultListener() {
-        @Override
-        public void onRemoveGeofencesByRequestIdsResult(int statusCode, String[] geofenceRequestIds) {
-          log("onRemoveGeofences status="+statusCode+" ids="+ Arrays.toString(geofenceRequestIds));
-        }
-        @Override
-        public void onRemoveGeofencesByPendingIntentResult(int statusCode, PendingIntent pendingIntent) {
-        }
-      });
-      */
-    }
-  }
-
-
-  @Override
-  public void onLocationChanged(Location l) {
-    log("onLocationChanged( " + l);
-    TekstTilTale.instans(null).tal("ny placering registreret inden for " + (int) l.getAccuracy() + " meter");
+  public void onConnected(Bundle bundle) {
+    log("onConnected( " + bundle);
+    if (MinApp.udvikling) MinApp.langToast("ny stedplacering onConnected()");
   }
 
   /* Kaldes af klienten hvis connect()-kaldet fejler */
@@ -199,6 +134,60 @@ public class Stedplacering_akt extends Activity implements LocationListener, Vie
     }
   }
 
+  /* Kaldes af Google-klienten hvis forbindelsen ryger ved en fejl */
+  @Override
+  public void onConnectionSuspended(int grund) {
+    log("onConnectionSuspended()");
+    if (MinApp.udvikling) MinApp.langToast("ny stedplacering onConnectionSuspended() "+grund);
+  }
+
+  @Override
+  public void onClick(View v) {
+    if (v==knap1) {
+      LocationRequest locationRequest = LocationRequest.create();
+      locationRequest.setSmallestDisplacement(50); // 50 meter
+      locationRequest.setInterval(1000 * 60 * 10); // 10 min
+      locationRequest.setFastestInterval(1000 * 60 * 3); // 3 min
+      locationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
+      log("Anmoder om "+locationRequest);
+      LocationServices.FusedLocationApi.requestLocationUpdates(googleApiClient, locationRequest, this);
+    }
+    if (v==knap2) {
+      LocationRequest locationRequest = LocationRequest.create();
+      locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+      locationRequest.setExpirationDuration(10000);
+      locationRequest.setNumUpdates(1);
+      log("Anmoder om "+locationRequest);
+      LocationServices.FusedLocationApi.requestLocationUpdates(googleApiClient, locationRequest, this);
+    }
+    if (v==knap3) {
+      LocationServices.FusedLocationApi.removeLocationUpdates(googleApiClient, this);
+    }
+    if (v==knap4) {
+      Location her = LocationServices.FusedLocationApi.getLastLocation(googleApiClient);
+      ArrayList<Geofence> geofenceliste = new ArrayList<Geofence>();
+      geofenceliste.add(new Geofence.Builder()
+              .setCircularRegion(her.getLatitude(), her.getLongitude(), 100) // 100 meter
+              .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_EXIT | Geofence.GEOFENCE_TRANSITION_ENTER)
+              .setExpirationDuration(1000 * 60 * 60 * 2) // 2 timer
+              .setRequestId("100meter")
+              .build());
+      log("Anmoder om " + geofenceliste);
+      LocationServices.GeofencingApi.addGeofences(googleApiClient, geofenceliste, geofencePi)
+              .setResultCallback(new ResultCallback<Status>() {
+                @Override
+                public void onResult(Status status) {
+                  log("onAddGeofencesResult status=" + status);
+                  TekstTilTale.instans(null).tal("Gå nu 100 meter væk");
+                }
+              });
+    }
+    if (v==knap5) {
+      LocationServices.GeofencingApi.removeGeofences(googleApiClient, geofencePi);
+    }
+  }
+
+
   @Override
   protected void onDestroy() {
     super.onDestroy();
@@ -207,10 +196,9 @@ public class Stedplacering_akt extends Activity implements LocationListener, Vie
     instans = null;
   }
 
-  /* Kaldes af Google-klienten hvis forbindelsen ryger ved en fejl */
   @Override
-  public void onConnectionSuspended(int grund) {
-    log("onConnectionSuspended()");
-    if (MinApp.udvikling) MinApp.langToast("ny stedplacering onConnectionSuspended() "+grund);
+  public void onLocationChanged(Location l) {
+    log("onLocationChanged( " + l);
+    TekstTilTale.instans(null).tal("ny placering registreret inden for " + (int) l.getAccuracy() + " meter");
   }
 }

@@ -13,7 +13,6 @@ import android.widget.TextView;
 /**
  * Created by j on 30-09-14.
  */
-@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class TekstDialog_frag extends DialogFragment {
 
   @Override

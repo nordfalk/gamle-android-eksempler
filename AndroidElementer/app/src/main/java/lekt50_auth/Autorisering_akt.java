@@ -28,6 +28,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Arrays;
 
 import lekt50_googlested.Log;
 
@@ -69,15 +70,20 @@ public class Autorisering_akt extends Activity implements OnClickListener {
     if (konti.length==0) {
       tv.setText("Du skal først logge ind på en Google-konto på telefonen");
     } else {
-      tv.setText("Hente data på en bruger.\n" +
-          "Spinner 1: Hvilken adgang app'en skal have (f.eks. profil)\n" +
-          "Spinner 2: Hvilken konto");
+      tv.setText("Eksempel på at hente data på en bruger.\n\n" +
+          "Spinner 1: Hvilken adgang app'en skal have (f.eks. profil):\n" +
+                      Arrays.toString(adgange) + "\n\n" +
+          "Spinner 2: Hvilken konto:\n" +
+              Arrays.toString(konti) +
+              "\n\nHerunder kommer log af kaldene der foretages:\n"
+
+      );
       adgangspinner = new Spinner(this);
-      adgangspinner.setAdapter(new ArrayAdapter(this, android.R.layout.simple_spinner_item, adgange));
+      adgangspinner.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, adgange));
       tl.addView(adgangspinner);
 
       kontospinner = new Spinner(this);
-      kontospinner.setAdapter(new ArrayAdapter(this, android.R.layout.simple_spinner_item, konti));
+      kontospinner.setAdapter(new ArrayAdapter<Account>(this, android.R.layout.simple_spinner_item, konti));
       tl.addView(kontospinner);
 
       knap = new Button(this);
@@ -108,12 +114,12 @@ public class Autorisering_akt extends Activity implements OnClickListener {
     }.execute();
   }
 
-  public void log(final Object message) {
-    Log.d(message.toString());
+  public void log(final Object obj) {
+    Log.d(obj.toString());
     runOnUiThread(new Runnable() {
       @Override
       public void run() {
-        tv.append("\n" + message);
+        tv.append("\n\n" + obj);
       }
     });
   }

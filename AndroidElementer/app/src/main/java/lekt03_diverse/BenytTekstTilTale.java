@@ -26,7 +26,7 @@ import java.util.Locale;
  *
  * @author Jacob Nordfalk
  */
-public class TekstTilTale extends Activity implements OnInitListener, OnClickListener {
+public class BenytTekstTilTale extends Activity implements OnInitListener, OnClickListener {
 
   EditText udtaleTekst;
   Button udtalKnap;

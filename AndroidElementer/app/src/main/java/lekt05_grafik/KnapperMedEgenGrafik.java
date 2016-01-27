@@ -100,7 +100,7 @@ public class KnapperMedEgenGrafik extends Activity {
           //log("ikke farve "+me);
           ib.setColorFilter(null);
         }
-        return true;
+        return false;
       }
     };
     OnFocusChangeListener farvKnapNårFokus = new OnFocusChangeListener() {
