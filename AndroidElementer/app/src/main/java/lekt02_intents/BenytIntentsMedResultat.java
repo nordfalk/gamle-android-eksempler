@@ -1,7 +1,8 @@
 package lekt02_intents;
 
+import android.accounts.AccountManager;
+import android.annotation.TargetApi;
 import android.app.Activity;
-import android.content.ActivityNotFoundException;
 import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.content.Intent;
@@ -10,11 +11,11 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.ContactsContract;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -37,7 +38,7 @@ import java.io.InputStream;
  */
 public class BenytIntentsMedResultat extends Activity implements OnClickListener {
 
-  Button vælgKontakt, vælgBillede, tagBillede, beskærBillede, dokumentation;
+  Button vælgKontakt, vælgGoogleKonto, vælgKonto, vælgBillede, tagBillede, beskærBillede, dokumentation;
   TextView resultatTextView;
   LinearLayout resultatHolder;
   private int VÆLG_KONTAKT = 1111;
@@ -56,6 +57,16 @@ public class BenytIntentsMedResultat extends Activity implements OnClickListener
     vælgKontakt.setText("Vælg kontakt");
     vælgKontakt.setOnClickListener(this);
     tl.addView(vælgKontakt);
+
+    vælgGoogleKonto = new Button(this);
+    vælgGoogleKonto.setText("Vælg Google-konto");
+    vælgGoogleKonto.setOnClickListener(this);
+    tl.addView(vælgGoogleKonto);
+
+    vælgKonto = new Button(this);
+    vælgKonto.setText("Alle typer konti");
+    vælgKonto.setOnClickListener(this);
+    tl.addView(vælgKonto);
 
     vælgBillede = new Button(this);
     vælgBillede.setText("Vælg billede fra galleri");
@@ -89,11 +100,20 @@ public class BenytIntentsMedResultat extends Activity implements OnClickListener
     setContentView(sv);
   }
 
+  @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
   public void onClick(View v) {
     try {
       if (v == vælgKontakt) {
         Intent i = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
         startActivityForResult(i, VÆLG_KONTAKT);
+
+      } else if (v == vælgGoogleKonto) {
+        Intent i = AccountManager.newChooseAccountIntent(null, null, new String[]{"com.google"}, false, null, null, null, null);
+        startActivityForResult(i, 0);
+
+      } else if (v == vælgKonto) {
+        Intent i = AccountManager.newChooseAccountIntent(null, null, null, false, null, null, null, null);
+        startActivityForResult(i, 0);
 
       } else if (v == vælgBillede) {
         Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
@@ -132,15 +152,21 @@ public class BenytIntentsMedResultat extends Activity implements OnClickListener
         startActivity(new Intent(Intent.ACTION_VIEW,
                 Uri.parse("http://developer.android.com/reference/android/content/Intent.html")));
       }
-    } catch (Exception e) {
+    } catch (Throwable e) {
       Toast.makeText(this, "Denne telefon mangler en funktion:\n" + e.getMessage(), Toast.LENGTH_LONG).show();
+      e.printStackTrace();
     }
   }
 
   @Override
-  protected void onActivityResult(int requestCode, int resultCode, Intent dataIntent) {
-    resultatTextView.setText(requestCode + " gav resultat " + resultCode + " og data:\n" + dataIntent);
-    System.out.println(requestCode + " gav resultat " + resultCode + " med data=" + dataIntent);
+  protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    resultatTextView.setText("onActivityResult requestCode="+requestCode + " resultCode=" + resultCode + "\ndata=" + data);
+    if (data!=null) {
+      data.removeExtra("et eller andet"); // Gennemtving udpakning af at extra bundle
+      resultatTextView.append("\nextras = "+data.getExtras());
+      resultatTextView.append("\ndataURI = "+data.getData());
+    }
+    System.out.println(resultatTextView.getText());
 
     resultatHolder.removeAllViews();
     ContentResolver cr = getContentResolver();
@@ -148,9 +174,7 @@ public class BenytIntentsMedResultat extends Activity implements OnClickListener
     if (resultCode == Activity.RESULT_OK) {
       try {
         if (requestCode == VÆLG_KONTAKT) {
-          resultatTextView.append("\n\nres.getData()=" + dataIntent.getData());
-          resultatTextView.append("\n\nres.getExtras()=" + dataIntent.getExtras());
-          Uri kontaktData = dataIntent.getData();
+          Uri kontaktData = data.getData();
           Cursor c = cr.query(kontaktData, null, null, null, null);
           while (c.moveToNext()) {
             for (int i = 0; i < c.getColumnCount(); i++) {
@@ -171,7 +195,7 @@ public class BenytIntentsMedResultat extends Activity implements OnClickListener
           }
           c.close();
         } else if (requestCode == VÆLG_BILLEDE) {
-          AssetFileDescriptor filDS = getContentResolver().openAssetFileDescriptor(dataIntent.getData(), "r");
+          AssetFileDescriptor filDS = getContentResolver().openAssetFileDescriptor(data.getData(), "r");
           Bitmap bmp = BitmapFactory.decodeStream(filDS.createInputStream());
           ImageView iv = new ImageView(this);
           iv.setImageBitmap(bmp);
@@ -179,7 +203,7 @@ public class BenytIntentsMedResultat extends Activity implements OnClickListener
         } else if (requestCode == TAG_BILLEDE) {
           ImageView iv = new ImageView(this);
           if (filPåEksterntLager==null) {
-            Bitmap bmp = (Bitmap) dataIntent.getExtras().get("data");
+            Bitmap bmp = (Bitmap) data.getExtras().get("data");
             iv.setImageBitmap(bmp);
           } else { // læs billedet i fuld opløsning fra ekstern lager/SD-kort
             Bitmap bmp = BitmapFactory.decodeFile(filPåEksterntLager.getPath());
@@ -188,7 +212,7 @@ public class BenytIntentsMedResultat extends Activity implements OnClickListener
           resultatHolder.addView(iv);
         } else if (requestCode == BESKÆR_BILLEDE) {
           ImageView iv = new ImageView(this);
-          Bitmap bmp = (Bitmap) dataIntent.getExtras().get("data");
+          Bitmap bmp = (Bitmap) data.getExtras().get("data");
           iv.setImageBitmap(bmp);
           resultatHolder.addView(iv);
         }

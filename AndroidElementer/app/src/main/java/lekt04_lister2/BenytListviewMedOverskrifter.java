@@ -28,6 +28,8 @@ public class BenytListviewMedOverskrifter extends Activity implements AdapterVie
           "2Indien", "2Nepal",
   };
 
+  MinAdapterMedOverskrifter adapter;
+
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -36,7 +38,8 @@ public class BenytListviewMedOverskrifter extends Activity implements AdapterVie
     listView.addHeaderView(new RatingBar(this));
     listView.addHeaderView(new RatingBar(this));
     listView.addFooterView(getLayoutInflater().inflate(R.layout.lekt01_tre_knapper, null));
-    listView.setAdapter(new MinAdapterMedOverskrifter());
+    adapter = new MinAdapterMedOverskrifter();
+    listView.setAdapter(adapter);
     listView.setDivider(null);
     listView.setOnItemClickListener(this);
     setContentView(listView);
@@ -44,6 +47,8 @@ public class BenytListviewMedOverskrifter extends Activity implements AdapterVie
 
   public void onItemClick(AdapterView<?> l, View v, int position, long id) {
     Toast.makeText(this, "Klik på " + position, Toast.LENGTH_SHORT).show();
+    landeOgOverskrifter[position] = "0Du klikkede her!";
+    adapter.notifyDataSetChanged();
   }
 
   public class MinAdapterMedOverskrifter extends BaseAdapter {

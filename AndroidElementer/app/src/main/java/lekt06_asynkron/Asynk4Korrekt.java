@@ -25,7 +25,7 @@ public class Asynk4Korrekt extends Activity implements OnClickListener {
   ProgressBar progressBar;
   Button knap, annullerknap;
 
-  static Asynk4Korrekt akt;
+  static Asynk4Korrekt synligAktivitet;
   static AsyncTaskUdskifteligAktivitet asyncTask;
 
   @Override
@@ -58,7 +58,7 @@ public class Asynk4Korrekt extends Activity implements OnClickListener {
     knap.setOnClickListener(this);
     annullerknap.setOnClickListener(this);
 
-    akt = this;
+    synligAktivitet = this;
 
     // Hvis der er sket en konfigurationsændring så kan det være vi har en gammel
     // asynctask som vi skal genbruge
@@ -70,7 +70,7 @@ public class Asynk4Korrekt extends Activity implements OnClickListener {
 
   @Override
   protected void onDestroy() {
-    akt = null; // Vigtigt, ellers bliver aktivitetsinstansen hængende i hukommelsen
+    synligAktivitet = null; // Vigtigt, ellers bliver aktivitetsinstansen hængende i hukommelsen
     super.onDestroy();
   }
 
@@ -110,30 +110,30 @@ public class Asynk4Korrekt extends Activity implements OnClickListener {
 
     @Override
     protected void onProgressUpdate(Double... progress) {
-      if (akt == null) return;
+      if (synligAktivitet == null) return;
       double procent = progress[0];
       double resttidISekunder = progress[1];
       String tekst = "arbejder - " + procent + "% færdig, mangler " + resttidISekunder + " sekunder endnu";
       Log.d("AsyncTask", tekst);
-      akt.knap.setText(tekst);
-      akt.progressBar.setProgress((int) procent);
+      synligAktivitet.knap.setText(tekst);
+      synligAktivitet.progressBar.setProgress((int) procent);
     }
 
     @Override
     protected void onPostExecute(String resultat) {
-      if (akt == null) return;
-      akt.knap.setText(resultat);
-      akt.knap.setEnabled(true);
-      akt.annullerknap.setVisibility(View.GONE); // Skjul knappen
+      if (synligAktivitet == null) return;
+      synligAktivitet.knap.setText(resultat);
+      synligAktivitet.knap.setEnabled(true);
+      synligAktivitet.annullerknap.setVisibility(View.GONE); // Skjul knappen
       asyncTask = null;
     }
 
     @Override
     protected void onCancelled() {
-      if (akt == null) return;
-      akt.knap.setText("Annulleret før tid");
-      akt.knap.setEnabled(true);
-      akt.annullerknap.setVisibility(View.GONE); // Skjul knappen
+      if (synligAktivitet == null) return;
+      synligAktivitet.knap.setText("Annulleret før tid");
+      synligAktivitet.knap.setEnabled(true);
+      synligAktivitet.annullerknap.setVisibility(View.GONE); // Skjul knappen
       asyncTask = null;
     }
   }

@@ -39,6 +39,7 @@ public class Hovedmenu_frag extends Fragment implements View.OnClickListener {
     if (v == hjaelpKnap) {
 
       getFragmentManager().beginTransaction()
+              .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right)
               .replace(R.id.fragmentindhold, new Hjaelp_frag())
               .addToBackStack(null)
               .commit();

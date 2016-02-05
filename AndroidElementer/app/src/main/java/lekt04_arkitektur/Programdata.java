@@ -18,5 +18,7 @@ public class Programdata implements Serializable {
 
   public void notifyObservatører() {
     for (Runnable r : observatører) r.run();
+    // Hvis metoden bliver kaldt fra baggrundstråde så brug i stedet
+    //for (Runnable r : observatører) MinApp.forgrundstråd.post(r);
   }
 }
