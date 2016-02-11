@@ -1,11 +1,12 @@
 # Eksempel på en kommasepareret fil med kommentarer
 # pakke, dokumenttitel, url
-#Hej fra Sune
+#
 # Dokumenter
 lekt01_views, 01 Introduktion, https://drive.google.com/open?id=1Yzqk8DiprF4HwWdSRBP6c-h8tMQTtzetSUVoRfTo_hs
 lekt01_views, 02 I gang med Android, https://drive.google.com/open?id=1xJ-DDw7FQ6SyTVgtT7rEZ9ZYW76F1fxcAeddYFTsnpI
 lekt02_aktiviteter, 03 Skift mellem aktiviteter, https://drive.google.com/open?id=1g0Nfnc0bE4ZYGYIuw_1ozf32TsUFZFIe-PkHKV9JQvs
 lekt02_intents, 03 Skift mellem aktiviteter, https://drive.google.com/open?id=1g0Nfnc0bE4ZYGYIuw_1ozf32TsUFZFIe-PkHKV9JQvs
+lekt02_intents, Stor samling af intents, https://developer.android.com/guide/components/intents-common.html
 lekt03_diverse, 04 Videre med Android, https://drive.google.com/open?id=1Rt11h3hyvUGCqeTHNXrJqtI85L-qndaAhDK2l4yhAhs
 lekt06_asynkron, 05 Flertrådet programmering, https://drive.google.com/open?id=15TRVIlBfyoIgT0eML9FFCZisQfpHUNcIgyqpY3Drz-4
 lekt04_arkitektur, 07 Anbefalinger og god praksis, https://drive.google.com/open?id=1369Ga09D8u6XZeyUSig_cd1m-eKckakdLNFf2POniX4

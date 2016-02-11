@@ -150,7 +150,7 @@ public class BenytIntentsMedResultat extends Activity implements OnClickListener
 
       } else {
         startActivity(new Intent(Intent.ACTION_VIEW,
-                Uri.parse("http://developer.android.com/reference/android/content/Intent.html")));
+                Uri.parse("https://developer.android.com/guide/components/intents-common.html")));
       }
     } catch (Throwable e) {
       Toast.makeText(this, "Denne telefon mangler en funktion:\n" + e.getMessage(), Toast.LENGTH_LONG).show();
