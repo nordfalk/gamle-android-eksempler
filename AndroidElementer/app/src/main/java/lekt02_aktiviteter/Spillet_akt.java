@@ -5,6 +5,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.BounceInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.OvershootInterpolator;
 import android.widget.Button;
@@ -63,6 +64,7 @@ public class Spillet_akt extends Activity implements View.OnClickListener {
     et.setError(null);
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR1) {
       spilKnap.animate().rotationBy(3*360).setInterpolator(new DecelerateInterpolator());
+//      spilKnap.animate().translationYBy(30).setInterpolator(new BounceInterpolator());
     }
     opdaterSkærm();
   }

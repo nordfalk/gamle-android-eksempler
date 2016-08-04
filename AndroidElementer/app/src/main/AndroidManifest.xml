@@ -184,13 +184,27 @@
              bemærk at det ikke sikkert, da alle installerede apps kan læse og skrive til billedet
         -->
         <provider
-            android:name="lekt08_providers.MinProvider"
+            android:name="lekt08_providers.MinEgenProvider"
             android:exported="true"
             android:authorities="dk.nordfalk.android.elementer.MinProvider" />
-
         <activity
-            android:name="lekt08_providers.BenytIntentsMedProvider"
+            android:name="lekt08_providers.BenytIntentsMedEgenProvider"
             android:screenOrientation="portrait" />
+
+        <!-- standardløsningen er at bruge FileProvider fra supportbiblioteket -->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="dk.nordfalk.android.elementer.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/lekt08_fileprovider" />
+        </provider>
+        <activity
+            android:name="lekt08_providers.BenytIntentsMedFileProvider"
+            android:screenOrientation="portrait" />
+
         <activity android:name="lekt09_recievers.OpdagAppInstallation" />
         <activity android:name="lekt09_recievers.ModtagSMSer" />
         <activity android:name="lekt09_recievers.OpdagNetvaerksAEndring" />

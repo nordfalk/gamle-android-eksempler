@@ -1,20 +1,18 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 22
-    buildToolsVersion "23.0.0"
+    compileSdkVersion 24
+    buildToolsVersion "24.0.1"
     defaultConfig {
 //      app'ens pakkenavn - dens unikke ID på telefonen
         applicationId "dk.nordfalk.android.elementer"
-//      denne app fungerer på telefoner med Android 2.2 (API 8) og frem
+//      denne app fungerer på telefoner med Android 2.3.3 (API 9) og frem
         minSdkVersion 9
-//      men den er beregnet til Android 5.1 (API 22)
-//      Bemærk at man ikke må bruge hovedtråden til netværk fra Android 2.3.3,
-//      så f.eks Byvejr vil ikke virke med targetSdkVersion 10 og højere
-        targetSdkVersion 22
+//      men den er beregnet til Android 7.0 (API 24)
+        targetSdkVersion 24
 
-        versionCode 55
-        versionName '2.3  4.jan 2016'
+        versionCode 56
+        versionName '2.4  4.aug 2016'
 
     }
     buildTypes {
@@ -31,11 +29,11 @@ android {
 dependencies {
     // Støttebiblioteker - se http://developer.android.com/tools/support-library/
     // Understøttelse af fragmenter
-    compile 'com.android.support:support-v4:22.2.1'
+    compile 'com.android.support:support-v4:24.1.1'
     // Understøttelse af actionbar
-    compile 'com.android.support:appcompat-v7:22.2.1'
+    compile 'com.android.support:appcompat-v7:24.1.1'
     // Understøttelse af venstremenu
-    compile 'com.android.support:design:22.2.1'
+    compile 'com.android.support:design:24.1.1'
 
-    compile 'com.google.android.gms:play-services:8.3.0'
+    compile 'com.google.android.gms:play-services:9.4.0'
 }

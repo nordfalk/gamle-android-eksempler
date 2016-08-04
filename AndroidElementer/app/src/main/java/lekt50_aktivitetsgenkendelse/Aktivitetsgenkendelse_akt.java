@@ -81,7 +81,7 @@ public class Aktivitetsgenkendelse_akt extends Activity implements OnClickListen
   @Override
   public void onConnected(Bundle bundle) {
     tv.append("Forbundet\n");
-    TekstTilTale.instans(this).tal("Forbundet med Google");
+    TekstTilTale.instans(this).tal("Der er forbindelse med Google");
   }
 
 

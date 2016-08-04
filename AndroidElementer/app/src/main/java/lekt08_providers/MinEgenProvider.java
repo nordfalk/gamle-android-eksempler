@@ -26,7 +26,7 @@ import lekt04_arkitektur.MinApp;
  * http://stackoverflow.com/questions/10042695/how-to-get-camera-result-as-a-uri-in-data-folder
  * http://dharmendra4android.blogspot.in/2012/04/save-captured-image-to-applications.html
  */
-public class MinProvider extends ContentProvider {
+public class MinEgenProvider extends ContentProvider {
   public static final Uri URI = Uri.parse("content://dk.nordfalk.android.elementer.MinProvider/1");
   public static final String FILNAVN = "billede.jpg";
   public static boolean visLogPåSkærm = false;

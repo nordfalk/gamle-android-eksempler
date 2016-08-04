@@ -33,7 +33,7 @@ public class Aktivitetsgenkendelse_reciever extends BroadcastReceiver {
       if (Aktivitetsgenkendelse_akt.instans != null) {
         Aktivitetsgenkendelse_akt.instans.tv.append("\n" + new Date() + "\n");
         for (DetectedActivity a : res.getProbableActivities()) {
-          String log = a.getType() + " " + getBeskrivelse(a.getType())+" "+ +a.getConfidence()+ "%\n";
+          String log = a.getType() + ":" + getBeskrivelse(a.getType())+" "+ +a.getConfidence()+ "%\n";
           Aktivitetsgenkendelse_akt.instans.tv.append(log);
           Log.d(log);
         }
