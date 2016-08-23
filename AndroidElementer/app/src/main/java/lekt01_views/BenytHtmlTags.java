@@ -2,6 +2,7 @@ package lekt01_views;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.text.util.Linkify;
 import android.widget.TextView;
@@ -9,7 +10,7 @@ import android.widget.TextView;
 /**
  * @author Jacob Nordfalk
  */
-public class BenytHtmlTags extends Activity {
+public class BenytHtmlTags extends AppCompatActivity {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {

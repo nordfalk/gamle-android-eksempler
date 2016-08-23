@@ -29,11 +29,11 @@ android {
 dependencies {
     // Støttebiblioteker - se http://developer.android.com/tools/support-library/
     // Understøttelse af fragmenter
-    compile 'com.android.support:support-v4:24.1.1'
+    compile 'com.android.support:support-v4:24.2.0'
     // Understøttelse af actionbar
-    compile 'com.android.support:appcompat-v7:24.1.1'
+    compile 'com.android.support:appcompat-v7:24.2.0'
     // Understøttelse af venstremenu
-    compile 'com.android.support:design:24.1.1'
+    compile 'com.android.support:design:24.2.0'
 
     compile 'com.google.android.gms:play-services:9.4.0'
 }

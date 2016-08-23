@@ -49,14 +49,12 @@
         android:name="android.hardware.screen.portrait"
         android:required="false" />
     <uses-feature
-        android:name="android.software.live_wallpaper"
-        android:required="false" />
-    <uses-feature
         android:name="android.software.app_widgets"
         android:required="false" />
 
     <application
         android:name="lekt04_arkitektur.MinApp"
+        android:theme="@style/Theme.AppCompat"
         android:icon="@drawable/logo">
 
         <!--
@@ -118,7 +116,7 @@
         <activity android:name="lekt03_diverse.Taleeventyr" />
         <activity android:name="lekt03_net.BenytNetOgAsyncTask" />
         <activity android:name="lekt03_net.ByvejrAktivitet" />
-        <activity android:name="lekt04_fragmenter.Hovedaktivitet" android:theme="@style/Theme.AppCompat"/>
+        <activity android:name="lekt04_fragmenter.Hovedaktivitet"/>
         <activity android:name="lekt04_arkitektur.NoteAktivitet" />
         <activity android:name="lekt04_arkitektur.NoteAktivitet2" />
         <activity android:name="lekt04_lister.BenytListView" />
@@ -171,8 +169,8 @@
         <activity android:name="lekt06_asynkron.Asynk2Thread" />
         <activity android:name="lekt06_asynkron.Asynk3AsyncTask" />
         <activity android:name="lekt06_asynkron.Asynk4Korrekt" />
-        <activity android:name="lekt07_fragmenter.BenytMitFragment_akt" android:theme="@style/Theme.AppCompat"/>
-        <activity android:name="lekt07_fragmenter.BenytHovedmenu_akt" android:theme="@style/Theme.AppCompat"/>
+        <activity android:name="lekt07_fragmenter.BenytMitFragment_akt" />
+        <activity android:name="lekt07_fragmenter.BenytHovedmenu_akt" />
         <activity android:name="lekt08_providers.VisOpkald" />
         <activity android:name="lekt08_providers.VisKontakter" />
         <activity android:name="lekt08_providers.VisKontakterMedListView" />
