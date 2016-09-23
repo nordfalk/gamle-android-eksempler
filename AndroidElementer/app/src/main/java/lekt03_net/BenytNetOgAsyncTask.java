@@ -23,13 +23,14 @@ public class BenytNetOgAsyncTask extends Activity implements OnClickListener {
   TextView textView;
 
   public static String hentUrl(String url) throws IOException {
+    System.out.println("Henter "+url);
     BufferedReader br = new BufferedReader(new InputStreamReader(new URL(url).openStream()));
     StringBuilder sb = new StringBuilder();
     String linje = br.readLine();
     while (linje != null) {
       sb.append(linje + "\n");
       linje = br.readLine();
-      Log.d("LÆST LINJE", "" + linje);
+      System.out.println(linje);
     }
     br.close();
     return sb.toString();
@@ -52,8 +53,9 @@ public class BenytNetOgAsyncTask extends Activity implements OnClickListener {
 
   // Til afprøvning af logikken i standard Java (meget hurtigere)
   public static void main(String[] args) throws IOException {
-    String rssdata = hentUrl("http://www.version2.dk/it-nyheder/rss");
+    String rssdata = hentUrl("https://www.version2.dk/it-nyheder/rss");
     String titler = findTitler(rssdata);
+    System.out.println("Fandt titler: "+titler);
   }
 
   @Override
@@ -91,7 +93,7 @@ public class BenytNetOgAsyncTask extends Activity implements OnClickListener {
     try {
       if (hvadBlevDerKlikketPå == knap1) {
 
-        String rssdata = hentUrl("http://www.version2.dk/it-nyheder/rss");
+        String rssdata = hentUrl("https://www.version2.dk/it-nyheder/rss");
         String titler = findTitler(rssdata);
         textView.setText(titler);
         setProgressBarIndeterminateVisibility(false);
@@ -103,7 +105,7 @@ public class BenytNetOgAsyncTask extends Activity implements OnClickListener {
           @Override
           protected Object doInBackground(Object... arg0) {
             try {
-              String rssdata = hentUrl("http://www.version2.dk/it-nyheder/rss");
+              String rssdata = hentUrl("https://www.version2.dk/it-nyheder/rss");
               String titler = findTitler(rssdata);
               return titler;
             } catch (Exception e) {
@@ -130,7 +132,7 @@ public class BenytNetOgAsyncTask extends Activity implements OnClickListener {
           @Override
           protected Object doInBackground(Object... arg0) {
             try {
-              String rssdata = hentUrl("http://www.version2.dk/it-nyheder/rss");
+              String rssdata = hentUrl("https://www.version2.dk/it-nyheder/rss");
               String titler = findTitler(rssdata);
               prefs.edit().putString("titler", titler).commit();     // Gem i prefs
               return titler;
