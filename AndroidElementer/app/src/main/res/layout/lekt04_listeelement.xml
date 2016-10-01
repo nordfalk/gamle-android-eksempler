@@ -22,7 +22,7 @@
         android:layout_toRightOf="@+id/listeelem_billede"
         android:text="overskrift"
         android:textColor="#ffffff"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:textStyle="bold"/>
 
     <TextView

@@ -21,21 +21,31 @@ lekt04_lister2, F15 Lister med RecyclerView, https://drive.google.com/open?id=1L
 
 
 # Videoer
-, Alle videoer samlet, https://www.youtube.com/watch?v=T0v0CDYmgdI&list=PLYt4JfDKMDDdcrVi4GQbN0-ugsO8ZRBYs
-lekt01_views, Videoer lektion 1, https://www.youtube.com/playlist?list=PLYt4JfDKMDDel5lADIA87Nfa8--6DdIV4
+, Kursus i Android, https://www.youtube.com/watch?v=T0v0CDYmgdI&list=PLYt4JfDKMDDdcrVi4GQbN0-ugsO8ZRBYs
+lekt01_views, Videoer lektion 1, https://www.youtube.com/watch?v=T0v0CDYmgdI&index=1&list=PLYt4JfDKMDDdcrVi4GQbN0-ugsO8ZRBYs
 
-lekt02_intents, Videoer lektion 2, https://www.youtube.com/playlist?list=PLYt4JfDKMDDcV85tKu_mCwpP5d0rIW9hP
-lekt02_aktiviteter, Video: Flere aktiviteter med Navigation Editor, https://www.youtube.com/watch?v=KuwijTk-C5M
-lekt03_diverse, Videoer lektion 3, http://www.youtube.com/playlist?list=PLYt4JfDKMDDf-X1UWLiajcPSDHOxBPT-_
+lekt02_intents, Videoer lektion 2, https://www.youtube.com/watch?v=PRdgva0JdRE&index=7&list=PLYt4JfDKMDDdcrVi4GQbN0-ugsO8ZRBYs
+
+lekt03_diverse, Videoer lektion 3, https://www.youtube.com/watch?v=s4NiSYs4RIk&list=PLYt4JfDKMDDdcrVi4GQbN0-ugsO8ZRBYs&index=9
 
 lekt04_lister, Videoer Lektion 4: Lister, http://youtu.be/_ziMhIYjy0E
 
-lekt05_grafik, Videoer lektion 5, http://www.youtube.com/playlist?list=PLYt4JfDKMDDdGYgh48d6nmCS484GyoWUN
-lekt05_sensorer, Videoer lektion 5, http://www.youtube.com/playlist?list=PLYt4JfDKMDDdGYgh48d6nmCS484GyoWUN
+lekt04_fragmenter, Video: Fra aktiviteter til fragmenter, https://www.youtube.com/watch?v=HgKeMBdGoQg&index=20&list=PLYt4JfDKMDDdcrVi4GQbN0-ugsO8ZRBYs
 
+lekt05_grafik, Videoer lektion 5, https://www.youtube.com/watch?v=gYCyK0TnIcA&list=PLYt4JfDKMDDdcrVi4GQbN0-ugsO8ZRBYs&index=23
+
+lekt05_sensorer, Videoer lektion 5, https://www.youtube.com/watch?v=Db_hyIahAcc&index=24&list=PLYt4JfDKMDDdcrVi4GQbN0-ugsO8ZRBYs
 
 lekt06_asynkron, Video 6.1 Flertrådet programmering - Handler Runnable Thread, https://youtu.be/iD-iVrq3zN0
 lekt06_asynkron, Video 6.2 Flertrådet programmering - AsyncTask, https://youtu.be/9xJj9J2AmDA
 lekt06_asynkron, Video 6.3 Flertrådede udfordringer og avanceret AsyncTask, https://youtu.be/FxElEKc3yR8
+
+lekt06_arkitektur, Video om arkitektur, https://www.youtube.com/watch?v=iF_dL_bAqh4&list=PLYt4JfDKMDDdcrVi4GQbN0-ugsO8ZRBYs&index=25
+
+lekt06_data, Video om SQLite, https://youtu.be/p6UgUYSkDmE?list=PLYt4JfDKMDDdcrVi4GQbN0-ugsO8ZRBYs
+
+lekt09_services, Video om services, https://youtu.be/T6UfhGeX2SQ?list=PLYt4JfDKMDDdcrVi4GQbN0-ugsO8ZRBYs
+
+lekt09_recievers, Video om Broadcastrecievere, https://youtu.be/3PFe5HZ27jE?list=PLYt4JfDKMDDdcrVi4GQbN0-ugsO8ZRBYs
 
 

@@ -11,13 +11,20 @@ android {
 //      men den er beregnet til Android 7.0 (API 24)
         targetSdkVersion 24
 
-        versionCode 56
-        versionName '2.4  4.aug 2016'
+        versionCode 57
+        versionName '2.5  1.okt 2016'
 
+/*
+//      dette giver en hurtigere build, men med højere hukommelsesforbrug
+        dexOptions {
+            javaMaxHeapSize "4g"
+        }
+//
+        multiDexEnabled true
+        */
     }
     buildTypes {
         release {
-            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
@@ -34,6 +41,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:24.2.0'
     // Understøttelse af venstremenu
     compile 'com.android.support:design:24.2.0'
-
     compile 'com.google.android.gms:play-services:9.4.0'
 }

@@ -22,6 +22,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -167,15 +168,17 @@ public class Aktivitetsliste3 extends AppCompatActivity {
 
 
       // Anonym nedarving af ArrayAdapter med omdefineret getView()
-      ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_2, android.R.id.text1, elementer) {
+      ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), R.layout.lekt04_listeelement, R.id.listeelem_overskrift, elementer) {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
           View view = super.getView(position, convertView, parent);
-          TextView listeelem_overskrift = (TextView) view.findViewById(android.R.id.text1);
-          TextView listeelem_beskrivelse = (TextView) view.findViewById(android.R.id.text2);
+          TextView listeelem_overskrift = (TextView) view.findViewById(R.id.listeelem_overskrift);
+          TextView listeelem_beskrivelse = (TextView) view.findViewById(R.id.listeelem_beskrivelse);
+          ImageView listeelem_billede = (ImageView) view.findViewById(R.id.listeelem_billede);
           listeelem_overskrift.setTextColor(Color.WHITE);
           listeelem_beskrivelse.setSingleLine(true);
           listeelem_beskrivelse.setTextColor(Color.LTGRAY);
+          listeelem_billede.setVisibility(View.GONE);
 
           String navn = elementer.get(position);
           String dokUrl = pakke.dokumenter.get(navn);
@@ -185,6 +188,8 @@ public class Aktivitetsliste3 extends AppCompatActivity {
             listeelem_beskrivelse.setText(dokUrl);//"dokumentation");
             listeelem_overskrift.setTextColor(Color.LTGRAY);
             listeelem_beskrivelse.setTextColor(Color.GRAY);
+            listeelem_billede.setVisibility(View.VISIBLE);
+            listeelem_billede.setImageResource(android.R.drawable.ic_menu_help);
           } else if (pakke.aktiviteter.contains(navn)) {
             String pakkenavn = navn.substring(0, navn.lastIndexOf('.'));
             String klassenavn = navn.substring(pakkenavn.length() + 1);
@@ -217,7 +222,7 @@ public class Aktivitetsliste3 extends AppCompatActivity {
       if (position>0) {
         listView.setSelectionFromTop(position, 30);
       } else {
-        listView.setSelectionFromTop(pakke.dokumenter.size(), 20);
+        listView.setSelectionFromTop(pakke.dokumenter.size(), 50);
       }
 
       return listView;
