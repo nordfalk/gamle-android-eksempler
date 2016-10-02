@@ -5,6 +5,7 @@ import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TextView;
 
+import dk.nordfalk.android.elementer.R;
 import lekt04_arkitektur.Programdata;
 
 /**
@@ -44,7 +45,7 @@ public class Liv4_bundle extends LogAktivitet {
     // De Views der har et ID bliver gemt i onSaveInstanceState()
     // og genskabt i onRestoreInstanceState().
     // I XML-layout-filer sættes attributten ID med f.eks. android:id="@+id/navn"
-    et2.setId(1000042); // bare et eller andet
+    et2.setId(R.id.editText); // sæt ID så den redigerede tekst bliver genskabt ved skærmvending
 
     TableLayout tl = new TableLayout(this);
     tl.addView(tv);

@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TableLayout;
 
+import dk.nordfalk.android.elementer.R;
+
 /**
  * @author Jacob Nordfalk
  */
@@ -26,7 +28,7 @@ public class Asynk1Handler extends Activity implements OnClickListener {
     TableLayout tl = new TableLayout(this);
     EditText editText = new EditText(this);
     editText.setText("Prøv at redigere her efter du har trykket på knapperne");
-    editText.setId(117); // Lad viewets indhold overleve en skærmvending
+    editText.setId(R.id.editText); // Giv viewet et ID så dets indhold overlever en skærmvending
     tl.addView(editText);
 
     knap1 = new Button(this);

@@ -18,12 +18,12 @@
                     android:layout_height="wrap_content"/>
 
             <EditText
-                    android:text="2500"
-                    android:singleLine="true"
-                    android:textColor="#0000ff"
-                    android:id="@+id/postnrEditText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                android:text="2500"
+                android:textColor="#0000ff"
+                android:id="@+id/editText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"/>
 
         </TableRow>
 

@@ -12,6 +12,8 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TableLayout;
 
+import dk.nordfalk.android.elementer.R;
+
 
 /**
  * Dette eksempel viser en AsyncTask der er knyttet korrekt til en aktivitet.
@@ -36,12 +38,12 @@ public class Asynk4Korrekt extends Activity implements OnClickListener {
 
     EditText editText = new EditText(this);
     editText.setText("Prøv at redigere her efter du har trykket på knapperne");
-    editText.setId(117); // Giv ID så indhold huskes ved skærmvendinger
+    editText.setId(R.id.editText); // Giv viewet et ID så dets indhold overlever en skærmvending
     tl.addView(editText);
 
     progressBar = new ProgressBar(this, null, android.R.attr.progressBarStyleHorizontal);
     progressBar.setMax(99);
-    progressBar.setId(118); // Giv ID så indhold huskes ved skærmvendinger
+    editText.setId(R.id.enKnap); // Giv viewet et ID så dets indhold overlever en skærmvending
     tl.addView(progressBar);
 
     knap = new Button(this);

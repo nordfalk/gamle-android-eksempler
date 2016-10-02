@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "24.0.1"
+    buildToolsVersion "24.0.2"
     defaultConfig {
 //      app'ens pakkenavn - dens unikke ID på telefonen
         applicationId "dk.nordfalk.android.elementer"
@@ -11,16 +11,14 @@ android {
 //      men den er beregnet til Android 7.0 (API 24)
         targetSdkVersion 24
 
-        versionCode 57
-        versionName '2.5  1.okt 2016'
+        versionCode 58
+        versionName '2.5  2.okt 2016'
 
-/*
 //      dette giver en hurtigere build, men med højere hukommelsesforbrug
+        /*
         dexOptions {
-            javaMaxHeapSize "4g"
+            javaMaxHeapSize "2g"
         }
-//
-        multiDexEnabled true
         */
     }
     buildTypes {
@@ -36,10 +34,13 @@ android {
 dependencies {
     // Støttebiblioteker - se http://developer.android.com/tools/support-library/
     // Understøttelse af fragmenter
-    compile 'com.android.support:support-v4:24.2.0'
-    // Understøttelse af actionbar
-    compile 'com.android.support:appcompat-v7:24.2.0'
+    compile 'com.android.support:support-v4:24.2.1'
+    // Understøttelse af actionbar/Toolbar
+    compile 'com.android.support:appcompat-v7:24.2.1'
     // Understøttelse af venstremenu
-    compile 'com.android.support:design:24.2.0'
-    compile 'com.google.android.gms:play-services:9.4.0'
+    compile 'com.android.support:design:24.2.1'
+
+//    compile 'com.google.android.gms:play-services:9.6.1'
+    compile 'com.google.android.gms:play-services-auth:9.6.1'
+    compile 'com.google.android.gms:play-services-location:9.6.1'
 }

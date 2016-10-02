@@ -15,6 +15,8 @@ import android.widget.TableLayout;
 
 import java.util.Locale;
 
+import dk.nordfalk.android.elementer.R;
+
 /**
  * http://stackoverflow.com/questions/3058919/text-to-speechtts-android
  * http://developer.android.com/resources/samples/ApiDemos/src/com/example/android/apis/app/TextToSpeechActivity.html
@@ -42,7 +44,7 @@ public class BenytTekstTilTale extends Activity implements OnInitListener, OnCli
     }
     udtaleTekst = new EditText(this);
     udtaleTekst.setText("Min danske oot tale - med Locale US - eer maiet dorli.");
-    udtaleTekst.setId(117); // sæt ID så den redigerede tekst bliver genskabt ved skærmvending
+    udtaleTekst.setId(R.id.editText); // sæt ID så den redigerede tekst bliver genskabt ved skærmvending
 
     udtalKnap = new Button(this);
     udtalKnap.setOnClickListener(this);

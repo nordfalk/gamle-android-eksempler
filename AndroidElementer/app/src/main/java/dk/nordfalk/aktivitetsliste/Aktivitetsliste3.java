@@ -73,7 +73,7 @@ public class Aktivitetsliste3 extends AppCompatActivity {
     actionBar.setCustomView(seKildekodeToggleButton);
 
 
-    seKildekodeToggleButton.setId(119);
+    seKildekodeToggleButton.setId(R.id.enKnap);
 
 
     if (savedInstanceState == null) // Frisk start - vis animation

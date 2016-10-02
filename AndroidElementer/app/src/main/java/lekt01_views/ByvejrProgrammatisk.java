@@ -20,7 +20,7 @@ import android.widget.Toast;
 public class ByvejrProgrammatisk extends Activity implements OnClickListener {
 
   Button okKnap, annullerKnap;
-  EditText postnrEditText;
+  EditText editText;
   WebView webView;
 
   @Override
@@ -35,12 +35,12 @@ public class ByvejrProgrammatisk extends Activity implements OnClickListener {
     textView.setText("Vejret for ");
     række.addView(textView);
 
-    postnrEditText = new EditText(this);
-    postnrEditText.setText("2500");
-    postnrEditText.setSingleLine(true);
-    postnrEditText.setTextColor(Color.BLUE);
-    //postnrEditText.setSelection(0, 4);  // postnrEditText.getText().length() giver 4
-    række.addView(postnrEditText);
+    editText = new EditText(this);
+    editText.setText("2500");
+    editText.setSingleLine(true);
+    editText.setTextColor(Color.BLUE);
+    //editText.setSelection(0, 4);  // editText.getText().length() giver 4
+    række.addView(editText);
     tableLayout.addView(række);
 
     okKnap = new Button(this);
@@ -68,7 +68,7 @@ public class ByvejrProgrammatisk extends Activity implements OnClickListener {
   public void onClick(View hvadBlevDerKlikketPå) {
     System.out.println("Der blev klikket på " + hvadBlevDerKlikketPå);
     if (hvadBlevDerKlikketPå == okKnap) {
-      String valgtPostNr = postnrEditText.getText().toString();
+      String valgtPostNr = editText.getText().toString();
       Toast.makeText(this, "Viser byvejr for " + valgtPostNr, Toast.LENGTH_LONG).show();
       webView.loadUrl("http://servlet.dmi.dk/byvejr/servlet/byvejr_dag1?by=" + valgtPostNr + "&mode=long");
     } else {

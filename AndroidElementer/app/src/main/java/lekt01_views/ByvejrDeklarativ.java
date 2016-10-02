@@ -17,7 +17,7 @@ import dk.nordfalk.android.elementer.R;
 public class ByvejrDeklarativ extends Activity implements OnClickListener {
 
   Button okKnap, annullerKnap;
-  EditText postnrEditText;
+  EditText editText;
   WebView webView;
 
   @Override
@@ -26,7 +26,7 @@ public class ByvejrDeklarativ extends Activity implements OnClickListener {
 
     setContentView(R.layout.lekt01_byvejr); // Hvis layout ligger i res/layout/lekt01_byvejr.xmlejr.xml
     // findViewById() kan først kaldes efter setContentView()
-    postnrEditText = (EditText) findViewById(R.id.postnrEditText);
+    editText = (EditText) findViewById(R.id.editText);
     okKnap = (Button) findViewById(R.id.okKnap);
     annullerKnap = (Button) findViewById(R.id.annullerKnap);
     webView = (WebView) findViewById(R.id.webView);
@@ -39,7 +39,7 @@ public class ByvejrDeklarativ extends Activity implements OnClickListener {
   public void onClick(View hvadBlevDerKlikketPå) {
     System.out.println("Der blev klikket på " + hvadBlevDerKlikketPå);
     if (hvadBlevDerKlikketPå == okKnap) {
-      String valgtPostNr = postnrEditText.getText().toString();
+      String valgtPostNr = editText.getText().toString();
       Toast.makeText(this, "Viser byvejr for " + valgtPostNr, Toast.LENGTH_LONG).show();
       webView.loadUrl("http://servlet.dmi.dk/byvejr/servlet/byvejr_dag1?by=" + valgtPostNr + "&mode=long");
     } else {

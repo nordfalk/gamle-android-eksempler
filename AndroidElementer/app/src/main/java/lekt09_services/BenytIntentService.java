@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TableLayout;
 
+import dk.nordfalk.android.elementer.R;
+
 
 /**
  * Dette eksempel bruger en IntentService til en baggrundsopgave.
@@ -30,12 +32,12 @@ public class BenytIntentService extends Activity implements OnClickListener {
 
     EditText editText = new EditText(this);
     editText.setText("En IntentService er kombinationen af en arbejds-/baggrundstråd og en service.");
-    editText.setId(117); // Giv ID så indhold huskes ved skærmvendinger
+    editText.setId(R.id.editText); // Giv viewet et ID så dets indhold overlever en skærmvending
     tl.addView(editText);
 
     progressBar = new ProgressBar(this, null, android.R.attr.progressBarStyleHorizontal);
     progressBar.setMax(99);
-    progressBar.setId(118); // Giv ID så indhold huskes ved skærmvendinger
+    progressBar.setId(R.id.enKnap); // Giv viewet et ID så dets indhold overlever en skærmvending
     tl.addView(progressBar);
 
     knap = new Button(this);

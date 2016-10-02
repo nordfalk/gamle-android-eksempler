@@ -172,7 +172,7 @@ public class YoutubeRssParsning extends Activity implements OnItemClickListener 
     listView = new ListView(this);
     listView.setAdapter(klipadapter);
     listView.setOnItemClickListener(this);
-    listView.setId(117); // sæt ID så tilstand blir gemt ved skærmvending
+    listView.setId(R.id.enKnap); // sæt ID så tilstand blir gemt ved skærmvending
     setContentView(listView);
   }
 

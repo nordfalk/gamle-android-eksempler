@@ -73,7 +73,7 @@ public class DialogDerOverleverSkaermvending extends Activity implements OnClick
       dialog.setTitle("En AlertDialog");
       EditText et = new EditText(this);
       et.setText("Denne her viser et generelt view og har to knapper");
-      et.setId(100001); // Husk indhold ved vending
+      et.setId(R.id.editText); // sæt ID så den redigerede tekst bliver genskabt ved skærmvending
       dialog.setView(et);
       dialog.setPositiveButton("Vis endnu en toast", new AlertDialog.OnClickListener() {
 
