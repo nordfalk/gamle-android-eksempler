@@ -4,13 +4,14 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 import dk.nordfalk.android.elementer.R;
 
-public class Velkomst_akt extends Activity implements Runnable {
+public class Velkomst_akt extends AppCompatActivity implements Runnable {
 
   static Velkomst_akt aktivitetDerVisesNu = null;
   Handler handler = new Handler();

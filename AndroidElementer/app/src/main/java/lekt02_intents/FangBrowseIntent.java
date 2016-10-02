@@ -3,12 +3,13 @@ package lekt02_intents;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.util.Linkify;
 import android.webkit.WebView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class FangBrowseIntent extends Activity {
+public class FangBrowseIntent extends AppCompatActivity {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {

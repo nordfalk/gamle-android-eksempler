@@ -9,6 +9,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.provider.Settings.Secure;
+import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
 import android.text.util.Linkify;
 import android.view.View;
@@ -23,7 +24,7 @@ import android.widget.Toast;
 /**
  * @author Jacob Nordfalk
  */
-public class BenytIntents extends Activity implements OnClickListener {
+public class BenytIntents extends AppCompatActivity implements OnClickListener {
   EditText tekstfelt, nummerfelt;
   Button ringOp, ringOpDirekte, sendSms, delApp, sendEpost, webadresse, wifiIndstillinger;
 

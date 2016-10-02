@@ -2,6 +2,7 @@ package lekt01_views;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -10,7 +11,7 @@ import android.widget.Button;
 /**
  * En aktivitet med én knap
  */
-public class BenytEnKnap extends Activity implements OnClickListener {
+public class BenytEnKnap extends AppCompatActivity implements OnClickListener {
 
   // Vi erklærer variabler herude så de huskes fra metode til metode
   Button enKnap;

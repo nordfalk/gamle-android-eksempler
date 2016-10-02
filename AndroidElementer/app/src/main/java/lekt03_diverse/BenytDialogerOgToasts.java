@@ -1,8 +1,6 @@
 package lekt03_diverse;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.ProgressDialog;
@@ -10,10 +8,11 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.NotificationCompat;
+import android.support.v7.app.AlertDialog;
 import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -32,7 +31,7 @@ import lekt05_grafik.Tegneprogram;
  */
 public class BenytDialogerOgToasts extends Activity implements OnClickListener {
 
-  Button visStandardToast, visToastMedBillede, visAlertDialog, visAlertDialog1, visAlertDialog2, visProgressDialog, visProgressDialogMedBillede, visNoitification;
+  Button visStandardToast, visToastMedBillede, visAlertDialog, visAlertDialog1, visAlertDialog2, visProgressDialog, visProgressDialogMedBillede, visNoitifikation;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -41,36 +40,36 @@ public class BenytDialogerOgToasts extends Activity implements OnClickListener {
     TableLayout tl = new TableLayout(this);
 
     visStandardToast = new Button(this);
-    visStandardToast.setText("visStandardToast");
+    visStandardToast.setText("vis Standard Toast");
     tl.addView(visStandardToast);
 
     visToastMedBillede = new Button(this);
-    visToastMedBillede.setText("visToastMedBillede");
+    visToastMedBillede.setText("vis Toast Med Billede");
     tl.addView(visToastMedBillede);
 
     visAlertDialog = new Button(this);
-    visAlertDialog.setText("visAlertDialog");
+    visAlertDialog.setText("vis AlertDialog");
     tl.addView(visAlertDialog);
 
     visAlertDialog1 = new Button(this);
-    visAlertDialog1.setText("visAlertDialog med 1 knap");
+    visAlertDialog1.setText("vis AlertDialog med 1 knap");
     tl.addView(visAlertDialog1);
 
     visAlertDialog2 = new Button(this);
-    visAlertDialog2.setText("visAlertDialog med 2 knapper");
+    visAlertDialog2.setText("vis AlertDialog med 2 knapper");
     tl.addView(visAlertDialog2);
 
     visProgressDialog = new Button(this);
-    visProgressDialog.setText("visProgressDialog");
+    visProgressDialog.setText("vis Progress Dialog");
     tl.addView(visProgressDialog);
 
     visProgressDialogMedBillede = new Button(this);
-    visProgressDialogMedBillede.setText("visProgressDialogMedBillede");
+    visProgressDialogMedBillede.setText("vis ProgressDialog Med Billede");
     tl.addView(visProgressDialogMedBillede);
 
-    visNoitification = new Button(this);
-    visNoitification.setText("visNoitification");
-    tl.addView(visNoitification);
+    visNoitifikation = new Button(this);
+    visNoitifikation.setText("vis Noitifikation");
+    tl.addView(visNoitifikation);
 
     visStandardToast.setOnClickListener(this);
     visToastMedBillede.setOnClickListener(this);
@@ -79,7 +78,7 @@ public class BenytDialogerOgToasts extends Activity implements OnClickListener {
     visAlertDialog.setOnClickListener(this);
     visAlertDialog1.setOnClickListener(this);
     visAlertDialog2.setOnClickListener(this);
-    visNoitification.setOnClickListener(this);
+    visNoitifikation.setOnClickListener(this);
 
     ScrollView sv = new ScrollView(this);
     sv.addView(tl);
@@ -98,6 +97,7 @@ public class BenytDialogerOgToasts extends Activity implements OnClickListener {
       t.setGravity(Gravity.CENTER, 0, 0);
       t.show();
     } else if (hvadBlevDerKlikketPå == visAlertDialog) {
+      Snackbar.make(hvadBlevDerKlikketPå, "Hej", Snackbar.LENGTH_LONG).show();
       AlertDialog.Builder dialog = new AlertDialog.Builder(this);
       dialog.setTitle("En AlertDialog");
       dialog.setMessage("Denne her har ingen knapper");
@@ -143,7 +143,7 @@ public class BenytDialogerOgToasts extends Activity implements OnClickListener {
         }
       });
       dialog.show();
-    } else if (hvadBlevDerKlikketPå == visNoitification) {
+    } else if (hvadBlevDerKlikketPå == visNoitifikation) {
       Intent intent = new Intent(this, Tegneprogram.class);
       PendingIntent pi = PendingIntent.getActivity(this, 0, intent, 0);
 

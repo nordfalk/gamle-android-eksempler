@@ -2,12 +2,13 @@ package lekt02_aktiviteter;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.webkit.WebView;
 
 /**
  * @author Jacob Nordfalk
  */
-public class Hjaelp_akt extends Activity {
+public class Hjaelp_akt extends AppCompatActivity {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {

@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.ContactsContract;
 import android.provider.MediaStore;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -36,7 +37,7 @@ import java.io.InputStream;
  *
  * @author Jacob Nordfalk
  */
-public class BenytIntentsMedResultat extends Activity implements OnClickListener {
+public class BenytIntentsMedResultat extends AppCompatActivity implements OnClickListener {
 
   Button vælgKontakt, vælgGoogleKonto, vælgKonto, vælgBillede, tagBillede, beskærBillede, dokumentation;
   TextView resultatTextView;

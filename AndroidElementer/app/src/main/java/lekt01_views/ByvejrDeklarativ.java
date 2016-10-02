@@ -2,6 +2,7 @@ package lekt01_views;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.webkit.WebView;
@@ -14,7 +15,7 @@ import dk.nordfalk.android.elementer.R;
 /**
  * @author Jacob Nordfalk
  */
-public class ByvejrDeklarativ extends Activity implements OnClickListener {
+public class ByvejrDeklarativ extends AppCompatActivity implements OnClickListener {
 
   Button okKnap, annullerKnap;
   EditText editText;

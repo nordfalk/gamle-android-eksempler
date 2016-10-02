@@ -3,6 +3,7 @@ package lekt02_aktiviteter;
 import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.BounceInterpolator;
@@ -16,7 +17,7 @@ import android.widget.TextView;
 /**
  * @author Jacob Nordfalk
  */
-public class Spillet_akt extends Activity implements View.OnClickListener {
+public class Spillet_akt extends AppCompatActivity implements View.OnClickListener {
 
   Galgelogik logik = new Galgelogik();
   private TextView info;

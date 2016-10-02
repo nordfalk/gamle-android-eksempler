@@ -3,6 +3,7 @@ package lekt02_aktiviteter;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -12,7 +13,7 @@ import dk.nordfalk.android.elementer.R;
 /**
  * @author Jacob Nordfalk
  */
-public class Hovedmenu_akt extends Activity implements OnClickListener {
+public class Hovedmenu_akt extends AppCompatActivity implements OnClickListener {
   // Vi erklærer variabler herude så de huskes fra metode til metode
   Button hjaelpKnap, indstillingerKnap, spilKnap;
 

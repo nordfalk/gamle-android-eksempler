@@ -2,6 +2,7 @@ package lekt01_views;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -12,7 +13,7 @@ import dk.nordfalk.android.elementer.R;
 /**
  * @author Jacob Nordfalk
  */
-public class BenytKnapperDeklarativ extends Activity implements OnClickListener {
+public class BenytKnapperDeklarativ extends AppCompatActivity implements OnClickListener {
   // Vi erklærer variabler herude så de huskes fra metode til metode
   Button knap1, knap2, knap3;
 
