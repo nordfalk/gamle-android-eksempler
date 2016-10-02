@@ -2,6 +2,7 @@ package lekt03_diverse;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -12,7 +13,7 @@ import dk.nordfalk.android.elementer.R;
 /**
  * @author Jacob Nordfalk
  */
-public class BenytLayoutInflater extends Activity implements OnClickListener {
+public class BenytLayoutInflater extends AppCompatActivity implements OnClickListener {
 
   private TextView textView;
 

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,7 +14,7 @@ import android.widget.TextView;
 import dk.nordfalk.android.elementer.R;
 import lekt02_aktiviteter.Indstillinger_akt;
 
-public class BenytMenuer2 extends Activity {
+public class BenytMenuer2 extends AppCompatActivity {
   private TextView textView;
 
   @Override

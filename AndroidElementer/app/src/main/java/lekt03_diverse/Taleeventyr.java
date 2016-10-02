@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.TextToSpeech.OnInitListener;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ import java.util.Locale;
 /**
  * @author Jacob Nordfalk
  */
-public class Taleeventyr extends Activity implements OnInitListener {
+public class Taleeventyr extends AppCompatActivity implements OnInitListener {
 
   TextView udtaleTekst;
   TextToSpeech tts;

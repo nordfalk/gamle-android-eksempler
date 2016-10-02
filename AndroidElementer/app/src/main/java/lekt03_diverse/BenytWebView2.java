@@ -3,6 +3,7 @@ package lekt03_diverse;
 import android.app.Activity;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
@@ -10,7 +11,7 @@ import android.widget.Toast;
 
 import dk.nordfalk.android.elementer.R;
 
-public class BenytWebView2 extends Activity {
+public class BenytWebView2 extends AppCompatActivity {
 
   public class MinKlasse {
 

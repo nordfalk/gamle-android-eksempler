@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -13,7 +14,7 @@ import dk.nordfalk.android.elementer.R;
 /**
  * @author Jacob Nordfalk
  */
-public class AfspilLyd extends Activity implements OnClickListener {
+public class AfspilLyd extends AppCompatActivity implements OnClickListener {
 
   Button enKnap;
   MediaPlayer enLyd;

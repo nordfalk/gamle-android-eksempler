@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -29,9 +30,9 @@ import lekt05_grafik.Tegneprogram;
 /**
  * @author Jacob Nordfalk
  */
-public class BenytDialogerOgToasts extends Activity implements OnClickListener {
+public class BenytDialogerOgToasts extends AppCompatActivity implements OnClickListener {
 
-  Button visStandardToast, visToastMedBillede, visAlertDialog, visAlertDialog1, visAlertDialog2, visProgressDialog, visProgressDialogMedBillede, visNoitifikation;
+  Button visStandardToast, visToastMedBillede, visSnackBar, visAlertDialog, visAlertDialog1, visAlertDialog2, visProgressDialog, visProgressDialogMedBillede, visNoitifikation;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +47,10 @@ public class BenytDialogerOgToasts extends Activity implements OnClickListener {
     visToastMedBillede = new Button(this);
     visToastMedBillede.setText("vis Toast Med Billede");
     tl.addView(visToastMedBillede);
+
+    visSnackBar = new Button(this);
+    visSnackBar.setText("vis SnackBar");
+    tl.addView(visSnackBar);
 
     visAlertDialog = new Button(this);
     visAlertDialog.setText("vis AlertDialog");
@@ -75,7 +80,7 @@ public class BenytDialogerOgToasts extends Activity implements OnClickListener {
     visToastMedBillede.setOnClickListener(this);
     visProgressDialog.setOnClickListener(this);
     visProgressDialogMedBillede.setOnClickListener(this);
-    visAlertDialog.setOnClickListener(this);
+    visSnackBar.setOnClickListener(this);
     visAlertDialog1.setOnClickListener(this);
     visAlertDialog2.setOnClickListener(this);
     visNoitifikation.setOnClickListener(this);
@@ -96,8 +101,14 @@ public class BenytDialogerOgToasts extends Activity implements OnClickListener {
       t.setView(im);
       t.setGravity(Gravity.CENTER, 0, 0);
       t.show();
+    } else if (hvadBlevDerKlikketPå == visSnackBar) {
+      Snackbar.make(hvadBlevDerKlikketPå, "En lang Snackbar", Snackbar.LENGTH_LONG).setAction("Vis en mere", new OnClickListener() {
+        @Override
+        public void onClick(View v) {
+          Snackbar.make(visSnackBar, "OK, det her er en kort snackbar", Snackbar.LENGTH_SHORT).show();
+        }
+      }).show();
     } else if (hvadBlevDerKlikketPå == visAlertDialog) {
-      Snackbar.make(hvadBlevDerKlikketPå, "Hej", Snackbar.LENGTH_LONG).show();
       AlertDialog.Builder dialog = new AlertDialog.Builder(this);
       dialog.setTitle("En AlertDialog");
       dialog.setMessage("Denne her har ingen knapper");

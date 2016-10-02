@@ -5,6 +5,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.TextToSpeech.OnInitListener;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
@@ -28,7 +29,7 @@ import dk.nordfalk.android.elementer.R;
  *
  * @author Jacob Nordfalk
  */
-public class BenytTekstTilTale extends Activity implements OnInitListener, OnClickListener {
+public class BenytTekstTilTale extends AppCompatActivity implements OnInitListener, OnClickListener {
 
   EditText udtaleTekst;
   Button udtalKnap;

@@ -2,10 +2,11 @@ package lekt03_diverse;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
-public class AfspilVideo extends Activity {
+public class AfspilVideo extends AppCompatActivity {
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
