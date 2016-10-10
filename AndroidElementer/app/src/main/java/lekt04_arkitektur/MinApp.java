@@ -40,7 +40,7 @@ import lekt06_youtube.FilCache;
  * udføre de allermest nødvendige ting her.
  *
  * BEMÆRK - Klassen her skal være nævnt i <application>-tagget i AndroidManifest.xml,
- * <application android:name="lekt04_arkitektur.MinApp"
+ * <application android:name="lekt04_arkitektur.MinApp" ...></application>
  */
 public class MinApp extends Application {
   // Globale data (kunne godt være gemt i en klassevariabel andetsteds)
@@ -93,7 +93,7 @@ public class MinApp extends Application {
   }
 
   public static void gemData() {
-    try {  // nu er aktiviteten ikke synlig, så er det tid til at gemme data!
+    try {
       Serialisering.gem(data, instans.getFilesDir() + "/programdata.ser");
     } catch (IOException ex) {
       ex.printStackTrace();

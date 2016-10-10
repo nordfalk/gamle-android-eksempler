@@ -102,10 +102,10 @@ public class BenytDialogerOgToasts extends AppCompatActivity implements OnClickL
       t.setGravity(Gravity.CENTER, 0, 0);
       t.show();
     } else if (hvadBlevDerKlikketPå == visSnackBar) {
-      Snackbar.make(hvadBlevDerKlikketPå, "En lang Snackbar", Snackbar.LENGTH_LONG).setAction("Vis en mere", new OnClickListener() {
+      Snackbar.make(hvadBlevDerKlikketPå, "En kort Snackbar", Snackbar.LENGTH_LONG).setAction("Vis en mere", new OnClickListener() {
         @Override
         public void onClick(View v) {
-          Snackbar.make(visSnackBar, "OK, det her er en kort snackbar", Snackbar.LENGTH_SHORT).show();
+          Snackbar.make(visSnackBar, "OK, her er en lang snackbar", Snackbar.LENGTH_SHORT).show();
         }
       }).show();
     } else if (hvadBlevDerKlikketPå == visAlertDialog) {

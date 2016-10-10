@@ -117,6 +117,7 @@
         <activity android:name="lekt03_net.BenytNetOgAsyncTask" />
         <activity android:name="lekt03_net.ByvejrAktivitet" />
         <activity android:name="lekt04_fragmenter.Hovedaktivitet"/>
+        <activity android:name="lekt04_fragmenter.HovedaktivitetMedViewpager"/>
         <activity android:name="lekt04_arkitektur.NoteAktivitet" />
         <activity android:name="lekt04_arkitektur.NoteAktivitet2" />
         <activity android:name="lekt04_lister.BenytListView" />

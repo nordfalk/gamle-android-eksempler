@@ -63,7 +63,7 @@ public class NoteAktivitet extends Activity implements OnClickListener {
     scrollView.addView(linearLayout);
     setContentView(scrollView);
 
-    visNoter();
+    opdaterSkærm();
   }
 
   @Override
@@ -73,10 +73,10 @@ public class NoteAktivitet extends Activity implements OnClickListener {
     MinApp.getData().noter.add(note);
     MinApp.gemData();
     editText.setText("");
-    visNoter();
+    opdaterSkærm();
   }
 
-  private void visNoter() {
+  private void opdaterSkærm() {
     String notetekst = MinApp.getData().noter.toString().replaceAll(", ", "\n");
     alleNoterTv.setText("Noter:\n" + notetekst);
   }

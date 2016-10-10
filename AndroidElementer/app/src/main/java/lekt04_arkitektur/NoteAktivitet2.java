@@ -22,16 +22,19 @@ import android.widget.TextView;
 
 /**
  * Simpel aktivitet til at tage noter
- * Benytter MinApp.data - som vi er SIKRE på er initialiseret,
- * da Application Singletons onCreate() metode bliver kaldt som
- * det første når en app (gen)startes
  *
  * @author Jacob Nordfalk
  */
-public class NoteAktivitet2 extends Activity implements Runnable, OnClickListener {
+public class NoteAktivitet2 extends Activity implements OnClickListener {
 
   EditText editText_postnr;
   private TextView alleNoterTv;
+  private Runnable dataobservatør = new Runnable() {
+    @Override
+    public void run() {
+      opdaterSkærm();
+    }
+  };
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -60,14 +63,14 @@ public class NoteAktivitet2 extends Activity implements Runnable, OnClickListene
     scrollView.addView(linearLayout);
     setContentView(scrollView);
 
-    MinApp.getData().observatører.add(this);
-    run();
+    MinApp.getData().observatører.add(dataobservatør);
+    opdaterSkærm();
   }
 
   @Override
   protected void onDestroy() {
     super.onDestroy();
-    MinApp.getData().observatører.remove(this);
+    MinApp.getData().observatører.remove(dataobservatør);
   }
 
   @Override
@@ -75,11 +78,10 @@ public class NoteAktivitet2 extends Activity implements Runnable, OnClickListene
     String note = editText_postnr.getText().toString();
     editText_postnr.setText("");
     MinApp.getData().noter.add(note);
-    MinApp.getData().notifyObservatører(); // kalder run() på os (og evt andre observatører), og MinApp.gemData();
+    MinApp.getData().kaldObservatører(); // kalder run() på dataobservatør (og evt andre observatører)
   }
 
-  @Override
-  public void run() {
+  private void opdaterSkærm() {
     String notetekst = MinApp.getData().noter.toString().replaceAll(", ", "\n");
     alleNoterTv.setText("Noter:\n" + notetekst);
   }
