@@ -8,11 +8,12 @@ android {
         applicationId "dk.nordfalk.android.elementer"
 //      denne app fungerer på telefoner med Android 2.3.3 (API 9) og frem
         minSdkVersion 9
+//        targetSdkVersion 22
 //      men den er beregnet til Android 7.0 (API 24)
-        targetSdkVersion 22
+        targetSdkVersion 24
 
         versionCode 58
-        versionName '2.5  2.okt 2016'
+        versionName '2.5.1  11.okt 2016'
 
 //      dette giver en hurtigere build, men med højere hukommelsesforbrug
         /*

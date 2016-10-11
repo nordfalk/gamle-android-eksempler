@@ -91,6 +91,7 @@
                     />
             </intent-filter>
         </activity>
+        <activity android:name="lekt02_intents.BenytIntentsMedTilladelser" />
 
         <!--
              Dette filter fanger tryk på HJEM-knappen
@@ -250,7 +251,10 @@
         <activity android:name="lekt10_livscyklus.Liv3_nonConfigurationInstance" />
         <activity android:name="lekt10_livscyklus.Liv4_bundle" />
         <activity android:name="lekt10_livscyklus.DialogDerOverleverSkaermvending" />
+
+        <activity android:name="ufaerdigt.BenytIntentsMedResTilladelser" />
         <activity android:name="ufaerdigt.ByvejrAktivitet2" />
+
         <activity android:name="lekt20_touchinput.BenytGestureDetector" />
         <activity android:name="lekt20_touchinput.BenytScaleGestureDetector" />
         <activity android:name="lekt20_touchinput.BenytMultiTouchController" />
