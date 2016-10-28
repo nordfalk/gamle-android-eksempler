@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import dk.nordfalk.android.elementer.R;
 
-public class BenytListViewMedEgetLayout2 extends Activity implements OnItemClickListener {
+public class EgetLayoutMedArrayAdapter2 extends Activity implements OnItemClickListener {
 
   @Override
   public void onCreate(Bundle savedInstanceState) {

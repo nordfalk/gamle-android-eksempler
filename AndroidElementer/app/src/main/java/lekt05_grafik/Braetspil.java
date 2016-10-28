@@ -110,7 +110,7 @@ public class Braetspil extends Activity {
     public boolean onTouchEvent(MotionEvent e) {
       //System.out.println(e);
       // Spillet er beregnet til en skærm der er 480 punkter bred...
-      float skærmSkala = 1;//getWidth()/480f; // ... så skalér derefter
+      float skærmSkala = getWidth()/480f; // ... så skalér derefter
       float ex = e.getX() / skærmSkala;
       float ey = e.getY() / skærmSkala;
       finger.x = ex;

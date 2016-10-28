@@ -126,12 +126,14 @@
         <activity android:name="lekt04_lister.BenytGallery" />
         <activity android:name="lekt04_lister.BenytGridView" />
         <activity android:name="lekt04_lister.BenytSpinner" />
-        <activity android:name="lekt04_lister.BenytListViewMedEgetLayout" />
-        <activity android:name="lekt04_lister2.BenytListViewMedEgetLayout2" />
-        <activity android:name="lekt04_lister2.BenytSpinnerMedEgetLayout2" />
+        <activity android:name="lekt04_lister.EgetLayoutMedArrayAdapter" />
+
+        <activity android:name="lekt04_lister2.EgetLayoutMedArrayAdapter2" />
+        <activity android:name="lekt04_lister2.EgetLayoutMedArrayAdapter2Spinner" />
+        <activity android:name="lekt04_lister2.EgetLayoutMedBaseAdapter" />
+        <activity android:name="lekt04_lister2.EgetLayoutMedBaseAdapterOverskrifter" />
         <activity android:name="lekt04_lister2.VisAlleAndroidDrawables" />
-        <activity android:name="lekt04_lister2.BenytListviewMedOverskrifter" />
-        <activity android:name="lekt04_lister2.BenytExpandableListActivity" />
+
         <activity android:name="lekt05_grafik.Grafikdemo0" />
         <activity android:name="lekt05_grafik.Tegneprogram" />
         <activity android:name="lekt05_grafik.Braetspil" />

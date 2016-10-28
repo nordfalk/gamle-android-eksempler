@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 import dk.nordfalk.android.elementer.R;
 
-public class BenytListviewMedOverskrifter extends Activity implements AdapterView.OnItemClickListener {
+public class EgetLayoutMedBaseAdapterOverskrifter extends Activity implements AdapterView.OnItemClickListener {
 
   String[] landeOgOverskrifter = {
           "0En overskrift",
@@ -34,20 +34,20 @@ public class BenytListviewMedOverskrifter extends Activity implements AdapterVie
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     ListView listView = new ListView(this);
-    // Det er også muligt at tilføje views som top- og bundelementer
-    listView.addHeaderView(new RatingBar(this));
-    listView.addHeaderView(new RatingBar(this));
-    listView.addFooterView(getLayoutInflater().inflate(R.layout.lekt01_tre_knapper, null));
     adapter = new MinAdapterMedOverskrifter();
     listView.setAdapter(adapter);
     listView.setDivider(null);
     listView.setOnItemClickListener(this);
+    // Det er også muligt at tilføje views som top- eller bundelementer
+    listView.addFooterView(new RatingBar(this));
+    listView.addFooterView(new RatingBar(this));
+    listView.addFooterView(getLayoutInflater().inflate(R.layout.lekt01_tre_knapper, null));
     setContentView(listView);
   }
 
   public void onItemClick(AdapterView<?> l, View v, int position, long id) {
     Toast.makeText(this, "Klik på " + position, Toast.LENGTH_SHORT).show();
-    landeOgOverskrifter[position] = "0Du klikkede her!";
+    landeOgOverskrifter[position] = "1Du klikkede her!"; // Skift type til overskrift
     adapter.notifyDataSetChanged();
   }
 
@@ -65,8 +65,14 @@ public class BenytListviewMedOverskrifter extends Activity implements AdapterVie
       return position;
     } // bruges ikke
 
+    /** Antallet af forskellige slags elementer */
+    @Override
+    public int getViewTypeCount() {
+      return 3;
+    }
+
     /**
-     * Skal give typen af elementet der skal vises.
+     * Skal give typen/slagsen af elementet der skal vises.
      * 0 er normale lande, 1 er kategorier og 2 er overskrifter
      */
     @Override
@@ -77,11 +83,11 @@ public class BenytListviewMedOverskrifter extends Activity implements AdapterVie
       return 2;
     }
 
+    /** Om dette element kan vælges */
     @Override
-    public int getViewTypeCount() {
-      return 3;
+    public boolean isEnabled(int position) {
+      return getItemViewType(position) > 1;
     }
-
 
     public View getView(final int position, View view, ViewGroup parent) {
       int typen = getItemViewType(position);
@@ -114,11 +120,6 @@ public class BenytListviewMedOverskrifter extends Activity implements AdapterVie
       }
 
       return view;
-    }
-
-    @Override
-    public boolean isEnabled(int position) {
-      return getItemViewType(position) > 1;
     }
   }
 }

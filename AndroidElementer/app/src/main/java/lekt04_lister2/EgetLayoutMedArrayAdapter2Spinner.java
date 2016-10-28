@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import dk.nordfalk.android.elementer.R;
 
-public class BenytSpinnerMedEgetLayout2 extends Activity implements OnItemSelectedListener {
+public class EgetLayoutMedArrayAdapter2Spinner extends Activity implements OnItemSelectedListener {
 
   @Override
   public void onCreate(Bundle savedInstanceState) {

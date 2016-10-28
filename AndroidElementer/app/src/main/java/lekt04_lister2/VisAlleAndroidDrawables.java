@@ -5,6 +5,7 @@ import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -37,7 +38,7 @@ import dk.nordfalk.android.elementer.R;
  *
  * @author j
  */
-public class VisAlleAndroidDrawables extends Activity implements AdapterView.OnItemClickListener {
+public class VisAlleAndroidDrawables extends AppCompatActivity implements AdapterView.OnItemClickListener {
   /**
    * Om billeder og resurser skal indlæses i en baggrundstråd eller i GUI-tråden
    */
@@ -113,7 +114,10 @@ public class VisAlleAndroidDrawables extends Activity implements AdapterView.OnI
 
       // For at sikre flydende scroll kan vi IKKE indlæse resursen i GUI-tråden
       if (!asynkronIndlæsning) {
-        listeelem.billede.setImageResource(resurseId);
+        try {
+          listeelem.billede.setImageResource(resurseId);
+        } catch (Exception e) {// sker hvis en drawable med det ID ikke findes
+        }
       } else {
         listeelem.billede.setImageDrawable(null);
         listeelem.position = position;
