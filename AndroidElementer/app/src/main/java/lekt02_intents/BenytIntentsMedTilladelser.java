@@ -25,11 +25,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 /**
+ * Se https://developer.android.com/training/permissions/index.html
  * @author Jacob Nordfalk
  */
 public class BenytIntentsMedTilladelser extends AppCompatActivity implements OnClickListener {
   EditText nummerfelt;
-  Button ringOpDirekte;
+  Button ringOpDirekte, webadresse;
 
 
   @Override
@@ -45,6 +46,10 @@ public class BenytIntentsMedTilladelser extends AppCompatActivity implements OnC
     ringOpDirekte = new Button(this);
     ringOpDirekte.setText("Ring op - direkte");
     tl.addView(ringOpDirekte);
+
+    webadresse = new Button(this);
+    webadresse.setText("Info om runtime tilladelser");
+    tl.addView(webadresse);
 
     ScrollView sv = new ScrollView(this);
     sv.addView(tl);
@@ -67,33 +72,31 @@ public class BenytIntentsMedTilladelser extends AppCompatActivity implements OnC
 
     try {
       if (v == ringOpDirekte) {
-        try {
-          // Bemærk: Kræver <uses-permission android:name="android.permission.CALL_PHONE" /> i manifestet.
-          // Bemærk: Fra Android 6 (targetSdkVersion 23) og frem skal brugeren spørges om lov først
-          int permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE);
-          if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CALL_PHONE)) {
-              Snackbar.make(v, "Giv tilladelse", Snackbar.LENGTH_LONG).setAction("OK", new OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                  ActivityCompat.requestPermissions(BenytIntentsMedTilladelser.this, new String[]{Manifest.permission.CALL_PHONE}, 4242);
-                }
-              }).show();
-              return;
-            }
-
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CALL_PHONE}, 4242);
+        // Bemærk: Kræver <uses-permission android:name="android.permission.CALL_PHONE" /> i manifestet.
+        // Bemærk: Fra Android 6 (targetSdkVersion 23) og frem skal brugeren spørges om lov først
+        int permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE);
+        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
+          if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CALL_PHONE)) {
+            Snackbar.make(v, "Giv tilladelse", Snackbar.LENGTH_LONG).setAction("OK", new OnClickListener() {
+              @Override
+              public void onClick(View v) {
+                ActivityCompat.requestPermissions(BenytIntentsMedTilladelser.this, new String[]{Manifest.permission.CALL_PHONE}, 4242);
+              }
+            }).show();
             return;
-          } else {
-            startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + nummer)));
           }
-        } catch (Exception e) {
-          Toast.makeText(this, "Du mangler <uses-permission android:name=\"android.permission.CALL_PHONE\" /> i manifestet\n" + e, Toast.LENGTH_LONG).show();
-          e.printStackTrace();
+
+          ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CALL_PHONE}, 4242);
+          return;
+        } else {
+          startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + nummer)));
         }
+      } else if (v == webadresse) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://developer.android.com/training/permissions/index.html"));
+        startActivity(intent);
       }
     } catch (Exception e) {
-      Toast.makeText(this, "Denne telefon mangler en funktion:\n" + e.getMessage(), Toast.LENGTH_LONG).show();
+      Toast.makeText(this, "Du mangler <uses-permission android:name=\"android.permission.CALL_PHONE\" /> i manifestet\n" + e, Toast.LENGTH_LONG).show();
       e.printStackTrace();
     }
   }
