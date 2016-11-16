@@ -21,9 +21,9 @@ public class EgetLayoutMedArrayAdapter2Spinner extends Activity implements OnIte
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
-    String[] lande = {"Danmark", "Norge", "Sverige", "Finland",
-            "Holland", "Italien", "Tyskland", "Frankrig", "Spanien", "Portugal",
-            "Nepal", "Indien", "Kina", "Japan", "Thailand"};
+    String[] lande = {"Danmark", "Norge", "Sverige", "Finland", "Holland", "Italien", "Tyskland",
+            "Frankrig", "Spanien", "Portugal", "Nepal", "Indien", "Kina", "Japan", "Thailand"};
+
     Spinner spinner = new Spinner(this);
     spinner.setOnItemSelectedListener(this);
     // Standard-udseende

@@ -17,9 +17,8 @@ public class BenytGallery extends Activity implements OnItemClickListener {
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
-    String[] lande = {"Danmark", "Norge", "Sverige", "Finland",
-            "Holland", "Italien", "Tyskland", "Frankrig", "Spanien", "Portugal",
-            "Nepal", "Indien", "Kina", "Japan", "Thailand"};
+    String[] lande = {"Danmark", "Norge", "Sverige", "Finland", "Holland", "Italien", "Tyskland",
+            "Frankrig", "Spanien", "Portugal", "Nepal", "Indien", "Kina", "Japan", "Thailand"};
 
     Gallery gallery = new Gallery(this);
     gallery.setOnItemClickListener(this);

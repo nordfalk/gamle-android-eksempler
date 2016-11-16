@@ -13,9 +13,9 @@ public class BenytListActivity extends ListActivity {
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
-    String[] lande = {"Danmark", "Norge", "Sverige", "Finland",
-            "Holland", "Italien", "Tyskland", "Frankrig", "Spanien", "Portugal",
-            "Nepal", "Indien", "Kina", "Japan", "Thailand"};
+    String[] lande = {"Danmark", "Norge", "Sverige", "Finland", "Holland", "Italien", "Tyskland",
+            "Frankrig", "Spanien", "Portugal", "Nepal", "Indien", "Kina", "Japan", "Thailand"};
+
     ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, android.R.id.text1, lande);
     setListAdapter(adapter);
   }

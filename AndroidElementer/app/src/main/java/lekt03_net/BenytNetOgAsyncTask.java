@@ -125,7 +125,7 @@ public class BenytNetOgAsyncTask extends Activity implements OnClickListener {
       } else if (hvadBlevDerKlikketPå == knap3) {
 
         final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        String titler = prefs.getString("titler", "(ingen titler)"); // Hent fra prefs
+        String titler = prefs.getString("titler", "(henter, vent et øjeblik)"); // Hent fra prefs
         textView.setText("henter... her er hvad jeg ved:\n" + titler);
 
         new AsyncTask() {

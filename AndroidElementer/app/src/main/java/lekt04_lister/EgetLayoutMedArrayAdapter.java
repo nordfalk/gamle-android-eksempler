@@ -17,9 +17,8 @@ public class EgetLayoutMedArrayAdapter extends Activity implements OnItemClickLi
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
-    String[] lande = {"Danmark", "Norge", "Sverige", "Finland",
-            "Holland", "Italien", "Tyskland", "Frankrig", "Spanien", "Portugal",
-            "Nepal", "Indien", "Kina", "Japan", "Thailand"};
+    String[] lande = {"Danmark", "Norge", "Sverige", "Finland", "Holland", "Italien", "Tyskland",
+            "Frankrig", "Spanien", "Portugal", "Nepal", "Indien", "Kina", "Japan", "Thailand"};
     ArrayAdapter adapter = new ArrayAdapter(this, R.layout.lekt04_listeelement, R.id.listeelem_overskrift, lande);
 
     ListView listView = new ListView(this);
