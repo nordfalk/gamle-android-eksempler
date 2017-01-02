@@ -18,6 +18,7 @@ import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
+import com.google.android.gms.location.ActivityRecognition;
 import com.google.android.gms.location.Geofence;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
@@ -191,8 +192,10 @@ public class Stedplacering_akt extends Activity implements LocationListener, Vie
   @Override
   protected void onDestroy() {
     super.onDestroy();
-    LocationServices.FusedLocationApi.removeLocationUpdates(googleApiClient, this);
-    googleApiClient.disconnect();
+    if (googleApiClient.isConnected()) {
+      LocationServices.FusedLocationApi.removeLocationUpdates(googleApiClient, this);
+      googleApiClient.disconnect();
+    }
     instans = null;
   }
 
