@@ -175,6 +175,7 @@
         <activity android:name="lekt06_asynkron.Asynk2Thread" />
         <activity android:name="lekt06_asynkron.Asynk3AsyncTask" />
         <activity android:name="lekt06_asynkron.Asynk4Korrekt" />
+        <activity android:name="lekt06_asynkron.Asynk5Message" />
         <activity android:name="lekt07_fragmenter.BenytMitFragment_akt" />
         <activity android:name="lekt07_fragmenter.BenytHovedmenu_akt" />
         <activity android:name="lekt08_providers.VisOpkald" />
