@@ -135,6 +135,7 @@
         <activity android:name="lekt04_lister2.EgetLayoutMedBaseAdapterOverskrifter" />
         <activity android:name="lekt04_lister2.VisAlleAndroidDrawables" />
         <activity android:name="lekt07_lister3.BenytRecyclerview" />
+        <activity android:name="lekt07_lister3.BenytRecyclerviewMedGesti" />
 
         <activity android:name="lekt05_grafik.Grafikdemo0" />
         <activity android:name="lekt05_grafik.Tegneprogram" />
@@ -262,7 +263,7 @@
         <activity android:name="lekt20_touchinput.BenytGestureDetector" />
         <activity android:name="lekt20_touchinput.BenytScaleGestureDetector" />
         <activity android:name="lekt20_touchinput.BenytMultiTouchController" />
-        <activity android:name="lekt31_venstremenu.BenytVenstremenu" android:theme="@style/Theme.AppCompat" />
+        <activity android:name="lekt31_venstremenu.BenytVenstremenu" />
         <activity android:name="lekt32_overgange.AktivitetsovergangBegynd" />
         <activity android:name="lekt32_overgange.AktivitetsovergangSlut" />
         <activity android:name="lekt32_overgange.VisFragmentoverrgange" />
@@ -285,7 +286,6 @@
         <!-- aktivitet som kan ses fra startskærmen -->
         <activity
             android:name="dk.nordfalk.aktivitetsliste.Aktivitetsliste3"
-            android:theme="@style/AppTheme"
             android:label="AndroidElementer" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -294,8 +294,8 @@
         </activity>
 
         <!-- Jeg skjuler alle aktiviteter der står herunder fra Aktivitetsliste -->
-        <activity android:name="dk.nordfalk.aktivitetsliste.VisKildekodeIWebView" android:theme="@style/Theme.AppCompat"/>
-        <activity android:name="dk.nordfalk.aktivitetsliste.VisKildekode" android:theme="@style/Theme.AppCompat">
+        <activity android:name="dk.nordfalk.aktivitetsliste.VisKildekodeIWebView"/>
+        <activity android:name="dk.nordfalk.aktivitetsliste.VisKildekode">
 
             <!-- bruges af metoden VisKildekode.findWebUrl() -->
             <meta-data
