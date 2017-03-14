@@ -58,7 +58,7 @@ public class BenytRecyclerview0 extends AppCompatActivity {
     @Override
     public ListeelemViewholder onCreateViewHolder(ViewGroup parent, int viewType) {
       View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.lekt04_listeelement, parent, false);
-      ListeelemViewholder vh = new ListeelemViewholder(parent);
+      ListeelemViewholder vh = new ListeelemViewholder(itemView);
       vh.overskrift =  (TextView) itemView.findViewById(R.id.listeelem_overskrift);
       vh.beskrivelse = (TextView) itemView.findViewById(R.id.listeelem_beskrivelse);
       vh.billede = (ImageView) itemView.findViewById(R.id.listeelem_billede);
