@@ -134,8 +134,10 @@
         <activity android:name="lekt04_lister2.EgetLayoutMedBaseAdapterViewholder" />
         <activity android:name="lekt04_lister2.EgetLayoutMedBaseAdapterOverskrifter" />
         <activity android:name="lekt04_lister2.VisAlleAndroidDrawables" />
+        <activity android:name="lekt07_lister3.BenytRecyclerview0" />
         <activity android:name="lekt07_lister3.BenytRecyclerview" />
         <activity android:name="lekt07_lister3.BenytRecyclerviewMedGesti" />
+        <activity android:name="lekt07_lister3.BenytRecyclerviewOverskrifter" />
 
         <activity android:name="lekt05_grafik.Grafikdemo0" />
         <activity android:name="lekt05_grafik.Tegneprogram" />
