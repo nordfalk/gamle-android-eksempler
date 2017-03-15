@@ -1,6 +1,7 @@
 package lekt07_lister3;
 
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -37,43 +38,30 @@ public class BenytRecyclerview0 extends AppCompatActivity {
     setContentView(recyclerView);
   }
 
-
-  class ListeelemViewholder extends RecyclerView.ViewHolder {
-    TextView overskrift;
-    TextView beskrivelse;
-    ImageView billede;
-
-    public ListeelemViewholder(View itemView) {
-      super(itemView);
-    }
-  }
-
-
-  RecyclerView.Adapter adapter = new RecyclerView.Adapter<ListeelemViewholder>() {
+  RecyclerView.Adapter adapter = new RecyclerView.Adapter() {
     @Override
     public int getItemCount()  {
       return lande.size();
     }
 
     @Override
-    public ListeelemViewholder onCreateViewHolder(ViewGroup parent, int viewType) {
-      View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.lekt04_listeelement, parent, false);
-      ListeelemViewholder vh = new ListeelemViewholder(itemView);
-      vh.overskrift =  (TextView) itemView.findViewById(R.id.listeelem_overskrift);
-      vh.beskrivelse = (TextView) itemView.findViewById(R.id.listeelem_beskrivelse);
-      vh.billede = (ImageView) itemView.findViewById(R.id.listeelem_billede);
-      return vh;
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+      View itemView = getLayoutInflater().inflate(R.layout.lekt04_listeelement, parent, false);
+      return new RecyclerView.ViewHolder(itemView) {};
     }
 
     @Override
-    public void onBindViewHolder(ListeelemViewholder vh, int position) {
-      vh.overskrift.setText(lande.get(position));
+    public void onBindViewHolder(RecyclerView.ViewHolder vh, int position) {
+      TextView overskrift = (TextView) vh.itemView.findViewById(R.id.listeelem_overskrift);
+      TextView beskrivelse = (TextView) vh.itemView.findViewById(R.id.listeelem_beskrivelse);
+      ImageView billede = (ImageView) vh.itemView.findViewById(R.id.listeelem_billede);
+      overskrift.setText(lande.get(position));
 
-      vh.beskrivelse.setText("Land nummer " + position + " på vh@"+Integer.toHexString(vh.hashCode()));
+      beskrivelse.setText("Land nummer " + position + " på vh@"+Integer.toHexString(vh.hashCode()));
       if (position % 3 == 2) {
-        vh.billede.setImageResource(android.R.drawable.sym_action_call);
+        billede.setImageResource(android.R.drawable.sym_action_call);
       } else {
-        vh.billede.setImageResource(android.R.drawable.sym_action_email);
+        billede.setImageResource(android.R.drawable.sym_action_email);
       }
     }
   };

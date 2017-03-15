@@ -1,12 +1,12 @@
 package lekt07_lister3;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -35,41 +35,27 @@ public class BenytRecyclerview extends AppCompatActivity {
     recyclerView = new RecyclerView(this);
 
     recyclerView.setLayoutManager(new LinearLayoutManager(this));
-    //recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-    //recyclerView.setLayoutManager(new StaggeredGridLayoutManager(10, LinearLayoutManager.HORIZONTAL));
-
     //recyclerView.setOnItemClickListener(this); FINDES IKKE - i stedet skal man lytte efter onClick på de enkelte vieww
     recyclerView.setAdapter(adapter);
 
     setContentView(recyclerView);
-    Snackbar.make(recyclerView, "Tryk på titlen for at flytte et element til toppen " +
-            "eller på billedet for at fjerne det", Snackbar.LENGTH_INDEFINITE);
+    Snackbar.make(recyclerView, "Tryk en titel for at flytte et element til toppen " +
+            "eller på billedet for at fjerne det", Snackbar.LENGTH_INDEFINITE).show();
   }
 
 
   /**
-   * Cacher forskellige views i et listeelement, sådan at søgninger i viewhierakiet
-   * mew findViewById() kun behøver ske EN gang.
+   * Husker forskellige views i et listeelement, sådan at søgninger i viewhierakiet
+   * med findViewById() kun behøver at ske EN gang.
    * Se https://developer.android.com/training/material/lists-cards.html
-   *
-   * @author j
    */
   class ListeelemViewholder extends RecyclerView.ViewHolder implements View.OnClickListener {
     TextView overskrift;
     TextView beskrivelse;
     ImageView billede;
 
-    public ListeelemViewholder(ViewGroup parent) {
-      super(LayoutInflater.from(parent.getContext())
-              .inflate(R.layout.lekt04_listeelement, parent, false));
-      // itemView indeholder layoutet der lige er blevet pakket ud
-      overskrift =  (TextView) itemView.findViewById(R.id.listeelem_overskrift);
-      beskrivelse = (TextView) itemView.findViewById(R.id.listeelem_beskrivelse);
-      billede = (ImageView) itemView.findViewById(R.id.listeelem_billede);
-
-      overskrift.setOnClickListener(this);
-      beskrivelse.setOnClickListener(this);
-      billede.setOnClickListener(this);
+    public ListeelemViewholder(View itemView) {
+      super(itemView);
     }
 
     @Override
@@ -87,6 +73,7 @@ public class BenytRecyclerview extends AppCompatActivity {
                     lande.add(position, landenavn);
                     adapter.notifyItemInserted(position);
                     recyclerView.smoothScrollToPosition(position);
+                    Snackbar.make(recyclerView, "OK, du får "+landenavn + " tilbage", Snackbar.LENGTH_LONG).show();
                   }
                 }).show();
       }
@@ -97,8 +84,19 @@ public class BenytRecyclerview extends AppCompatActivity {
         adapter.notifyItemMoved(position, 0);
         recyclerView.scrollToPosition(0);
       }
+
+      if (v == beskrivelse) {
+        Snackbar.make(recyclerView, "Prøv at skifte layout-manager", Snackbar.LENGTH_INDEFINITE)
+                .setAction("Skift", new View.OnClickListener() {
+                  @Override
+                  public void onClick(View view) {
+                    skiftLayoutManager();
+                  }
+                }).show();
+      }
     }
   }
+
 
   RecyclerView.Adapter adapter = new RecyclerView.Adapter<ListeelemViewholder>() {
     @Override
@@ -108,12 +106,22 @@ public class BenytRecyclerview extends AppCompatActivity {
 
     @Override
     public ListeelemViewholder onCreateViewHolder(ViewGroup parent, int viewType) {
-      return new ListeelemViewholder(parent);
+      View view = getLayoutInflater().inflate(R.layout.lekt04_listeelement, parent, false);
+      ListeelemViewholder vh = new ListeelemViewholder(view);
+      vh.overskrift =  (TextView) view.findViewById(R.id.listeelem_overskrift);
+      vh.beskrivelse = (TextView) view.findViewById(R.id.listeelem_beskrivelse);
+      vh.billede = (ImageView) view.findViewById(R.id.listeelem_billede);
+
+      vh.overskrift.setOnClickListener(vh);
+      vh.beskrivelse.setOnClickListener(vh);
+      vh.billede.setOnClickListener(vh);
+      return vh;
     }
 
     @Override
     public void onBindViewHolder(ListeelemViewholder vh, int position) {
       vh.overskrift.setText(lande.get(position));
+      if (position>0) vh.overskrift.append(" (flyt op)");
 
       vh.beskrivelse.setText("Land nummer " + position + " på vh@"+Integer.toHexString(vh.hashCode()));
       if (position % 3 == 2) {
@@ -123,4 +131,38 @@ public class BenytRecyclerview extends AppCompatActivity {
       }
     }
   };
+
+
+
+
+  int aktivLayoutManager;
+  private void skiftLayoutManager() {
+    aktivLayoutManager++;
+    String aktivLayoutManagerTekst;
+
+    if (aktivLayoutManager==1) {
+      recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+      aktivLayoutManagerTekst = "GridLayoutManager 2 søjler";
+    } else if (aktivLayoutManager == 2) {
+      recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL));
+      aktivLayoutManagerTekst = "StaggeredGridLayoutManager 2 søjler";
+    } else if (aktivLayoutManager == 3) {
+      recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+      aktivLayoutManagerTekst = "LinearLayoutManager vandret";
+    } else if (aktivLayoutManager == 4) {
+      recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, true));
+      aktivLayoutManagerTekst = "LinearLayoutManager bagfra";
+    } else {
+      recyclerView.setLayoutManager(new LinearLayoutManager(this));
+      aktivLayoutManagerTekst = "LinearLayoutManager (normal)";
+      aktivLayoutManager = 0;
+    }
+    Snackbar.make(recyclerView, aktivLayoutManagerTekst, Snackbar.LENGTH_INDEFINITE).setAction("Skift", new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        skiftLayoutManager();
+      }
+    }).show();
+  }
+
 }

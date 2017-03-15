@@ -57,9 +57,14 @@ public class BenytRecyclerviewOverskrifter extends AppCompatActivity {
     }
 
     @Override
+    public int getItemViewType(int position) {
+      return position % 3;
+    }
+
+    @Override
     public ListeelemViewholder onCreateViewHolder(ViewGroup parent, int viewType) {
-      View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.lekt04_listeelement, parent, false);
-      ListeelemViewholder vh = new ListeelemViewholder(parent);
+      View itemView = getLayoutInflater().inflate(R.layout.lekt04_listeelement, null);
+      ListeelemViewholder vh = new ListeelemViewholder(itemView);
       vh.overskrift =  (TextView) itemView.findViewById(R.id.listeelem_overskrift);
       vh.beskrivelse = (TextView) itemView.findViewById(R.id.listeelem_beskrivelse);
       vh.billede = (ImageView) itemView.findViewById(R.id.listeelem_billede);

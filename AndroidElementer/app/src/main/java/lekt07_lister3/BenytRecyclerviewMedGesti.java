@@ -45,7 +45,7 @@ public class BenytRecyclerviewMedGesti extends AppCompatActivity {
     itemTouchHelper.attachToRecyclerView(recyclerView);
     setContentView(recyclerView);
     Snackbar.make(recyclerView, "Tag fat i et listeelement og arrangér det et andet sted i listen " +
-            "eller træk det helt væk", Snackbar.LENGTH_INDEFINITE);
+            "eller træk det helt væk", Snackbar.LENGTH_INDEFINITE).show();
   }
 
   class ListeelemViewholder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -54,8 +54,7 @@ public class BenytRecyclerviewMedGesti extends AppCompatActivity {
     ImageView billede;
 
     public ListeelemViewholder(ViewGroup parent) {
-      super(LayoutInflater.from(parent.getContext())
-              .inflate(R.layout.lekt04_listeelement, parent, false));
+      super(getLayoutInflater().inflate(R.layout.lekt04_listeelement, parent, false));
       // itemView indeholder layoutet der lige er blevet pakket ud
       overskrift =  (TextView) itemView.findViewById(R.id.listeelem_overskrift);
       beskrivelse = (TextView) itemView.findViewById(R.id.listeelem_beskrivelse);
@@ -96,18 +95,30 @@ public class BenytRecyclerviewMedGesti extends AppCompatActivity {
     }
   };
 
+
+  // Læs mere på https://medium.com/@ipaulpro/drag-and-swipe-with-recyclerview-b9456d2b1aaf#.fjo359jbr
   ItemTouchHelper.SimpleCallback simpleItemTouchCallback = new ItemTouchHelper.SimpleCallback(
           ItemTouchHelper.UP | ItemTouchHelper.DOWN,  // dragDirs
           ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) { // swipeDirs
+
     @Override
-    public boolean onMove(RecyclerView rv, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
-      int position = viewHolder.getAdapterPosition();
+    public void onSelectedChanged(RecyclerView.ViewHolder vh, int actionState) {
+      super.onSelectedChanged(vh, actionState);
+      Log.d("Lande", "onSelectedChanged "+vh+" "+actionState);
+      if (actionState == ItemTouchHelper.ACTION_STATE_DRAG) {
+        vh.itemView.animate().scaleX(0.8f).scaleY(0.8f).alpha(0.6f);
+      }
+    }
+
+    @Override
+    public boolean onMove(RecyclerView rv, RecyclerView.ViewHolder vh, RecyclerView.ViewHolder target) {
+      int position = vh.getAdapterPosition();
       int tilPos = target.getAdapterPosition();
       String land = lande.remove(position);
       lande.add(tilPos, land);
       Log.d("Lande", "Flyttet: "+lande);
       adapter.notifyItemMoved(position, tilPos);
-      return true;
+      return true; // false hvis rykket ikke skal foretages
     }
 
     @Override
@@ -119,9 +130,10 @@ public class BenytRecyclerviewMedGesti extends AppCompatActivity {
     }
 
     @Override
-    public void clearView(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
-      super.clearView(recyclerView, viewHolder);
-      Log.d("Lande", "Interaktion færdig");
+    public void clearView(RecyclerView recyclerView, RecyclerView.ViewHolder vh) {
+      super.clearView(recyclerView, vh);
+      Log.d("Lande", "clearView "+vh);
+      vh.itemView.animate().scaleX(1).scaleY(1).alpha(1);
     }
   };
 }
