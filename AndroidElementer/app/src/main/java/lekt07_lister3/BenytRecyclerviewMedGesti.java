@@ -48,28 +48,6 @@ public class BenytRecyclerviewMedGesti extends AppCompatActivity {
             "eller træk det helt væk", Snackbar.LENGTH_INDEFINITE).show();
   }
 
-  class ListeelemViewholder extends RecyclerView.ViewHolder implements View.OnClickListener {
-    TextView overskrift;
-    TextView beskrivelse;
-    ImageView billede;
-
-    public ListeelemViewholder(ViewGroup parent) {
-      super(getLayoutInflater().inflate(R.layout.lekt04_listeelement, parent, false));
-      // itemView indeholder layoutet der lige er blevet pakket ud
-      overskrift =  (TextView) itemView.findViewById(R.id.listeelem_overskrift);
-      beskrivelse = (TextView) itemView.findViewById(R.id.listeelem_beskrivelse);
-      billede = (ImageView) itemView.findViewById(R.id.listeelem_billede);
-
-      overskrift.setOnClickListener(this);
-      beskrivelse.setOnClickListener(this);
-      billede.setOnClickListener(this);
-    }
-
-    @Override
-    public void onClick(View v) {
-      Toast.makeText(v.getContext(), "Klik på " + getAdapterPosition(), Toast.LENGTH_SHORT).show();
-    }
-  }
 
   RecyclerView.Adapter adapter = new RecyclerView.Adapter<ListeelemViewholder>() {
     @Override
@@ -79,7 +57,12 @@ public class BenytRecyclerviewMedGesti extends AppCompatActivity {
 
     @Override
     public ListeelemViewholder onCreateViewHolder(ViewGroup parent, int viewType) {
-      return new ListeelemViewholder(parent);
+      View view = getLayoutInflater().inflate(R.layout.lekt04_listeelement, parent, false);
+      ListeelemViewholder vh = new ListeelemViewholder(view);
+      vh.overskrift =  (TextView) view.findViewById(R.id.listeelem_overskrift);
+      vh.beskrivelse = (TextView) view.findViewById(R.id.listeelem_beskrivelse);
+      vh.billede = (ImageView) view.findViewById(R.id.listeelem_billede);
+      return vh;
     }
 
     @Override
@@ -94,6 +77,17 @@ public class BenytRecyclerviewMedGesti extends AppCompatActivity {
       }
     }
   };
+
+
+  class ListeelemViewholder extends RecyclerView.ViewHolder {
+    TextView overskrift;
+    TextView beskrivelse;
+    ImageView billede;
+
+    public ListeelemViewholder(View itemView) {
+      super(itemView);
+    }
+  }
 
 
   // Læs mere på https://medium.com/@ipaulpro/drag-and-swipe-with-recyclerview-b9456d2b1aaf#.fjo359jbr

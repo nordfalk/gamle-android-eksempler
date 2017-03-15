@@ -95,11 +95,11 @@ public class EgetLayoutMedBaseAdapterOverskrifter extends Activity implements Ad
       if (view == null) {
         // Vi skal oprette et nyt view afhængig af typen
         if (typen == 0) {
-          view = getLayoutInflater().inflate(android.R.layout.simple_list_item_1, null);
+          view = getLayoutInflater().inflate(android.R.layout.simple_list_item_1, parent, false);
         } else if (typen == 1) {
-          view = getLayoutInflater().inflate(android.R.layout.simple_list_item_1, null);
+          view = getLayoutInflater().inflate(android.R.layout.simple_list_item_1, parent, false);
         } else {
-          view = getLayoutInflater().inflate(R.layout.lekt04_listeelement, null);
+          view = getLayoutInflater().inflate(R.layout.lekt04_listeelement, parent, false);
         }
       }
 

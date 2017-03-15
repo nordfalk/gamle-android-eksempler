@@ -44,8 +44,43 @@ public class BenytRecyclerview extends AppCompatActivity {
   }
 
 
+  RecyclerView.Adapter adapter = new RecyclerView.Adapter<ListeelemViewholder>() {
+    @Override
+    public int getItemCount()  {
+      return lande.size();
+    }
+
+    @Override
+    public ListeelemViewholder onCreateViewHolder(ViewGroup parent, int viewType) {
+      View view = getLayoutInflater().inflate(R.layout.lekt04_listeelement, parent, false);
+      ListeelemViewholder vh = new ListeelemViewholder(view);
+      vh.overskrift =  (TextView) view.findViewById(R.id.listeelem_overskrift);
+      vh.beskrivelse = (TextView) view.findViewById(R.id.listeelem_beskrivelse);
+      vh.billede = (ImageView) view.findViewById(R.id.listeelem_billede);
+
+      vh.overskrift.setOnClickListener(vh);
+      vh.beskrivelse.setOnClickListener(vh);
+      vh.billede.setOnClickListener(vh);
+      return vh;
+    }
+
+    @Override
+    public void onBindViewHolder(ListeelemViewholder vh, int position) {
+      vh.overskrift.setText(lande.get(position));
+      if (position>0) vh.overskrift.append(" (flyt op)");
+
+      vh.beskrivelse.setText("Land nummer " + position + " på vh@"+Integer.toHexString(vh.hashCode()));
+      if (position % 3 == 2) {
+        vh.billede.setImageResource(android.R.drawable.ic_menu_delete);
+      } else {
+        vh.billede.setImageResource(android.R.drawable.ic_delete);
+      }
+    }
+  };
+
+
   /**
-   * Husker forskellige views i et listeelement, sådan at søgninger i viewhierakiet
+   * En Viewholder husker forskellige views i et listeelement, sådan at søgninger i viewhierakiet
    * med findViewById() kun behøver at ske EN gang.
    * Se https://developer.android.com/training/material/lists-cards.html
    */
@@ -98,43 +133,9 @@ public class BenytRecyclerview extends AppCompatActivity {
   }
 
 
-  RecyclerView.Adapter adapter = new RecyclerView.Adapter<ListeelemViewholder>() {
-    @Override
-    public int getItemCount()  {
-      return lande.size();
-    }
-
-    @Override
-    public ListeelemViewholder onCreateViewHolder(ViewGroup parent, int viewType) {
-      View view = getLayoutInflater().inflate(R.layout.lekt04_listeelement, parent, false);
-      ListeelemViewholder vh = new ListeelemViewholder(view);
-      vh.overskrift =  (TextView) view.findViewById(R.id.listeelem_overskrift);
-      vh.beskrivelse = (TextView) view.findViewById(R.id.listeelem_beskrivelse);
-      vh.billede = (ImageView) view.findViewById(R.id.listeelem_billede);
-
-      vh.overskrift.setOnClickListener(vh);
-      vh.beskrivelse.setOnClickListener(vh);
-      vh.billede.setOnClickListener(vh);
-      return vh;
-    }
-
-    @Override
-    public void onBindViewHolder(ListeelemViewholder vh, int position) {
-      vh.overskrift.setText(lande.get(position));
-      if (position>0) vh.overskrift.append(" (flyt op)");
-
-      vh.beskrivelse.setText("Land nummer " + position + " på vh@"+Integer.toHexString(vh.hashCode()));
-      if (position % 3 == 2) {
-        vh.billede.setImageResource(android.R.drawable.ic_menu_delete);
-      } else {
-        vh.billede.setImageResource(android.R.drawable.ic_delete);
-      }
-    }
-  };
-
-
-
-
+  /**
+   * Skifter LayoutManager - kan fjernes
+   */
   int aktivLayoutManager;
   private void skiftLayoutManager() {
     aktivLayoutManager++;
