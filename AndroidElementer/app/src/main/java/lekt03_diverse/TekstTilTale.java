@@ -29,7 +29,7 @@ import dk.nordfalk.android.elementer.R;
  *
  * @author Jacob Nordfalk
  */
-public class BenytTekstTilTale extends AppCompatActivity implements OnInitListener, OnClickListener {
+public class TekstTilTale extends AppCompatActivity implements OnInitListener, OnClickListener {
 
   EditText udtaleTekst;
   Button udtalKnap;
