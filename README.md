@@ -1,7 +1,9 @@
 # android-eksempler
 
-Forskellige eksempler på hvordan man programmerer til Android-platformen.
 
+# Bemærk - AndroidElementer har fået nyt repo - se https://github.com/nordfalk/AndroidElementer
+
+Forskellige eksempler på hvordan man programmerer til Android-platformen.
 
   * AndroidElementer viser forskellige elementer i Android-programmering. Kildekoden til eksemplerne kan ses INDE FRA SELVE app'en - se https://github.com/nordfalk/android-eksempler/blob/wiki/AndroidElementer.md
   * VejrFanen viser dagens vejr fra DMI og meget andet
