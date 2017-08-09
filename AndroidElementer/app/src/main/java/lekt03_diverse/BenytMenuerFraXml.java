@@ -1,12 +1,10 @@
 package lekt03_diverse;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -14,15 +12,15 @@ import android.widget.TextView;
 import dk.nordfalk.android.elementer.R;
 import lekt02_aktiviteter.Indstillinger_akt;
 
-public class BenytMenuer2 extends AppCompatActivity {
+public class BenytMenuerFraXml extends AppCompatActivity {
   private TextView textView;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     textView = new TextView(this);
-    textView.setText("Dette eksempel viser hvordan menuer virker i Android 2, og hvordan ActionBar fungerer i Android 4\n");
-    textView.append("Tryk på menu-knappen (F2 i emulatoren)\n");
+    textView.setText("Dette eksempel viser hvordan menuer defineret i en XML-fil virker\n");
+    textView.append("Tryk på knapperne i topbjælken (Actionbar/Toolbar)\n");
     setContentView(textView);
   }
 
@@ -33,7 +31,7 @@ public class BenytMenuer2 extends AppCompatActivity {
   public boolean onCreateOptionsMenu(Menu menu) {
     super.onCreateOptionsMenu(menu); // tilføj systemets standardmenuer
     textView.append("\nonCreateOptionsMenu " + menu);
-    // oftes vil man lægge menupunkterne ud i en XML-fil og pakke den ud således
+    // ofte vil man lægge menupunkterne ud i en XML-fil og pakke den ud således
     getMenuInflater().inflate(R.menu.lekt03_benytmenuer2, menu);
     return true;
   }
@@ -67,14 +65,5 @@ public class BenytMenuer2 extends AppCompatActivity {
       return super.onOptionsItemSelected(item);
     }
     return true;
-  }
-
-  /**
-   * Kaldes når der trykkes på en fysisk knap (incl MENU)
-   */
-  @Override
-  public boolean onKeyDown(int keyCode, KeyEvent event) {
-    textView.append("\nonKeyDown " + keyCode);
-    return super.onKeyDown(keyCode, event);
   }
 }

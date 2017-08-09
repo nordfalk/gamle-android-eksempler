@@ -68,7 +68,7 @@
         <activity android:name="lekt01_views.BenytWebView" />
         <activity android:name="lekt01_views.ByvejrProgrammatisk" />
         <activity android:name="lekt01_views.ByvejrDeklarativ" />
-        <activity android:name="lekt01_views.BenytHtmlTags" />
+        <activity android:name="lekt01_views.BenytHtmlKoder" />
         <activity android:name="lekt01_views.BenytMenuer" />
         <activity android:name="lekt02_intents.BenytIntents" />
         <activity android:name="lekt02_intents.BenytIntentsFraGoogle" />
@@ -111,7 +111,7 @@
         <activity android:name="lekt03_diverse.AfspilVideo" />
         <activity android:name="lekt03_diverse.BenytWebView2" />
         <activity android:name="lekt03_diverse.BenytLayoutInflater" />
-        <activity android:name="lekt03_diverse.BenytMenuer2" />
+        <activity android:name="lekt03_diverse.BenytMenuerFraXml" />
         <activity android:name="lekt03_diverse.BenytDialogerOgToasts" />
         <activity android:name="lekt03_diverse.TekstTilTale" />
         <activity android:name="lekt03_diverse.Talegenkendelse" />

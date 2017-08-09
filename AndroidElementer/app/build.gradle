@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion '25.0.0'
+    compileSdkVersion 25
+    buildToolsVersion '25.0.3'
     defaultConfig {
 //      app'ens pakkenavn - dens unikke ID på telefonen
         applicationId "dk.nordfalk.android.elementer"
-//      denne app fungerer på telefoner med Android 2.3.3 (API 9) og frem
-        minSdkVersion 9
+//      denne app fungerer på telefoner med Android 4.0 (API 14) og frem
+        minSdkVersion 14
 //      men den er beregnet til Android 6.0 (API 22)
         targetSdkVersion 22
 // targetSdkVersion skal være 22 eller under for at vi kan se brugerens konti umiddelbart.
@@ -36,13 +36,13 @@ android {
 dependencies {
     // Støttebiblioteker - se http://developer.android.com/tools/support-library/
     // Understøttelse af fragmenter
-    compile 'com.android.support:support-v4:24.2.1'
+    compile 'com.android.support:support-v4:25.3.1'
     // Understøttelse af actionbar/Toolbar
-    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.android.support:appcompat-v7:25.3.1'
     // Understøttelse af venstremenu
-    compile 'com.android.support:design:24.2.1'
+    compile 'com.android.support:design:25.3.1'
 
 //    compile 'com.google.android.gms:play-services:9.6.1'
-    compile 'com.google.android.gms:play-services-auth:9.6.1'
-    compile 'com.google.android.gms:play-services-location:9.6.1'
+    compile 'com.google.android.gms:play-services-auth:11.0.4'
+    compile 'com.google.android.gms:play-services-location:11.0.4'
 }

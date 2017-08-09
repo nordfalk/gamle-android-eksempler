@@ -23,7 +23,7 @@ public class BenytKnapperDeklarativ extends AppCompatActivity implements OnClick
 
     System.out.println("savedInstanceState==" + savedInstanceState);
 
-    // Hvis vi erklærer variabler herinde så er de ikke tilgængelige i andre metoder
+    // Hvis vi erklærer variabler herinde så er de lokale variabler og ikke tilgængelige i andre metoder
     //Button knap1, knap2, knap3;
 
     setContentView(R.layout.lekt01_tre_knapper);
